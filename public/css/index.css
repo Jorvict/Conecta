@@ -6,25 +6,25 @@ body{
 }
 
 #video{
-    padding: 0 180px;
+    /* padding: 0 180px; */
     width: 100%;
-    height: 250px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 #video video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 1280px;
+    height: 720px;
+    /* object-fit: cover; */
 }
 
 .slider-container
 {
     padding: 0 180px;
     width: 100%;
-    height: 600px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,7 +34,7 @@ body{
 #slider{
     overflow: hidden;
     height: inherit;
-    width: 1700px;
+    width: 1130px;
 }
 
 /* ------ Animacion Slider ------ */
@@ -42,21 +42,21 @@ body{
 @-webkit-keyframes slide_animation{
     0%{left: 0px;}
     10%{left: 0px;}
-    20%{left: 1700px;}
-    30%{left: 1700px;}
-    40%{left: 3400px;}
-    50%{left: 3400px;}
-    60%{left: 1700px;}
-    70%{left: 1700px;}
-    80%{left: 1700px;}
+    20%{left: 1130px;}
+    30%{left: 1130px;}
+    40%{left: 2260px;}
+    50%{left: 2260px;}
+    60%{left: 1130px;}
+    70%{left: 1130px;}
+    80%{left: 1130px;}
     90%{left: 0px;}
     100%{left: 0px;}
 }
 
 .carousel_slide{
-    width: 5100px;
+    width: 3390px;
     height: inherit;
-    margin: 0 0 0 -3400px;
+    margin: 0 0 0 -2260px;
     position: relative;
     -webkit-animation-name: slide_animation;
     -webkit-animation-duration: 33s;
@@ -67,7 +67,7 @@ body{
 
 .img-container{
     height: inherit;
-    width: 1700px;
+    width: 1130px;
     position: relative;
     float: left;
     object-fit: cover;
