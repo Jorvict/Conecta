@@ -46,7 +46,7 @@ body{
     50%{left: 3400px;}
     60%{left: 1700px;}
     70%{left: 1700px;}
-    80%{left: 0px;}
+    80%{left: 1700px;}
     90%{left: 0px;}
     100%{left: 0px;}
 }
@@ -57,7 +57,7 @@ body{
     margin: 0 0 0 -3400px;
     position: relative;
     -webkit-animation-name: slide_animation;
-    -webkit-animation-duration: 30s;
+    -webkit-animation-duration: 33s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-direction:alternate;
     -webkit-animation-play-state: running;
