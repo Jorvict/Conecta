@@ -1,0 +1,75 @@
+section#t-principal {
+	overflow: hidden;
+    width: 97%;
+	/*background: #fff;*/
+    box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.75);
+    margin: 0 auto;
+}
+
+h4#categoria {
+    color: #00c1c8;
+    text-align: center;
+    font-family: 'Permanent Marker';
+    font-size: 32px;
+}
+
+section#contendido{
+    margin-top: 10px;
+    /*background:red;*/
+    width: 100%;
+/*    height: 850px;*/
+    padding: 10px 10px 10px;
+    }
+
+section#contenedor{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-left: 60px;
+    margin-right: 60px;
+    }
+
+.cuadros {
+    width: 270px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    background: #fff;
+    height: 270px;
+}
+img#img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  /*  object-fit: cover;*/
+ 
+}
+
+.hover-galeria {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(1);
+    background: rgba(255, 255, 255, 0.6);
+    transition: transform .75s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.hover-galeria p{
+    color: #000;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.cuadros:hover .hover-galeria{
+    transform: scale(0);
+}

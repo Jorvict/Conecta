@@ -1,0 +1,515 @@
+body{
+    height: 100%;
+    width: 100%;
+	margin:0;
+	padding:0;
+}
+
+#slider{
+    background:#098;
+    
+    width: 90%;
+    height: 470px;
+    display: block;
+    margin: 0 auto;
+    }
+
+img.d-block.w-100 {
+    width: 100%;
+    height: 470px;
+}
+
+#contenido{
+    /*background:red;*/
+    min-height:220px;
+    width: 100%;
+   /* height: 700px;*/
+    display: flex;
+    flex-wrap: wrap;
+    }
+
+section.titulo{
+ 
+    text-align: center;
+
+
+    overflow: hidden;
+    width: 97%;
+    /*background: #fff;*/
+    box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.75);
+    margin: 0 auto;
+ 
+    height: 40px;
+}
+
+section.titulo h2{
+ 	font-size: 2rem;
+ 	color: #00b2bb;
+    font-family: 'Permanent Marker';
+}
+
+
+section.contenedor {
+    /* padding: 0 12px 0 0; */
+    margin: 0 30px 0 30px;
+     padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    background: #fff;
+}
+
+.destacados {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+ 
+.espacio {
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 55px;
+}
+
+.pasos-sig {
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 245px;
+    height: 500px;
+    box-shadow: -1px 2px 24px -5px rgba(0, 0, 0, 0.75);
+    background: #e5e5e5;
+}
+
+.pasos-sig img{
+    width: 100%;
+    height: 250px;
+}
+span#subtitulo {
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+}
+
+
+.pasos-sig .subtitulo {
+    padding: 10px 0px 0px 0px;
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+
+p.p {
+    margin: 10px 10px 10px 10px;
+}
+
+section.tituloconecta{
+ 	padding: 20px 0px;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    box-shadow: -1px 2px 24px -5px rgba(0, 0, 0, 0.75);
+}
+
+section.tituloconecta h2{
+ 	font-size: 2rem;
+ 	color: #ff9e00;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+}
+p#conectaes {
+    padding-top: 10px;
+    width: 32%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+}
+
+section#tunegocio {
+    width: 100%;
+    height: 180px;
+    display: block;
+    margin: 0 auto;
+    background: orange;
+}
+
+section#cont {
+   /* background: #098;*/
+    width: 100%;
+    height: 180px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section#registra {
+    margin-left: 10%;
+    width: 30%;
+    height: 180px;
+    background: #00c1c8;
+   
+}
+
+h1#re {
+    margin-top: 40px;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+}
+
+h4#llena {
+    margin-top: 30px;
+    color: #000;
+    text-align: center;
+    font-size: 17px;
+}
+
+a.aqui {
+    font-weight: 900;
+    color: #000;
+    text-decoration: none;
+}
+
+section#desarrollamos {
+    width: 50%;
+    height: 180px;
+    background: #fff;
+    margin-right: 10%;
+}
+.espacioo {
+    width: 100%;
+    height: 28px;
+}
+section.cajas {
+    margin-top: 60px;
+    width: 298px;
+   /* background: red;*/
+    margin: 5px 5px 5px 5px;
+    float: left;
+
+}
+
+#desarrollamos h3 span{
+    background: orange;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    margin-right: 5px;
+}
+
+
+h3#txtcaja {
+    font-size: 18px;
+    text-align: justify;
+    color: #000;
+    font-weight: 800;
+}
+
+.ver{
+width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.ver a {
+    padding: 2px 40px;
+    background-color: orange;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+h1#cotiza {
+
+    font-size: 40px;
+    color: #00cccc;
+    letter-spacing: -2px;
+    margin:0 auto;
+    text-align: center;
+}
+
+
+section.titulocoti{
+ 	padding: 20px 0px;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    background: #fff;
+}
+
+section.titulocoti h2{
+ 	font-size: 2rem;
+ 	color: #00b2bb;
+}
+
+
+section.abastece {
+    background: #f2f2f2;
+    margin: 0 30px 0 30px;
+     padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+    height: 160px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.abastececonte {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+h4#abastece {
+    font-size: 1.5rem;
+    margin: 0 0 0 40px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+}
+
+.items {
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 245px;
+    height: 100px;
+    
+}
+
+
+
+section.formulario {
+   /* background: #098;*/
+    margin: 0 30px 0 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+}
+
+section#form-inputs {
+   /* background: #fff;*/
+    width: 850px;
+    height: 40px;
+    margin:0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+section#que-buscas{
+	/*background: red;*/
+    width: 100%;
+    height: 40px;
+    margin-right: 20px;
+
+    
+}
+input.que-buscas {
+   	width: 100%;
+   	height:70%;
+    border: 1px solid #00b2bb;
+    border-radius: 4px;
+    padding: 5px 5px;
+    outline: none;
+    color: #00b2bb;
+}
+
+
+section#otros-input{
+	/*background: blue;*/
+    width: 45%;
+    height: 40px;
+}
+
+textarea.otros-input {
+    width: 100%;
+    border: 1px solid #00b2bb;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+div#espacio{
+/*	background: blue;*/
+    width: 70px;
+    height: 40px;
+}
+
+input.otros-input {
+   	width: 100%;
+   	height:70%;
+    border: 1px solid #00b2bb;
+    border-radius: 4px;
+    outline: none;
+    margin-top: 10px;
+}
+
+
+input#buscas {
+     font-size: 15px; 
+     color: #000;
+}
+
+input#form{
+    font-size: 15px;
+    color: #000;
+   
+}
+
+
+.solicita-cotizacion {
+    padding-top: 50px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.solicita-cotizacion a{
+    text-decoration: none;
+    color: #fff;
+    padding: 20px 50px;
+    font-size: 20px;
+    background-color: orange;
+    border-radius: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+}
+
+
+
+
+button#b{
+    background: #0066CC;
+}
+
+
+
+
+
+
+@media screen and (max-width:1200px)
+{
+    #slider{
+        height: 260px;
+        background: #fff;
+    }
+   img.d-block.w-100{
+    height: 260px;
+}
+
+    section.tituloconecta h2{
+        font-size: 23px;
+    }
+    section.titulocoti h2 {
+        font-size: 23px;
+    }
+
+    section.abastece {
+        height: 250px;
+        margin: 10px 10px 10px 10px;
+    }
+
+    .items {
+    /* margin-bottom: 10px; */
+    /* overflow: hidden; */
+        width: 100%;
+        height: 25px;
+        text-align: center;
+    }
+    section.tituloconecta {
+        height: 220px;
+        margin: 10px 10px 10px 10px;;
+    }
+
+    p#conectaes {
+        width: 90%;
+    }
+    section.formulario {
+        margin: 10px 10px 10px 10px;
+    }
+
+    section#form-inputs{
+        width: 100%;
+    }
+    section#que-buscas {
+    /* background: red; */
+        width: 100%;
+        margin-right: 0;
+    }
+    section#otros-input {
+    /* background: blue; */
+        width: 100%;
+    }
+    
+
+    div#espacio {
+        display: none;
+    }
+
+    section#tunegocio{
+        width: 100%;
+        height: 570px;
+        background: orange;
+    }
+    section#registra{
+        width: 100%;
+        height: 220px;
+        /*background: red;*/
+        margin: 0;
+        display: block;
+    }
+    
+    section#desarrollamos{
+        width: 100%;
+        height: 370px;
+        /*background: blue;*/
+        margin: 0;
+        display: block;
+    }
+    
+    section.cajas{
+        margin: 10px 10px 10px 10px;
+    }
+
+    h3#txtcaja{
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .c-logo {
+    /* display: block; */
+        margin: 0 auto;
+        width: 50%;
+        height: 50%;
+    }
+
+    h4#Suscribete {
+        font-size: 9px;
+    }
+
+    .solicita-cotizacion {
+        /* padding-top: 50px; */
+        width: 100%;
+        text-align: center;
+        /* margin-bottom: 50px; */
+        margin: 0 auto;
+        display: block;
+    }
+    .solicita-cotizacion a {
+        padding: 0;
+    }
+} 
+
+
+

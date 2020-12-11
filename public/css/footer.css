@@ -1,0 +1,219 @@
+footer{
+    background: #00c7ce;
+    padding: 20px 0 0 0;
+    margin: 0 auto;
+    height: 170px;
+    width: 100%;
+}
+
+.contenedor-footer{
+    
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.content-footeriz {
+    /*background: #fff;*/
+    width: 25%;
+    height: 120px;
+    margin: 0px 0 0 33px;
+}
+
+.c-logo {
+    /* display: block; */
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
+}
+
+img#logofooter {
+    width: 100%;
+    height:100%;
+}
+
+.content-footercentro {
+/*    background: #fff;*/
+    width: 50%;
+    padding: 0 0 0 52px;
+}
+
+/*section#input-footer {
+    width: 100%;
+    height: 40px;
+    margin:0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 20px;
+}*/
+
+input#input-footer {
+     font-size: 15px; 
+}
+input.input-footer {
+    width: 60%;
+    height:70%;
+    border: 1px solid #00b2bb;
+    border-radius: 4px;
+    padding: 5px 5px;
+    outline: none;
+    color: #00b2bb;
+        background: #a8f7f7f2;
+}
+
+
+button.btsubs {
+    background: #e5e5e5;
+    color: orange;
+    font-size: 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid #e5e5e5;
+}
+
+p#n-c-c {
+    color: #fff;
+}
+
+h4#Suscribete {
+    color: #fff;
+    font-size: 16px;
+}
+
+p#i{
+    margin: 0 10px 0 0;
+}
+
+.content-footerder {
+    /*background: red;*/
+    width: 25%;
+}
+
+h1#contactanos {
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+img#face {
+    padding: 0 0 0 122px;
+}
+
+img#telefono {
+    padding: 0 0 0 0;
+}
+
+img#instagram {
+    padding: 0 0 0 0;
+}
+.otros {
+    background: #00c7ce;
+    width: 100%;
+    height: 30px;
+    display: flex;
+}
+.c-otros {
+    width: 62%;
+    display: flex;
+}
+
+p#otros {
+    margin: 0 auto;
+   
+    color: #fff;
+    font-size: 12px;
+}
+@media screen and (max-width:1200px){
+footer {
+        background: #00c7ce;
+        /* min-height: 80px; */
+        width: 100%;
+        /* display: flex; */
+        flex-wrap: wrap;
+        height: 335px;
+        align-items: center;
+    }
+
+    .contenedor-footer {
+        display: block;
+        width: 100%;
+        height: 100%;
+        justify-content: space-evenly;
+        margin: auto;
+    }
+
+    .content-footeriz {
+        /* background: #fff; */
+        width: 50%;
+        height: 120px;
+        margin: 0px 0 0 33px;
+        display: block;
+        margin: 0 auto;
+    }
+    .otros {
+        background: #00c7ce;
+        width: 100%;
+        height: 30px;
+        display: flex;
+        display: block;
+        margin: 0 auto;
+    }
+    .c-logo{
+        width: 100%;
+        height: 100%;
+    }
+    .content-footercentro {
+        /* background: #fff; */
+        width: 90%;
+        padding: 0; 
+        display: block;
+        margin: 0 auto;
+        height: 22px;
+    }
+    h4#Suscribete {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .content-footerder {
+        /* background: red; */
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+    .otros {
+        background: #00c7ce;
+        width: 100%;
+        height: 80px;
+    }
+    .c-otros {
+        width: 50%;
+        height: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    input#input-footer{
+        width: 100%;
+    }
+
+    input#input-footer{
+        font-size: 13px;
+    }
+
+    button.btsubs {
+        display: block;
+        width: 50%;
+        margin-top: 5px;
+        margin: 0 auto;
+    }
+    p#n-c-c {
+        margin: 0 auto;
+        display: block;
+        font-size: 12px;
+        text-align: center;
+    }
+}
