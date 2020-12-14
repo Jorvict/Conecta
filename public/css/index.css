@@ -92,13 +92,33 @@ body{
 }
 
 .slider-container .banner-desc .desc-logo{
-    width: 150px;
+    width: 100%;
     height: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .slider-container .banner-desc .desc-logo img{
-    width: 100%;
+    width: 150px;
     height: 100%;
+}
+
+.slider-container .banner-desc .desc-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-container .banner-desc .desc-btn a{
+    text-decoration: none;
+    margin: 10px 0px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    font-size: 18px;
+    color: white;
+    background-color: #ff9c00;
+    outline: none;
 }
 
 /* #slider{
