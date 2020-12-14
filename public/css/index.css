@@ -141,7 +141,8 @@ body{
 
 .slider-container .banner-desc .desc-logo img{
     width: 150px;
-    height: 100%;
+    height: 150px;
+    border-radius: 150px;
 }
 
 .slider-container .banner-desc .desc-social{
