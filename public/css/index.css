@@ -214,6 +214,7 @@ section#cont {
     width: 100%;
     height: 180px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -249,7 +250,11 @@ section#desarrollamos {
     width: 50%;
     height: 180px;
     background: #fff;
-    margin-right: 10%;
+    /* margin-right: 10%; */
+    padding: 0px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 .espacioo {
     width: 100%;
