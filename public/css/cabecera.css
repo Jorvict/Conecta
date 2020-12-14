@@ -345,16 +345,3 @@ section#menu {
     }
 }
 
-@media screen and (max-width:800px)
-{
-    #video{
-        padding: 0 10px;
-        max-width: 800px;
-    }
-
-    #video video
-    {
-        width: 100%;
-        height: auto;
-    }
-}
