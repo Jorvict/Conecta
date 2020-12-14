@@ -29,10 +29,18 @@ footer{
     height: 100%;
 }
 
-img#logofooter {
+.c-logo p{
+    font-size: 40px;
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-family: 'Permanent Marker';
+}
+
+/* img#logofooter {
     width: 100%;
     height:100%;
-}
+} */
 
 .content-footercentro {
 /*    background: #fff;*/
