@@ -143,6 +143,7 @@ body{
     width: 150px;
     height: 150px;
     border-radius: 150px;
+    object-fit: cover;
 }
 
 .slider-container .banner-desc .desc-social{
