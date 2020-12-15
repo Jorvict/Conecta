@@ -111,6 +111,9 @@ body{
     position: relative;
     float: left;
     object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .img-container .img-slider{
@@ -118,12 +121,12 @@ body{
     width: 100%;
 }
 
-.slider-container .banner-desc{
+.img-container .banner-desc{
     position: absolute;
     color: black;
     font-weight: 500;
     background: rgba(255, 255, 255, 0.6);
-    width: 50%;
+    width: 75%;
     height: auto;
     padding: 25px 25px;
     display: flex;
