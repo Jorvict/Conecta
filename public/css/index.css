@@ -80,17 +80,17 @@ body{
 /* ------ Animacion Slider ------ */
 
 @-webkit-keyframes slide_animation{
-    0%{left: 0px;}
-    10%{left: 0px;}
+    0%{left: 2560px;}
+    10%{left: 2560px;}
     20%{left: 1280px;}
     30%{left: 1280px;}
-    40%{left: 2560px;}
-    50%{left: 2560px;}
+    40%{left: 0px;}
+    50%{left: 0px;}
     60%{left: 1280px;}
     70%{left: 1280px;}
     80%{left: 1280px;}
-    90%{left: 0px;}
-    100%{left: 0px;}
+    90%{left: 2560px;}
+    100%{left: 2560px;}
 }
 
 .carousel_slide{
