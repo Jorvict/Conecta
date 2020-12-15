@@ -1,3 +1,8 @@
+@font-face{
+    font-family:'Marker Felt';
+    src: url(../../fonts/Marker_Felt.ttf);
+}
+
 footer{
     background: #00c7ce;
     padding: 20px 0 0 0;
@@ -30,11 +35,12 @@ footer{
 }
 
 .c-logo p{
-    font-size: 40px;
+    font-size: 42px;
     margin: 0;
     text-align: center;
     color: white;
-    font-family: 'Permanent Marker';
+    /* font-family: 'Permanent Marker'; */
+    font-family: 'Marker Felt';
 }
 
 /* img#logofooter {
@@ -64,7 +70,7 @@ input#input-footer {
      padding-left: 20px;
 }
 input.input-footer {
-    width: 30%;
+    width: 40%;
     height:70%;
     border: 1px solid #00b2bb;
     border-radius: 30px;
@@ -178,6 +184,7 @@ footer {
         width: 100%;
         height: 100%;
     }
+
     .content-footercentro {
         /* background: #fff; */
         width: 90%;
