@@ -4,6 +4,21 @@
     box-sizing: border-box ;
 }
 
+.form-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 50;
+    top: -100vh;
+    left: 0;
+    transition: 0.3s;
+}
+
+.form-container.is-active{
+    top: 0;
+}
+
 
 .form-registro{
     width: 400px;
