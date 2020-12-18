@@ -228,6 +228,7 @@ figure{
 
 .cabecera .right-sect .bottom .menu ul{
     display: flex;
+    justify-content: center;
     /* align-items: center; */
     width: 100%;
     height: 100%;
@@ -238,7 +239,7 @@ figure{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25%;
+    width: 15%;
     height: 100%;
     color: #00c1c8;
     font-size: 20px;
@@ -246,6 +247,7 @@ figure{
     font-family: 'Helvetica';
     float: left;
     position: relative;
+    text-align: center;
 }
 
 .cabecera .right-sect .bottom .menu ul .first-nav a{
