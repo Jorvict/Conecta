@@ -12,6 +12,10 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 	
 	<link rel="stylesheet" type="text/css" href="../public/css/categorias.css">
+
+	<!-- <link rel="stylesheet" type="text/css" href="../public/css/cabecera.css"> -->
+	<link rel="stylesheet" type="text/css" href="../public/css/test-header.css">
+
 	<link rel="stylesheet" type="text/css" href="../public/css/cabecera.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/footer.css">
 	
@@ -20,182 +24,287 @@
 	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 <body>
-	<section id="superior">
-		<img id="logocel" src="../public/imagenes/LOGO_FINAL.jpg">
-        <section id="hashtag">
-        	<span>#OrgullososdeComprarleAlPerú</span>
-        </section>
 
-        <section id="registrate">
-        	<span>¿Tienes un negocio?<br>Te ayudamos</span>
+	<div class="page-container">
 
-        	<button type="button" class="registrate">
-              REGÍSTRATE GRATIS            
-          	</button>
+		<header class="cabecera">
+			<figure class="img-container">
+				<img src="../public/imagenes/LOGO_FINAL.webp" alt="">
+			</figure>
+			<section class="right-sect">
+				<section class="top">
+					<div class="division first">
+						<p>#OrgullososdeComprarleAlPerú</p>
+					</div>
+					<div class="division second">
+						<p>¿Tienes un negocio? <br>
+							Te ayudamos.</p>                 
+					</div>
+					<div class="division third">
+						<button class="register">
+							REGISTRATE <br> 
+							GRATIS
+						</button>
+					</div>
+					<div class="division fourth">
+						<figure class="img-container">
+							<img src="../public/imagenes/home.gif" alt="">
+						</figure>
 
-            <div class="login">
-            	<img src="../public/imagenes/home.gif" id="logito">
-            	<button class="login" type="button" data-toggle="modal" data-target="#loginModal" data-whatever="@mdo" id="sesion">
-                Iniciar Sesión
-              </button>
-            </div>
-        </section>
-    </section>
+						<button class="Login">
+							Iniciar sesión
+						</button>
+					</div>
+				</section>
+				<section class="middle">
+					<div class="input-container">
+						<input type="text" placeholder="¿Qué estás buscando?">
+						<i class="icon-search"></i>
+					</div>
+				</section>
+				<section class="bottom">
+					<nav class="menu">
+						<ul>
+							<li class="first-nav">
+								<a href="">Inicio</a>
+							</li>
+							<li class="first-nav">
+								<a href="">Tienda</a>
+							</li>
+							<li class="first-nav parent">
+								<a href="./categorias.html">Categorías</a>
+								<ul>
+									<div class="wrapper">
+										<li>
+											<a href="#deliver">Ropa y textil</a>
+										</li>
+										<li>
+											<a href="#package">Abarrotes</a>
+										</li>
+										<li>
+											<a href="#express">Restaurantes</a>
+										</li>
+										<li>
+											<a href="">Salud</a>
+										</li>
+										<li>
+											<a href="">Pasteleria</a>
+										</li>
+									</div>
 
-    <section id="cabecera">
-    	<section id="logo">
-    		<a href=""><img id="logo" src="../public/imagenes/LOGO_FINAL.webp"></a>
-    	</section>
+									<div class="wrapper">
+										<li>
+											<a href="">Cuero y calzado</a>
+										</li>
+										<li>
+											<a href="">Servicio Técnico</a>
+										</li>
+										<li>
+											<a href="">Ferretería</a>
+										</li>
+										<li>
+											<a href="">Lavanderías</a>
+										</li>
+										<li>
+											<a href="">Frutas y verduras</a>
+										</li>
+									</div>
 
-    	<section id="buscadores">
-    		<section id="buscador1">
-    			<input class="buscador1" type="text" aria-label="Search" placeholder="Qué estás buscando" id="busca-producto"><i class="bx bx-search"></i>
-    		</section>
+									<div class="wrapper"> 
+										<li>
+											<a href="">Útiles de oficina</a>
+										</li>
+										<li>
+											<a href="">Mascota</a>
+										</li>
+										<li>
+											<a href="">Iluminación</a>
+										</li>
+										<li>
+											<a href="">Decoración</a>
+										</li>
+										<li>
+											<a href="">Otros</a>
+										</li>
+									</div>
+								</ul>
+							</li>
+							<li class="first-nav">
+								<a href="">¿Quíenes somos?</a>
+							</li>
+						</ul>
+					</nav>
+				</section>
+			</section>    
+		</header>
 
-    		<section id="buscador2">
-    			<input class="buscador2" type="text" aria-label="Search" placeholder="¿Dónde estás?. Ej. Paruro" id="busca-ubicacion">
-    		</section>
-
-    		<section id="menu">
-		      	<div class="navbar">
-
-				  	<a href="#home">Inicio</a>
-				  	<a href="#home">Tienda</a>
-				  	<div class="subnav">
-				    <button class="subnavbtn">Categorías <i class="fa fa-caret-down"></i></button>
-				    	<div class="subnav-content">
-				      		<a href="#deliver">Ropa y textil</a>
-				      		<a href="#package">Abarrotes</a>
-				      		<a href="#express">Restaurantes</a>
-				       		<a href="">Salud</a>
-							<a href="">Pasteleria</a>
-							<a href="">Cuero y calzado</a>
-							<a href="">Servicio Técnico</a>
-							<a href="">Ferretería</a>
-							<a href="">Lavanderías</a>
-							<a href="">Frutas y verduras</a>
-							<a href="">Útiles de oficina</a>
-							<a href="">Mascota</a>
-							<a href="">Iluminación</a>
-							<a href="">Decoración</a>
-							<a href="">Otros</a>
-				    	</div>
-			  		</div> 
-			  
-					<a href="#contact">Nuestros servicios</a>
-					<a href="">¿Quíenes somos?</a>
+		<br>
+		<section id="t-principal"><h4 id="categoria">Categorías</h4></section>
+	
+		<section id="contendido">
+			<section id="contenedor">
+				<div class="cuadros">
+						<img id="img" src="../public/imagenes/ropa.jpg">
+					<div class="hover-galeria">
+						<p>Ropa y textiles</p>
+					</div>
 				</div>
-    		</section>
-    	</section>
-    </section>
-    <br>
-    <section id="t-principal"><h4 id="categoria">Categorías</h4></section>
+	
+				<div class="cuadros">
+						<img id="img" src="../public/imagenes/abarrote.jpg">
+					<div class="hover-galeria">
+						<p>Abarrotes</p>
+					</div>
+				</div>
+	
+				<div class="cuadros">
+						<img id="img" src="../public/imagenes/restaurante.jpg">
+					<div class="hover-galeria">
+						<p>Restaurante</p>
+					</div>
+				</div>
+	
+				<div class="cuadros">
+					<img id="img" src="../public/imagenes/salud.jpg">
+					<div class="hover-galeria">
+						<p>Salud</p>
+					</div>
+				</div>
+	
+				<div class="cuadros">
+					<img id="img" src="../public/imagenes/pasteleria.jpeg">
+					<div class="hover-galeria">
+						<p>Pastelería</p>
+					</div>
+				</div>
+	
+				<div class="cuadros">
+					<img id="img" src="../public/imagenes/calzado.jpg">
+					<div class="hover-galeria">
+						<p>Cuero y calzado</p>
+					</div>
+				</div>
+	
+				<div class="cuadros">
+					<img id="img" src="../public/imagenes/serviciotecnico.jpg">
+					<div class="hover-galeria">
+						<p>Servicio Técnico</p>
+					</div>
+				</div>
+	
+				<div class="cuadros">
+					<img id="img" src="../public/imagenes/ferreteria.jpg">
+					<div class="hover-galeria">
+						<p>Ferretería</p>
+					</div>
+				</div>
+	
+				<div class="cuadros">
+					<img id="img" src="../public/imagenes/lavanderia.jpg">
+					<div class="hover-galeria">
+						<p>Lavanderías</p>
+					</div>
+				</div>
+	
+				<div class="cuadros">
+					<img id="img" src="../public/imagenes/frutas_verduras.jpg">
+					<div class="hover-galeria">
+						<p>Frutas y verduras</p>
+					</div>
+				</div>
+	
+				<div class="cuadros">
+					<img id="img" src="../public/imagenes/utiles-de-oficina.jpg">
+					<div class="hover-galeria">
+						<p>Útiles de oficina</p>
+					</div>
+				</div>
+	
+				<div class="cuadros">
+					<img id="img" src="../public/imagenes/mascota.jpg">
+					<div class="hover-galeria">
+						<p>Máscota</p>
+					</div>
+				</div>
 
-    <section id="contendido">
-    	<section id="contenedor">
-	    	<div class="cuadros">
-	    			<img id="img" src="../public/imagenes/ropa.jpg">
-	            <div class="hover-galeria">
-                    <p>Ropa y textiles</p>
-                </div>
-	        </div>
+				<div class="cuadros">
+					<img id="img" src="../public/imagenes/iluminacion.jpg">
+					<div class="hover-galeria">
+						<p>Iluminación</p>
+					</div>
+				</div>
 
-	        <div class="cuadros">
-	    			<img id="img" src="../public/imagenes/abarrote.jpg">
-	            <div class="hover-galeria">
-                    <p>Abarrotes</p>
-                </div>
-	        </div>
+				<div class="cuadros">
+					<img id="img" src="../public/imagenes/decoracion.jpg">
+					<div class="hover-galeria">
+						<p>Decoración</p>
+					</div>
+				</div>
 
-	        <div class="cuadros">
-	    			<img id="img" src="../public/imagenes/restaurante.jpg">
-	            <div class="hover-galeria">
-                    <p>Restaurante</p>
-                </div>
-	        </div>
+				<div class="cuadros">
+					<img id="img" src="../public/imagenes/otros.png">
+					<div class="hover-galeria">
+						<p>Otros</p>
+					</div>
+				</div>
 
-	        <div class="cuadros">
-	            
-	        </div>
+			</section>
+		</section>
+		
+		<footer>
+			<div class="contenedor-footer">
+				<div class="content-footeriz">
+					<div class="c-logo">
+						<p>CONECTA PERÚ</p>
+						<!-- CONSULTAR <img src="../public/imagenes/logo1.png" id="logofooter"> -->
+					</div>
 
-	        <div class="cuadros">
-	            
-	        </div>
+				</div>
+				<div class="content-footercentro">
+					<h4 id="Suscribete">Enterate acerca de nuestros productos y servicios.</h4>
+					<section id="input-footer ">
+						<section id="input-footer ">
+							<input class="input-footer" type="text" aria-label="Search" placeholder="Tu correo electrónico"
+								id="input-footer">
 
-	        <div class="cuadros">
-	            
-	        </div>
-
-	        <div class="cuadros">
-	            
-	        </div>
-
-	        <div class="cuadros">
-	            
-	        </div>
-
-	        <div class="cuadros">
-	            
-	        </div>
-
-	        <div class="cuadros">
-	            
-	        </div>
-
-	        <div class="cuadros">
-	            
-	        </div>
-
-	        <div class="cuadros">
-	            
-	        </div>
-	    </section>
-    </section>
-
-<footer>
-	<div class="contenedor-footer">
-        <div class="content-footeriz">
-       		<div class="c-logo">
-       			<img src="../public/imagenes/logo.jpg" id="logofooter">
-       		</div>
- 	      
-	    </div>
-	    <div class="content-footercentro">
-	        	<h4 id="Suscribete">Suscribete y matente al tanto acerca de nuestro productos y servicios.</h4>
-	        	<section id="input-footer ">
-		    		<section id="input-footer ">
-		    			<input class="input-footer" type="text" aria-label="Search" placeholder=" &nbsp; Tu correo electrónico" id="input-footer">
-		    		
-			        <button class="btsubs" type="submit">SUSCRÍBETE</button>
-			        <p id="n-c-c">Nunca compartiremos tu direción de correo electrónico con tercera persona.</p>
-		    		</section>
+							<button class="btsubs" type="submit">SUSCRIBIRSE</button>
+							<p id="n-c-c">Nunca compartiremos tu direción de correo electrónico con tercera persona.</p>
+						</section>
 
 
-		    	</section>
-	    </div>
-	    <div class="content-footerder">
-	    	<br id="salto-foot-der">
-	    	<br id="salto-foot-der">
-	    	<br id="salto-foot-der">
-	    	<br id="salto-foot-der">
-	    	<br id="salto-foot-der">
-	    	<h1 id="contactanos">CONTÁCTANOS</h1>
-	    	<a href="https://www.facebook.com/conectaperupymes/"> <img id="face" src="../public/imagenes/facebook.png"></a>
-	        <a href="https://wa.me/51936910425"> <img id="telefono" src="../public/imagenes/telefono.png"></a>
-	        <a href="https://www.instagram.com/conectaperunegocios/"> <img id="instagram" src="../public/imagenes/instagram.png"></a>
+					</section>
+				</div>
+				<div class="content-footerder">
+					<br id="salto-foot-der">
+					<br id="salto-foot-der">
+					<br id="salto-foot-der">
+					<br id="salto-foot-der">
+					<br id="salto-foot-der">
+					<h1 id="contactanos">CONTÁCTANOS</h1>
+					<a href="https://www.facebook.com/conectaperupymes/"> <img id="face"
+							src="../public/imagenes/facebook.png"></a>
+					<a href="https://wa.me/51936910425"> <img id="telefono" src="../public/imagenes/telefono.png"></a>
+					<a href="https://www.instagram.com/conectaperunegocios/"> <img id="instagram"
+							src="../public/imagenes/instagram.png"></a>
 
-	    </div>
-	  	
-    </div>
-    <div class="otros">
-    	<div class="c-otros">
-	    	<p id="otros">¿QUÍENES SOMOS?</p>
-	  	    <p id="otros">NUESTROS SERVICIOS</p>
-	  	    <p id="otros">TÉRMINOS Y CONDICIONES</p>
-	        <p id="otros">POLÍTICAS DE PRIVACIDAD</p>
-	    </div>
-    </div>
+				</div>
 
-</footer>
+			</div>
+			<div class="otros">
+				<div class="c-otros">
+					<p id="otros">¿QUIÉNES SOMOS?</p>
+					<!-- CONSULTAR <p id="otros">NUESTROS SERVICIOS</p> -->
+					<p id="otros">TÉRMINOS Y CONDICIONES</p>
+					<p id="otros">POLÍTICAS DE PRIVACIDAD</p>
+
+				</div>
+			</div>
+
+		</footer>
+
+	</div>
+
+
+
 </body>
 </html>

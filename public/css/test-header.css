@@ -278,8 +278,8 @@ figure{
     position: absolute;
     z-index: 5;
     top: 100%;
-    right: -100%;
-    width: 500%;
+    right: -234%;
+    width: 834%;
     height: 300%;
     background-color: #00c1c8;
 }
@@ -296,10 +296,12 @@ figure{
     width: 20%;
     height: 100%;
     list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
 .cabecera .right-sect .bottom .menu ul .first-nav:hover ul .wrapper li a{
-    width: 100%;
+    width: 80%;
     height: 100%;
     display: flex;
     justify-content: center;
