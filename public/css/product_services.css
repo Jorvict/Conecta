@@ -88,7 +88,7 @@ main .left-section .info-emp .container-sticky{
     height: 60%;
     max-height: 700px;
     width: 100%;
-    margin-top: 120px;
+    margin-top: 190px;
     /* background-color: yellow; */
     position: sticky;
     top: 40px;
@@ -153,6 +153,7 @@ main .right-section{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 main .right-section .title-products{
@@ -169,24 +170,60 @@ main .right-section .products-container{
     /* height: 200px; */
     /* background-color: blue; */
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-top: 30px;
 }
 
 main .right-section .products-container .product{
     width: 20%;
-    /* margin-right: 5%; */
+    min-width: 250px;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-bottom: 5%;
     min-height: 400px;
     height: auto;
-    background-color: red;
+    background-color: #e5e5e5;
+    height: auto;
 }
 
 main .right-section .products-container .product .img-product{
     width: 100%;
-    height: 60%;
+    height: 70%;
 }
 
 main .right-section .products-container .product .img-product img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+main .right-section .products-container .product .subtitulo-product{
+    margin-top: 10px;
+    color: #00c7ce;
+    text-align: center;
+}
+
+main .right-section .products-container .product .product-desc{
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+main .right-section .button-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+main .right-section .button-container button{
+    background: #ff9e00;
+    color: #e4f4f4;
+    font-size: 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid #e5e5e5;
+    width: 20%;
+    font-weight: 700;
 }
