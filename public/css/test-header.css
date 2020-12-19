@@ -73,6 +73,13 @@ figure{
 .cabecera .img-container{
     width: 20%;
     height: 100%;
+
+    position: relative;
+    float: left;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cabecera .img-container img{
