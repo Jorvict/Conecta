@@ -348,7 +348,7 @@ figure{
     .cabecera{
         flex-wrap: wrap;
         height: auto;
-        padding-bottom: 15px;
+        /* padding-bottom: 15px; */
     }
 
     .cabecera .img-container{
@@ -417,6 +417,9 @@ figure{
         left: 0;
     }
 
+    .cabecera .right-sect .middle{
+        height: 60px;
+    }
 
     .cabecera .right-sect .bottom .menu ul{
         height: auto;
