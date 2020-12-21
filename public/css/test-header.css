@@ -57,6 +57,10 @@ figure{
   .icon-facebook:before {
     content: "\e901";
   }
+  .icon-menu:before {
+    content: "\e905";
+  }
+  
 
 /* Contenedor principal */
 
@@ -86,6 +90,22 @@ figure{
     width: 100%;
     height: 100%;
     padding: 0px 50px;
+}
+
+.cabecera .img-container .burger-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color:rgba(0, 193, 200, 0.8);
+    line-height: 40px;
+    text-align: center;
+    position: fixed;
+    z-index: 1500;
+    color: #e5e5e5;
+    font-size: 20px;
+    right: 15px;
+    top: 15px;
+    display: none;
 }
 
 /* Contenedor de sección derecha */
@@ -339,6 +359,10 @@ figure{
     .cabecera .img-container a{
         height: 100%;
         width: 70%;
+    }
+
+    .cabecera .img-container .burger-button{
+        display: block;
     }
 
     .cabecera .right-sect{

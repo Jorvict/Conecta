@@ -131,6 +131,7 @@
 				<a href="./index.html">
 					<img src="../public/imagenes/LOGO_FINAL.webp" alt="">
 				</a>
+				<i class="icon-menu burger-button"></i>
 			</figure>
 			<section class="right-sect">
 				<section class="top">
@@ -635,14 +636,25 @@
 		const menu = document.querySelector('.menu');
 		console.log(menu);
 
-		const menuButton = document.querySelector('.Login');
+		const menuButton = document.querySelector('.burger-button');
 		console.log(menuButton);
 
 		// Desplegar menu
-		function ShowMenu(){
-            menu.classList.add('is-activem');
-        }
-        menuButton.addEventListener('click', ShowMenu);
+		// function ShowMenu(){
+        //     menu.classList.add('is-activem');
+        // }
+		// menuButton.addEventListener('click', ShowMenu);
+		
+		function HideShowMenu(){
+			if (menu.classList.contains('is-activem')){
+				menu.classList.remove('is-activem');
+			}
+			else{
+				menu.classList.add('is-activem');
+			}
+		}
+
+		menuButton.addEventListener('click', HideShowMenu);
 		
 		// Ocultar menu
 		// function HideMenu(){
