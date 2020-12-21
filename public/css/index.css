@@ -739,4 +739,132 @@ button#b{
         justify-content: center;
     }
 
+    /* Slider responsive 425px */
+    .slider-container
+    {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    #slider{
+        overflow: hidden;
+        height: inherit;
+        width: 425px;
+    }
+
+    /* ------ Animacion Slider ------ */
+
+    @-webkit-keyframes slide_animation{
+        0%{left: 850px;}
+        10%{left: 850px;}
+        20%{left: 425px;}
+        30%{left: 425px;}
+        40%{left: 0px;}
+        50%{left: 0px;}
+        60%{left: 425px;}
+        70%{left: 425px;}
+        80%{left: 425px;}
+        90%{left: 850px;}
+        100%{left: 850px;}
+    }
+
+    .carousel_slide{
+        width: 1275px;
+        height: inherit;
+        margin: 0 0 0 -850px;
+        position: relative;
+        -webkit-animation-name: slide_animation;
+        -webkit-animation-duration: 33s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction:alternate;
+        -webkit-animation-play-state: running;
+    }
+
+    .img-container{
+        height: inherit;
+        width: 425px;
+        position: relative;
+        float: left;
+        object-fit: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-container .img-slider{
+        height: inherit;
+        width: 100%;
+    }
+
+    .img-container .banner-desc{
+        position: absolute;
+        color: black;
+        font-weight: 500;
+        background: rgba(255, 255, 255, 0.6);
+        width: 75%;
+        height: auto;
+        padding: 25px 25px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-radius: 10px;
+    }
+
+    .img-container .banner-desc .desc-title{
+        text-align: center;
+    }
+
+    .slider-container .banner-desc .desc-logo{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .slider-container .banner-desc .desc-logo img{
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+        object-fit: cover;
+    }
+
+    .slider-container .banner-desc .desc-social{
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .social{
+        width: 50%;
+        text-align: center;
+    }
+
+    .icon-phone,
+    .icon-facebook,
+    .icon-instagram,
+    .icon-location{
+        color: #00c1c8;
+    }
+
+    .slider-container .banner-desc .desc-btn{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .slider-container .banner-desc .desc-btn a{
+        text-decoration: none;
+        margin: 10px 0px;
+        padding: 10px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 14px;
+        color: white;
+        background-color: #ff9c00;
+        outline: none;
+    }
+
 }
