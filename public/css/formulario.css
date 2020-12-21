@@ -29,6 +29,7 @@
     font-family: 'Source Sans Pro', sans-serif;
     color:black;
     border:  #ff9e00 15px solid;
+    position: relative;
     
 }
 .form-registro h4{
@@ -36,8 +37,18 @@
     font-size: 40px;
     margin-bottom: 5px;
     color: #00c1c8;
-
 }
+
+.form-registro span{
+    position: absolute;
+    right: 15px;
+    top: 0px;
+    font-weight: 900;
+    font-size: 25px;
+    cursor: pointer;
+    color: orange;
+}
+
 .controles{
     width: 100%;
     background: #ffffff;
