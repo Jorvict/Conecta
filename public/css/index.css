@@ -753,29 +753,29 @@ button#b{
     #slider{
         overflow: hidden;
         height: inherit;
-        width: 425px;
+        width: 400px;
     }
 
     /* ------ Animacion Slider ------ */
 
     @-webkit-keyframes slide_animation{
-        0%{left: 850px;}
-        10%{left: 850px;}
-        20%{left: 425px;}
-        30%{left: 425px;}
+        0%{left: 800px;}
+        10%{left: 800px;}
+        20%{left: 400px;}
+        30%{left: 400px;}
         40%{left: 0px;}
         50%{left: 0px;}
-        60%{left: 425px;}
-        70%{left: 425px;}
-        80%{left: 425px;}
-        90%{left: 850px;}
-        100%{left: 850px;}
+        60%{left: 400px;}
+        70%{left: 400px;}
+        80%{left: 400px;}
+        90%{left: 800px;}
+        100%{left: 800px;}
     }
 
     .carousel_slide{
-        width: 1275px;
+        width: 1200px;
         height: inherit;
-        margin: 0 0 0 -850px;
+        margin: 0 0 0 -800px;
         position: relative;
         -webkit-animation-name: slide_animation;
         -webkit-animation-duration: 33s;
@@ -786,7 +786,7 @@ button#b{
 
     .img-container{
         height: inherit;
-        width: 425px;
+        width: 400px;
         position: relative;
         float: left;
         object-fit: cover;
