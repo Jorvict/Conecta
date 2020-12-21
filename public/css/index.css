@@ -727,12 +727,12 @@ button#b{
 
 @media screen and (max-width:425px)
 {
-.page-container{
-    width: 100%;
-    min-width: 425px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+    .page-container{
+        width: 100%;
+        min-width: 425px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
 }

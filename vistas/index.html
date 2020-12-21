@@ -607,7 +607,8 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script>
-        
+		
+		// Const para registro
         const register = document.querySelector('.form-container');
         console.log(register);
 
@@ -627,8 +628,27 @@
         function HideRegister(){
 			register.classList.remove('is-active')
 		}
-        closeButton.addEventListener('click', HideRegister);
+		closeButton.addEventListener('click', HideRegister);
+		
 
+		// Const para menú
+		const menu = document.querySelector('.menu');
+		console.log(menu);
+
+		const menuButton = document.querySelector('.Login');
+		console.log(menuButton);
+
+		// Desplegar menu
+		function ShowMenu(){
+            menu.classList.add('is-activem');
+        }
+        menuButton.addEventListener('click', ShowMenu);
+		
+		// Ocultar menu
+		// function HideMenu(){
+		// 	menu.classList.remove('is-activem')
+		// }
+		// menuButton.addEventListener('click', HideMenu);
         
 
     </script>
