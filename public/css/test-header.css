@@ -121,6 +121,8 @@ figure{
     height: 33.33%;
     background-color: #00c1c8;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cabecera .right-sect .top .division{
@@ -146,6 +148,12 @@ figure{
     font-family: 'Helvetica';
     text-align: center;
 }
+
+.cabecera .right-sect .top .division.first p,
+.cabecera .right-sect .top .division.second p{
+    margin: 0px;
+}
+
 
 .cabecera .right-sect .top .division.third button{
     width: 90%;
@@ -353,7 +361,7 @@ figure{
 
     .cabecera .img-container{
         width: 100%;
-        height: 50%;
+        height: auto;
     }
 
     .cabecera .img-container a{
@@ -367,13 +375,14 @@ figure{
 
     .cabecera .right-sect{
         width: 100%;
-        height: 50%;
+        height: auto;
     }
 
     .cabecera .right-sect .top{
         height: auto;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
     }
 
     .cabecera .right-sect .top .division.first{
@@ -384,6 +393,7 @@ figure{
     .cabecera .right-sect .top .division.third,
     .cabecera .right-sect .top .division.fourth{
         width: 30%;
+        /* height: 100px; */
     }
 
     .cabecera .right-sect .middle .input-container{
@@ -430,6 +440,26 @@ figure{
         height: auto;
         width: 100%;
     }
-    
 
+    #img-login{
+        padding: 0 30px;
+        object-fit: contain;
+    }
+
+    .cabecera .right-sect .top .division.fourth .Login{
+        font-size: 14px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 375px)
+{
+    .division.first p{
+        font-size: 28px;
+    }
+
+    .cabecera .right-sect .top .division.third button{
+        font-size: 12px;
+    }
+    
 }

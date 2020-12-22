@@ -92,6 +92,10 @@
     margin: 10px 76px;
     font-size: 20px;
     border-radius: 20px;
-   
-    
+}
+
+@media screen and (max-width: 320px){
+    .form-registro{
+        width: 320px;
+    }
 }

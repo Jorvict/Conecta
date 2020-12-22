@@ -41,8 +41,32 @@
 <body>
 
     <div class="page-container">
+
+        <div class="form-container">
+			<section class="form-registro">
+				<h4>Registro</h4>
+				<span class="close-button">x</span>
+				<input class="controles" type="text" name="negocio" id="negocio" placeholder="Nombre del negocio">
+
+				<input class="controles"  type="number" name="ruc" id="ruc" placeholder="RUC del negocio">
+
+				<input class="controles"  type="text" name="tipo" id="tipo" placeholder="Tipo del negocio">
+
+				<input class="controles"  type="text" name="direccion" id="direccion" placeholder="Dirección o referencia ">
+
+				<input class="controles"  type="text" name="nombre" id="nombre" placeholder="Nombre del titular">
+
+				<input class="controles"  type="email" name="correo" id="correo" placeholder="Correo electrónico">
+
+				<input class="controles"  type="number" name="numero" id="numero" placeholder="Número de celular">
+
+				<input   type="checkbox"> He leido acepto los <a href="#">Terminos y Condiciones</a> y las <a href="#">Politicas de Seguridad</a> </input>
+
+				<input class="boton" type="submit" value="ENVIAR">
+			</section>
+		</div>
         
-        <header class="cabecera">
+		<header class="cabecera">
 			<figure class="img-container">
 				<a href="./index.html">
 					<img src="../public/imagenes/LOGO_FINAL.webp" alt="">
@@ -53,6 +77,9 @@
 				<section class="top">
 					<div class="division first">
 						<p>#OrgullososdeComprarleAlPerú</p>
+					</div>
+					<div class="wrapper">
+						
 					</div>
 					<div class="division second">
 						<p>¿Tienes un negocio? <br>
@@ -66,7 +93,7 @@
 					</div>
 					<div class="division fourth">
 						<figure class="img-container">
-							<img src="../public/imagenes/home.gif" alt="">
+							<img id="img-login" src="../public/imagenes/home.gif" alt="">
 						</figure>
 
 						<button class="Login">
@@ -198,19 +225,24 @@
                             </h3>
                             <div class="docker-imgs">
                                 <figure class="dck-img-container">
-                                    <img src="../public/imagenes/Secciones-categorias/Ropa y textiles/renzo.jpg" alt="">
+                                    <a href="">
+                                        <img src="../public/imagenes/Secciones-categorias/Ropa y textiles/renzo.jpg" alt="">
+                                    </a>
                                 </figure>
                                 <figure class="dck-img-container">
-                                    <img src="../public/imagenes/Secciones-categorias/Ropa y textiles/capittana.jpg"
-                                        alt="">
+                                    <a href="">
+                                        <img src="../public/imagenes/Secciones-categorias/Ropa y textiles/capittana.jpg" alt="">
+                                    </a>
                                 </figure>
                                 <figure class="dck-img-container">
-                                    <img src="../public/imagenes/Secciones-categorias/Ropa y textiles/sophie.jpg"
-                                        alt="">
+                                    <a href="">
+                                        <img src="../public/imagenes/Secciones-categorias/Ropa y textiles/sophie.jpg" alt="">
+                                    </a>
                                 </figure>
                                 <figure class="dck-img-container">
-                                    <img src="../public/imagenes/Secciones-categorias/Ropa y textiles/peruvian.jpg"
-                                        alt="">
+                                    <a href="">
+                                        <img src="../public/imagenes/Secciones-categorias/Ropa y textiles/peruvian.jpg" alt="">
+                                    </a>
                                 </figure>
                             </div>
                         </div>
@@ -352,6 +384,58 @@
 
         </footer>
     </div>
+
+
+    <script>
+		
+		// Const para registro
+        const register = document.querySelector('.form-container');
+        console.log(register);
+
+        const loginButton = document.querySelector('.register');
+        console.log(loginButton);
+
+		const closeButton = document.querySelector('.close-button');
+		console.log(closeButton);
+
+		// Desplegar registro
+        function ShowRegister(){
+            register.classList.add('is-active');
+        }
+        loginButton.addEventListener('click', ShowRegister);
+
+        // Ocultar registro
+        function HideRegister(){
+			register.classList.remove('is-active')
+		}
+		closeButton.addEventListener('click', HideRegister);
+		
+
+		// Const para menú
+		const menu = document.querySelector('.menu');
+		console.log(menu);
+
+		const menuButton = document.querySelector('.burger-button');
+		console.log(menuButton);
+
+		// Ocultar-Desplegar menu
+		
+		function HideShowMenu(){
+			if (menu.classList.contains('is-activem')){
+				menu.classList.remove('is-activem');
+			}
+			else{
+				menu.classList.add('is-activem');
+			}
+		}
+
+		menuButton.addEventListener('click', HideShowMenu);
+		
+        
+
+    </script>
+
+
 </body>
 
 </html>
