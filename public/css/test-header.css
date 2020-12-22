@@ -415,6 +415,11 @@ figure{
         /* display: none; */
     }
 
+    .cabecera .right-sect .bottom .menu .first-nav ul,
+    .cabecera .right-sect .bottom .menu ul .first-nav:hover ul{
+        display: none;
+    }
+
     .menu{
         position: fixed;
         background: rgb(229, 229, 229, 0.8);
