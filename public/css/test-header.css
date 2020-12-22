@@ -467,6 +467,12 @@ figure{
 
     .cabecera .right-sect .top .division.third button{
         font-size: 12px;
-    }
-    
+    } 
+}
+
+@media screen and (max-width: 320px)
+{
+    .division.first p{
+        font-size: 24px;
+    }    
 }
