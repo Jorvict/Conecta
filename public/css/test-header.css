@@ -359,14 +359,21 @@ figure{
         /* padding-bottom: 15px; */
     }
 
-    .cabecera .img-container{
+    .cabecera #img-logo{
         width: 100%;
         height: auto;
+        justify-content: flex-start;
+        padding-left: 30px;
     }
 
     .cabecera .img-container a{
-        height: 100%;
-        width: 70%;
+        height: 70px;
+        width: 70px;
+    }
+
+    .cabecera .img-container a img{
+        object-fit: contain;
+        padding: 0px;
     }
 
     .cabecera .img-container .burger-button{
