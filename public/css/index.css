@@ -869,6 +869,62 @@ button#b{
 
 }
 
+@media screen and (max-width:375px)
+{
+    .page-container{
+        width: 100%;
+        max-width: 375px;
+    }
+
+    #slider{
+        overflow: hidden;
+        height: inherit;
+        width: 350px;
+    }
+
+    /* ------ Animacion Slider ------ */
+
+    @-webkit-keyframes slide_animation{
+        0%{left: 700px;}
+        10%{left: 700px;}
+        20%{left: 350px;}
+        30%{left: 350px;}
+        40%{left: 0px;}
+        50%{left: 0px;}
+        60%{left: 350px;}
+        70%{left: 350px;}
+        80%{left: 300px;}
+        90%{left: 700px;}
+        100%{left: 700px;}
+    }
+
+    .carousel_slide{
+        width: 1050px;
+        height: inherit;
+        margin: 0 0 0 -700px;
+        position: relative;
+        -webkit-animation-name: slide_animation;
+        -webkit-animation-duration: 33s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction:alternate;
+        -webkit-animation-play-state: running;
+    }
+
+    .img-container{
+        height: inherit;
+        width: 350px;
+        position: relative;
+        float: left;
+        object-fit: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .img-container .banner-desc{
+        width: 90%;
+    }
+}
+
 @media screen and (max-width:320px)
 {
     .page-container{
