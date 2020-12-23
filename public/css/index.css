@@ -338,7 +338,7 @@ section#tunegocio {
 section#cont {
    /* background: #098;*/
     width: 100%;
-    height: 180px;
+    height: auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -373,11 +373,12 @@ a.aqui {
 }
 
 section#desarrollamos {
-    width: 50%;
+    width: 80%;
     height: 180px;
     background: #fff;
     /* margin-right: 10%; */
     padding: 0px 10px;
+    padding-top: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -388,7 +389,7 @@ section#desarrollamos {
 }
 section.cajas {
     margin-top: 60px;
-    width: 298px;
+    width: 40%;
    /* background: red;*/
     margin: 5px 5px 5px 5px;
     float: left;
@@ -399,7 +400,9 @@ section.cajas {
     background: orange;
     color: #fff;
     border-radius: 50%;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     width: 30px;
     height: 30px;
@@ -414,6 +417,7 @@ h3#txtcaja {
     text-align: justify;
     color: #000;
     font-weight: 800;
+    display: flex;
 }
 
 .ver{
@@ -461,12 +465,13 @@ section.titulocoti h2{
 section.abastece {
     background: #f2f2f2;
     margin: 0 30px 0 30px;
-     padding-top: 30px;
+    padding-top: 30px;
     padding-bottom: 30px;
     width: 100%;
     height: 160px;
     margin: auto;
     overflow: hidden;
+    text-align: center;
 }
 
 .abastececonte {
@@ -477,7 +482,7 @@ section.abastece {
 
 h4#abastece {
     font-size: 1.5rem;
-    margin: 0 0 0 40px;
+    /* margin: 0 0 0 40px; */
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bold;
 }
@@ -663,8 +668,11 @@ button#b{
 
     section#tunegocio{
         width: 100%;
-        height: 570px;
+        /* height: 570px; */
         background: orange;
+        height: auto;
+        display: flex;
+        justify-content: center;
     }
     section#registra{
         width: 100%;
@@ -679,7 +687,9 @@ button#b{
         height: 370px;
         /*background: blue;*/
         margin: 0;
-        display: block;
+        display: flex;
+        align-items: center;
+
     }
     
     section.cajas{
@@ -689,6 +699,9 @@ button#b{
     h3#txtcaja{
         text-align: center;
         font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .c-logo {
@@ -865,6 +878,27 @@ button#b{
         color: white;
         background-color: #ff9c00;
         outline: none;
+    }
+
+    section#tunegocio{
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    section#cont{
+        width: 80%;
+        height: auto;
+    }
+
+    section#desarrollamos{
+        display: flex;
+        align-items: center;
+        padding-top: 0px;
+    }
+
+    section.cajas{
+        width: 100%;
     }
 
 }
