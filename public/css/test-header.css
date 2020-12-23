@@ -285,6 +285,7 @@ figure{
     float: left;
     position: relative;
     text-align: center;
+    cursor: pointer;
 }
 
 .cabecera .right-sect .bottom .menu ul .first-nav a{
