@@ -213,6 +213,7 @@ figure{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 11px;
 }
 
 .cabecera .right-sect .middle .input-container{
@@ -259,7 +260,7 @@ figure{
 
 .cabecera .right-sect .bottom .menu{
     height: 100%;
-    margin-top: 11px;
+    /* margin-top: 11px; */
 }
 
 .cabecera .right-sect .bottom .menu ul{
