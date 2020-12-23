@@ -28,8 +28,8 @@
     max-height: 615px;
     background:white;
     padding: 15px;
-    margin: auto;
-    margin-top: 100px;
+    /* margin: auto; */
+    margin-top: 30px;
     font-family: 'Source Sans Pro', sans-serif;
     color:black;
     border:  #ff9e00 15px solid;
