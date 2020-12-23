@@ -12,7 +12,9 @@
     z-index: 50;
     top: -2000px;
     left: 0;
-    transition: 0.8s;
+    transition: 1.2s;
+    display: flex;
+    justify-content: center;
 }
 
 .form-container.is-active{
@@ -22,6 +24,8 @@
 
 .form-registro{
     width: 400px;
+    height: auto;
+    max-height: 615px;
     background:white;
     padding: 15px;
     margin: auto;
