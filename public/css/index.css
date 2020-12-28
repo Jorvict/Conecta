@@ -295,8 +295,14 @@ span#subtitulo {
 .pasos-sig .subtitulo {
     padding: 10px 0px 0px 0px;
     width: 100%;
+    height: 7%;
     text-align: center;
     color: black;
+}
+
+.pasos-sig span {
+    height: 25%;
+    display: block;
 }
 
 p.p {
@@ -421,11 +427,12 @@ h3#txtcaja {
 }
 
 .ver{
-width: 100%;
+    height: 6%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
+    align-items: center;
 }
 
 .ver a {
