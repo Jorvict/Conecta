@@ -184,3 +184,32 @@ body .form-container-product .form-product .inferior .big-container .enviar-vent
     font-size: 20px;
     border-radius: 20px;
 }
+
+@media screen and (max-width: 425px){
+    body .form-container-product .form-product{
+        display: block;
+        height: 700px;
+        margin-top: 70px;
+    }
+
+    body .form-container-product .form-product .superior{
+        height: 25%;
+    }
+
+    body .form-container-product .form-product .inferior{
+        width: 90%;
+        height: auto;
+        margin: auto
+    }
+
+    body .form-container-product .form-product .inferior .big-container .enviar-venta{
+        width: 40%;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    body .form-container-product .form-product .superior{
+        height: 30%;
+    }
+}
