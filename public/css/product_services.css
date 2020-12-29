@@ -229,6 +229,10 @@ main .right-section .products-container .product .button-container button{
     font-weight: 700;
 }
 
+main .right-section .products-container .product .button-container button:focus{
+    outline: none;
+}
+
 main .right-section .products-container .product .product-desc{
     margin-top: 10px;
     font-size: 14px;

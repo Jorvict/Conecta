@@ -350,7 +350,8 @@ section#tunegocio {
     display: block;
     margin: 0 auto;
     background: orange;
-    box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 0px 15px -3px rgba(0, 0, 0, 0.75);
+    margin-bottom: 15px;
 }
 
 section#cont {
@@ -411,8 +412,12 @@ section.cajas {
     width: auto;
    /* background: red;*/
     /* margin: 5px 5px 5px 5px; */
-    margin-left: 50px;
+    margin-left: 110px;
     float: left;
+}
+
+section.cajas.first-caja {
+    margin-left: 0px;
 
 }
 

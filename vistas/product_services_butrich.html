@@ -8,6 +8,7 @@
     <!-- Css form registro -->
 	<link rel="stylesheet" href="../public/css/formulario.css">
 	<link rel="stylesheet" href="../public/css/login.css">
+	<link rel="stylesheet" href="../public/css/form-product.css">
 	
 
     <!-- Css externo -->
@@ -78,6 +79,65 @@
 
 				<input class="boton" type="submit" value="INGRESAR">
 
+			</section>
+		</div>
+
+		<div class="form-container-product">
+			<section class="form-product">
+	
+				<!-- Barra superior formulario -->
+				<article class="header-form-product">
+					<span class="close-button-product">x</span>
+				</article>
+	
+				<article class="superior">
+					<figure class="img-form-product">
+						<img src="../public/imagenes/Secciones-categorias/Ropa y textiles/Butrich/costureria.jpg" alt="">
+					</figure>
+					<div class="description-form-product">
+						<div class="container-elements-product">
+							<h2>Costurería</h2>
+								<p>Descripción Lorem ipsum dolor sit, amet consectetur adipisicing elit asieuxnal ksnda </p>
+							<p><strong>Precio: </strong> S/ 14.99</p>
+						</div>
+					</div>
+				</article>
+	
+				<article class="inferior">
+					<h2>Formulario de compra</h2>
+	
+					<div class="big-container">
+	
+						<div class="cont-item">
+							<h3>Nombre</h3>
+							<input type="text">
+						</div>
+						<div class="cont-item">
+							<h3>Apellido</h3>
+							<input type="text">
+						</div>
+						<div class="cont-item">
+							<h3>Dirección</h3>
+							<input type="text">
+						</div>
+						<div class="cont-item half">
+							<h3>Cantidad</h3>
+							<input type="text">
+						</div>
+						<div class="cont-item half">
+							<h3>Teléfono</h3>
+							<input type="text">
+						</div>
+						<div class="cont-item big">
+							<h3>Comentarios</h3>
+							<textarea name="comentarios" id="comentatios" cols="30" rows="4"></textarea>
+						</div>
+	
+						<button class="enviar-venta">
+							Adquirir
+						</button>
+					</div>
+				</article>
 			</section>
 		</div>
         
@@ -285,7 +345,7 @@
                             S/ 14.99
 						</p>
 						<div class="button-container">
-							<button>
+							<button class="btn-product">
 								Ver producto
 							</button>
 						</div>
@@ -303,7 +363,7 @@
                             S/ 29.99
 						</p>
 						<div class="button-container">
-							<button>
+							<button class="btn-product">
 								Ver producto
 							</button>
 						</div>
@@ -321,7 +381,7 @@
                             S/ 59.99
 						</p>
 						<div class="button-container">
-							<button>
+							<button class="btn-product">
 								Ver producto
 							</button>
 						</div>
@@ -339,7 +399,7 @@
                             S/ 99.99
 						</p>
 						<div class="button-container">
-							<button>
+							<button class="btn-product">
 								Ver producto
 							</button>
 						</div>
@@ -357,7 +417,7 @@
                             S/ 29.99
 						</p>
 						<div class="button-container">
-							<button>
+							<button class="btn-product">
 								Ver producto
 							</button>
 						</div>
@@ -366,7 +426,7 @@
 
                 <div class="button-container">
                     <button>
-                        Ver productos
+                        Ver más
                     </button>
                 </div>
 
@@ -500,6 +560,28 @@
 		}
 		closeButtonLogin.addEventListener('click', HideLogin)
 
+
+		// Const para Producto
+		const product = document.querySelector('.form-container-product');
+		console.log(product);
+
+		const productButton = document.querySelector('.btn-product');
+		console.log(productButton);
+
+		const closeButtonProduct = document.querySelector('.close-button-product');
+		console.log(closeButtonProduct);
+
+		// Desplegar Product
+		function ShowProduct(){
+			product.classList.add('is-activep')
+		}
+		productButton.addEventListener('click', ShowProduct)
+
+		// Ocultar Product
+		function HideProduct(){
+			product.classList.remove('is-activep')
+		}
+		closeButtonProduct.addEventListener('click', HideProduct)
 	</script>
 
 
