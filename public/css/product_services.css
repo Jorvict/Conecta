@@ -218,6 +218,17 @@ main .right-section .products-container .product .subtitulo-product{
     text-align: center;
 }
 
+main .right-section .products-container .product .button-container button{
+    background: #ff9e00;
+    color: #e4f4f4;
+    font-size: 18px;
+    border-radius: 15px;
+    text-decoration: none;
+    border: 1px solid #e5e5e5;
+    width: 65%;
+    font-weight: 700;
+}
+
 main .right-section .products-container .product .product-desc{
     margin-top: 10px;
     font-size: 14px;
