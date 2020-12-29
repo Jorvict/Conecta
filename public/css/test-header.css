@@ -130,14 +130,14 @@ figure{
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .cabecera .right-sect .top .division.first{
     width: 55%;
     font-size: 32px;
     font-family: 'Marker Felt';
-    color: #009ca1;
+    color: #e4f4f4;
     font-weight: 800;
 }
 
@@ -192,10 +192,20 @@ figure{
 }
 
 .cabecera .right-sect .top .division.fourth .Login{
-    width: 60%;
+    /* width: 60%;
     height: 50%;
     background-color: rgba(0, 193, 200, 1);
     color: white;
+    border: none;
+    cursor: pointer; */
+
+    width: 70%;
+    height: 32%;
+    background-color: orange;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
 }

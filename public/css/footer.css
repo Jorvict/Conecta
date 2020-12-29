@@ -92,12 +92,14 @@ button.btsubs {
 }
 
 p#n-c-c {
+    margin-top: 10px;
     color: #fff;
 }
 
 h4#Suscribete {
     color: #fff;
     font-size: 16px;
+    margin-bottom: 10px;
 }
 
 p#i{
@@ -149,7 +151,7 @@ img#instagram {
     display: flex;
 }
 
-p#otros {
+a#otros {
     margin: 0 auto;
     color: #fff;
     font-size: 12px;
