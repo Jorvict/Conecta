@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Css form registro -->
-    <link rel="stylesheet" href="../public/css/formulario.css">
+	<link rel="stylesheet" href="../public/css/formulario.css">
+	<link rel="stylesheet" href="../public/css/login.css">
+	
 
     <!-- Css externo -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
@@ -63,6 +65,19 @@
 				<input   type="checkbox"> He leido acepto los <a href="#">Terminos y Condiciones</a> y las <a href="#">Politicas de Seguridad</a> </input>
 
 				<input class="boton" type="submit" value="ENVIAR">
+			</section>
+		</div>
+
+		<div class="login-container">
+			<section class="form-login">
+				<h4>Iniciar sesión</h4>
+				<span class="close-button-login">x</span>
+
+				<input class="controles" type="email" name="correologin" id="correologin" placeholder="Correo electrónico">
+				<input class="controles" type="email" name="contrasenalogin" id="contrasenalogin" placeholder="Contraseña">
+
+				<input class="boton" type="submit" value="INGRESAR">
+
 			</section>
 		</div>
         
@@ -419,30 +434,30 @@
     </div>
 
 
-    <script>
-		
-		// Const para registro
-        const register = document.querySelector('.form-container');
-        console.log(register);
+	<script>
 
-        const loginButton = document.querySelector('.register');
-        console.log(loginButton);
+		// Const para registro
+		const register = document.querySelector('.form-container');
+		console.log(register);
+
+		const registerButton = document.querySelector('.register');
+		console.log(registerButton);
 
 		const closeButton = document.querySelector('.close-button');
 		console.log(closeButton);
 
 		// Desplegar registro
-        function ShowRegister(){
-            register.classList.add('is-active');
-        }
-        loginButton.addEventListener('click', ShowRegister);
+		function ShowRegister() {
+			register.classList.add('is-active');
+		}
+		registerButton.addEventListener('click', ShowRegister);
 
-        // Ocultar registro
-        function HideRegister(){
+		// Ocultar registro
+		function HideRegister() {
 			register.classList.remove('is-active')
 		}
 		closeButton.addEventListener('click', HideRegister);
-		
+
 
 		// Const para menú
 		const menu = document.querySelector('.menu');
@@ -452,21 +467,40 @@
 		console.log(menuButton);
 
 		// Ocultar-Desplegar menu
-		
-		function HideShowMenu(){
-			if (menu.classList.contains('is-activem')){
+		function HideShowMenu() {
+			if (menu.classList.contains('is-activem')) {
 				menu.classList.remove('is-activem');
 			}
-			else{
+			else {
 				menu.classList.add('is-activem');
 			}
 		}
-
 		menuButton.addEventListener('click', HideShowMenu);
-		
-        
 
-    </script>
+
+		// Const para Login
+		const login = document.querySelector('.login-container');
+		console.log(login);
+
+		const loginButton = document.querySelector('.Login');
+		console.log(loginButton);
+
+		const closeButtonLogin = document.querySelector('.close-button-login');
+		console.log(closeButtonLogin);
+
+		// Desplegar Login
+		function ShowLogin(){
+			login.classList.add('is-activel')
+		}
+		loginButton.addEventListener('click', ShowLogin)
+
+		// Ocultar Login
+		function HideLogin(){
+			login.classList.remove('is-activel')
+		}
+		closeButtonLogin.addEventListener('click', HideLogin)
+
+	</script>
 
 
 </body>

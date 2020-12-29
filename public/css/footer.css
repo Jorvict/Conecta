@@ -223,10 +223,11 @@ footer {
         height: 80px;
     }
     .c-otros {
-        width: 50%;
+        width: 100%;
         height: 100%;
-        display: block;
-        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     input#input-footer{
@@ -261,6 +262,6 @@ footer {
     }
 
     h1#contactanos{
-        margin-top: 5px;
+        margin-top: 15px;
     }
 }

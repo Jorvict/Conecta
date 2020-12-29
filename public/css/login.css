@@ -4,7 +4,7 @@
     box-sizing: border-box ;
 }
 
-.form-container{
+.login-container{
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
@@ -17,33 +17,33 @@
     justify-content: center;
 }
 
-.form-container.is-active{
+.login-container.is-activel{
     top: 0;
 }
 
 
-.form-registro{
+.form-login{
     width: 400px;
     height: auto;
-    max-height: 680px;
+    max-height: 300px;
     background:white;
     padding: 15px;
     /* margin: auto; */
     margin-top: 30px;
     font-family: 'Source Sans Pro', sans-serif;
     color:black;
-    border:  #ff9e00 15px solid;
+    border:  #ff9e00 8px solid;
     position: relative;
     
 }
-.form-registro h4{
+.form-login h4{
     text-align: center;
     font-size: 40px;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
     color: #00c1c8;
 }
 
-.form-registro span{
+.form-login span{
     position: absolute;
     right: 15px;
     top: 0px;
@@ -58,35 +58,24 @@
     background: #ffffff;
     padding: 10px;
     border-radius: 20px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     border: 2px solid #00c1c8;
     font-family: 'calibri' ;
     font-size: 18px;
-  
-    
-
-
 
 }
 ::-webkit-input-placeholder { color:#00c1c8; } 
 
-
-
-.form-registro a{
+.form-login a{
     color: #ff9e00;
     text-decoration: none;
 }
-.form-registro a:hover{
+.form-login a:hover{
     color:#00c1c8;
     text-decoration: underline;
 }
 
-.form-registro .terminos{
-    background-color: black;
-}
-
-
-.form-registro .boton{
+.form-login .boton{
     width: 55%;
     color:white;
     background:#ff9e00;
@@ -99,7 +88,7 @@
 }
 
 @media screen and (max-width: 320px){
-    .form-registro{
+    .form-login{
         width: 320px;
     }
 }
