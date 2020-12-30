@@ -23,15 +23,15 @@ body .form-container-product{
 }
 
 body .form-container-product .form-product{
-    width: 1100px;
-    height: 500px;
+    width: 400px;
+    height: 850px;
     border-radius: 10px;
     background-color: #e5e5e5;
     margin-top: 30px;
     overflow: hidden;
-    display:flex;
+    /* display:flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; */
 }
 
 /* Barra cabecera */
@@ -56,8 +56,9 @@ body .form-container-product .form-product .header-form-product .close-button-pr
 
 /* Seccion left con imagen y nombre de producto */
 body .form-container-product .form-product .left{
-    width: 45%;
-    height: auto;
+    width: 100%;
+    height: 40%;
+    margin-bottom: 25px;
     /* display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly; */
@@ -108,9 +109,10 @@ body .form-container-product .form-product .left .description-form-product .cont
 /* Sección right */
 
 body .form-container-product .form-product .right{
-    width: 45%;
-    height: calc(auto-15px);
-    height: 80%;
+    width: 90%;
+    /* height: calc(auto-15px); */
+    height: 40%;
+    margin: 0 auto;
     background-color: #f5f5f5;
     /* margin-right: 15px; */
     /* display: flex;
@@ -147,6 +149,7 @@ body .form-container-product .form-product .right .big-container .cont-item.big{
 }
 body .form-container-product .form-product .right .big-container .cont-item.big textarea{
     width: 100%;
+    resize: none;
 }
 
 body .form-container-product .form-product .right .big-container .cont-item h3{
@@ -180,7 +183,14 @@ body .form-container-product .form-product .right .big-container .cont-item.big 
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-body .form-container-product .form-product .right .big-container .enviar-venta{
+body .form-container-product .form-product .btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+body .form-container-product .form-product .btn-container .enviar-venta{
+    margin-top: 15px;
     width: 30%;
     color:white;
     background:#ff9e00;
@@ -188,6 +198,10 @@ body .form-container-product .form-product .right .big-container .enviar-venta{
     padding:10px;
     font-size: 20px;
     border-radius: 20px;
+}
+
+body .form-container-product .form-product .btn-container .enviar-venta:focus{
+    outline: none;
 }
 
 @media screen and (max-width: 425px){
