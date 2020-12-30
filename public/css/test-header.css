@@ -15,6 +15,16 @@ figure{
     font-family:'Marker Felt';
     src: url(../../fonts/Marker_Felt.ttf);
 }
+@font-face{
+    font-family:'Gotham';
+    src: url(../../fonts/GothamMedium.ttf);
+}
+
+@font-face{
+    font-family:'Myriad Pro';
+    src: url(../../fonts/MYRIADPRO-REGULAR.woff);
+}
+
 @font-face {
     font-family: 'icomoon';
     src:  url('../../fonts/icomoon.eot?t20w8t');
@@ -136,7 +146,7 @@ figure{
 .cabecera .right-sect .top .division.first{
     width: 55%;
     font-size: 32px;
-    font-family: 'Marker Felt';
+    font-family:'Myriad Pro';
     color: #e4f4f4;
     font-weight: 800;
     padding-left: 30px;
@@ -413,13 +423,29 @@ figure{
         flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
+        padding-bottom: 15px;
     }
 
     .cabecera .right-sect .top .division.first{
         width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-left: 0px;
     }
 
-    .cabecera .right-sect .top .division.second,
+    .cabecera .right-sect .top .division.first p{
+        font-size: 24px;
+    }
+
+    .cabecera .right-sect .top .division.second{
+        display: none;
+    }
+
+    .cabecera .right-sect .top .division.third{
+        position: relative;
+        top: 8px;
+    }
+
     .cabecera .right-sect .top .division.third,
     .cabecera .right-sect .top .division.fourth{
         width: 30%;
