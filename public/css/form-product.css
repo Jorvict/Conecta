@@ -23,15 +23,15 @@ body .form-container-product{
 }
 
 body .form-container-product .form-product{
-    width: 400px;
-    height: 850px;
+    width: 800px;
+    height: 600px;
     border-radius: 10px;
     background-color: #e5e5e5;
     margin-top: 30px;
     overflow: hidden;
-    /* display:flex;
+    display:flex;
     flex-wrap: wrap;
-    justify-content: center; */
+    /* align-items: center; */
 }
 
 /* Barra cabecera */
@@ -56,9 +56,12 @@ body .form-container-product .form-product .header-form-product .close-button-pr
 
 /* Seccion left con imagen y nombre de producto */
 body .form-container-product .form-product .left{
-    width: 100%;
-    height: 40%;
-    margin-bottom: 25px;
+    width: 45%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 25px; */
     /* display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly; */
@@ -77,7 +80,7 @@ body .form-container-product .form-product .left .img-form-product img{
 }
 
 body .form-container-product .form-product .left .description-form-product{
-    width: 90%;
+    width: 100%;
     height: 30%;
     background-color: #f5f5f5;
     display: flex;
@@ -109,9 +112,9 @@ body .form-container-product .form-product .left .description-form-product .cont
 /* Sección right */
 
 body .form-container-product .form-product .right{
-    width: 90%;
+    width: 45%;
     /* height: calc(auto-15px); */
-    height: 40%;
+    height: 500px;
     margin: 0 auto;
     background-color: #f5f5f5;
     /* margin-right: 15px; */
