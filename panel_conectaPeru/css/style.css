@@ -8,7 +8,14 @@ figure, body {
 
 .body {
   min-height: 100vh;
-  display: flex; }
+  display: flex; 
+  flex-wrap: wrap;
+  }
+
+/* .container{
+  width: 100%;
+  max-width: 1366px;
+} */
 
 .header {
   flex: .8;
@@ -21,6 +28,23 @@ figure, body {
     margin-left: auto;
     margin-right: auto;
     display: block; }
+
+.burger-button{
+  background-color: grey;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  position: absolute;
+  z-index: 6000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  right: 15px;
+  top: 15px;
+  display: none;
+}
 
 .nav {
   flex: 1;
@@ -41,6 +65,9 @@ figure, body {
   .menu__link {
     text-decoration: none;
     color: lightblue; }
+  .menu__link:hover {
+    color: orange; /*Referencia*/
+    }
 
 .main {
   flex: 5; }
@@ -52,7 +79,10 @@ figure, body {
   .menuHo__img {
     width: 15%;
     padding: 1.5rem;
-    padding-left: 3rem; }
+    padding-left: 3rem; 
+    min-width: 175px;
+    min-height: 120px;
+    }
   .menuHo__usuario {
     display: flex; }
   .menuHo__nombre {
@@ -60,3 +90,58 @@ figure, body {
 
 .icono {
   margin-right: .5rem; }
+
+
+@media screen and (max-width: 425px){
+  .body{
+    display: initial;
+  }
+
+  .header{
+    flex:initial;
+    width: 100%;
+    height: 90px;
+    padding-left: 15px;
+    background-color: #e5e5e5;
+    border: none;
+    }
+    .header__logo,
+    .header__img{
+      height: 100%;
+      object-fit: contain;
+    }
+    .header__img{
+      width: 30%;
+      margin: initial;
+    }
+    .nav{
+      padding: 0;
+      top: 90px;
+      left: -4000px;
+      position: absolute;
+      width: 100%;
+      height: calc(100% - 90px);
+      z-index: 5000;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: .6s;
+      }
+      .menu__item{
+        text-align: center;
+      }
+      .nav.is-active{
+        left: 0px;
+      }
+
+    .burger-button{
+      display: flex;
+    }
+}
+
+@media screen and (max-width:320px){
+  .menuHo__img{
+    padding-left: 1rem;
+  }
+}

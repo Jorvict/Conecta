@@ -8,6 +8,9 @@
   </head>
   <body class="body">
     <header class="header">
+      <div class="burger-button">
+        <i class="fas fa-bars"></i>
+      </div>
       <figure class="header__logo"><img class="header__img" src="image/logo1.PNG" alt="logo de la empresa"/></figure>
       <nav class="nav">
         <ul class="menu">
@@ -28,5 +31,22 @@
       </section>
       <section class="contenido"> </section>
     </main>
+
+    <script>
+      const menu = document.querySelector('.nav');
+      console.log(menu);
+      const menuButton = document.querySelector('.burger-button');
+      console.log(menuButton);
+      
+      function ShowHideMenu(){
+        if (menu.classList.contains('is-active')){
+          menu.classList.remove('is-active');
+        }
+        else{
+          menu.classList.add('is-active');
+        }
+      }
+      menuButton.addEventListener('click', ShowHideMenu)
+    </script>
   </body>
 </html>
