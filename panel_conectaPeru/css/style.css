@@ -92,7 +92,7 @@ figure, body {
   margin-right: .5rem; }
 
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 768px){
   .body{
     display: initial;
   }
@@ -137,6 +137,9 @@ figure, body {
 
     .burger-button{
       display: flex;
+    }
+    .menuHo__img{
+      padding-left: 2rem;
     }
 }
 
