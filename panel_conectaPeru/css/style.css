@@ -99,6 +99,7 @@ figure, body {
 
   .header{
     flex:initial;
+    position: fixed;
     width: 100%;
     height: 90px;
     padding-left: 15px;
@@ -118,7 +119,7 @@ figure, body {
       padding: 0;
       top: 90px;
       left: -4000px;
-      position: absolute;
+      position: fixed;
       width: 100%;
       height: calc(100% - 90px);
       z-index: 5000;
