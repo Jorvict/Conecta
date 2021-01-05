@@ -56,7 +56,6 @@ figure, body {
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding-left: 0;
   width: 70%;
   margin: 0 auto; }
@@ -130,6 +129,9 @@ figure, body {
       justify-content: center;
       align-items: center;
       transition: .6s;
+      }
+      .menu{
+        align-items: center;
       }
       .menu__item{
         width: 120px;
