@@ -38,7 +38,6 @@ figure{
   }
   
   [class^="icon-"], [class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
     speak: never;
     font-style: normal;
@@ -46,8 +45,6 @@ figure{
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-  
-    /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -70,10 +67,8 @@ figure{
   .icon-menu:before {
     content: "\e905";
   }
-  
 
 /* Contenedor principal */
-
 .cabecera{
     width: 100%;
     height: 220px;
@@ -83,7 +78,6 @@ figure{
 }
 
 /* Seccion de logo */
-
 .cabecera .img-container{
     width: 20%;
     height: 100%;
@@ -119,14 +113,12 @@ figure{
 }
 
 /* Contenedor de sección derecha */
-
 .cabecera .right-sect{
     width: 80%;
     height: 100%;
 }
 
 /* Apartado superior del header */
-
 .cabecera .right-sect .top{
     height: 33.33%;
     background-color: #00c1c8;
@@ -153,7 +145,6 @@ figure{
 }
 
 .cabecera .right-sect .top .division.second{
-    /* justify-content: center; */
     font-size: 14px;
     font-weight:600;
     font-family: 'Helvetica';
@@ -164,7 +155,6 @@ figure{
 .cabecera .right-sect .top .division.second p{
     margin: 0px;
 }
-
 
 .cabecera .right-sect .top .division.third button{
     width: 90%;
@@ -203,13 +193,6 @@ figure{
 }
 
 .cabecera .right-sect .top .division.fourth .Login{
-    /* width: 60%;
-    height: 50%;
-    background-color: rgba(0, 193, 200, 1);
-    color: white;
-    border: none;
-    cursor: pointer; */
-
     width: 70%;
     height: 32%;
     background-color: orange;
@@ -226,11 +209,9 @@ figure{
 }
 
 /* Sección media (input) */
-
 .cabecera .right-sect .middle{
     width: 100%;
     height: 33.33%;
-    /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -272,8 +253,6 @@ figure{
     color: #00b2bb;
 }
 
-/* Sección inferior (menú) */
-
 .cabecera .right-sect .bottom{
     width: 100%;
     height: 33.33%;
@@ -281,7 +260,6 @@ figure{
 
 .cabecera .right-sect .bottom .menu{
     height: 100%;
-    /* margin-top: 11px; */
 }
 
 .cabecera .right-sect .bottom .menu ul{
@@ -312,9 +290,6 @@ figure{
 .cabecera .right-sect .bottom .menu ul .first-nav a{
     text-decoration: none;
     color: #00c1c8;
-
-    /* width: 100%;
-    height: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -330,7 +305,6 @@ figure{
 }
 
 /* Submenú */
-
 .cabecera .right-sect .bottom .menu .first-nav ul{
     display: none;
 }
@@ -393,7 +367,6 @@ figure{
     .cabecera{
         flex-wrap: wrap;
         height: auto;
-        /* padding-bottom: 15px; */
     }
 
     .cabecera #img-logo{
@@ -453,7 +426,6 @@ figure{
     .cabecera .right-sect .top .division.third,
     .cabecera .right-sect .top .division.fourth{
         width: 30%;
-        /* height: 100px; */
     }
 
     .cabecera .right-sect .middle .input-container{
@@ -462,10 +434,6 @@ figure{
 
     .cabecera .right-sect .middle .input-container input{
         width: 90%;
-    }
-
-    .cabecera .right-sect .bottom{
-        /* display: none; */
     }
 
     .cabecera .right-sect .bottom .menu .first-nav ul,
@@ -480,7 +448,6 @@ figure{
         top: 0;
         left: -4000px;
         width: 100vw;
-        /* height: 100vh; */
         bottom: 0; /* Para centrar el ol */
         display: flex;
         align-items: center;

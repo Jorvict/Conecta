@@ -30,20 +30,11 @@ body{
 }
 
 section#t-principal {
-	/* overflow: hidden; */
     width: 100%;
     background: #00c7ce;
     margin-top: 70px;
     padding-left: 30%;
-    /* box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.75); */
-    /* margin: 0 auto; */
 }
-
-/* #t-principal .space-title{
-    width: 30%;
-    height: 100%;
-    background-color: red;
-} */
 
 h4#categoria {
     color: black;
@@ -63,18 +54,13 @@ main{
 }
 
 /* Aside izquierdo */
-
 main .left-section{
     width: 30%;
-    /* height: 1800px; */
-    /* background-color: red; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* box-shadow: 5px 0px 20px -10px rgba(0, 0, 0, 0.75); */
-    /* position: fixed; */
-
 }
+
 /* Contenedor imagen */
 main .img-container{
     width: 30%;
@@ -84,6 +70,7 @@ main .img-container{
     display: flex;
     justify-content: center;
 }
+
 main .img-container img{
     width: 200px;
     height: auto;
@@ -91,6 +78,7 @@ main .img-container img{
     border: 8px solid #00c7ce;
     overflow: hidden;
 }
+
 /* Contenedor texto */
 main .left-section .info-emp{
     height: 100%;
@@ -102,12 +90,8 @@ main .left-section .info-emp .container-sticky{
     max-height: 700px;
     width: 100%;
     margin-top: 190px;
-    /* background-color: yellow; */
     position: sticky;
     top: 40px;
-    /* display: flex; */
-    /* flex-wrap: wrap;
-    justify-content: center; */
 }
 
 main .left-section .info-emp .container-sticky .description{
@@ -154,15 +138,11 @@ main .left-section .info-emp .container-sticky .recomendaciones .docker-imgs .dc
     border-radius: 50px;
 }
 
-
 /* Seccion derecha */
-
 main .right-section{
     width: 70%;
     height: auto;
-    /* background-color: blue; */
     position: relative;
-    /* left: 30%; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -181,8 +161,6 @@ main .right-section .title-products{
 
 main .right-section .products-container{
     width: 90%;
-    /* height: 200px; */
-    /* background-color: blue; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -284,5 +262,4 @@ main .right-section .button-container button{
     main .right-section .button-container button{
         width: 45%;
     }
-
 }

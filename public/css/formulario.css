@@ -21,21 +21,19 @@
     top: 0;
 }
 
-
 .form-registro{
     width: 400px;
     height: auto;
     max-height: 710px;
     background:white;
     padding: 15px;
-    /* margin: auto; */
     margin-top: 30px;
     font-family: 'Source Sans Pro', sans-serif;
     color:black;
     border:  #ff9e00 15px solid;
     position: relative;
-    
 }
+
 .form-registro h4{
     text-align: center;
     font-size: 40px;
@@ -62,15 +60,11 @@
     border: 2px solid #00c1c8;
     font-family: 'calibri' ;
     font-size: 18px;
-  
-    
-
-
-
 }
-::-webkit-input-placeholder { color:#00c1c8; } 
 
-
+::-webkit-input-placeholder { 
+    color:#00c1c8; 
+} 
 
 .form-registro a{
     color: #ff9e00;
@@ -84,7 +78,6 @@
 .form-registro .terminos{
     background-color: black;
 }
-
 
 .form-registro .boton{
     width: 55%;

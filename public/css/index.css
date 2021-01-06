@@ -11,7 +11,6 @@
   }
   
   [class^="icon-"], [class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
     speak: never;
     font-style: normal;
@@ -19,8 +18,7 @@
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-  
-    /* Better Font Rendering =========== */
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -40,7 +38,6 @@
   .icon-menu:before {
   content: "\e905";
 }
-
 
 body{
     height: 100%;
@@ -64,9 +61,7 @@ body{
     max-width: 1366px;
 }
 
-
 #video{
-    /* padding: 0 180px; */
     width: 100%;
     height: auto;
     max-height: 400px;
@@ -78,7 +73,6 @@ body{
 #video video{
     width: 800px;
     height: 400px;
-    /* object-fit: cover; */
 }
 
 .slider-container
@@ -98,7 +92,6 @@ body{
 }
 
 /* ------ Animacion Slider ------ */
-
 @-webkit-keyframes slide_animation{
     0%{left: 2560px;}
     10%{left: 2560px;}
@@ -146,10 +139,8 @@ body{
     color: black;
     font-weight: 500;
     background: rgba(255, 255, 255, 0.6);
-    /* width: 75%; */
     width: 23%;
     height: auto;
-    /* padding: 25px 25px; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -167,7 +158,6 @@ body{
 .slider-container .banner-desc .desc-logo img{
     width: 150px;
     height: 150px;
-    /* border-radius: 150px; */
     object-fit: cover;
     padding-top: 10px;
 }
@@ -212,40 +202,19 @@ body{
     outline: none;
 }
 
-/* #slider{
-    background:#098;
-    
-    width: 90%;
-    height: 470px;
-    display: block;
-    margin: 0 auto;
-    }
-
-img.d-block.w-100 {
-    width: 100%;
-    height: 470px;
-} */
-
 #contenido{
-    /*background:red;*/
     min-height:220px;
     width: 100%;
-   /* height: 700px;*/
     display: flex;
     flex-wrap: wrap;
     }
 
 section.titulo{
- 
     text-align: center;
-
-
     overflow: hidden;
     width: 97%;
-    /*background: #fff;*/
     box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.75);
     margin: 0 auto;
- 
     height: 40px;
 }
 
@@ -257,7 +226,6 @@ section.titulo h2{
 
 
 section.contenedor {
-    /* padding: 0 12px 0 0; */
     margin: 0 30px 0 30px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -295,13 +263,13 @@ section.contenedor {
     width: 100%;
     height: 250px;
 }
+
 span#subtitulo {
     font-size: 14px;
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bold;
 }
-
 
 .pasos-sig .subtitulo {
     padding: 10px 0px 0px 0px;
@@ -355,7 +323,6 @@ section#tunegocio {
 }
 
 section#cont {
-   /* background: #098;*/
     width: 100%;
     height: auto;
     display: flex;
@@ -368,7 +335,6 @@ section#registra {
     width: 30%;
     height: 180px;
     background: #00c1c8;
-   
 }
 
 h1#re {
@@ -395,30 +361,24 @@ section#desarrollamos {
     width: 80%;
     height: 180px;
     background: #fff;
-    /* margin-right: 10%; */
-    /* padding: 0px 10px; */
-    /* padding-top: 15px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
+
 .espacioo {
     width: 100%;
     height: 28px;
 }
 section.cajas {
-    /* margin-top: 60px; */
     width: auto;
-   /* background: red;*/
-    /* margin: 5px 5px 5px 5px; */
     margin-left: 110px;
     float: left;
 }
 
 section.cajas.first-caja {
     margin-left: 0px;
-
 }
 
 #desarrollamos h3 span{
@@ -435,7 +395,6 @@ section.cajas.first-caja {
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
     margin-right: 5px;
 }
-
 
 h3#txtcaja {
     font-size: 18px;
@@ -463,7 +422,6 @@ h3#txtcaja {
     font-size: 14px;
 }
 
-
 h1#cotiza {
 
     font-size: 40px;
@@ -472,7 +430,6 @@ h1#cotiza {
     margin:0 auto;
     text-align: center;
 }
-
 
 section.titulocoti{
  	padding: 20px 0px;
@@ -486,7 +443,6 @@ section.titulocoti h2{
  	font-size: 2rem;
  	color: #00b2bb;
 }
-
 
 section.abastece {
     background: #f2f2f2;
@@ -508,7 +464,6 @@ section.abastece {
 
 h4#abastece {
     font-size: 1.5rem;
-    /* margin: 0 0 0 40px; */
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bold;
 }
@@ -521,10 +476,7 @@ h4#abastece {
     
 }
 
-
-
 section.formulario {
-   /* background: #098;*/
     margin: 0 30px 0 30px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -541,18 +493,14 @@ section#form-inputs {
     margin:0 auto;
     display: flex;
     flex-wrap: wrap;
-
 }
 
-
 section#que-buscas{
-	/*background: red;*/
     width: 100%;
     height: 40px;
     margin-right: 20px;
-
-    
 }
+
 input.que-buscas {
    	width: 100%;
    	height:70%;
@@ -563,9 +511,7 @@ input.que-buscas {
     color: #00b2bb;
 }
 
-
 section#otros-input{
-	/*background: blue;*/
     width: 45%;
     height: 40px;
 }
@@ -577,7 +523,6 @@ textarea.otros-input {
     border-radius: 3px;
 }
 div#espacio{
-/*	background: blue;*/
     width: 70px;
     height: 40px;
 }
@@ -591,7 +536,6 @@ input.otros-input {
     margin-top: 10px;
 }
 
-
 input#buscas {
      font-size: 15px; 
      color: #000;
@@ -603,13 +547,13 @@ input#form{
    
 }
 
-
 .solicita-cotizacion {
     padding-top: 50px;
     width: 100%;
     text-align: center;
     margin-bottom: 50px;
 }
+
 .solicita-cotizacion a{
     text-decoration: none;
     color: #fff;
@@ -621,31 +565,20 @@ input#form{
     font-weight: bold;
 }
 
-
-
-
 button#b{
     background: #0066CC;
 }
 
-
-
-
-
-
 @media screen and (max-width:1200px)
 {
-    /* #slider{
-        height: 260px;
-        background: #fff;
-    } */
    img.d-block.w-100{
     height: 260px;
-}
+    }
 
     section.tituloconecta h2{
         font-size: 23px;
     }
+
     section.titulocoti h2 {
         font-size: 23px;
     }
@@ -656,12 +589,11 @@ button#b{
     }
 
     .items {
-    /* margin-bottom: 10px; */
-    /* overflow: hidden; */
         width: 100%;
         height: 25px;
         text-align: center;
     }
+
     section.tituloconecta {
         height: 220px;
         margin: 10px 10px 10px 10px;;
@@ -677,33 +609,30 @@ button#b{
     section#form-inputs{
         width: 100%;
     }
+
     section#que-buscas {
-    /* background: red; */
         width: 100%;
         margin-right: 0;
     }
     section#otros-input {
-    /* background: blue; */
         width: 100%;
     }
     
-
     div#espacio {
         display: none;
     }
 
     section#tunegocio{
         width: 100%;
-        /* height: 570px; */
         background: orange;
         height: auto;
         display: flex;
         justify-content: center;
     }
+
     section#registra{
         width: 100%;
         height: 220px;
-        /*background: red;*/
         margin: 0;
         display: block;
     }
@@ -711,11 +640,9 @@ button#b{
     section#desarrollamos{
         width: 100%;
         height: 370px;
-        /*background: blue;*/
         margin: 0;
         display: flex;
         align-items: center;
-
     }
     
     section.cajas{
@@ -731,7 +658,6 @@ button#b{
     }
 
     .c-logo {
-    /* display: block; */
         margin: 0 auto;
         width: 50%;
         height: 50%;
@@ -742,10 +668,8 @@ button#b{
     }
 
     .solicita-cotizacion {
-        /* padding-top: 50px; */
         width: 100%;
         text-align: center;
-        /* margin-bottom: 50px; */
         margin: 0 auto;
         display: block;
     }
@@ -757,7 +681,6 @@ button#b{
 @media screen and (max-width:800px)
 {
     #video{
-        /* padding: 0 10px; */
         max-width: 800px;
     }
 
@@ -778,7 +701,6 @@ button#b{
         justify-content: center;
     }
 
-    /* Slider responsive 425px */
     .slider-container
     {
         width: 100%;
@@ -796,7 +718,6 @@ button#b{
     }
 
     /* ------ Animacion Slider ------ */
-
     @-webkit-keyframes slide_animation{
         0%{left: 800px;}
         10%{left: 800px;}
@@ -867,7 +788,6 @@ button#b{
     .slider-container .banner-desc .desc-logo img{
         width: 100px;
         height: 100px;
-        /* border-radius: 100px; */
         object-fit: cover;
     }
 
@@ -930,7 +850,6 @@ button#b{
     section.cajas{
         width: 100%;
     }
-
 }
 
 @media screen and (max-width:375px)
@@ -947,7 +866,6 @@ button#b{
     }
 
     /* ------ Animacion Slider ------ */
-
     @-webkit-keyframes slide_animation{
         0%{left: 700px;}
         10%{left: 700px;}
@@ -1003,7 +921,6 @@ button#b{
     }
 
     /* ------ Animacion Slider ------ */
-
     @-webkit-keyframes slide_animation{
         0%{left: 600px;}
         10%{left: 600px;}
