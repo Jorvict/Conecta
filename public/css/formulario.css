@@ -32,6 +32,9 @@
     color:black;
     border:  #ff9e00 15px solid;
     position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .form-registro h4{
@@ -86,7 +89,6 @@
     border:none;
     font-family: 'Nerko One', cursive;
     padding:10px;
-    margin: 10px 76px;
     font-size: 20px;
     border-radius: 20px;
 }
@@ -94,5 +96,9 @@
 @media screen and (max-width: 320px){
     .form-registro{
         width: 320px;
+    }
+
+    .form-registro .boton{
+        font-size: 16px;
     }
 }
