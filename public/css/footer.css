@@ -32,12 +32,9 @@ footer{
     height: 100%;
 }
 
-.c-logo p{
-    font-size: 42px;
+.c-logo #logofooter{
     margin: 0;
-    text-align: center;
-    color: white;
-    font-family: 'Marker Felt';
+    width: 170px;
 }
 
 .content-footercentro {
