@@ -364,6 +364,10 @@ figure{
     align-items: center;
 }
 
+.cabecera .right-sect .bottom .menu ul .first-nav:hover ul .wrapper li.lng-nav{
+    width: 25%;
+}
+
 .cabecera .right-sect .bottom .menu ul .first-nav:hover ul .wrapper li a{
     width: auto;
     height: min-content;
