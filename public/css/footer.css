@@ -34,7 +34,9 @@ footer{
 
 .c-logo #logofooter{
     margin: 0;
-    width: 170px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .content-footercentro {
@@ -119,7 +121,7 @@ img#instagram {
     justify-content: center;
 }
 .c-otros {
-    width: 62%;
+    width: 100%;
     display: flex;
 }
 
@@ -149,9 +151,9 @@ footer {
     .content-footeriz {
         width: 50%;
         height: 120px;
-        margin: 0px 0 0 33px;
         display: block;
         margin: 0 auto;
+        margin-bottom: 10px;
     }
     .otros {
         background: #00c7ce;
