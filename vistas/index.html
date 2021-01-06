@@ -545,78 +545,12 @@
 
 	</div>
 
-
 	<!-- jQuery and JS bundle w/ Popper.js -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-	<script>
-
-		// Const para registro
-		const register = document.querySelector('.form-container');
-		console.log(register);
-
-		const registerButton = document.querySelector('.register');
-		console.log(registerButton);
-
-		const closeButton = document.querySelector('.close-button');
-		console.log(closeButton);
-
-		// Desplegar registro
-		function ShowRegister() {
-			register.classList.add('is-active');
-		}
-		registerButton.addEventListener('click', ShowRegister);
-
-		// Ocultar registro
-		function HideRegister() {
-			register.classList.remove('is-active')
-		}
-		closeButton.addEventListener('click', HideRegister);
-
-
-		// Const para menú
-		const menu = document.querySelector('.menu');
-		console.log(menu);
-
-		const menuButton = document.querySelector('.burger-button');
-		console.log(menuButton);
-
-		// Ocultar-Desplegar menu
-		function HideShowMenu() {
-			if (menu.classList.contains('is-activem')) {
-				menu.classList.remove('is-activem');
-			}
-			else {
-				menu.classList.add('is-activem');
-			}
-		}
-		menuButton.addEventListener('click', HideShowMenu);
-
-
-		// Const para Login
-		const login = document.querySelector('.login-container');
-		console.log(login);
-
-		const loginButton = document.querySelector('.Login');
-		console.log(loginButton);
-
-		const closeButtonLogin = document.querySelector('.close-button-login');
-		console.log(closeButtonLogin);
-
-		// Desplegar Login
-		function ShowLogin(){
-			login.classList.add('is-activel')
-		}
-		loginButton.addEventListener('click', ShowLogin)
-
-		// Ocultar Login
-		function HideLogin(){
-			login.classList.remove('is-activel')
-		}
-		closeButtonLogin.addEventListener('click', HideLogin)
-
-	</script>
-
+	<script type="text/javascript" src="../public/js/menu.js" ></script>
+	<script type="text/javascript" src="../public/js/form_registro.js"></script>
+	<script type="text/javascript" src="../public/js/login.js"></script>
 </body>
 
 </html>

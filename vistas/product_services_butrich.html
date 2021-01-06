@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="../public/css/login.css">
 	<link rel="stylesheet" href="../public/css/form-product.css">
 	
-
     <!-- Css externo -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
 
@@ -22,7 +21,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
-
 
     <!-- Css body -->
     <link rel="stylesheet" type="text/css" href="../public/css/product_services.css">
@@ -447,7 +445,6 @@
                         Ver más
                     </button>
                 </div>
-
             </section>
         </main>
 
@@ -511,98 +508,11 @@
 		</footer>
     </div>
 
-
-	<script>
-
-		// Const para registro
-		const register = document.querySelector('.form-container');
-		console.log(register);
-
-		const registerButton = document.querySelector('.register');
-		console.log(registerButton);
-
-		const closeButton = document.querySelector('.close-button');
-		console.log(closeButton);
-
-		// Desplegar registro
-		function ShowRegister() {
-			register.classList.add('is-active');
-		}
-		registerButton.addEventListener('click', ShowRegister);
-
-		// Ocultar registro
-		function HideRegister() {
-			register.classList.remove('is-active')
-		}
-		closeButton.addEventListener('click', HideRegister);
-
-
-		// Const para menú
-		const menu = document.querySelector('.menu');
-		console.log(menu);
-
-		const menuButton = document.querySelector('.burger-button');
-		console.log(menuButton);
-
-		// Ocultar-Desplegar menu
-		function HideShowMenu() {
-			if (menu.classList.contains('is-activem')) {
-				menu.classList.remove('is-activem');
-			}
-			else {
-				menu.classList.add('is-activem');
-			}
-		}
-		menuButton.addEventListener('click', HideShowMenu);
-
-
-		// Const para Login
-		const login = document.querySelector('.login-container');
-		console.log(login);
-
-		const loginButton = document.querySelector('.Login');
-		console.log(loginButton);
-
-		const closeButtonLogin = document.querySelector('.close-button-login');
-		console.log(closeButtonLogin);
-
-		// Desplegar Login
-		function ShowLogin(){
-			login.classList.add('is-activel')
-		}
-		loginButton.addEventListener('click', ShowLogin)
-
-		// Ocultar Login
-		function HideLogin(){
-			login.classList.remove('is-activel')
-		}
-		closeButtonLogin.addEventListener('click', HideLogin)
-
-
-		// Const para Producto
-		const product = document.querySelector('.form-container-product');
-		console.log(product);
-
-		const productButton = document.querySelector('.btn-product');
-		console.log(productButton);
-
-		const closeButtonProduct = document.querySelector('.close-button-product');
-		console.log(closeButtonProduct);
-
-		// Desplegar Product
-		function ShowProduct(){
-			product.classList.add('is-activep')
-		}
-		productButton.addEventListener('click', ShowProduct)
-
-		// Ocultar Product
-		function HideProduct(){
-			product.classList.remove('is-activep')
-		}
-		closeButtonProduct.addEventListener('click', HideProduct)
-	</script>
-
-
+	<!-- JavaScript -->
+	<script type="text/javascript" src="../public/js/menu.js" ></script>
+	<script type="text/javascript" src="../public/js/form_registro.js"></script>
+	<script type="text/javascript" src="../public/js/login.js"></script>
+	<script type="text/javascript" src="../public/js/form-product.js"></script>
 </body>
 
 </html>
