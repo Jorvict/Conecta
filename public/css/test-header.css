@@ -13,25 +13,25 @@ figure{
 
 @font-face{
     font-family:'Marker Felt';
-    src: url(../../fonts/Marker_Felt.ttf);
+    src: url(../fonts/Marker_Felt.ttf);
 }
 @font-face{
     font-family:'Gotham';
-    src: url(../../fonts/Gotham-Black.otf);
+    src: url(../fonts/Gotham-Black.otf);
 }
 
 @font-face{
     font-family:'Myriad Pro';
-    src: url(../../fonts/MYRIADPRO-REGULAR.woff);
+    src: url(../fonts/MYRIADPRO-REGULAR.woff);
 }
 
 @font-face {
     font-family: 'icomoon';
-    src:  url('../../fonts/icomoon.eot?t20w8t');
-    src:  url('../../fonts/icomoon.eot?t20w8t#iefix') format('embedded-opentype'),
-      url('../../fonts/icomoon.ttf?t20w8t') format('truetype'),
-      url('../../fonts/icomoon.woff?t20w8t') format('woff'),
-      url('../../fonts/icomoon.svg?t20w8t#icomoon') format('svg');
+    src:  url('../fonts/icomoon.eot?t20w8t');
+    src:  url('../fonts/icomoon.eot?t20w8t#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?t20w8t') format('truetype'),
+      url('../fonts/icomoon.woff?t20w8t') format('woff'),
+      url('../fonts/icomoon.svg?t20w8t#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
