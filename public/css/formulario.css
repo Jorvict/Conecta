@@ -32,9 +32,6 @@
     color:black;
     border:  #ff9e00 15px solid;
     position: relative;
-    /* display: flex;
-    justify-content: center;
-    flex-wrap: wrap; */
 }
 
 .form-registro h4{
@@ -86,12 +83,13 @@
 }
 
 .form-registro .btn-container{
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .form-registro .boton{
-    width: 55%;
+    width: 60%;
     color:white;
     background:#ff9e00;
     border:none;
@@ -99,7 +97,6 @@
     padding:10px;
     font-size: 20px;
     border-radius: 20px;
-    margin: 0 auto
 }
 
 @media screen and (max-width: 320px){
