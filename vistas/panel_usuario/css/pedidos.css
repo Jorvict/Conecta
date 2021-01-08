@@ -9,6 +9,7 @@
 }
 
 .contenido .space{
+    min-height: calc(100vh - 120px);
     padding-left: 40px;
     padding-top: 40px;
     padding-right: 40px;
@@ -27,6 +28,7 @@
 
 .titulo .cont-titulo h3{
     font-size: 24px;
+    font-family: 'Gotham Black';
 }
 
 .titulo .cont-titulo button{
@@ -65,11 +67,12 @@
 }
 
 .buscador input{
-    background-color: #e5e5e5;
+    background-color: white;
     border: none;
     width: 285px;
     height: 30px;
     padding: 0 20px;
+    border: 0.5px solid grey;
 }
 
 .buscador input:focus{
@@ -96,6 +99,7 @@
     background-color: white;
     border-collapse: collapse;
     text-align: left;
+    /* border-radius: 10px; */
 }
 
 .table-container th,
@@ -109,6 +113,7 @@
     background-color: #00c1c8;
     border-bottom: solid 5px #007579;
     color: white;
+    font-family: 'Gotham Black';
 }
 
 .table-container tr:nth-child(even){
@@ -135,12 +140,23 @@
     width: 75%;
     height: 70%;
     border: none;
-    background-color: orange;
+    background-color: #00c89d ;
     cursor: pointer;
+    border-radius: 5px;
 }
+.table-container tr .btn-ver-cont button.delete{
+    background-color: red;
+}
+
 .table-container tr .btn-ver-cont button:hover,
 .table-container tr .btn-ver-cont button:hover i{
-    background-color: rgb(207, 140, 16);
+    background-color: #009474;
+    color: white;
+}
+
+.table-container tr .btn-ver-cont button.delete:hover,
+.table-container tr .btn-ver-cont button.delete:hover i{
+    background-color: rgb(168, 0, 0);
     color: white;
 }
 
@@ -155,6 +171,19 @@
 .table-container tr .btn-ver-cont button i{
     font-size: 24px;
     color: black;
+}
+
+.items {
+    display: flex;
+}
+
+.items__1 {
+    padding: .3rem;
+    border: 1px solid gray;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    margin-top: .5rem;
 }
 
 @media screen and (max-width:425px){

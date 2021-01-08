@@ -13,16 +13,16 @@ figure{
 
 @font-face{
     font-family:'Marker Felt';
-    src: url(../fonts/Marker_Felt.ttf);
+    src: url('../fonts/Marker_Felt.ttf');
 }
 @font-face{
     font-family:'Gotham';
-    src: url(../fonts/Gotham-Black.otf);
+    src: url('../fonts/Gotham-Black.otf');
 }
 
 @font-face{
     font-family:'Myriad Pro';
-    src: url(../fonts/MYRIADPRO-REGULAR.woff);
+    src: url('../fonts/MYRIADPRO-REGULAR.woff');
 }
 
 @font-face {
