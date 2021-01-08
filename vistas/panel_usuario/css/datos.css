@@ -42,7 +42,8 @@ body {
   flex-direction: column;
   border: 0.5px solid #c7c2c2;
   border-top: none;
- 
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+  position: relative;
 }
 
 .header__img {
@@ -122,6 +123,8 @@ body {
   border: 0.5px solid #c7c2c2;
   border-left: none;
   border-top: none;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+  position: relative;
 }
 
 .menuHo__img {
