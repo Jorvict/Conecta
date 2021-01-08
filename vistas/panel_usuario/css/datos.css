@@ -10,20 +10,6 @@ body {
   margin: 0;
 }
 
-@font-face{
-  font-family:'Myriad Pro';
-  src: url('../../../public/fonts/MYRIADPRO-REGULAR.woff');
-}
-
-@font-face{
-  font-family:'Marker Felt';
-  src: url('../../../public/fonts/Marker_Felt.ttf');
-}
-@font-face{
-  font-family:'Gotham Black';
-  src: url('../../../public/fonts/Gotham-Black.otf');
-}
-
 .body {
   font-family: Helvetica, sans-serif;
   min-height: 100vh;
@@ -40,9 +26,9 @@ body {
   flex: .9;
   display: flex;
   flex-direction: column;
-  background-color: #f5f5f5;
   border: 0.5px solid #c7c2c2;
   border-top: none;
+ 
 }
 
 .header__img {
@@ -87,8 +73,6 @@ body {
   padding-left: 0;
   width: 70%;
   margin: 0 auto;
-  font-family:'Myriad Pro';
-
 }
 
 .menu__item {
@@ -136,31 +120,48 @@ body {
 .menuHo__usuario {
   display: flex;
   align-items: center;
-  background-color: #f5f5f5;
-  box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.75);
+ 
 }
 .ver__tienda1{
   text-decoration: none;
   color:black;
-  font-size: 14px;
+  font-size: 16px;
+  text-align: center;
+  display: none;
+}
+.ver__tienda2{
+  text-decoration: none;
+  color:black;
+  font-size: 16px;
   text-align: center;
 }
 
+@media screen and (min-width: 768px) {
+  .ver__tienda2{
+    display: none;
+    font-size: 1rem;
+    color: #464646;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .ver__tienda1{
-    
+    display: block;
     font-size: 1rem;
+    color: #868686;
   }
 }
 
 
+.ver__tienda1:hover,.ver__tienda2:hover{
+  color: rgb(0, 178, 187);
 
+}
 
 .menuHo__usuarioSection{
 
   display: flex;
-  width: 77%;
+  width: 100%;
 }
 
 
@@ -214,7 +215,7 @@ body {
   .nav {
     padding: 0;
     top: 90px;
-    transform: translateX(-120%);
+    left: -4000px;
     position: fixed;
     width: 100%;
     height: calc(100% - 90px);
@@ -223,7 +224,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 1s;
+    transition: .6s;
+    
   }
 
   .menu {
@@ -237,7 +239,6 @@ body {
 
   .nav.is-active {
     left: 0px;
-    transform: translateX(0%);
   }
 
   .burger-button {
@@ -273,7 +274,7 @@ body {
   font-size: 24px;
   margin: 0;
   margin-bottom: 1rem;
-  font-family:'Gotham Black';
+  font-family: Gotham-Black;
 }
 
 .datos__form {
@@ -460,7 +461,7 @@ body {
 .nav {
     padding: 0;
     top: 90px;
-    transform: translateX(-120%);
+    left: -4000px;
     position: fixed;
     width: 100%;
     height: calc(100% - 90px);
@@ -469,7 +470,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 1s;
+    transition: .6s;
 }}
 
 @media screen and (max-width: 768px){

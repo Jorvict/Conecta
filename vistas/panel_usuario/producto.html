@@ -36,7 +36,7 @@
       <figure class="menuHo__usuario">
         <div class="menuHo__usuarioSection">
         <img class="menuHo__img" src="image/usuario.jpg" alt="usuario" />
-        <figcaption class="menuHo__nombre"> Maria Alaya Torres </figcaption></div>
+        <figcaption class="menuHo__nombre">Maria Alaya Torres<br><br><a class="ver__tienda2" href="#"><i class="fas fa-list-alt"></i> Ver tienda</a> </figcaption></div>
         <a class="ver__tienda1" href="#"><i class="fas fa-list-alt"></i> Ver tienda</a>
         
       </figure>
@@ -55,19 +55,15 @@
           <h1 class="nuevoProducto">Nuevo producto</h1>
           <form action="#" class="nuevoProducto__form">
             <label for="nombre">Nombre del producto:</label>
-            <input style="border:1px solid gray" class="form__item" type="text" id="nombre"
+            <input style="border:1px solid gray" class="form__item t" type="text" id="nombre"
               name="nombre_producto">
-            <div class="form__item">
-              <label for="descripcion" class="text_label">Descripción del producto:</label><br>
-              <textarea style="border:1px solid gray" class="form__text" id="descripcion" name="descripcion">
-      </textarea>
-            </div>
+          
             <div class="form__parte">
               <label for="cantidad">Cantidad:</label>
-              <input style="border:1px solid gray" class="form__item" type="number" id="cantidad">
+              <input style="border:1px solid gray" class="form__item t" type="number" id="cantidad">
               <div class="form__item">
                 <label for="medida" class="text_label">Medida:</label><br>
-                <select style="border:1px solid gray;background-color: white;" id="medida" name="medida" class="form__item">
+                <select style="border:1px solid gray;background-color: white;" id="medida" name="medida" class="form__item t">
                   <option value="galon">Galon(s)</option>
                   <option value="kilo">Kilo(s)</option>
                   <option value="litro">Litro(s)</option>
@@ -75,8 +71,12 @@
                 </select>
               </div>
               <label for="precio">Precio:</label>
-              <input style="border:1px solid gray" class="form__item" type="number" id="precio">
-
+              <input style="border:1px solid gray" class="form__item t" type="number" id="precio">
+              <div class="form__item">
+                <label for="descripcion" class="text_label t">Descripción del producto:</label><br>
+                <textarea style="border:1px solid gray" class="form__text" id="descripcion" name="descripcion">
+        </textarea>
+              </div>
               <div class="form__item">
                 <label for="imagen" class="text_label">imagen del poducto:</label><br>
                 <input style="border-radius:initial;" type="file" id="imagen" class="form__item" name="imagen">
@@ -101,31 +101,32 @@
           <h1 class="nuevoProducto">Editar producto</h1>
           <form action="#" class="nuevoProducto__form">
             <label for="nombre">Nombre del producto:</label>
-            <input style="border:1px solid gray" class="form__item" type="text" id="nombre"
+            <input style="border:1px solid gray" class="form__item t" type="text" id="nombre"
               name="nombre_producto">
-            <div class="form__item">
-              <label for="descripcion" class="text_label">Descripción del producto:</label><br>
-              <textarea style="border:1px solid gray" class="form__text" id="descripcion" name="descripcion">
-      </textarea>
-            </div>
+           
             <div class="form__parte">
               <label for="cantidad">Cantidad:</label>
-              <input style="border:1px solid gray" class="form__item" type="number" id="cantidad">
+              <input style="border:1px solid gray" class="form__item t" type="number" id="cantidad">
               <div class="form__item">
                 <label for="medida" class="text_label">Medida:</label><br>
-                <select style="border:1px solid gray;background-color: white;" id="medida" name="medida" class="form__item">
+                <select style="border:1px solid gray;background-color: white;" id="medida" name="medida" class="form__item t">
                   <option value="galon">Galon(s)</option>
                   <option value="kilo">Kilo(s)</option>
                   <option value="litro">Litro(s)</option>
                   <option value="unidad">Unidad(s)</option>
                 </select>
               </div>
+             
               <label for="precio">Precio:</label>
-              <input style="border:1px solid gray" class="form__item" type="number" id="precio">
-
+              <input style="border:1px solid gray" class="form__item t" type="number" id="precio">
+              <div class="form__item">
+                <label for="descripcion" class="text_label">Descripción del producto:</label><br>
+                <textarea style="border:1px solid gray" class="form__text" id="descripcion" name="descripcion">
+        </textarea>
+              </div>
               <div class="form__item">
                 <label for="imagen" class="text_label">imagen del poducto:</label><br>
-                <input style="border-radius:initial;" type="file" id="imagen" class="form__item" name="imagen">
+                <input style="border-radius:initial;" type="file" id="imagen" class="form__item t" name="imagen">
               </div>
             </div>
            
@@ -147,7 +148,13 @@
 
 
       <div class="producto__tabla">
+        
         <table class="tabla">
+          <colgroup>
+            <col span="1" style="width: inherit;">
+            <col span="2" style="width: 250px;">
+            
+          </colgroup>
           <tr class="tabla__fila tabla__head">
             <th class="tabla__celda">Nombre</th>
             <th class="tabla__celda">Cantidad disponible</th>

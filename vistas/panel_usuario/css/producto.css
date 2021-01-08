@@ -19,7 +19,7 @@
 }
 
 .producto__titulo {
-    font-family:'Gotham Black';
+    font-family: Gotham-Black;
     font-size: 24px;
     margin: 0;
     margin-bottom: 1rem;
@@ -100,7 +100,7 @@ padding: 1rem;
 }
 
 .nuevoProducto {
-    background:rgb(0, 158, 251);
+    background:orange;
     margin: 0;
     padding: 1rem;
 }
@@ -109,8 +109,8 @@ padding: 1rem;
     display: flex;
     flex-direction: column;
 
-    padding: 1rem 0;
-    padding-top: 0;
+   
+    padding-top: 1rem;
 
 }
 
@@ -132,6 +132,7 @@ padding: 1rem;
 .form__text {
     width: 100%;
     border-radius: 3px;
+    height: 35px;
 
 
 }
@@ -226,6 +227,7 @@ padding: 1rem;
     background-color: white;
     border-collapse: collapse;
     text-align: left;
+    text-align: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -240,7 +242,7 @@ padding: 1rem;
     background-color: #00c1c8;
     border-bottom: solid 5px #007579;
     color: white;
-    font-family:'Gotham Black';
+    font-family: Gotham-Black;
 }
 
 .tabla,
@@ -338,3 +340,6 @@ padding: 1rem;
     
 }
 
+.t{
+    height: 25px;
+}
