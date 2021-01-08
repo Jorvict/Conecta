@@ -10,6 +10,20 @@ body {
   margin: 0;
 }
 
+@font-face{
+  font-family:'Myriad Pro';
+  src: url('../../../public/fonts/MYRIADPRO-REGULAR.woff');
+}
+
+@font-face{
+  font-family:'Marker Felt';
+  src: url('../../../public/fonts/Marker_Felt.ttf');
+}
+@font-face{
+  font-family:'Gotham Black';
+  src: url('../../../public/fonts/Gotham-Black.otf');
+}
+
 .body {
   font-family: Helvetica, sans-serif;
   min-height: 100vh;
@@ -78,6 +92,7 @@ body {
 .menu__item {
   margin: 1.5rem 0;
   padding-left: 15px;
+  font-family: 'Myriad Pro';
 }
 
 .menu__link {
@@ -176,7 +191,7 @@ body {
 
 .menuHo__nombre {
   align-self: center;
-  
+  font-family: 'Myriad Pro';
 }
 
 .icono {
@@ -215,7 +230,7 @@ body {
   .nav {
     padding: 0;
     top: 90px;
-    left: -4000px;
+    transform: translateX(-120%);
     position: fixed;
     width: 100%;
     height: calc(100% - 90px);
@@ -224,8 +239,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .6s;
-    
+    transition: 1s;
   }
 
   .menu {
@@ -238,7 +252,8 @@ body {
   }
 
   .nav.is-active {
-    left: 0px;
+    left: 0;
+    transform: translateX(0%);
   }
 
   .burger-button {
@@ -274,7 +289,6 @@ body {
   font-size: 24px;
   margin: 0;
   margin-bottom: 1rem;
-  font-family: Gotham-Black;
 }
 
 .datos__form {
@@ -383,7 +397,7 @@ body {
 
   .datos__titulo {
     width: 100%;
- 
+    font-family: 'Gotham Black';
     font-size:24px;
   }
 
@@ -460,8 +474,8 @@ body {
 @media screen and (max-width: 768px){
 .nav {
     padding: 0;
-    top: 90px;
-    left: -4000px;
+    top: 90px;    
+    transform: translateX(-120%);
     position: fixed;
     width: 100%;
     height: calc(100% - 90px);
@@ -470,7 +484,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .6s;
+    transition: 1s;
 }}
 
 @media screen and (max-width: 768px){

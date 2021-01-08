@@ -19,7 +19,7 @@
 }
 
 .producto__titulo {
-    font-family: Gotham-Black;
+    font-family: 'Gotham Black';
     font-size: 24px;
     margin: 0;
     margin-bottom: 1rem;
@@ -27,7 +27,6 @@
 
 @media screen and (min-width: 768px) {
     .producto__titulo {
-
         font-size: 24px;
     }
 
@@ -241,8 +240,9 @@ padding: 1rem;
 .tabla__head {
     background-color: #00c1c8;
     border-bottom: solid 5px #007579;
-    color: white;
-    font-family: Gotham-Black;
+    color: white;        
+    font-family: 'Gotham Black';
+
 }
 
 .tabla,
