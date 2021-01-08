@@ -2,6 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  
 }
 
 figure,
@@ -9,7 +10,22 @@ body {
   margin: 0;
 }
 
+@font-face{
+  font-family:'Myriad Pro';
+  src: url('../../../public/fonts/MYRIADPRO-REGULAR.woff');
+}
+
+@font-face{
+  font-family:'Marker Felt';
+  src: url('../../../public/fonts/Marker_Felt.ttf');
+}
+@font-face{
+  font-family:'Gotham Black';
+  src: url('../../../public/fonts/Gotham-Black.otf');
+}
+
 .body {
+  font-family: Helvetica, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
@@ -21,7 +37,7 @@ body {
 } */
 
 .header {
-  flex: .8;
+  flex: .9;
   display: flex;
   flex-direction: column;
   border: 0.5px solid #c7c2c2;
@@ -55,7 +71,11 @@ body {
 .nav {
   flex: 1;
   padding-top: 2.5rem;
+ 
 }
+
+
+
 
 .menu {
   list-style: none;
@@ -66,6 +86,8 @@ body {
   padding-left: 0;
   width: 70%;
   margin: 0 auto;
+  font-family:'Myriad Pro';
+
 }
 
 .menu__item {
@@ -76,12 +98,21 @@ body {
 .menu__link {
   text-decoration: none;
   color: #868686;
+  font-size: 20px;
 }
 
-.menu__link:hover {
-  color: #00c1c8;
-  /*Referencia*/
+
+@media screen and (min-width: 768px) {
+  .menu__link{
+
+   font-size: 16px;
+  }
 }
+
+
+.menu__link:hover {
+  color: #00c1c8; /*Referencia*/
+  }
 
 .main {
   flex: 5;
@@ -146,6 +177,7 @@ body {
 
 .icono {
   margin-right: .5rem;
+  
 }
 
 
@@ -184,7 +216,7 @@ body {
     width: 100%;
     height: calc(100% - 90px);
     z-index: 5000;
-    background-color: #e5e5e5;
+    background-color:  #f5f5f5;;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -196,11 +228,9 @@ body {
     align-items: center;
   }
 
-  .menu__link {
-    color: #464646; 
-    font-size: 20px;}
-  .menu__item{
-    width: 160px;
+  .menu__item {
+    width: 120px;
+    
   }
 
   .nav.is-active {
@@ -237,7 +267,10 @@ body {
 }
 
 .datos__titulo {
-  text-align: center;
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-family:'Gotham Black';
 }
 
 .datos__form {
@@ -284,21 +317,28 @@ body {
 }
 
 .imagen__submit {
+  margin-top:1rem;
   width: 50%;
   display: block;
   margin-right: auto;
   margin-left: auto;
-  border-radius: 10px;
-  background-color: rgb(5, 168, 147);
+  border-radius: 3px;
+  background-color: #1aabc2;
   color: white;
   padding: .2rem 0;
   border: none;
   cursor: pointer;
+  transition: background .8s;
+   
 }
-
+.imagen__submit:hover{
+    background-color:#118394 ;
+}
 @media screen and (min-width: 768px) {
   .formulario {
-    padding: 0 2rem;
+    padding-left: 40px;
+    padding-top: 40px;
+    padding-right: 40px;
   }
 
   .datos {
@@ -339,8 +379,8 @@ body {
 
   .datos__titulo {
     width: 100%;
-    padding: 0 8rem;
-    font-size: 2rem;
+ 
+    font-size:24px;
   }
 
   .descripcion,
@@ -350,7 +390,9 @@ body {
   }
 
   .datos__form {
-    height: 38px
+    height: 38px;
+    background-color: white
+    
   }
 
 
@@ -361,6 +403,7 @@ body {
 
   .imagen {
     flex-direction: row;
+    width: 95%;
   }
 
 
@@ -387,9 +430,9 @@ body {
 
   .imagen__submit {
     margin-bottom: 2rem;
-    width: 20%;
+    width: 25%;
     padding: .5rem 0;
-    border-radius: 20px;
+    border-radius: 3px;
   }
 }
 
@@ -397,9 +440,57 @@ body {
 
 
 
+.formulario{
+  background-color: #e5e5e5;
+}
 
-@media screen and (min-width: 930px) {
-  .formulario {
-    padding: 0 8rem;
-  }
+@media screen and (max-width: 768px){
+.menu__item {
+    width: 160px;
+}}
+@media screen and (max-width: 768px){
+.menu {
+    align-items: center;
+}}
+
+@media screen and (max-width: 768px){
+.nav {
+    padding: 0;
+    top: 90px;
+    left: -4000px;
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 90px);
+    z-index: 5000;
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .6s;
+}}
+
+@media screen and (max-width: 768px){
+.menu__link {
+    color: #464646;
+    font-size: 20px;
+}}
+
+
+
+input::-webkit-input-placeholder{
+  color: rgb(0, 178, 187);
+  
+
+}
+
+.datos__form{
+  border:1px solid rgb(0, 178, 187);
+}
+
+label{
+  color: rgb(0, 178, 187);
+}
+
+.indicacion__texto{
+  text-align: center;
 }

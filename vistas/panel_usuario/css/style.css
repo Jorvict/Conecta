@@ -6,9 +6,9 @@
 figure, body {
   margin: 0;}
 
-  @font-face{
-    font-family:'Myriad Pro';
-    src: url('../../../public/fonts/MYRIADPRO-REGULAR.woff');
+@font-face{
+  font-family:'Myriad Pro';
+  src: url('../../../public/fonts/MYRIADPRO-REGULAR.woff');
 }
 
 @font-face{

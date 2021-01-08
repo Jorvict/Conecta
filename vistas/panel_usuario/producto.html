@@ -5,8 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mis datos</title>
-  <link rel="stylesheet" href="css/datos.css"/>
+  <link rel="stylesheet" href="css/datos.css" />
   <link rel="stylesheet" href="css/producto.css" />
+  <link rel="stylesheet" href="../../public/fonts/Gotham-Black.otf">
   <script src="https://kit.fontawesome.com/c702fce202.js" crossorigin="anonymous"></script>
 </head>
 
@@ -18,14 +19,14 @@
     <figure class="header__logo"><img class="header__img" src="image/logo1.PNG" alt="logo de la empresa" /></figure>
     <nav class="nav">
       <ul class="menu">
-        <li class="menu__item"><a class="menu__link" href="./index.html"> <i class="fas fa-home icono"></i>Inicio</a></li>
-        <li class="menu__item"><a class="menu__link" href="./datos.html"> <i class="fas fa-id-card-alt icono"></i>Mis
+        <li class="menu__item"><a class="menu__link" href="index.html"> <i class="fas fa-home icono"></i>Inicio</a></li>
+        <li class="menu__item"><a class="menu__link" href="datos.html"> <i class="fas fa-id-card-alt icono"></i>Mis
             datos</a>
         </li>
-        <li class="menu__item"><a class="menu__link" href="#"> <i
+        <li class="menu__item"><a class="menu__link" href="producto.html"> <i
               class="fas fa-shopping-basket icono"></i></i>Productos</a></li>
-        <li class="menu__item"><a class="menu__link" href="./pedidos.html"> <i class="fas fa-pen-square icono"></i>Pedidos</a></li>
-        <li class="menu__item"><a class="menu__link" href="./ventas.html"> <i class="fas fa-store icono"></i>Ventas</a></li>
+        <li class="menu__item"><a class="menu__link" href="pedidos.html"> <i class="fas fa-pen-square icono"></i>Pedidos</a></li>
+        <li class="menu__item"><a class="menu__link" href="ventas.html"><i class="fas fa-file-invoice-dollar icono" aria-hidden="true"></i>Ventas</a></li>
         <li class="menu__item"><a class="menu__link" href="#"> <i class="fas fa-door-open icono"></i>Salir</a></li>
       </ul>
     </nav>
@@ -44,16 +45,17 @@
       <h1 class="producto__titulo">Productos</h1>
       <div class="header__main">
         <form action="#" class="producto__form">
-          <label for="">Buscar:</label><br>
+          <label for="" style="color: black;font-size: 18px;">Buscar:</label><br>
           <input type="search" name="buscar" class="form__input">
         </form>
-        <a href="#" class="producto__boton" id="nuevoProducto">Nuevo Producto</a>
+        <a href="#" class="producto__boton" id="nuevoProducto"> <i class="fas fa-list-alt"></i>&#160;Nuevo Producto</a>
       </div>
       <div class="nuevo__producto" id="bloque">
         <div class="contenido">
           <h1 class="nuevoProducto">Nuevo producto</h1>
           <form action="#" class="nuevoProducto__form">
-            <input style="border:1px solid gray" class="form__item" type="text" placeholder="Nombre del producto"
+            <label for="nombre">Nombre del producto:</label>
+            <input style="border:1px solid gray" class="form__item" type="text" id="nombre"
               name="nombre_producto">
             <div class="form__item">
               <label for="descripcion" class="text_label">Descripción del producto:</label><br>
@@ -61,7 +63,8 @@
       </textarea>
             </div>
             <div class="form__parte">
-              <input style="border:1px solid gray" class="form__item" type="number" placeholder="Cantidad">
+              <label for="cantidad">Cantidad:</label>
+              <input style="border:1px solid gray" class="form__item" type="number" id="cantidad">
               <div class="form__item">
                 <label for="medida" class="text_label">Medida:</label><br>
                 <select style="border:1px solid gray;background-color: white;" id="medida" name="medida" class="form__item">
@@ -71,7 +74,8 @@
                   <option value="unidad">Unidad(s)</option>
                 </select>
               </div>
-              <input style="border:1px solid gray" class="form__item" type="number" placeholder="Precio">
+              <label for="precio">Precio:</label>
+              <input style="border:1px solid gray" class="form__item" type="number" id="precio">
 
               <div class="form__item">
                 <label for="imagen" class="text_label">imagen del poducto:</label><br>
@@ -82,9 +86,9 @@
 
 
             <div class="botonesProducto">
-              <div class="botonesProducto__section"></div>
-              <button type="button"  class="form__submit guardar" ><i class="fas fa-check"></i> Guardar</button>
               <a href="#" class="cancelar" id="cancelar"><i class="fas fa-times"></i> Cancelar</a>
+              <button type="button"  class="form__submit guardar" ><i class="fas fa-check"></i> Guardar</button>
+              
             </div>
         </div>
         </form>
@@ -96,7 +100,8 @@
         <div class="contenido">
           <h1 class="nuevoProducto">Editar producto</h1>
           <form action="#" class="nuevoProducto__form">
-            <input style="border:1px solid gray" class="form__item" type="text" placeholder="Nombre del producto"
+            <label for="nombre">Nombre del producto:</label>
+            <input style="border:1px solid gray" class="form__item" type="text" id="nombre"
               name="nombre_producto">
             <div class="form__item">
               <label for="descripcion" class="text_label">Descripción del producto:</label><br>
@@ -104,7 +109,8 @@
       </textarea>
             </div>
             <div class="form__parte">
-              <input style="border:1px solid gray" class="form__item" type="number" placeholder="Cantidad">
+              <label for="cantidad">Cantidad:</label>
+              <input style="border:1px solid gray" class="form__item" type="number" id="cantidad">
               <div class="form__item">
                 <label for="medida" class="text_label">Medida:</label><br>
                 <select style="border:1px solid gray;background-color: white;" id="medida" name="medida" class="form__item">
@@ -114,7 +120,8 @@
                   <option value="unidad">Unidad(s)</option>
                 </select>
               </div>
-              <input style="border:1px solid gray" class="form__item" type="number" placeholder="Precio">
+              <label for="precio">Precio:</label>
+              <input style="border:1px solid gray" class="form__item" type="number" id="precio">
 
               <div class="form__item">
                 <label for="imagen" class="text_label">imagen del poducto:</label><br>
@@ -125,9 +132,9 @@
 
 
             <div class="botonesProducto">
-              <div class="botonesProducto__section"></div>
-              <button type="button"  class="form__submit guardar" ><i class="fas fa-check"></i> Guardar</button>
               <a href="#" class="cancelar" id="cancelar__editar"><i class="fas fa-times"></i> Cancelar</a>
+              <button type="button"  class="form__submit guardar" ><i class="fas fa-check"></i> Guardar</button>
+             
             </div>
         </div>
         </form>
@@ -153,40 +160,40 @@
             <td class="tabla__celda">Alfreds Futterkiste</td>
             <td class="tabla__celda">5</td>
             <td class="tabla__celda">80.00</td>
-            <td class="tabla__celda icono"><i id="icono__editar" class="fas fa-edit editar"></i></td>
-            <td class="tabla__celda"><i class="fas fa-trash-alt eliminar"></i></td>
+            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
+            <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
 
           </tr>
-          <tr class="tabla__fila">
+          <tr class="tabla__fila" >
             <td class="tabla__celda">Centro comercial Moctezuma</td>
             <td class="tabla__celda">5</td>
             <td class="tabla__celda">80.00</td>
-            <td class="tabla__celda icono"><i class="fas fa-edit editar"></i></td>
-            <td class="tabla__celda"><i class="fas fa-trash-alt eliminar"></i></td>
+            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
+            <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
 
           </tr>
           <tr class="tabla__fila">
             <td class="tabla__celda">Ernst Handel</td>
             <td class="tabla__celda">5</td>
             <td class="tabla__celda">80.00</td>
-            <td class="tabla__celda icono"><i class="fas fa-edit editar"></i></td>
-            <td class="tabla__celda"><i class="fas fa-trash-alt eliminar"></i></td>
+            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
+            <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
 
           </tr>
-          <tr class="tabla__fila">
+          <tr class="tabla__fila" >
             <td class="tabla__celda">Island Trading</td>
             <td class="tabla__celda">5</td>
             <td class="tabla__celda">80.00</td>
-            <td class="tabla__celda icono"><i class="fas fa-edit editar"></i></td>
-            <td class="tabla__celda"><i class="fas fa-trash-alt eliminar"></i></td>
+            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
+            <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
 
           </tr>
           <tr class="tabla__fila">
             <td class="tabla__celda">Island Trading</td>
             <td class="tabla__celda">10</td>
             <td class="tabla__celda">80.00</td>
-            <td class="tabla__celda "><i class="fas fa-edit editar"></i></td>
-            <td class="tabla__celda"><i class="fas fa-trash-alt eliminar"></i></td>
+            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
+            <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
           </tr>
         </table>
       </div>

@@ -6,24 +6,29 @@
 
 .producto {
     padding: .8rem;
+    background-color: #e5e5e5;
 }
 
 @media screen and (min-width: 768px) {
     .producto {
-        padding: 0 8rem;
+        padding-left: 40px;
+    padding-top: 40px;
+    padding-right: 40px;
     }
 
 }
 
 .producto__titulo {
-    text-align: center;
-    font-size: 1.5rem;
+    font-family:'Gotham Black';
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 768px) {
     .producto__titulo {
 
-        font-size: 2rem;
+        font-size: 24px;
     }
 
 }
@@ -43,21 +48,34 @@
 }
 
 .form__input {
-    background-color: #f5f5f5;
-    border-radius: 5px;
+ 
+
+   
 }
 
 .producto__boton {
     padding: .3rem;
     color: white;
-    background-color: rgb(5, 168, 147);
+    background-color: #1aabc2;
+    border-color: #17a2b8;
     text-decoration: none;
-    border-radius: 10px;
+    
+    font-weight: 600;
+    border: none;
+    transition: background .8s;
+    display: flex;
+    align-items: center;
+   
+}
+.producto__boton:hover{
+    background-color:#118394 ;
+    
 }
 
 @media screen and (min-width: 768px) {
     .producto__boton {
         padding: .5rem;
+        font-size: 18px;
     }
 
 }
@@ -82,7 +100,9 @@ padding: 1rem;
 }
 
 .nuevoProducto {
-    text-align: center;
+    background:rgb(0, 158, 251);
+    margin: 0;
+    padding: 1rem;
 }
 
 .nuevoProducto__form {
@@ -96,8 +116,8 @@ padding: 1rem;
 
 @media screen and (min-width: 768px) {
     .nuevoProducto__form {
-        padding: 1rem 8rem;
-        padding-top: 0;
+        padding: 1rem 1rem;
+        
     }
 
 }
@@ -106,12 +126,12 @@ padding: 1rem;
     width: 100%;
 
     margin: .5rem 0;
-    border-radius: 8px;
+    border-radius: 3px;
 }
 
 .form__text {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 3px;
 
 
 }
@@ -153,12 +173,15 @@ padding: 1rem;
 .cancelar {
     background-color: rgb(218, 40, 40);
     color: white;
-    padding: .2rem;
-    border-radius: 10px;
+    padding: .8rem;
+    border-radius: 3px;
     text-decoration: none;
     font-size: 14px;
+    transition: background .8s;
 }
-
+.cancelar:hover{
+    background-color: rgb(177, 37, 37);
+}
 
 @media screen and (min-width: 768px) {
     .cancelar {
@@ -169,13 +192,22 @@ padding: 1rem;
 
 
 .guardar {
-    background-color: rgb(13, 156, 144);
-    border-radius: 10px;
+    
+    border-radius: 3px;
     cursor: pointer;
     border: none;
     color: white;
+    padding: .8rem;
+    background-color: white;
+    color: rgb(0, 158, 251);
+    border:1px solid rgb(0, 158, 251);
+    transition: background  .8s;
+    
 }
-
+.guardar:hover{
+    background-color:rgb(0, 158, 251);
+    color: white;
+}
 .producto__tabla {
     font-size: 14px;
     overflow-x: auto;
@@ -190,24 +222,37 @@ padding: 1rem;
 }
 
 .tabla {
-    width: 100%;
+    width: 1050px;
+    background-color: white;
     border-collapse: collapse;
-    background-color: #f5f5f5;
+    text-align: left;
 }
 
+@media screen and (min-width: 768px) {
+    .tabla {
+     width: 100%;
+    }
+
+}
+
+
 .tabla__head {
-    background-color: #212529;
+    background-color: #00c1c8;
+    border-bottom: solid 5px #007579;
     color: white;
+    font-family:'Gotham Black';
 }
 
 .tabla,
 .tabla__celda {
-    border: 1px solid gray;
+    border: solid 1px black;
+    padding: 0 20px;
+    height: 50px;
 
 }
 
 .tabla__celda {
-    text-align: center;
+    
     padding: .2rem;
 }
 
@@ -222,15 +267,29 @@ padding: 1rem;
 .editar,
 .eliminar {
     cursor: pointer;
+    font-size: 1rem;
 }
 
-.editar{
-    color: rgb(177, 177, 49)
+.editar_b{
+   background-color: orange;
+   border: none;
+   padding: .8rem;
+   border-radius: 3px;
+   transition: background .8s;
 }
-.eliminar{
-    color: red;
+.editar_b:hover{
+    background-color: rgb(185, 125, 14);
 }
-
+.eliminar_b{
+    background-color: red;
+    border: none;
+    padding: .8rem;
+    border-radius: 3px;
+    transition: background .8s;
+}
+.eliminar_b:hover{
+    background-color: rgb(175, 13, 13)
+}
 .items {
     display: flex;
 }
@@ -261,5 +320,21 @@ padding: 1rem;
     .text_label{
         font-size: 1rem;
     }
+}
+
+.tabla__fila:nth-child(odd):not(:first-child){
+    background-color: #f0f0f0;
+}
+
+
+.tabla__fila:hover:not(:first-child){
+    background-color: rgba(63, 150, 156, 0.5);
+    color: white;
+}
+
+.tabla__celda{border: solid 1px black;
+    padding: 0 20px;
+    height: 50px;
+    
 }
 
