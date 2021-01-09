@@ -114,6 +114,9 @@ figure, body {
   box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
   border-left: none;
   border-top: none; }
+  .menuHo.initial{
+    position: initial;
+  }
   .menuHo__img {
     width: 15%;
     padding: 1.5rem;

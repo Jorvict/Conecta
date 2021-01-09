@@ -126,6 +126,9 @@ body {
   box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
   position: relative;
 }
+.menuHo.initial{
+  position: initial;
+}
 
 .menuHo__img {
   width: 15%;
@@ -292,6 +295,7 @@ body {
   font-size: 24px;
   margin: 0;
   margin-bottom: 1rem;
+  font-family: 'Gotham Black';
 }
 
 .datos__form {
