@@ -6,14 +6,14 @@
 
 .producto {
     padding: .8rem;
-   
+
 }
 
 @media screen and (min-width: 768px) {
     .producto {
         padding-left: 40px;
-    padding-top: 40px;
-    padding-right: 40px;
+        padding-top: 40px;
+        padding-right: 40px;
     }
 
 }
@@ -46,11 +46,7 @@
 
 }
 
-.form__input {
- 
 
-   
-}
 
 .producto__boton {
     padding: .3rem;
@@ -58,18 +54,19 @@
     background-color: #1aabc2;
     border-color: #17a2b8;
     text-decoration: none;
-    
+
     font-weight: 600;
     border: none;
     transition: background .8s;
     display: flex;
     align-items: center;
     border-radius: 3px;
-   
+
 }
-.producto__boton:hover{
-    background-color:#118394 ;
-    
+
+.producto__boton:hover {
+    background-color: #118394;
+
 }
 
 @media screen and (min-width: 768px) {
@@ -82,42 +79,42 @@
 
 
 .nuevo__producto {
-    
+
     background-color: rgba(0, 0, 0, 0.5);
 }
 
 .contenido {
     background-color: white;
-padding: 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     width: initial;
     margin: 0 auto;
     border-radius: 4px;
-  
+
 }
 
 @media screen and (min-width: 768px) {
-    .contenido{
-        padding:0;
+    .contenido {
+        padding: 0;
         width: 500px;
     }
 
 }
 
 .nuevoProducto {
-    background:orange;
+    background: orange;
     margin: 0;
     padding: 1rem;
-    
-    border-radius:4px ;
+
+    border-radius: 4px;
 }
 
 .nuevoProducto__form {
     display: flex;
     flex-direction: column;
 
-   
+
     padding-top: 1rem;
 
 }
@@ -125,7 +122,7 @@ padding: 1rem;
 @media screen and (min-width: 768px) {
     .nuevoProducto__form {
         padding: 1rem 1rem;
-        
+
     }
 
 }
@@ -149,11 +146,11 @@ padding: 1rem;
     position: fixed;
     width: 100%;
     height: 100%;
-   
-        top: -2000px;
-        transition: top .6s;
+
+    top: -2000px;
+    transition: top .6s;
     left: 0;
-    padding:1.5rem .5rem;
+    padding: 1.5rem .5rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -189,7 +186,8 @@ padding: 1rem;
     font-size: 14px;
     transition: background .8s;
 }
-.cancelar:hover{
+
+.cancelar:hover {
     background-color: rgb(177, 37, 37);
 }
 
@@ -202,7 +200,7 @@ padding: 1rem;
 
 
 .guardar {
-    
+
     border-radius: 3px;
     cursor: pointer;
     border: none;
@@ -210,14 +208,16 @@ padding: 1rem;
     padding: .8rem;
     background-color: white;
     color: rgb(0, 158, 251);
-    border:1px solid rgb(0, 158, 251);
-    transition: background  .8s;
-    
+    border: 1px solid rgb(0, 158, 251);
+    transition: background .8s;
+
 }
-.guardar:hover{
-    background-color:rgb(0, 158, 251);
+
+.guardar:hover {
+    background-color: rgb(0, 158, 251);
     color: white;
 }
+
 .producto__tabla {
     font-size: 14px;
     overflow-x: auto;
@@ -241,7 +241,7 @@ padding: 1rem;
 
 @media screen and (min-width: 768px) {
     .tabla {
-     width: 100%;
+        width: 100%;
     }
 
 }
@@ -250,7 +250,7 @@ padding: 1rem;
 .tabla__head {
     background-color: #00c1c8;
     border-bottom: solid 5px #007579;
-    color: white;        
+    color: white;
     font-family: 'Gotham Black';
 
 }
@@ -264,7 +264,7 @@ padding: 1rem;
 }
 
 .tabla__celda {
-    
+
     padding: .2rem;
 }
 
@@ -282,26 +282,30 @@ padding: 1rem;
     font-size: 1rem;
 }
 
-.editar_b{
-   background-color: orange;
-   border: none;
-   padding: .8rem;
-   border-radius: 3px;
-   transition: background .8s;
+.editar_b {
+    background-color: orange;
+    border: none;
+    padding: .8rem;
+    border-radius: 3px;
+    transition: background .8s;
 }
-.editar_b:hover{
+
+.editar_b:hover {
     background-color: rgb(185, 125, 14);
 }
-.eliminar_b{
+
+.eliminar_b {
     background-color: red;
     border: none;
     padding: .8rem;
     border-radius: 3px;
     transition: background .8s;
 }
-.eliminar_b:hover{
+
+.eliminar_b:hover {
     background-color: rgb(175, 13, 13)
 }
+
 .items {
     display: flex;
 }
@@ -323,34 +327,37 @@ padding: 1rem;
 
 
 
-.text_label{
+.text_label {
     font-size: 14px;
 }
+
 @media screen and (min-width: 768px) {
-    .text_label{
+    .text_label {
         font-size: 1rem;
     }
 }
 
-.tabla__fila:nth-child(odd):not(:first-child){
+.tabla__fila:nth-child(odd):not(:first-child) {
     background-color: #f0f0f0;
 }
 
 
-.tabla__fila:hover:not(:first-child){
+.tabla__fila:hover:not(:first-child) {
     background-color: rgba(63, 150, 156, 0.5);
     color: white;
 }
 
-.tabla__celda{border: solid 1px black;
+.tabla__celda {
+    border: solid 1px black;
     padding: 0 20px;
     height: 50px;
-    
+
 }
 
-.t{
+.t {
     height: 30px;
 }
+
 .display__nuevo {
     display: block;
     top: 0;
