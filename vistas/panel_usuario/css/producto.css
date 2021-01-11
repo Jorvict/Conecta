@@ -258,9 +258,15 @@ label{
 
 }
 
+.tabla{
+    border-radius: 15px 15px 15px 15px;
+    overflow: hidden;
+    border-collapse: collapse;
+}
+
 .tabla,
 .tabla__celda {
-    border: solid 1px black;
+    border: solid 1px white; /* espaciado */
     padding: 0 20px;
     height: 50px;
 
@@ -351,7 +357,7 @@ label{
 }
 
 .tabla__celda {
-    border: solid 1px black;
+    border: solid 1px #c1c1c1;
     padding: 0 20px;
     height: 50px;
 
