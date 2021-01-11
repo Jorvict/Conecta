@@ -4,7 +4,9 @@
   box-sizing: border-box;
   
 }
-
+body {
+  background: #f6f6f6;
+}
 figure,
 body {
   margin: 0;
@@ -37,12 +39,12 @@ body {
 } */
 
 .header {
-  flex: .9;
+ width: 190px;
   display: flex;
   flex-direction: column;
   border: 0.5px solid #c7c2c2;
   border-top: none;
-  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
   position: relative;
 }
 
@@ -72,7 +74,7 @@ body {
 
 .nav {
   flex: 1;
-  padding-top: 2.5rem;
+  padding-top: 3rem;
  
 }
 
@@ -125,6 +127,7 @@ body {
   border-top: none;
   box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
   position: relative;
+  margin-bottom: .3rem;
 }
 .menuHo.initial{
   position: initial;
@@ -152,7 +155,7 @@ body {
 }
 .ver__tienda2{
   text-decoration: none;
-  color:black;
+  color: #868686;
   font-size: 16px;
   text-align: center;
 }
@@ -161,7 +164,7 @@ body {
   .ver__tienda2{
     display: none;
     font-size: 1rem;
-    color: #464646;
+    
   }
 }
 
@@ -198,6 +201,7 @@ body {
 .menuHo__nombre {
   align-self: center;
   font-family: 'Myriad Pro';
+  color: #868686;
 }
 
 .icono {
@@ -451,6 +455,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-left: 1.3rem;
   }
 
   .imagen__submit {
@@ -466,7 +471,7 @@ body {
 
 
 .formulario{
-  background-color: #e5e5e5;
+  background: #f6f6f6;
 }
 
 @media screen and (max-width: 768px){
