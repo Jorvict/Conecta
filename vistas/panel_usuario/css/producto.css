@@ -3,7 +3,10 @@
 *::after {
     box-sizing: border-box;
 }
-
+label{
+    font-weight: 600;
+    font-family: Helvetica, sans-serif;
+}
 .producto {
     padding: .8rem;
 
@@ -150,7 +153,7 @@
     top: -2000px;
     transition: top .6s;
     left: 0;
-    padding: 1.5rem .5rem;
+    padding: 0.2rem .5rem;
 }
 
 @media screen and (min-width: 768px) {
