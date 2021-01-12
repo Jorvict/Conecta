@@ -12,10 +12,6 @@ cancelar.addEventListener("click", () => {
     bloque.classList.remove("display__nuevo")
 })
 
-
-
-
-
 let icono__editar = document.getElementById("icono__editar")
 let cancelar__editar = document.getElementById("cancelar__editar")
 
