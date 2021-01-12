@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mis datos</title>
+  <title>Producto</title>
   <link rel="stylesheet" href="css/datos.css" />
   <link rel="stylesheet" href="css/producto.css" />
   <link rel="stylesheet" href="../../public/fonts/Gotham-Black.otf">
@@ -42,14 +42,13 @@
                 class="fas fa-list-alt"></i> Ver tienda</a> </figcaption>
         </div>
         <a class="ver__tienda1" href="#"><i class="fas fa-list-alt"></i> Ver tienda</a>
-
       </figure>
     </section>
     <section class="producto">
       <h1 class="producto__titulo">Productos</h1>
       <div class="header__main">
         <form action="#" class="producto__form">
-          <label for="" style="color: black;font-size: 18px;">Buscar:</label><br>
+          <label for="" class="buscar">Buscar:</label><br>
           <input type="search" name="buscar" class="form__input">
         </form>
         <a href="#" class="producto__boton" id="nuevoProducto"> <i class="fas fa-list-alt"></i>&#160;Nuevo Producto</a>
@@ -60,7 +59,6 @@
           <form action="#" class="nuevoProducto__form">
             <label for="nombre">Nombre del producto:</label>
             <input style="border:1px solid gray" class="form__item t" type="text" id="nombre" name="nombre_producto">
-
             <div class="form__parte">
               <label for="cantidad">Cantidad:</label>
               <input style="border:1px solid gray" class="form__item t" type="number" id="cantidad">
@@ -68,7 +66,6 @@
                 <label for="medida" class="text_label">Medida:</label><br>
                 <select style="border:1px solid gray;background-color: white;" id="medida" name="medida"
                   class="form__item t">
-
                   <option value="kilo">Kilo(s)</option>
                   <option value="litro">Litro(s)</option>
                   <option value="unidad">Unidad(s)</option>
@@ -86,27 +83,20 @@
                 <input style="border-radius:initial;" type="file" id="imagen" class="form__item" name="imagen">
               </div>
             </div>
-
-
-
             <div class="botonesProducto">
               <a href="#" class="cancelar" id="cancelar"><i class="fas fa-times"></i> Cancelar</a>
               <button type="button" class="form__submit guardar"><i class="fas fa-check"></i> Guardar</button>
-
             </div>
         </div>
         </form>
       </div>
       </div>
-
-
       <div class="nuevo__producto" id="bloque__editar">
         <div class="contenido">
           <h1 class="nuevoProducto">Editar producto</h1>
           <form action="#" class="nuevoProducto__form">
             <label for="nombre">Nombre del producto:</label>
             <input style="border:1px solid gray" class="form__item t" type="text" id="nombre" name="nombre_producto">
-
             <div class="form__parte">
               <label for="cantidad">Cantidad:</label>
               <input style="border:1px solid gray" class="form__item t" type="number" id="cantidad">
@@ -114,13 +104,11 @@
                 <label for="medida" class="text_label">Medida:</label><br>
                 <select style="border:1px solid gray;background-color: white;" id="medida" name="medida"
                   class="form__item t">
-
                   <option value="kilo">Kilo(s)</option>
                   <option value="litro">Litro(s)</option>
                   <option value="unidad">Unidad(s)</option>
                 </select>
               </div>
-
               <label for="precio">Precio:</label>
               <input style="border:1px solid gray" class="form__item t" type="number" id="precio">
               <div class="form__item">
@@ -133,25 +121,19 @@
                 <input style="border-radius:initial;" type="file" id="imagen" class="form__item t" name="imagen">
               </div>
             </div>
-
-
-
             <div class="botonesProducto">
               <a href="#" class="cancelar" id="cancelar__editar"><i class="fas fa-times"></i> Cancelar</a>
               <button type="button" class="form__submit guardar"><i class="fas fa-check"></i> Guardar</button>
-
             </div>
         </div>
         </form>
       </div>
       </div>
       <div class="producto__tabla">
-
         <table class="tabla">
           <colgroup>
             <col span="1" style="width: inherit;">
             <col span="2" style="width: 250px;">
-
           </colgroup>
           <tr class="tabla__fila tabla__head">
             <th class="tabla__celda">Nombre</th>
@@ -159,7 +141,6 @@
             <th class="tabla__celda">Precio</th>
             <th class="tabla__celda">Editar</th>
             <th class="tabla__celda">Eliminar</th>
-
           </tr>
           <tr class="tabla__fila">
             <td class="tabla__celda">Alfreds Futterkiste</td>
@@ -168,7 +149,6 @@
             <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar"
                   class="fas fa-edit editar"></i></button></td>
             <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
-
           </tr>
           <tr class="tabla__fila">
             <td class="tabla__celda">Centro comercial Moctezuma</td>
@@ -177,7 +157,6 @@
             <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar"
                   class="fas fa-edit editar"></i></button></td>
             <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
-
           </tr>
           <tr class="tabla__fila">
             <td class="tabla__celda">Ernst Handel</td>
@@ -186,7 +165,6 @@
             <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar"
                   class="fas fa-edit editar"></i></button></td>
             <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
-
           </tr>
           <tr class="tabla__fila">
             <td class="tabla__celda">Island Trading</td>
@@ -195,7 +173,6 @@
             <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar"
                   class="fas fa-edit editar"></i></button></td>
             <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
-
           </tr>
           <tr class="tabla__fila">
             <td class="tabla__celda">Island Trading</td>
@@ -216,23 +193,9 @@
     </section>
   </main>
   <script src="js/menu.js">
-    const menu = document.querySelector('.nav');
-    console.log(menu);
-    const menuButton = document.querySelector('.burger-button');
-    console.log(menuButton);
-
-    function ShowHideMenu() {
-      if (menu.classList.contains('is-active')) {
-        menu.classList.remove('is-active');
-      } else {
-        menu.classList.add('is-active');
-      }
-    }
-    menuButton.addEventListener('click', ShowHideMenu)
   </script>
   <script src="js/producto.js
   "></script>
-
 </body>
 
 </html>
