@@ -176,17 +176,13 @@ body {
     color: #868686;
   }
 }
-<<<<<<< HEAD
 .ver__tienda1,
 .ver__tienda2{
   font-family: 'Myriad Pro';
 }
-.ver__tienda1:hover,.ver__tienda2:hover{
-=======
 
 .ver__tienda1:hover,
 .ver__tienda2:hover {
->>>>>>> 1083d58bc1dbde6284441b221d6c52d77086797b
   color: rgb(0, 178, 187);
 
 }
