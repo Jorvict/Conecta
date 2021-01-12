@@ -3,16 +3,24 @@
 *::after {
     box-sizing: border-box;
 }
-label{
+
+label {
     font-weight: 600;
     font-family: Helvetica, sans-serif;
+    font-size: 14px;
 }
+
 .producto {
     padding: .8rem;
 
 }
 
 @media screen and (min-width: 768px) {
+
+    label {
+        font-size: 1rem;
+    }
+
     .producto {
         padding-left: 40px;
         padding-top: 40px;
@@ -49,8 +57,6 @@ label{
 
 }
 
-
-
 .producto__boton {
     padding: .3rem;
     color: white;
@@ -79,7 +85,6 @@ label{
     }
 
 }
-
 
 .nuevo__producto {
 
@@ -170,7 +175,7 @@ label{
 }
 
 .botonesProducto {
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: flex-end;
 }
@@ -200,7 +205,6 @@ label{
     }
 
 }
-
 
 .guardar {
 
@@ -258,7 +262,7 @@ label{
 
 }
 
-.tabla{
+.tabla {
     border-radius: 5px 5px 5px 5px;
     overflow: hidden;
     border-collapse: collapse;
@@ -266,7 +270,8 @@ label{
 
 .tabla,
 .tabla__celda {
-    border: solid 1px white; /* espaciado */
+    border: solid 1px white;
+    /* espaciado */
     padding: 0 20px;
     height: 50px;
 
@@ -370,4 +375,10 @@ label{
 .display__nuevo {
     display: block;
     top: 0;
+}
+
+.buscar {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
 }
