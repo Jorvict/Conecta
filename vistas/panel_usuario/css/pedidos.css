@@ -22,7 +22,6 @@
 
 .titulo{
     display: flex;
-    margin-bottom: 20px;
 }
 
 .titulo .cont-titulo{
@@ -76,7 +75,6 @@
     border: none;
     width: 285px;
     height: 30px;
-    padding: 0 20px;
     border: 0.5px solid grey;
 }
 

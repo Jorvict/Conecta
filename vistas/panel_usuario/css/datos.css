@@ -33,11 +33,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* .container{
-  width: 100%;
-  max-width: 1366px;
-} */
-
 .header {
  width: 190px;
   display: flex;
@@ -77,9 +72,6 @@ body {
   padding-top: 3rem;
  
 }
-
-
-
 
 .menu {
   list-style: none;
@@ -175,8 +167,10 @@ body {
     color: #868686;
   }
 }
-
-
+.ver__tienda1,
+.ver__tienda2{
+  font-family: 'Myriad Pro';
+}
 .ver__tienda1:hover,.ver__tienda2:hover{
   color: rgb(0, 178, 187);
 
