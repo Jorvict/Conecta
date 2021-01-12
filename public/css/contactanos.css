@@ -1,3 +1,15 @@
+*{box-sizing: border-box;margin: 0;
+    font-family:  Helvetica, sans-serif;}
+  
+      
+      
+      @font-face{
+        font-family:'Gotham Black';
+        src: url('../../../public/fonts/Gotham-Black.otf');
+      }
+
+
+
 section#t-principal {
 	overflow: hidden;
     width: 97%;
@@ -15,4 +27,12 @@ h4#categoria {
 section#contendido{
     margin-top: 10px;
     width: 100%;
+}
+
+.main__contacto{
+    display: flex;
+    flex-direction: column;
+}
+.form{display: flex;
+    flex-direction: column;
 }
