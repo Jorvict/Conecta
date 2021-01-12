@@ -27,7 +27,8 @@
     width: 500px;
     height: 600px;
     margin-top: 20px;
-    background-color: #e5e5e5;
+    /* background-color: #e5e5e5; */
+    background-color: white;
     border-radius: 10px;
     overflow: hidden;
     font-family: Helvetica, sans-serif;
@@ -36,21 +37,29 @@
 .form-container .frm-product .close-container{
     width: 100%;
     height: 50px;
-    background-color: orange;
+    background-color: #00c1c8;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding-right: 20px;
     margin-bottom: 20px;
 }
 
-.form-container .frm-product .close-container span{
+.form-container .frm-product .close-container .close-title{
+    position: relative;
+    left: 20px;
+    font-size: 18px;
+    font-weight: 900;
+    color: black;
+}
+
+.form-container .frm-product .close-container .close-button{
     font-size: 18px;
     font-weight: 900;
     color: #555555;
     cursor: pointer;
 }
-.form-container .frm-product .close-container span:hover{
+.form-container .frm-product .close-container .close-button:hover{
     color: black;
 }
 
@@ -61,7 +70,7 @@
 
 .form-container .frm-product .body-frm-container .img-container{
     width: 100%;
-    height: 38%;
+    height: 30%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -76,7 +85,8 @@
 }
 
 .form-container .frm-product .body-frm-container .comments-container{
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
+    background-color: white;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -92,17 +102,26 @@
 
 .form-container .frm-product .body-frm-container .comments-container h3{
     justify-content: flex-start;
+    color: rgb(0, 178, 187);
+    font-family: 'Helvetica', 'sans-serif';
+    font-weight: 600;
 }
 
+.form-container .frm-product .body-frm-container .comments-container input,
 .form-container .frm-product .body-frm-container .comments-container textarea{
     width: 90%;
     resize: none;
     border: 1px solid #ced4da;
     border-radius: 5px;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
+.form-container .frm-product .body-frm-container .comments-container textarea{
+    margin-bottom: 25px;
+}
+
+.form-container .frm-product .body-frm-container .comments-container input:focus,
 .form-container .frm-product .comments-container textarea:focus{
     border-color: #80bdff;
     outline: 0;
@@ -116,13 +135,14 @@
 }
 
 .form-container .frm-product .comments-container .buttons-container button{
-    width: 30%;
+    width: 35%;
     height: 40px;
     border-radius: 5px;
     color: white;
     border: none;
     cursor: pointer;
     font-size: 18px;
+    transition: .8s;
 }
 .form-container .frm-product .comments-container .buttons-container button:focus{
     outline: none;
@@ -143,11 +163,16 @@
 }
 
 .form-container .frm-product .comments-container .buttons-container button.btn-confirmar{
-    background-color: rgb(29, 206, 29);
+    border: 1px solid rgb(0, 158, 251);
+    background-color: white;
+    color: rgb(0, 158, 251);
 }
 .form-container .frm-product .comments-container .buttons-container button.btn-confirmar:hover{
-    background-color: rgb(25, 175, 25);
+    background-color: rgb(0, 158, 251);
+    color: white;
+    
 }
 .form-container .frm-product .comments-container .buttons-container button.btn-confirmar:focus{
-    background-color: rgb(20, 138, 20);
+    /* background-color: rgb(0, 114, 180);
+    color: white; */
 }
