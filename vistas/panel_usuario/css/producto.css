@@ -259,7 +259,7 @@ label{
 }
 
 .tabla{
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 5px 5px 5px 5px;
     overflow: hidden;
     border-collapse: collapse;
 }
