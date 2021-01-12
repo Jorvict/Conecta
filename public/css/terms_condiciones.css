@@ -1,0 +1,18 @@
+section#t-principal {
+	overflow: hidden;
+    width: 97%;
+    box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.75);
+    margin: 0 auto;
+}
+
+h4#categoria {
+    color: #00c1c8;
+    text-align: center;
+    font-family:'Gotham';
+    font-size: 32px;
+}
+
+section#contendido{
+    margin-top: 10px;
+    width: 100%;
+}
