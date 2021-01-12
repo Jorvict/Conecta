@@ -271,7 +271,6 @@ label {
 .tabla,
 .tabla__celda {
     border: solid 1px white;
-    /* espaciado */
     padding: 0 20px;
     height: 50px;
 
