@@ -109,20 +109,8 @@
     </section>
   </main>
 
-  <script>
-    const menu = document.querySelector('.nav');
-    console.log(menu);
-    const menuButton = document.querySelector('.burger-button');
-    console.log(menuButton);
-
-    function ShowHideMenu() {
-      if (menu.classList.contains('is-active')) {
-        menu.classList.remove('is-active');
-      } else {
-        menu.classList.add('is-active');
-      }
-    }
-    menuButton.addEventListener('click', ShowHideMenu)
+  <script src="js/menu.js">
+    
   </script>
 </body>
 

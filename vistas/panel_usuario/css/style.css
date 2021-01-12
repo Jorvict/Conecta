@@ -209,3 +209,41 @@ figure, body {
     padding-left: 1rem;
   }
 }
+
+
+
+.ver__tienda1{
+  text-decoration: none;
+  color:black;
+  font-size: 16px;
+  text-align: center;
+  display: none;
+}
+.ver__tienda2{
+  text-decoration: none;
+  color: #868686;
+  font-size: 16px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .ver__tienda2{
+    display: none;
+    font-size: 1rem;
+    
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ver__tienda1{
+    display: block;
+    font-size: 1rem;
+    color: #868686;
+  }
+}
+
+
+.ver__tienda1:hover,.ver__tienda2:hover{
+  color: rgb(0, 178, 187);
+
+}
