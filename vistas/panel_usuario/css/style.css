@@ -127,6 +127,7 @@ figure, body {
     display: flex; }
   .menuHo__nombre {
     font-family: 'Myriad Pro';
+    color: #868686;
     align-self: center; }
 
 .icono {
