@@ -1,49 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mis datos</title>
-  <link rel="stylesheet" href="css/datos.css" />
-  <link rel="stylesheet" href="../../public/fonts/Gotham-Black.otf">
-  <script src="https://kit.fontawesome.com/c702fce202.js" crossorigin="anonymous"></script>
-</head>
+<?php
+include 'header.php';
+?>
 
 <body class="body">
-  <header class="header">
-    <div class="burger-button">
-      <i class="fas fa-bars"></i>
-    </div>
-    <figure class="header__logo"><img class="header__img" src="image/logo1.PNG" alt="logo de la empresa" /></figure>
-    <nav class="nav">
-      <ul class="menu">
-        <li class="menu__item"><a class="menu__link" href="index.html"> <i class="fas fa-home icono"></i>Inicio</a></li>
-        <li class="menu__item"><a class="menu__link" href="datos.html"> <i class="fas fa-id-card-alt icono"></i>Mis
-            datos</a>
-        </li>
-        <li class="menu__item"><a class="menu__link" href="producto.html"> <i
-              class="fas fa-shopping-basket icono"></i></i>Productos</a></li>
-        <li class="menu__item"><a class="menu__link" href="pedidos.html"> <i
-              class="fas fa-pen-square icono"></i>Pedidos</a></li>
-        <li class="menu__item"><a class="menu__link" href="ventas.html"><i class="fas fa-file-invoice-dollar icono"
-              aria-hidden="true"></i>Ventas</a></li>
-        <li class="menu__item"><a class="menu__link" href="#"> <i class="fas fa-door-open icono"></i>Salir</a></li>
-      </ul>
-    </nav>
-  </header>
+  <?php include 'menu.html'; ?>
   <main class="main">
-    <section class="menuHo initial">
-      <figure class="menuHo__usuario">
-        <div class="menuHo__usuarioSection">
-          <img class="menuHo__img" src="image/usuario.jpg" alt="usuario" />
-
-          <figcaption class="menuHo__nombre"> Maria Alaya Torres<br><br><a class="ver__tienda2" href="#"><i
-                class="fas fa-list-alt"></i> Ver tienda</a> </figcaption>
-        </div>
-        <a class="ver__tienda1" href="#"><i class="fas fa-list-alt"></i> Ver tienda</a>
-      </figure>
-    </section>
+    <?php include 'superior.php'; ?>
     <section class="formulario">
       <form action="#" class="datos">
         <h1 class="datos__titulo">Mis datos</h1>
@@ -96,8 +58,7 @@
           <input class="datos__form" type="url" placeholder="URL instagram" name="instagram">
           <section class="imagen">
             <figure class="imagen__logo">
-              <img style="width: 70%;margin: 0 auto;display: block;" src="image/logo1.PNG" alt="logo"
-                class="imagen__img1">
+              <img style="width: 70%;margin: 0 auto;display: block;" src="image/logo1.PNG" alt="logo" class="imagen__img1">
             </figure>
             <div class="indicacion">
               <p class="indicacion__texto">Sube tu logo en JPG o PNG, peso máximo de 1Mb. Tamaño sugerido 180 x 180

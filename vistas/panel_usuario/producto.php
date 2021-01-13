@@ -1,49 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Productos</title>
-  <link rel="stylesheet" href="css/datos.css" />
-  <link rel="stylesheet" href="css/producto.css" />
-  <link rel="stylesheet" href="../../public/fonts/Gotham-Black.otf">
-  <script src="https://kit.fontawesome.com/c702fce202.js" crossorigin="anonymous"></script>
-</head>
-
+<?php
+include 'header.php';
+?>
 <body class="body">
-  <header class="header">
-    <div class="burger-button">
-      <i class="fas fa-bars"></i>
-    </div>
-    <figure class="header__logo"><img class="header__img" src="image/logo1.PNG" alt="logo de la empresa" /></figure>
-    <nav class="nav">
-      <ul class="menu">
-        <li class="menu__item"><a class="menu__link" href="index.html"> <i class="fas fa-home icono"></i>Inicio</a></li>
-        <li class="menu__item"><a class="menu__link" href="datos.html"> <i class="fas fa-id-card-alt icono"></i>Mis
-            datos</a>
-        </li>
-        <li class="menu__item"><a class="menu__link" href="producto.html"> <i
-              class="fas fa-shopping-basket icono"></i></i>Productos</a></li>
-        <li class="menu__item"><a class="menu__link" href="pedidos.html"> <i
-              class="fas fa-pen-square icono"></i>Pedidos</a></li>
-        <li class="menu__item"><a class="menu__link" href="ventas.html"><i class="fas fa-file-invoice-dollar icono"
-              aria-hidden="true"></i>Ventas</a></li>
-        <li class="menu__item"><a class="menu__link" href="#"> <i class="fas fa-door-open icono"></i>Salir</a></li>
-      </ul>
-    </nav>
-  </header>
+  <?php include 'menu.html'; ?>
   <main class="main">
-    <section class="menuHo initial">
-      <figure class="menuHo__usuario">
-        <div class="menuHo__usuarioSection">
-          <img class="menuHo__img" src="image/usuario.jpg" alt="usuario" />
-          <figcaption class="menuHo__nombre">Maria Alaya Torres<br><br><a class="ver__tienda2" href="#"><i
-                class="fas fa-list-alt"></i> Ver tienda</a> </figcaption>
-        </div>
-        <a class="ver__tienda1" href="#"><i class="fas fa-list-alt"></i> Ver tienda</a>
-      </figure>
-    </section>
+    <?php include 'superior.php'; ?>
     <section class="producto">
       <h1 class="producto__titulo">Productos</h1>
       <div class="header__main">
@@ -64,8 +25,7 @@
               <input style="border:1px solid gray" class="form__item t" type="number" id="cantidad">
               <div class="form__item">
                 <label for="medida" class="text_label">Medida:</label><br>
-                <select style="border:1px solid gray;background-color: white;" id="medida" name="medida"
-                  class="form__item t">
+                <select style="border:1px solid gray;background-color: white;" id="medida" name="medida" class="form__item t">
                   <option value="kilo">Kilo(s)</option>
                   <option value="litro">Litro(s)</option>
                   <option value="unidad">Unidad(s)</option>
@@ -102,8 +62,7 @@
               <input style="border:1px solid gray" class="form__item t" type="number" id="cantidad">
               <div class="form__item">
                 <label for="medida" class="text_label">Medida:</label><br>
-                <select style="border:1px solid gray;background-color: white;" id="medida" name="medida"
-                  class="form__item t">
+                <select style="border:1px solid gray;background-color: white;" id="medida" name="medida" class="form__item t">
                   <option value="kilo">Kilo(s)</option>
                   <option value="litro">Litro(s)</option>
                   <option value="unidad">Unidad(s)</option>
@@ -146,40 +105,35 @@
             <td class="tabla__celda">Alfreds Futterkiste</td>
             <td class="tabla__celda">5</td>
             <td class="tabla__celda">80.00</td>
-            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar"
-                  class="fas fa-edit editar"></i></button></td>
+            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
             <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
           </tr>
           <tr class="tabla__fila">
             <td class="tabla__celda">Centro comercial Moctezuma</td>
             <td class="tabla__celda">5</td>
             <td class="tabla__celda">80.00</td>
-            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar"
-                  class="fas fa-edit editar"></i></button></td>
+            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
             <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
           </tr>
           <tr class="tabla__fila">
             <td class="tabla__celda">Ernst Handel</td>
             <td class="tabla__celda">5</td>
             <td class="tabla__celda">80.00</td>
-            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar"
-                  class="fas fa-edit editar"></i></button></td>
+            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
             <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
           </tr>
           <tr class="tabla__fila">
             <td class="tabla__celda">Island Trading</td>
             <td class="tabla__celda">5</td>
             <td class="tabla__celda">80.00</td>
-            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar"
-                  class="fas fa-edit editar"></i></button></td>
+            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
             <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
           </tr>
           <tr class="tabla__fila">
             <td class="tabla__celda">Island Trading</td>
             <td class="tabla__celda">10</td>
             <td class="tabla__celda">80.00</td>
-            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar"
-                  class="fas fa-edit editar"></i></button></td>
+            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
             <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
           </tr>
         </table>
@@ -192,10 +146,8 @@
       </div>
     </section>
   </main>
-  <script src="js/menu.js">
-  </script>
-  <script src="js/producto.js
-  "></script>
+  <script src="js/menu.js"></script>
+  <script src="js/producto.js"></script>
 </body>
 
 </html>
