@@ -65,6 +65,18 @@ body .form-container-product .form-product .left{
     padding-left: 10px;
 }
 
+body .form-container-product .form-product .left h2{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #00c1c8;
+    font-weight: 600;
+    font-size: 32px;
+    font-family: 'Myriad Pro';
+    display: none;
+}
+
 body .form-container-product .form-product .left .container-elements-left{
     height: 95%;
 }
@@ -241,6 +253,14 @@ body .form-container-product .form-product .btn-container .enviar-venta{
     padding:10px;
     font-size: 20px;
     border-radius: 20px;
+    font-family: 'Myriad Pro';
+    font-weight: 600;
+}
+
+body .form-container-product .form-product .btn-container .enviar-venta:hover{
+    background-color: #c8eff0;
+    color: orange;
+    transition: .3s;
 }
 
 body .form-container-product .form-product .btn-container .enviar-venta:focus{
@@ -250,18 +270,50 @@ body .form-container-product .form-product .btn-container .enviar-venta:focus{
 @media screen and (max-width: 425px){
     body .form-container-product .form-product{
         display: block;
+        width: 98%;
         height: 700px;
         margin-top: 70px;
+        overflow: scroll;
+    }
+
+    body .form-container-product .form-product .header-form-product{
+        position: fixed;
+        width: 98%;
     }
 
     body .form-container-product .form-product .left{
-        height: 25%;
+        /* height: 25%; */
+        width: 100%;
+        padding-left: 0;
+        margin-bottom: 20px;
+        padding-top: 60px;
+    }
+
+    body .form-container-product .form-product .left .container-elements-left .slider-container{
+        width: 95%;
+    }
+
+    body .form-container-product .form-product .left .description-form-product{
+        width: 95%;
+    }
+
+    body .form-container-product .form-product .left h2{
+        display: block;
     }
 
     body .form-container-product .form-product .right{
-        width: 90%;
+        width: 100%;
         height: auto;
-        margin: auto
+        margin: auto;
+        padding-bottom: 20px;
+    }
+
+    body .form-container-product .form-product .right h2{
+        display: none;
+    }
+
+    body .form-container-product .form-product .right .big-container .cont-item{
+        width: 100%;
     }
 
     body .form-container-product .form-product .right .big-container .enviar-venta{
@@ -270,8 +322,15 @@ body .form-container-product .form-product .btn-container .enviar-venta:focus{
     }
 }
 
+
+@media screen and (max-width: 320px){
+    body .form-container-product .form-product .btn-container .enviar-venta{
+        width: 35%;
+    }
+}
+
 @media screen and (max-width: 320px){
     body .form-container-product .form-product .left{
-        height: 30%;
+        /* height: 30%; */
     }
 }
