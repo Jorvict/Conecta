@@ -2141,6 +2141,7 @@ CREATE TABLE `empresas`  (
   `Telefono` varchar(9) NOT NULL,
   `Whatsapp` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Facebook` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Instangram` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Estado` bool DEFAULT TRUE NOT NULL,
   PRIMARY KEY (`RucEmpresa`) USING BTREE,
   CONSTRAINT `empresa_fk1` FOREIGN KEY (`IdCategoria`) REFERENCES `categorias`(`IdCategoria`) ON DELETE RESTRICT ON UPDATE CASCADE,
@@ -2155,9 +2156,9 @@ CREATE TABLE `productos`  (
   `RucEmpresa` varchar(11) NOT NULL,
   `NomProducto` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Descripcion` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Precio` double NOT NULL,
+  `Precio` decimal(7,2) NOT NULL,
   `Stock` int(50) NOT NULL,
-  `Imagen` longblob NOT NULL,
+  `Imagen` longblob,
   PRIMARY KEY (`IdProducto`) USING BTREE,
   CONSTRAINT `productos_fk1` FOREIGN KEY (`RucEmpresa`) REFERENCES `empresas`(`RucEmpresa`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
@@ -2233,5 +2234,54 @@ BEGIN
 END $$
 DELIMITER ;
 
--- call registrarEmpresa('prueba@gmail.com','123','12345678901','Negocio',1,'Av.Perú','Esteban','955597838');
-select * from empresas;
+call registrarEmpresa('prueba@gmail.com','123','11111111111','Negocio',1,'Av.Perú','Esteban','955597838');
+
+DELIMITER $$
+CREATE PROCEDURE agregarProducto(
+IN RucEmpresa varchar(11),
+	NomProducto varchar(150),
+    Descripcion varchar(1000),
+    Precio decimal(7,2),
+    Stock int)
+BEGIN 
+	INSERT INTO `productos`(`RucEmpresa`,`NomProducto`,`Descripcion`,`Precio`,`Stock`)
+    VALUES(RucEmpresa,NomProducto,Descripcion,Precio,Stock);
+END $$
+DELIMITER ;
+
+call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,100);
+
+DELIMITER $$
+CREATE PROCEDURE productosByRuc(
+IN RucEmpresa varchar(11))
+BEGIN 
+	SELECT `NomProducto`,`Descripcion`,`Precio` FROM `productos` WHERE `RucEmpresa` = RucEmpresa ;
+END $$
+DELIMITER ;
+
+call productosByRuc('11111111111');
+
+DELIMITER $$
+CREATE PROCEDURE showEmpresa(
+IN RucEmpresa varchar(11))
+BEGIN 
+	SELECT `NomEmpresa`,`Logo`,`Descripcion`,`Telefono`,`Facebook`,`Instangram`,`Direccion` 
+    FROM `empresas` WHERE `RucEmpresa` = RucEmpresa;
+END $$
+DELIMITER ;
+
+call showEmpresa('11111111111');
+
+DELIMITER $$
+CREATE PROCEDURE empresasByCategoria(
+IN IdCategoria int)
+BEGIN 
+	SELECT `RucEmpresa`,`NomEmpresa`,`Logo` 
+    FROM `empresas` WHERE `IdCategoria` = IdCategoria;
+END $$
+DELIMITER ;
+
+call empresasByCategoria(1);
+
+
+
