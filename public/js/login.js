@@ -13,3 +13,14 @@ function HideLogin(){
     login.classList.remove('is-activel')
 }
 closeButtonLogin.addEventListener('click', HideLogin);
+
+function CheckLogin() {
+	const email = $("#correologin").val(),
+		clave = $("#contrasenalogin").val(),
+		url = "../index.php?f=login",
+		parametros = {
+			email: email,
+			clave: clave,
+		};
+	return getFormValues(url, parametros);
+}
