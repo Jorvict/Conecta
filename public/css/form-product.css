@@ -10,7 +10,8 @@ body .form-container-product{
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
-    font-family: 'Source Sans Pro', sans-serif;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    font-family: 'Helvetica';
     position: fixed;
     z-index: 55;
     top: -2000px;
@@ -152,7 +153,7 @@ body .form-container-product .form-product .right h2{
     color: #00c1c8;
     font-weight: 600;
     font-size: 32px;
-    font-family: 'Helvetica';
+    font-family: 'Myriad Pro';
 }
 
 body .form-container-product .form-product .right .big-container{
@@ -196,6 +197,7 @@ body .form-container-product .form-product .right .big-container .cont-item.big 
     padding: 0px 20px;
     font-weight: 600;
     /* font-family: 'Gotham'; Aqui va fuente de campos formulario */
+    font-family: 'Helvetica';
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75)
 }
 
@@ -221,7 +223,7 @@ body .form-container-product .form-product .right .big-container .cont-item.big 
 body .form-container-product .form-product .right .big-container .cont-item.big textarea{
     height: 90px;
     padding: 10px 20px;
-    font-family: 'Source Sans Pro', sans-serif;
+    /* font-family: 'Source Sans Pro', sans-serif; */
 }
 
 body .form-container-product .form-product .btn-container{
