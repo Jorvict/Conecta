@@ -221,7 +221,7 @@ section.titulo{
 section.titulo h2{
  	font-size: 2rem;
  	color: #00b2bb;
-    font-family: 'Marker Felt';
+    font-family: 'Gotham';
 }
 
 
@@ -581,6 +581,7 @@ button#b{
 
     section.titulocoti h2 {
         font-size: 23px;
+        font-family: 'Gotham';
     }
 
     section.abastece {
