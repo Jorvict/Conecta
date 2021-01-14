@@ -12,7 +12,7 @@ if (@$_GET['f']) {
                 $_SESSION['ubicacion'] = ($e->DepProvByDistrito((int)$result['Distrito']));
             }
         }
-        echo json_encode($result);
+        echo json_encode($_SESSION['empresa']);
     } else {
         echo $result;
     }

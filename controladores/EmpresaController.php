@@ -36,7 +36,7 @@ class EmpresaController {
             // DATOS INCORRECTOS
             return ['bool' => false, 'error' => 'datosIncorrectos'];
         }
-        if (count($this->modelo->buscarByRuc($ruc)) == 0) {
+        if (empty($this->modelo->buscarByRuc($ruc))) {
             $empresa = new Empresa($email,$clave,$ruc,$negocio,$id_categoria,$direccion,$titular,$celular);
             return ($this->modelo->registrarEmpresa($empresa)) ?
                     $this->modelo->loginEmpresa($email,$clave) :
@@ -97,14 +97,9 @@ class EmpresaController {
         if (empty($e->descripcion) || empty($e->direccion) || (int)$_POST['departamento'] == 0 || strlen($e->telefono) != 9 || strlen($e->whatsapp) > 9) {
             return ['bool' => false, 'msg' => 'datosIncorrectos'];
         }
-        if ($this->modelo->actualizarEmpresa($e)) {
-            $array = $this->modelo->buscarByRuc($e->ruc);
-            $array['bool'] = true;
-            $array['msg'] = 'exito';
-            return $array;
-        } else {
-            ['bool' => true, 'msg' => 'problemaSQL'];
-        }
+        return ($this->modelo->actualizarEmpresa($e)) ?
+                $this->modelo->buscarByRuc($e->ruc) :
+                ['bool' => true, 'msg' => 'problemaSQL'];
     }
     function DepProvByDistrito(int $distrito){
         return $this->modelo->DepProvByDistrito($distrito);

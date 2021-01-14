@@ -2,36 +2,7 @@ let dep = $("#departamento"),
 	prov = $("#provincia"),
 	dist = $("#distrito");
 
-dep.load(
-	"../../index.php?f=listarDepartamentos&phpDep=" + $("#phpDepartamento").val(),
-	function () {
-		if ($(this).val() == 0) {
-			prov.html('<option value="0">Seleccione una provincia...</option>');
-			dist.html('<option value="0">Seleccione un distrito...</option>');
-			prov.attr("disabled", true);
-			dist.attr("disabled", true);
-		} else {
-			prov.removeAttr("disabled");
-			dist.removeAttr("disabled");
-			prov.load(
-				"../../index.php?f=listarProvincias&idDep=" +
-					$(this).val() +
-					"&phpProv=" +
-					$("#phpProvincia").val(),
-				function () {
-					dist.load(
-						"../../index.php?f=listarDistritos&idProv=" +
-							$(this).val() +
-							"&phpDist=" +
-							$("#phpDistrito").val()
-					);
-				}
-			);
-		}
-	}
-);
-
-dep.change(function () {
+function updateSelects() {
 	if ($(this).val() == 0) {
 		prov.html('<option value="0">Seleccione una provincia...</option>');
 		dist.html('<option value="0">Seleccione un distrito...</option>');
@@ -45,26 +16,25 @@ dep.change(function () {
 				$(this).val() +
 				"&phpProv=" +
 				$("#phpProvincia").val(),
-			function () {
-				dist.load(
-					"../../index.php?f=listarDistritos&idProv=" +
-						$(this).val() +
-						"&phpDist=" +
-						$("#phpDistrito").val()
-				);
-			}
+			loadDistritos
 		);
 	}
-});
-
-prov.change(function () {
+}
+function loadDistritos() {
 	dist.load(
 		"../../index.php?f=listarDistritos&idProv=" +
 			$(this).val() +
 			"&phpDist=" +
 			$("#phpDistrito").val()
 	);
-});
+}
+
+dep.load(
+	"../../index.php?f=listarDepartamentos&phpDep=" + $("#phpDepartamento").val(),
+	updateSelects
+);
+dep.change(updateSelects);
+prov.change(loadDistritos);	
 
 function validateNumber(event) {
 	let unicode = event.keyCode || event.which;
@@ -110,7 +80,7 @@ function CheckDatos() {
 					msg = "Hubo un problema en el registro";
 					icon = "error";
 					break;
-				case "exito":
+				default:
 					msg = "Información de empresa actualizada";
 					icon = "success";
 					break;
