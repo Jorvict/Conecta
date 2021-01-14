@@ -20,47 +20,36 @@
 
 	<link rel="stylesheet" href="../public/css/formulario.css">
 	<link rel="stylesheet" href="../public/css/login.css">
+	<link rel="stylesheet" href="../public/datatables/datatables.min.css">
+	<link rel="stylesheet" href="../public/datatables/DataTables-1.10.23/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" href="../public/css/sweetalert2.min.css">
+
 </head>
 
 <body>
 
 	<div class="page-container">
 		<div class="form-container">
-			<form action="" class="form-registro">
+			<form action="../vistas/panel_usuario/index.php" onsubmit="return CheckRegistro()" class="form-registro" method="POST">
 				<h4>Registro</h4>
 				<span class="close-button">x</span>
 
-				<input class="controles" type="email" name="correo" id="correo" placeholder="Correo electrónico">
+				<input class="controles" type="email" name="correo" id="correo" placeholder="Correo electrónico" required>
 
-				<input class="controles" type="email" name="contrasena" id="contrasena" placeholder="Contraseña">
+				<input class="controles" type="password" name="contrasena" id="contrasena" placeholder="Contraseña" required>
 
-				<input class="controles" type="number" name="ruc" id="ruc" placeholder="RUC del negocio">
+				<input class="controles" type="text" name="ruc" id="ruc" placeholder="RUC del negocio" onkeydown="return validateNumber(event)" maxlength="11" required>
 				
-				<input class="controles" type="text" name="negocio" id="negocio" placeholder="Nombre del negocio">
+				<input class="controles" type="text" name="negocio" id="negocio" placeholder="Nombre del negocio" required>
 
-				<select name="tip-categorias" id="tip-categorias" class="tip-categorias">
-					<option value="Seleccione">Seleccione una categoría...</option>
-					<option value="Ropa y Textil">Ropa y textil</option>
-					<option value="Abarrotes">Abarrotes</option>
-					<option value="Restaurantes">Restaurantes</option>
-					<option value="Salud">Salud</option>
-					<option value="Pasteleria">Pastelería</option>
-					<option value="Cuero y calzado">Cuero y calzado</option>
-					<option value="Ferreteria">Ferretería</option>
-					<option value="Frutas y versuras">Frutas y verduras</option>
-					<option value="Utiles de oficina">Útiles de oficina</option>
-					<option value="Mascota">Mascota</option>
-					<option value="Iluminacion">Iluminación</option>
-					<option value="Decoracion">Decoración</option>
-					<option value="Otros">Otros</option>
-				</select>
+				<select name="tip-categorias" id="tip-categorias" class="tip-categorias"></select>
 
 				<input class="controles" type="text" name="direccion" id="direccion"
-					placeholder="Dirección o referencia ">
+					placeholder="Dirección o referencia" required>
 
-				<input class="controles" type="text" name="nombre" id="nombre" placeholder="Nombre del titular">
-
-				<input class="controles" type="number" name="numero" id="numero" placeholder="Número de celular">
+					<input class="controles" type="text" name="nombre" id="nombre" placeholder="Nombre del titular" required>
+					
+					<input class="controles" type="text" name="numero" id="numero" placeholder="Número de celular" onkeydown="return validateNumber(event)" maxlength="9" required>
 				
 				<div class="btn-container">
 					<input class="boton" type="submit" value="REGISTRARSE">
@@ -69,12 +58,12 @@
 		</div>
 
 		<div class="login-container">
-			<form action="" class="form-login">
+			<form action="../vistas/panel_usuario/index.php" onsubmit="return CheckLogin()" class="form-login" method="POST">
 				<h4>Iniciar sesión</h4>
 				<span class="close-button-login">x</span>
 
-				<input class="controles" type="email" name="correologin" id="correologin" placeholder="Correo electrónico">
-				<input class="controles" type="email" name="contrasenalogin" id="contrasenalogin" placeholder="Contraseña">
+				<input class="controles" type="email" name="correologin" id="correologin" placeholder="Correo electrónico" required>
+	            <input class="controles" type="password" name="contrasenalogin" id="contrasenalogin" placeholder="Contraseña" required>
 
 				<input class="boton" type="submit" value="INGRESAR">
 			</form>
@@ -546,7 +535,8 @@
 	</div>
 
 	<!-- jQuery and JS bundle w/ Popper.js -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="../public/plugins/jquery-3.5.1.min.js"></script>
+	<script src="../public/plugins/sweetalert2.all.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" src="../public/js/menu.js" ></script>
 	<script type="text/javascript" src="../public/js/form_registro.js"></script>

@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['empresa'])) {
+  header('Location: ../../vistas/index.html');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,12 +26,12 @@
         <figure class="header__logo"><img class="header__img" src="image/logo1.PNG" alt="logo de la empresa"/></figure>
         <nav class="nav">
           <ul class="menu">
-            <li class="menu__item"><a class="menu__link" href="./index.html"> <i class="fas fa-home icono"></i>Inicio</a></li>
+            <li class="menu__item"><a class="menu__link" href="./index.php"> <i class="fas fa-home icono"></i>Inicio</a></li>
             <li class="menu__item"><a class="menu__link" href="./datos.html"> <i class="fas fa-id-card-alt icono"></i>Mis datos</a></li>
             <li class="menu__item"><a class="menu__link" href="./producto.html"> <i class="fas fa-shopping-basket icono"></i></i>Productos</a></li>
             <li class="menu__item"><a class="menu__link" href="./pedidos.html"> <i class="fas fa-pen-square icono"></i>Pedidos</a></li>
             <li class="menu__item"><a class="menu__link" href="./ventas.html"> <i class="fas fa-file-invoice-dollar icono"></i>Ventas</a></li>
-            <li class="menu__item"><a class="menu__link" href="#"> <i class="fas fa-door-open icono"></i>Salir</a></li>
+            <li class="menu__item"><a class="menu__link" href="../../index.php?cerrarSesion="> <i class="fas fa-door-open icono"></i>Salir</a></li>
           </ul>
         </nav>
       </header>
@@ -35,7 +41,7 @@
             <div class="menuHo__usuarioSection">
             <img class="menuHo__img" src="image/usuario.jpg" alt="usuario" />
        
-            <figcaption class="menuHo__nombre"> Maria Alaya Torres<br><br><a class="ver__tienda2" href="#"><i class="fas fa-list-alt"></i> Ver tienda</a> </figcaption></div>
+            <figcaption class="menuHo__nombre"><?php echo $_SESSION['empresa']['NomTitular'] ?><br><br><a class="ver__tienda2" href="#"><i class="fas fa-list-alt"></i> Ver tienda</a> </figcaption></div>
             <a class="ver__tienda1" href="#"><i class="fas fa-list-alt"></i> Ver tienda</a>
             
           </figure>
