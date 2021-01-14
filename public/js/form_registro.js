@@ -25,7 +25,7 @@ function validateNumber(event) {
 	return correctKey;
 }
 
-function getFormValues(url, parametros) {
+function getFormResponse(url, parametros) {
 	let result;
 	$.ajax({
 		data: parametros,
@@ -72,7 +72,7 @@ function CheckRegistro() {
 			titular: $("#nombre").val(),
 			telefono: $("#numero").val(),
 		};
-		return getFormValues(url, parametros);
+		return getFormResponse(url, parametros);
 }
 
 $('#tip-categorias').load("../index.php?f=listarCategorias");

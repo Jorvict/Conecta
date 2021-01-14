@@ -65,7 +65,7 @@ DROP TABLE IF EXISTS `provincia`;
 CREATE TABLE `provincia`  (
   `IdProvincia` int(11) NOT NULL AUTO_INCREMENT,
   `Provincia` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `IdDepartamento` int(11) NOT NULL,
+  `IdDepartamento` int NOT NULL,
   PRIMARY KEY (`IdProvincia`) USING BTREE,
   CONSTRAINT `provincia_fk1` FOREIGN KEY (`IdDepartamento`) REFERENCES `departamentos`(`IdDepartamento`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE = InnoDB AUTO_INCREMENT = 2505 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
@@ -2136,7 +2136,7 @@ CREATE TABLE `empresas`  (
   `NomTitular` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `EmailEmp` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Direccion` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Distrito` int(11) NOT NULL DEFAULT 1,
+  `Distrito` int(11) DEFAULT null,
   `EmailPers` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Telefono` varchar(9) NOT NULL,
   `Whatsapp` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
@@ -2220,7 +2220,7 @@ select * from categorias
 
 DELIMITER $$
 CREATE PROCEDURE registrarEmpresa(
-	in emailEmp varchar(50),
+	in emailPers varchar(50),
     clave varchar(255),
 	ruc varchar(11),
 	empresa varchar(50),
@@ -2229,12 +2229,12 @@ CREATE PROCEDURE registrarEmpresa(
 	titular varchar(50),
 	telefono varchar(9))
 BEGIN
-	insert into empresas(`EmailEmp`,`Contrasena`,`RucEmpresa`,`NomEmpresa`,`IdCategoria`,`Direccion`,`NomTitular`,`Telefono`)
-    values (emailEmp,clave,ruc,empresa,id_categoria,direccion,titular,telefono);
+	insert into empresas(`EmailPers`,`Contrasena`,`RucEmpresa`,`NomEmpresa`,`IdCategoria`,`Direccion`,`NomTitular`,`Telefono`)
+    values (emailPers,clave,ruc,empresa,id_categoria,direccion,titular,telefono);
 END $$
 DELIMITER ;
 
-call registrarEmpresa('prueba@gmail.com','123','11111111111','Negocio',1,'Av.Perú','Esteban','955597838');
+-- call registrarEmpresa('prueba@gmail.com','123','11111111111','Negocio',1,'Av.Perú','Esteban','955597838');
 
 DELIMITER $$
 CREATE PROCEDURE agregarProducto(
@@ -2249,13 +2249,13 @@ BEGIN
 END $$
 DELIMITER ;
 
-call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,100);
+-- call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,100);
 
 DELIMITER $$
 CREATE PROCEDURE productosByRuc(
-IN RucEmpresa varchar(11))
+IN RucEmp varchar(11))
 BEGIN 
-	SELECT `NomProducto`,`Descripcion`,`Precio` FROM `productos` WHERE `RucEmpresa` = RucEmpresa ;
+	SELECT `NomProducto`,`Descripcion`,`Precio` FROM `productos` WHERE `RucEmpresa` = RucEmp ;
 END $$
 DELIMITER ;
 
@@ -2263,10 +2263,10 @@ call productosByRuc('11111111111');
 
 DELIMITER $$
 CREATE PROCEDURE showEmpresa(
-IN RucEmpresa varchar(11))
+IN RucEmp varchar(11))
 BEGIN 
 	SELECT `NomEmpresa`,`Logo`,`Descripcion`,`Telefono`,`Facebook`,`Instangram`,`Direccion` 
-    FROM `empresas` WHERE `RucEmpresa` = RucEmpresa;
+    FROM `empresas` WHERE `RucEmpresa` = RucEmp;
 END $$
 DELIMITER ;
 
@@ -2274,14 +2274,70 @@ call showEmpresa('11111111111');
 
 DELIMITER $$
 CREATE PROCEDURE empresasByCategoria(
-IN IdCategoria int)
+IN IdCat int)
 BEGIN 
 	SELECT `RucEmpresa`,`NomEmpresa`,`Logo` 
-    FROM `empresas` WHERE `IdCategoria` = IdCategoria;
+    FROM `empresas` WHERE `IdCategoria` = IdCat;
 END $$
 DELIMITER ;
 
 call empresasByCategoria(1);
 
+DELIMITER $$
+CREATE PROCEDURE provinciaByDepartamento(
+IN IdDep int)
+BEGIN 
+	SELECT * FROM `provincia` WHERE `IdDepartamento` = IdDep;
+END $$
+DELIMITER ;
 
+call provinciaByDepartamento(2);
 
+DELIMITER $$
+CREATE PROCEDURE distritoByProvincia(
+IN IdProv int)
+BEGIN 
+	SELECT * FROM `distritos` WHERE `IdProvincia` = IdProv;
+END $$
+DELIMITER ;
+
+call distritoByProvincia(2);
+
+DELIMITER $$
+CREATE PROCEDURE actualizarEmpresa(
+	in ruc varchar(11),
+    emailEmp varchar(50),
+    descripcion varchar(1000),
+	direccion varchar(100),
+    distrito int,
+	telefono varchar(9),
+    whatsapp varchar(11),
+    facebook varchar(200),
+    instangram varchar(200))
+BEGIN
+	update `empresas` set `EmailEmp` = emailEmp,
+						`Descripcion` = descripcion,
+                        `Distrito` = distrito,
+                        `Direccion` = direccion,
+                        `Telefono` = telefono,
+                        `Whatsapp` = whatsapp,
+                        `Facebook` = facebook,
+                        `Instangram` = instangram
+	where `RucEmpresa` = ruc; 
+END $$
+DELIMITER ;
+
+-- call actualizarEmpresa('11111111111','esteban@gmail.com','Descripción','Av. Perú',2,'955597838','955597838','esteban@gmail.com','esteban@gmail.com');
+
+DELIMITER $$
+CREATE PROCEDURE DepProvByDistrito(
+IN IdDist int)
+BEGIN 
+	SELECT de.IdDepartamento,p.IdProvincia,di.IdDistrito FROM `distritos` di
+    INNER JOIN `provincia` p ON p.IdProvincia = di.IdProvincia
+    INNER JOIN `departamentos` de ON de.IdDepartamento = p.IdDepartamento
+    WHERE di.IdDistrito = IdDist;
+END $$
+DELIMITER ;
+
+call DepProvByDistrito(1500);

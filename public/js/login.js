@@ -22,5 +22,5 @@ function CheckLogin() {
 			email: email,
 			clave: clave,
 		};
-	return getFormValues(url, parametros);
+	return getFormResponse(url, parametros);
 }

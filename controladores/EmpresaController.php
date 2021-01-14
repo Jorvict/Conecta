@@ -36,7 +36,7 @@ class EmpresaController {
             // DATOS INCORRECTOS
             return ['bool' => false, 'error' => 'datosIncorrectos'];
         }
-        if ($this->modelo->buscarByRuc($ruc) == 0) {
+        if (count($this->modelo->buscarByRuc($ruc)) == 0) {
             $empresa = new Empresa($email,$clave,$ruc,$negocio,$id_categoria,$direccion,$titular,$celular);
             return ($this->modelo->registrarEmpresa($empresa)) ?
                     $this->modelo->loginEmpresa($email,$clave) :
@@ -53,6 +53,61 @@ class EmpresaController {
             $options.= '<option value='.$cat['IdCategoria'].'>'.$cat['nombre'].'</option>';
         }
         return $options;
+    }
+    function listarDepartamentos(){
+        $departamentos = $this->modelo->listarDepartamentos();
+        $options = '<option value="0">Seleccione un departamento...</option>';
+        foreach ($departamentos as $dep) {
+            $selected = ($_GET['phpDep'] == $dep['IdDepartamento']) ? ' selected' : '';
+            $options.= '<option value='.$dep['IdDepartamento'].$selected.'>'.$dep['Departamento'].'</option>';
+        }
+        return $options;
+    }
+    function listarProvincias(){
+        $idDep = $_GET['idDep'];
+        $provincias = $this->modelo->listarProvincias($idDep);
+        $options = '';
+        foreach ($provincias as $prov) {
+            $selected = ($_GET['phpProv'] == $prov['IdProvincia']) ? ' selected' : '';
+            $options.= '<option value='.$prov['IdProvincia'].$selected.'>'.$prov['Provincia'].'</option>';
+        }
+        return $options;
+    }
+    function listarDistritos(){
+        $idProv = $_GET['idProv'];
+        $distritos = $this->modelo->listarDistritos($idProv);
+        $options = '';
+        foreach ($distritos as $dist) {
+            $selected = ($_GET['phpDist'] == $dist['IdDistrito']) ? ' selected' : '';
+            $options.= '<option value='.$dist['IdDistrito'].$selected.'>'.$dist['Distrito'].'</option>';
+        }
+        return $options;
+    }
+    function actualizarDatos(){
+        $e = new Empresa();
+        $e->ruc = $_POST['ruc'];
+        $e->emailEmp = str_replace(" ","",$_POST['email']);
+        $e->descripcion = trim($_POST['descripcion']);
+        $e->direccion = trim($_POST['direccion']);
+        $e->distrito = (int)$_POST['distrito'];
+        $e->telefono = $_POST['telefono'];
+        $e->whatsapp = $_POST['whatsapp'];
+        $e->facebook = trim($_POST['facebook']);
+        $e->instagram = trim($_POST['instagram']);
+        if (empty($e->descripcion) || empty($e->direccion) || (int)$_POST['departamento'] == 0 || strlen($e->telefono) != 9 || strlen($e->whatsapp) > 9) {
+            return ['bool' => false, 'msg' => 'datosIncorrectos'];
+        }
+        if ($this->modelo->actualizarEmpresa($e)) {
+            $array = $this->modelo->buscarByRuc($e->ruc);
+            $array['bool'] = true;
+            $array['msg'] = 'exito';
+            return $array;
+        } else {
+            ['bool' => true, 'msg' => 'problemaSQL'];
+        }
+    }
+    function DepProvByDistrito(int $distrito){
+        return $this->modelo->DepProvByDistrito($distrito);
     }
 }
 ?>
