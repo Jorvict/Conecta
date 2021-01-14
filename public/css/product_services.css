@@ -92,6 +92,7 @@ main .left-section .info-emp .container-sticky{
     margin-top: 190px;
     position: sticky;
     top: 40px;
+    font-family: 'Helvetica';
 }
 
 main .left-section .info-emp .container-sticky .description{
@@ -117,6 +118,7 @@ main .left-section .info-emp .container-sticky .recomendaciones{
 
 main .left-section .info-emp .container-sticky .recomendaciones .titulo{
     color: #00c7ce;
+    font-family: 'Myriad Pro';
 }
 
 main .left-section .info-emp .container-sticky .recomendaciones .docker-imgs{
@@ -154,8 +156,8 @@ main .right-section .title-products{
     width: 100%;
     text-align: center;
     font-size: 24px;
-    font-family: 'Source Sans Pro';
-    font-weight: 700;
+    font-family: 'Myriad Pro';
+    font-weight: 600;
     color: #00c7ce;
 }
 
