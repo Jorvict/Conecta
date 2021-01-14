@@ -10,7 +10,6 @@ body .form-container-product{
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
-    /* font-family: 'Source Sans Pro', sans-serif; */
     font-family: 'Helvetica';
     position: fixed;
     z-index: 55;
@@ -21,14 +20,12 @@ body .form-container-product{
 
 .form-container-product.is-activep{
     top: 0;
-    /* overflow: scroll; */
 }
 
 body .form-container-product .form-product{
     width: 980px;
     height: 600px;
     border-radius: 10px;
-    /* background-color: #e5e5e5; */
     background-color: white;
     margin-top: 30px;
     overflow: hidden;
@@ -92,7 +89,6 @@ body .form-container-product .form-product .left .container-elements-left .slide
     margin: 0 auto;
     margin-bottom: 15px;
     border-radius: 12px;
-    /* display: flex; */
 }
 
 body .form-container-product .form-product .left .container-elements-left .slider-container .slider{
@@ -131,10 +127,11 @@ body .form-container-product .form-product .left .container-elements-left .slide
 
 body .form-container-product .form-product .left .container-elements-left .slider-container .slider .controls-container button i{
     font-size: 50px;
-    color: rgba(245, 245, 245, 0.6);
+    color: rgba(255, 157, 0, 0.7);
+    
 }
 body .form-container-product .form-product .left .container-elements-left .slider-container .slider .controls-container button i:hover{
-    color: rgb(156, 156, 156)
+    color: rgba(255, 157, 0, 1);
 }
 
 body .form-container-product .form-product .left .container-elements-left .slider-container .slider .carousel_slide{
@@ -168,7 +165,6 @@ body .form-container-product .form-product .left .container-elements-left .slide
 body .form-container-product .form-product .left .description-form-product{
     width: 420px;
     height: 30%;
-    /* border: 1px solid #f5f5f5; */
     border: 1px solid #ced4da;
     border-radius: 12px;
     display: flex;
@@ -188,8 +184,6 @@ body .form-container-product .form-product .left .description-form-product .cont
 body .form-container-product .form-product .left .description-form-product .container-elements-product h2{
     font-size: 24px;
     font-family: 'Myriad Pro';
-    /* font-weight: 600; */
-    /* margin-bottom: 10px; */
     color: #00c1c8;
 }
 
@@ -210,13 +204,11 @@ body .form-container-product .form-product .left .description-form-product .cont
     font-weight: 900;
 }
 
-
 /* Sección right */
 body .form-container-product .form-product .right{
     width: 50%;
     height: 500px;
     margin: 0 auto;
-    /* background-color: #f5f5f5; */
 }
 
 body .form-container-product .form-product .right h2{
@@ -270,7 +262,6 @@ body .form-container-product .form-product .right .big-container .cont-item.big 
     border-radius: 5px;
     padding: 0px 20px;
     font-weight: 600;
-    /* font-family: 'Gotham'; Aqui va fuente de campos formulario */
     font-family: 'Helvetica';
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75)
 }
@@ -297,7 +288,6 @@ body .form-container-product .form-product .right .big-container .cont-item.big 
 body .form-container-product .form-product .right .big-container .cont-item.big textarea{
     height: 90px;
     padding: 10px 20px;
-    /* font-family: 'Source Sans Pro', sans-serif; */
 }
 
 body .form-container-product .form-product .btn-container{
@@ -320,7 +310,7 @@ body .form-container-product .form-product .btn-container .enviar-venta{
 }
 
 body .form-container-product .form-product .btn-container .enviar-venta:hover{
-    background-color: #c8eff0;
+    background-color: rgba(0, 178, 187, 1);
     color: orange;
     transition: .3s;
 }
@@ -337,7 +327,6 @@ body .form-container-product .form-product .btn-container .enviar-venta:focus{
     body .form-container-product .form-product{
         display: block;
         width: 95%;
-        /* height: 700px; */
         height: auto;
         margin-top: 70px;
         overflow: scroll;
