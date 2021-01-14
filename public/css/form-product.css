@@ -21,6 +21,7 @@ body .form-container-product{
 
 .form-container-product.is-activep{
     top: 0;
+    /* overflow: scroll; */
 }
 
 body .form-container-product .form-product{
@@ -65,7 +66,7 @@ body .form-container-product .form-product .left{
     padding-left: 10px;
 }
 
-body .form-container-product .form-product .left h2{
+body .form-container-product .form-product .left .title-mobile{
     width: 100%;
     text-align: center;
     margin-top: 10px;
@@ -268,17 +269,23 @@ body .form-container-product .form-product .btn-container .enviar-venta:focus{
 }
 
 @media screen and (max-width: 425px){
+    .form-container-product.is-activep{
+        padding-bottom: 20px;
+    }
+
     body .form-container-product .form-product{
         display: block;
-        width: 98%;
-        height: 700px;
+        width: 95%;
+        /* height: 700px; */
+        height: auto;
         margin-top: 70px;
         overflow: scroll;
     }
 
     body .form-container-product .form-product .header-form-product{
         position: fixed;
-        width: 98%;
+        width: 95%;
+        border-radius: 10px 10px 0px 0px;
     }
 
     body .form-container-product .form-product .left{
@@ -297,8 +304,9 @@ body .form-container-product .form-product .btn-container .enviar-venta:focus{
         width: 95%;
     }
 
-    body .form-container-product .form-product .left h2{
+    body .form-container-product .form-product .left .title-mobile{
         display: block;
+        font-size: 30px;
     }
 
     body .form-container-product .form-product .right{
