@@ -146,8 +146,4 @@ include 'header.php';
       </div>
     </section>
   </main>
-  <script src="js/menu.js"></script>
-  <script src="js/producto.js"></script>
-</body>
-
-</html>
+  <?php include 'footer.php'; ?>

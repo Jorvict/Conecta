@@ -1,61 +1,50 @@
-<?php
-include 'header.php';
-?>
+<?php include 'header.php'; ?>
 
 <body class="body">
   <?php include 'menu.html'; ?>
   <main class="main">
     <?php include 'superior.php'; ?>
     <section class="formulario">
-      <form action="#" class="datos">
+      <form class="datos">
         <h1 class="datos__titulo">Mis datos</h1>
         <div class="datos">
-          <input class="datos__form" type="text" placeholder="Nombre" name="nombre">
+          <input class="datos__form" type="text" placeholder="Nombre" name="nombre" value="<?php echo $_SESSION['empresa']['NomTitular'] ?>" readonly>
 
-          <input class="datos__form" type="text" placeholder="Mi empresa" name="mi_empresa">
-          <input class="datos__form" type="email" placeholder="Correo electrónico" name="email">
-          <input class="datos__form" type="email" placeholder="Correo Corporativo" name="email_corporativo">
-          <input class="datos__form" type="password" placeholder="Contraseña" name="contraseña">
-          <input class="datos__form" type="number" placeholder="RUC" name="ruc">
+          <input class="datos__form" type="text" placeholder="Mi empresa" name="mi_empresa" value="<?php echo $_SESSION['empresa']['NomEmpresa'] ?>" readonly>
+          <input class="datos__form" type="email" placeholder="Correo electrónico" name="email" id="emailPers" value="<?php echo $_SESSION['empresa']['EmailPers'] ?>" readonly>
+          <input class="datos__form" type="email" placeholder="Correo Corporativo" name="email_corporativo" id="emailEmp" value="<?php echo $_SESSION['empresa']['EmailEmp'] ?>" required>
+          <input class="datos__form" type="password" placeholder="Contraseña" name="contrasena" value="<?php echo $_SESSION['empresa']['Contrasena'] ?>" readonly>
+          <input class="datos__form" type="text" placeholder="RUC" name="ruc" id="ruc" value="<?php echo $_SESSION['empresa']['RucEmpresa'] ?>" readonly>
           <div class="descripcion">
             <label for="descripcion">Descripción de tu tienda:</label><br>
-            <textarea class="datos__form text_area" id="descripcion" name="descripcion">
-          </textarea>
+            <textarea class="datos__form text_area" id="descripcion" name="descripcion" required><?php echo $_SESSION['empresa']['Descripcion'] ?></textarea>
           </div>
           <div class="selectores">
             <div class="departamento">
               <label for="departamento">Departamento:</label><br>
-              <select class="datos__form texto" id="departamento" name="departamento">
-                <option value="LIMA">LIMA</option>
-                <option value="ICA">ICA</option>
-                <option value="LORETO">LORETO</option>
-                <option value="PIURA">PIURA</option>
-              </select>
+              <input type="text" id="phpDepartamento" value="<?php echo @$_SESSION['ubicacion']['IdDepartamento'] ?>" hidden>
+              <select class="datos__form texto" id="departamento" name="departamento"></select>
             </div>
             <div class="provincia">
               <label for="provincia">Provincia:</label><br>
-              <select class="datos__form texto" id="provincia" name="provincia ">
-                <option value="LIMA">LIMA</option>
-                <option value="ICA">ICA</option>
-                <option value="CALLAO">CALLAO</option>
-                <option value="PIURA">PIURA</option>
+              <input type="text" id="phpProvincia" value="<?php echo @$_SESSION['ubicacion']['IdProvincia'] ?>" hidden>
+              <select class="datos__form texto" id="provincia" name="provincia" disabled>
+                <option value="0">Seleccione una provincia...</option>
               </select>
             </div>
             <div class="distrito ">
               <label for="distrito">Distrito:</label><br>
-              <select class="datos__form texto" id="distrito" name="distrito">
-                <option value="PUENTE PIEDRA">PUENTE PIEDRA</option>
-                <option value="LOS OLIVOS">LOS OLIVOS</option>
-                <option value="ANCON">ANCON</option>
-                <option value="CALLAO">CALLAO</option>
+              <input type="text" id="phpDistrito" value="<?php echo @$_SESSION['ubicacion']['IdDistrito'] ?>" hidden>
+              <select class="datos__form texto" id="distrito" name="distrito" disabled>
+                <option value="0">Seleccione un distrito...</option>
               </select>
             </div>
           </div>
-          <input class="datos__form" type="text" placeholder="Direccion de empresa" name="direccion">
-          <input class="datos__form" type="tel" placeholder="Teléfono" name="telefono">
-          <input class="datos__form" type="tel" placeholder="Whatsapp" name="whatsapp">
-          <input class="datos__form" type="url" placeholder="URL facebook" name="facebook">
-          <input class="datos__form" type="url" placeholder="URL instagram" name="instagram">
+          <input class="datos__form" type="text" placeholder="Direccion de empresa" name="direccion" id="direccion" value="<?php echo $_SESSION['empresa']['Direccion'] ?>" required>
+          <input class="datos__form" type="tel" placeholder="Teléfono" name="telefono" id="telefono" value="<?php echo $_SESSION['empresa']['Telefono'] ?>" onkeydown="return validateNumber(event)" required>
+          <input class="datos__form" type="tel" placeholder="Whatsapp" name="whatsapp" id="whatsapp" value="<?php echo $_SESSION['empresa']['Whatsapp'] ?>" onkeydown="return validateNumber(event)">
+          <input class="datos__form" type="url" placeholder="URL facebook" name="facebook" id="facebook" value="<?php echo $_SESSION['empresa']['Facebook'] ?>">
+          <input class="datos__form" type="url" placeholder="URL instagram" name="instagram" id="instagram" value="<?php echo $_SESSION['empresa']['Instangram'] ?>">
           <section class="imagen">
             <figure class="imagen__logo">
               <img style="width: 70%;margin: 0 auto;display: block;" src="image/logo1.PNG" alt="logo" class="imagen__img1">
@@ -66,14 +55,9 @@ include 'header.php';
               <input class="indicacion__form datos__form" type="file" name="logo">
             </div>
           </section>
-          <input class="imagen__submit" type="submit" value="Guardar datos">
+          <input class="imagen__submit" type="button" id="btnGuardar" value="Guardar datos">
         </div>
       </form>
     </section>
   </main>
-  <script src="js/menu.js">
-
-  </script>
-</body>
-
-</html>
+  <?php include 'footer.php'; ?>

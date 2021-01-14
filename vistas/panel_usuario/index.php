@@ -10,8 +10,4 @@ include 'header.php';
       <section class="contenido"></section>
     </main>
   </div>
-
-  <script type="text/javascript" src="./js/menu.js"></script>
-</body>
-
-</html>
+<?php include 'footer.php'; ?>

@@ -129,10 +129,4 @@ include 'header.php';
       </section>
     </main>
   </div>
-
-  <script type="text/javascript" src="./js/menu.js"></script>
-  <script type="text/javascript" src="./js/form-pedido.js"></script>
-
-</body>
-
-</html>
+  <?php include 'footer.php'; ?>

@@ -97,7 +97,4 @@ include 'header.php';
     </main>
   </div>
 
-  <script type="text/javascript" src="./js/menu.js"></script>
-</body>
-
-</html>
+  <?php include 'footer.php'; ?>

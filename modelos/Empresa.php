@@ -3,39 +3,41 @@ require_once 'Conexion.php';
 
 class Empresa {
     private $cnx;
-    public $email,$clave,$ruc,$negocio,$direccion,$titular,$celular;
+    public $emailPers,$clave,$ruc,$nomEmp,$direccion,$titular,$telefono,$descripcion,$logo,$emailEmp,$distrito,$whatsapp,$facebook,$instagram;
+    public bool $estado;
     public int $id,$id_categoria;
 
-    function __construct($email = null,$clave = null,$ruc = null,$negocio = null,$id_categoria = 0,$direccion = null,$titular = null,$celular = null)
+    
+    function __construct($emailPers = null,$clave = null,$ruc = null,$nomEmp = null,$id_categoria = 0,$direccion = null,$titular = null,$telefono = null)
     {
-        $this->email = $email;
+        $this->emailPers = $emailPers;
         $this->clave = $clave;
         $this->ruc = $ruc;
-        $this->negocio = $negocio;
+        $this->nomEmp = $nomEmp;
         $this->id_categoria = $id_categoria;
         $this->direccion = $direccion;
         $this->titular = $titular;
-        $this->celular = $celular;
+        $this->telefono = $telefono;
         $this->cnx = Conexion::conectar();
     }
     function registrarEmpresa(Empresa $e){
         $sql = 'call registrarEmpresa(?,?,?,?,?,?,?,?)';
         $stmt = $this->cnx->prepare($sql);
 
-        $stmt->bindParam(1,$e->email, PDO::PARAM_STR);
+        $stmt->bindParam(1,$e->emailPers, PDO::PARAM_STR);
         $password = password_hash($e->clave,PASSWORD_DEFAULT);
         $stmt->bindParam(2,$password);
         $stmt->bindParam(3,$e->ruc, PDO::PARAM_STR, 11);
-        $stmt->bindParam(4,$e->negocio, PDO::PARAM_STR);
+        $stmt->bindParam(4,$e->nomEmp, PDO::PARAM_STR);
         $stmt->bindParam(5,$e->id_categoria, PDO::PARAM_INT);
         $stmt->bindParam(6,$e->direccion, PDO::PARAM_STR);
         $stmt->bindParam(7,$e->titular, PDO::PARAM_STR);
-        $stmt->bindParam(8,$e->celular, PDO::PARAM_STR, 9);
+        $stmt->bindParam(8,$e->telefono, PDO::PARAM_STR, 9);
 
         return $stmt->execute();
     }
     function loginEmpresa(string $email,string $clave){
-        $sql = "select * from empresas where emailEmp = '{$email}' and Estado = true";
+        $sql = "select * from empresas where emailPers = '{$email}' and Estado = true";
         $stmt = $this->cnx->prepare($sql);
         $stmt->execute();
         $empresa =  $stmt->fetch(PDO::FETCH_ASSOC);
@@ -49,7 +51,7 @@ class Empresa {
         $sql = "select * from empresas where RucEmpresa = '{$ruc}'";
         $stmt = $this->cnx->prepare($sql);
         $stmt->execute(); 
-        return $stmt->rowCount();       
+        return $stmt->fetch(PDO::FETCH_ASSOC);       
     }
     function listarCategorias(){
         $sql = "select * from categorias";
@@ -57,5 +59,44 @@ class Empresa {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    function listarDepartamentos(){
+        $sql = "select * from departamentos";
+        $stmt = $this->cnx->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    function listarProvincias(int $idDep){
+        $sql = "call provinciaByDepartamento(?);";
+        $stmt = $this->cnx->prepare($sql);
+        $stmt->execute(array($idDep));
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    function listarDistritos(int $idProv){
+        $sql = "call distritoByProvincia(?);";
+        $stmt = $this->cnx->prepare($sql);
+        $stmt->execute(array($idProv));
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    function actualizarEmpresa(Empresa $e){
+        $sql = "call actualizarEmpresa(?,?,?,?,?,?,?,?,?);";
+        $stmt = $this->cnx->prepare($sql);
+
+        $stmt->bindParam(1,$e->ruc, PDO::PARAM_STR,11);
+        $stmt->bindParam(2,$e->emailEmp, PDO::PARAM_STR);
+        $stmt->bindParam(3,$e->descripcion, PDO::PARAM_STR);
+        $stmt->bindParam(4,$e->direccion, PDO::PARAM_STR);
+        $stmt->bindParam(5,$e->distrito, PDO::PARAM_INT);
+        $stmt->bindParam(6,$e->telefono, PDO::PARAM_STR,9);
+        $stmt->bindParam(7,$e->whatsapp, PDO::PARAM_STR,9);
+        $stmt->bindParam(8,$e->facebook, PDO::PARAM_STR);
+        $stmt->bindParam(9,$e->instagram, PDO::PARAM_STR);
+
+        return $stmt->execute();
+    }
+    function DepProvByDistrito(int $distrito){
+        $sql = "call DepProvByDistrito(?);";
+        $stmt = $this->cnx->prepare($sql);
+        $stmt->execute(array($distrito));
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
-?>
