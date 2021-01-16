@@ -2331,7 +2331,7 @@ BEGIN
 END $$
 DELIMITER ;
 
-/*call agregarProducto('11111111111','AProducto','Lorem ipsus',10.5,10);
+call agregarProducto('11111111111','AProducto','Lorem ipsus',10.5,10);
 call agregarProducto('11111111111','CProducto','Lorem ipsus',15.5,100);
 call agregarProducto('11111111111','BProducto','Lorem ipsus',12.5,50);
 call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,40);
@@ -2340,7 +2340,7 @@ call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,100);
 call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,100);
 call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,100);
 call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,100);
-call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,100);*/
+call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,100);
 
 DELIMITER $$
 CREATE PROCEDURE productosByRuc(
@@ -2419,7 +2419,9 @@ BEGIN
     SET SQL_SAFE_UPDATES = 0;
 END $$
 DELIMITER ;
-call actualizarEmpresa('11111111111','esteban@gmail.com','Descripción','Av. Perú','070104','955597838','955597838','esteban@gmail.com','esteban@gmail.com');
+
+-- call actualizarEmpresa('11111111111','esteban@gmail.com','Descripción','Av. Perú','070104','955597838','955597838','esteban@gmail.com','esteban@gmail.com');
+
 DELIMITER $$
 CREATE PROCEDURE DepProvByDistrito(
 IN IdDist varchar(6))
