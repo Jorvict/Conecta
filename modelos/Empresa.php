@@ -65,13 +65,13 @@ class Empresa {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    function listarProvincias(int $idDep){
+    function listarProvincias($idDep){
         $sql = "call provinciaByDepartamento(?);";
         $stmt = $this->cnx->prepare($sql);
         $stmt->execute(array($idDep));
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    function listarDistritos(int $idProv){
+    function listarDistritos($idProv){
         $sql = "call distritoByProvincia(?);";
         $stmt = $this->cnx->prepare($sql);
         $stmt->execute(array($idProv));
@@ -85,7 +85,7 @@ class Empresa {
         $stmt->bindParam(2,$e->emailEmp, PDO::PARAM_STR);
         $stmt->bindParam(3,$e->descripcion, PDO::PARAM_STR);
         $stmt->bindParam(4,$e->direccion, PDO::PARAM_STR);
-        $stmt->bindParam(5,$e->distrito, PDO::PARAM_INT);
+        $stmt->bindParam(5,$e->distrito, PDO::PARAM_STR);
         $stmt->bindParam(6,$e->telefono, PDO::PARAM_STR,9);
         $stmt->bindParam(7,$e->whatsapp, PDO::PARAM_STR,9);
         $stmt->bindParam(8,$e->facebook, PDO::PARAM_STR);
@@ -93,7 +93,7 @@ class Empresa {
 
         return $stmt->execute();
     }
-    function DepProvByDistrito(int $distrito){
+    function DepProvByDistrito($distrito){
         $sql = "call DepProvByDistrito(?);";
         $stmt = $this->cnx->prepare($sql);
         $stmt->execute(array($distrito));

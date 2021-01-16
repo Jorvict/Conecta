@@ -5,7 +5,7 @@
   <main class="main">
     <?php include 'superior.php'; ?>
     <section class="formulario">
-      <form class="datos">
+      <form class="datos" id="formDatos">
         <h1 class="datos__titulo">Mis datos</h1>
         <div class="datos">
           <input class="datos__form" type="text" placeholder="Nombre" name="nombre" value="<?php echo $_SESSION['empresa']['NomTitular'] ?>" readonly>
@@ -55,7 +55,7 @@
               <input class="indicacion__form datos__form" type="file" name="logo">
             </div>
           </section>
-          <input class="imagen__submit" type="button" id="btnGuardar" value="Guardar datos">
+          <input class="imagen__submit" type="submit" id="btnGuardar" value="Guardar datos">
         </div>
       </form>
     </section>

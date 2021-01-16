@@ -12,7 +12,7 @@ function updateSelects() {
 		prov.removeAttr("disabled");
 		dist.removeAttr("disabled");
 		prov.load(
-			"../../index.php?f=listarProvincias&idDep=" +
+			"../../index.php?controller=empresa&action=listarProvincias&idDep=" +
 				$(this).val() +
 				"&phpProv=" +
 				$("#phpProvincia").val(),
@@ -22,7 +22,7 @@ function updateSelects() {
 }
 function loadDistritos() {
 	dist.load(
-		"../../index.php?f=listarDistritos&idProv=" +
+		"../../index.php?controller=empresa&action=listarDistritos&idProv=" +
 			$(this).val() +
 			"&phpDist=" +
 			$("#phpDistrito").val()
@@ -30,11 +30,12 @@ function loadDistritos() {
 }
 
 dep.load(
-	"../../index.php?f=listarDepartamentos&phpDep=" + $("#phpDepartamento").val(),
+	"../../index.php?controller=empresa&action=listarDepartamentos&phpDep=" +
+		$("#phpDepartamento").val(),
 	updateSelects
 );
 dep.change(updateSelects);
-prov.change(loadDistritos);	
+prov.change(loadDistritos);
 
 function validateNumber(event) {
 	let unicode = event.keyCode || event.which;
@@ -48,7 +49,7 @@ function validateNumber(event) {
 }
 
 function CheckDatos() {
-	const url = "../../index.php?f=actualizarDatos",
+	const url = "../../index.php?controller=empresa&action=actualizarDatos",
 		parametros = {
 			ruc: $("#ruc").val(),
 			emailPers: $("#emailPers").val(),
@@ -69,8 +70,10 @@ function CheckDatos() {
 		type: "POST",
 		async: false,
 		success: function (response) {
-			let json = JSON.parse(response);
-			let msg, icon;
+			let msg,
+				icon,
+				json = JSON.parse(response);
+			result = json.bool;
 			switch (json.msg) {
 				case "datosIncorrectos":
 					msg = "Datos incorrectos o incompletos";
@@ -83,6 +86,7 @@ function CheckDatos() {
 				default:
 					msg = "Información de empresa actualizada";
 					icon = "success";
+					result = true;
 					break;
 			}
 			Swal.fire({
@@ -92,7 +96,6 @@ function CheckDatos() {
 			});
 		},
 	});
+	return false;
 }
-$("#btnGuardar").click(function () {
-	CheckDatos();
-});
+$("#formDatos").submit(CheckDatos);

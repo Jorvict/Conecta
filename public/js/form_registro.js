@@ -61,7 +61,7 @@ function getFormResponse(url, parametros) {
 	return result;
 }
 function CheckRegistro() {
-	const url = "../index.php?f=registro",
+	const url = "../index.php?controller=empresa&action=registro",
 		parametros = {
 			email: $("#correo").val(),
 			clave: $("#contrasena").val(),
@@ -75,5 +75,5 @@ function CheckRegistro() {
 		return getFormResponse(url, parametros);
 }
 
-$('#tip-categorias').load("../index.php?f=listarCategorias");
+$('#tip-categorias').load("../index.php?controller=empresa&action=listarCategorias");
 

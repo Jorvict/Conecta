@@ -16,6 +16,10 @@ if (!isset($_SESSION['empresa'])) {
   <link rel="stylesheet" href="css/form-pedido.css">
   <link rel="stylesheet" href="css/datos.css">
   <link rel="stylesheet" href="css/producto.css">
+  <link rel="stylesheet" href="../../public/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../public/css/sweetalert2.min.css">
+  <link rel="stylesheet" href="../../public/plugins/datatables/datatables.min.css">
+  <link rel="stylesheet" href="../../public/plugins/datatables/DataTables-1.10.23/css/dataTables.bootstrap4.min.css">
 
   <script src="https://kit.fontawesome.com/c702fce202.js" crossorigin="anonymous"></script>
 

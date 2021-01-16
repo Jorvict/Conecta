@@ -1,6 +1,7 @@
 <?php
 include 'header.php';
 ?>
+
 <body class="body">
   <?php include 'menu.html'; ?>
   <main class="main">
@@ -56,28 +57,28 @@ include 'header.php';
           <h1 class="nuevoProducto">Editar producto</h1>
           <form action="#" class="nuevoProducto__form">
             <label for="nombre">Nombre del producto:</label>
-            <input style="border:1px solid gray" class="form__item t" type="text" id="nombre" name="nombre_producto">
+            <input style="border:1px solid gray" class="form__item t" type="text" id="nombreEditar" name="nombre_producto">
             <div class="form__parte">
               <label for="cantidad">Cantidad:</label>
-              <input style="border:1px solid gray" class="form__item t" type="number" id="cantidad">
+              <input style="border:1px solid gray" class="form__item t" type="number" id="cantidadEditar">
               <div class="form__item">
                 <label for="medida" class="text_label">Medida:</label><br>
-                <select style="border:1px solid gray;background-color: white;" id="medida" name="medida" class="form__item t">
+                <select style="border:1px solid gray;background-color: white;" id="medidaEditar" name="medida" class="form__item t">
                   <option value="kilo">Kilo(s)</option>
                   <option value="litro">Litro(s)</option>
                   <option value="unidad">Unidad(s)</option>
                 </select>
               </div>
               <label for="precio">Precio:</label>
-              <input style="border:1px solid gray" class="form__item t" type="number" id="precio">
+              <input style="border:1px solid gray" class="form__item t" type="number" id="precioEditar">
               <div class="form__item">
                 <label for="descripcion" class="text_label">Descripción del producto:</label><br>
-                <textarea style="border:1px solid gray" class="form__text" id="descripcion" name="descripcion">
+                <textarea style="border:1px solid gray" class="form__text" id="descripcionEditar" name="descripcion">
                 </textarea>
               </div>
               <div class="form__item">
                 <label for="imagen" class="text_label">imagen del poducto:</label><br>
-                <input style="border-radius:initial;" type="file" id="imagen" class="form__item t" name="imagen">
+                <input style="border-radius:initial;" type="file" id="imagenEditar" class="form__item t" name="imagen">
               </div>
             </div>
             <div class="botonesProducto">
@@ -89,19 +90,21 @@ include 'header.php';
         </div>
       </div>
       <div class="producto__tabla">
-        <table class="tabla">
+        <table class="tabla" id="productosTabla">
           <colgroup>
             <col span="1" style="width: inherit;">
             <col span="2" style="width: 250px;">
           </colgroup>
-          <tr class="tabla__fila tabla__head">
-            <th class="tabla__celda">Nombre</th>
-            <th class="tabla__celda">Cantidad disponible</th>
-            <th class="tabla__celda">Precio</th>
-            <th class="tabla__celda">Editar</th>
+          <thead>
+            <tr class="tabla__fila tabla__head">
+              <th class="tabla__celda">Nombre</th>
+              <th class="tabla__celda">Cantidad disponible</th>
+              <th class="tabla__celda">Precio</th>
+              <th class="tabla__celda">Editar</th>
             <th class="tabla__celda">Eliminar</th>
-          </tr>
-          <tr class="tabla__fila">
+            </tr>
+          </thead>
+          <!-- <tr class="tabla__fila">
             <td class="tabla__celda">Alfreds Futterkiste</td>
             <td class="tabla__celda">5</td>
             <td class="tabla__celda">80.00</td>
@@ -135,15 +138,15 @@ include 'header.php';
             <td class="tabla__celda">80.00</td>
             <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
             <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
-          </tr>
+          </tr> -->
         </table>
       </div>
-      <div class="items">
+      <!-- <div class="items">
         <a href="#" class="items__1">Anterior</a>
         <a href="#" class="items__1">1</a>
         <a href="#" class="items__1">2</a>
         <a href="#" class="items__1">Siguiente</a>
-      </div>
+      </div> -->
     </section>
   </main>
   <?php include 'footer.php'; ?>

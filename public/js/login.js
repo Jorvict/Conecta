@@ -17,7 +17,7 @@ closeButtonLogin.addEventListener('click', HideLogin);
 function CheckLogin() {
 	const email = $("#correologin").val(),
 		clave = $("#contrasenalogin").val(),
-		url = "../index.php?f=login",
+		url = "../index.php?controller=empresa&action=login",
 		parametros = {
 			email: email,
 			clave: clave,
