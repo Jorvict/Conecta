@@ -15,29 +15,29 @@ include 'header.php';
         </form>
         <a href="#" class="producto__boton" id="nuevoProducto"> <i class="fas fa-list-alt"></i>&#160;Nuevo Producto</a>
       </div>
-      <div class="nuevo__producto" id="bloque">
+      <div class="form__producto" id="bloque">
         <div class="contenido">
-          <h1 class="nuevoProducto " style="background-color: rgb(0, 158, 251)">Nuevo producto</h1>
-          <form action="#" class="nuevoProducto__form">
+          <h1 class="formProducto">Nuevo producto</h1>
+          <form class="formProducto__form" id="formProducto">
+          <input type="text" id="idProd" hidden>
             <label for="nombre">Nombre del producto:</label>
-            <input style="border:1px solid gray" class="form__item t" type="text" id="nombre" name="nombre_producto">
+            <input style="border:1px solid gray" class="form__item t" type="text" id="nombre" name="nombre_producto" required>
             <div class="form__parte">
               <label for="cantidad">Cantidad:</label>
-              <input style="border:1px solid gray" class="form__item t" type="number" id="cantidad">
+              <input style="border:1px solid gray" class="form__item t" type="text" id="cantidad" required>
               <div class="form__item">
                 <label for="medida" class="text_label">Medida:</label><br>
                 <select style="border:1px solid gray;background-color: white;" id="medida" name="medida" class="form__item t">
-                  <option value="kilo">Kilo(s)</option>
-                  <option value="litro">Litro(s)</option>
-                  <option value="unidad">Unidad(s)</option>
+                  <option value="Kilo(s)">Kilo(s)</option>
+                  <option value="Litro(s)">Litro(s)</option>
+                  <option value="Unidad(es)">Unidad(es)</option>
                 </select>
               </div>
               <label for="precio">Precio:</label>
-              <input style="border:1px solid gray" class="form__item t" type="number" id="precio">
+              <input style="border:1px solid gray" class="form__item t" type="text" id="precio" required>
               <div class="form__item">
                 <label for="descripcion" class="text_label t">Descripción del producto:</label><br>
-                <textarea style="border:1px solid gray" class="form__text" id="descripcion" name="descripcion">
-                </textarea>
+                <textarea style="border:1px solid gray" class="form__text" id="descripcion" name="descripcion" required></textarea>
               </div>
               <div class="form__item">
                 <label for="imagen" class="text_label">imagen del poducto:</label><br>
@@ -46,44 +46,7 @@ include 'header.php';
             </div>
             <div class="botonesProducto">
               <a href="#" class="cancelar" id="cancelar"><i class="fas fa-times"></i> Cancelar</a>
-              <button type="button" class="form__submit guardar"><i class="fas fa-check"></i> Guardar</button>
-            </div>
-
-          </form>
-        </div>
-      </div>
-      <div class="nuevo__producto" id="bloque__editar">
-        <div class="contenido">
-          <h1 class="nuevoProducto">Editar producto</h1>
-          <form action="#" class="nuevoProducto__form">
-            <label for="nombre">Nombre del producto:</label>
-            <input style="border:1px solid gray" class="form__item t" type="text" id="nombreEditar" name="nombre_producto">
-            <div class="form__parte">
-              <label for="cantidad">Cantidad:</label>
-              <input style="border:1px solid gray" class="form__item t" type="number" id="cantidadEditar">
-              <div class="form__item">
-                <label for="medida" class="text_label">Medida:</label><br>
-                <select style="border:1px solid gray;background-color: white;" id="medidaEditar" name="medida" class="form__item t">
-                  <option value="kilo">Kilo(s)</option>
-                  <option value="litro">Litro(s)</option>
-                  <option value="unidad">Unidad(s)</option>
-                </select>
-              </div>
-              <label for="precio">Precio:</label>
-              <input style="border:1px solid gray" class="form__item t" type="number" id="precioEditar">
-              <div class="form__item">
-                <label for="descripcion" class="text_label">Descripción del producto:</label><br>
-                <textarea style="border:1px solid gray" class="form__text" id="descripcionEditar" name="descripcion">
-                </textarea>
-              </div>
-              <div class="form__item">
-                <label for="imagen" class="text_label">imagen del poducto:</label><br>
-                <input style="border-radius:initial;" type="file" id="imagenEditar" class="form__item t" name="imagen">
-              </div>
-            </div>
-            <div class="botonesProducto">
-              <a href="#" class="cancelar" id="cancelar__editar"><i class="fas fa-times"></i> Cancelar</a>
-              <button type="button" class="form__submit guardar"><i class="fas fa-check"></i> Guardar</button>
+              <button type="submit" class="form__submit guardar"><i class="fas fa-check"></i> Guardar</button>
             </div>
 
           </form>
@@ -96,49 +59,14 @@ include 'header.php';
             <col span="2" style="width: 250px;">
           </colgroup>
           <thead>
-            <tr class="tabla__fila tabla__head">
+            <tr id="tabla__head">
               <th class="tabla__celda">Nombre</th>
               <th class="tabla__celda">Cantidad disponible</th>
               <th class="tabla__celda">Precio</th>
               <th class="tabla__celda">Editar</th>
-            <th class="tabla__celda">Eliminar</th>
+              <th class="tabla__celda">Eliminar</th>
             </tr>
           </thead>
-          <!-- <tr class="tabla__fila">
-            <td class="tabla__celda">Alfreds Futterkiste</td>
-            <td class="tabla__celda">5</td>
-            <td class="tabla__celda">80.00</td>
-            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
-            <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
-          </tr>
-          <tr class="tabla__fila">
-            <td class="tabla__celda">Centro comercial Moctezuma</td>
-            <td class="tabla__celda">5</td>
-            <td class="tabla__celda">80.00</td>
-            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
-            <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
-          </tr>
-          <tr class="tabla__fila">
-            <td class="tabla__celda">Ernst Handel</td>
-            <td class="tabla__celda">5</td>
-            <td class="tabla__celda">80.00</td>
-            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
-            <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
-          </tr>
-          <tr class="tabla__fila">
-            <td class="tabla__celda">Island Trading</td>
-            <td class="tabla__celda">5</td>
-            <td class="tabla__celda">80.00</td>
-            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
-            <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
-          </tr>
-          <tr class="tabla__fila">
-            <td class="tabla__celda">Island Trading</td>
-            <td class="tabla__celda">10</td>
-            <td class="tabla__celda">80.00</td>
-            <td class="tabla__celda icono"><button class="editar_b"><i id="icono__editar" class="fas fa-edit editar"></i></button></td>
-            <td class="tabla__celda"><button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button></td>
-          </tr> -->
         </table>
       </div>
       <!-- <div class="items">

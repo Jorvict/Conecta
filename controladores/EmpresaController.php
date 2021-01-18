@@ -92,7 +92,7 @@ class EmpresaController {
         $e->whatsapp = $_POST['whatsapp'];
         $e->facebook = trim($_POST['facebook']);
         $e->instagram = trim($_POST['instagram']);
-        if (empty($e->descripcion) || empty($e->direccion) || empty($e->emailEmp) || $_POST['departamento'] == '0' || strlen($e->telefono) != 9 || strlen($e->whatsapp) > 9) {
+        if (empty($e->descripcion) || empty($e->direccion) || $_POST['departamento'] == '0' || strlen($e->telefono) != 9 || strlen($e->whatsapp) > 9) {
             return ['bool' => false, 'msg' => 'datosIncorrectos'];
         }
         return ($this->modelo->actualizarEmpresa($e)) ?

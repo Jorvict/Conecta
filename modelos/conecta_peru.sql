@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `distritos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `ubigeo_peru_districts`
+-- Volcado de datos para la tabla `distritos`
 --
 
 INSERT INTO `distritos` (`IdDistrito`, `Distrito`, `IdProvincia`, `IdDepartamento`) VALUES
@@ -2240,7 +2240,9 @@ CREATE TABLE `productos`  (
   `Descripcion` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Precio` decimal(7,2) NOT NULL,
   `Stock` int(50) NOT NULL,
+  `Medida` varchar(50) NOT NULL,
   `Imagen` longblob,
+  `Estado` bool default true,
   PRIMARY KEY (`IdProducto`) USING BTREE,
   CONSTRAINT `productos_fk1` FOREIGN KEY (`RucEmpresa`) REFERENCES `empresas`(`RucEmpresa`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -2324,29 +2326,47 @@ IN RucEmpresa varchar(11),
 	NomProducto varchar(150),
     Descripcion varchar(1000),
     Precio decimal(7,2),
+    Medida varchar(50),
     Stock int)
 BEGIN 
-	INSERT INTO `productos`(`RucEmpresa`,`NomProducto`,`Descripcion`,`Precio`,`Stock`)
-    VALUES(RucEmpresa,NomProducto,Descripcion,Precio,Stock);
+	INSERT INTO `productos`(`RucEmpresa`,`NomProducto`,`Descripcion`,`Precio`,`Medida`,`Stock`)
+    VALUES(RucEmpresa,NomProducto,Descripcion,Precio,Medida,Stock);
 END $$
 DELIMITER ;
 
-call agregarProducto('11111111111','AProducto','Lorem ipsus',10.5,10);
-call agregarProducto('11111111111','CProducto','Lorem ipsus',15.5,100);
-call agregarProducto('11111111111','BProducto','Lorem ipsus',12.5,50);
-call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,40);
-call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,70);
-call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,100);
-call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,100);
-call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,100);
-call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,100);
-call agregarProducto('11111111111','Producto','Lorem ipsus',10.5,100);
+-- call agregarProducto('11111111111','AProducto','Lorem ipsus','10.5','Medida',100);
+
+DELIMITER $$
+CREATE PROCEDURE editarProducto(
+IN IdProd int,
+	NomProd varchar(150),
+    Descr varchar(1000),
+    Precio decimal(7,2),
+    Medida varchar(50),
+    Stock int)
+BEGIN 
+	UPDATE `productos` SET `NomProducto` = NomProd,`Descripcion` = Descr,`Precio` = Precio,`Medida` = Medida,`Stock` = Stock
+    WHERE `IdProducto` = IdProd;
+END $$
+DELIMITER ;
+
+-- call editarProducto(2,'ProdEditado','Desc',10.5,'Kilo(s)',95);
+
+DELIMITER $$
+CREATE PROCEDURE eliminarProducto(IN IdProd int)
+BEGIN
+	UPDATE `productos` SET `Estado` = false WHERE `IdProducto` = IdProd;
+END $$
+DELIMITER ;
+
+-- call eliminarProducto(2);
+select * from productos;
 
 DELIMITER $$
 CREATE PROCEDURE productosByRuc(
 IN RucEmp varchar(11))
 BEGIN 
-	SELECT `NomProducto`,`Stock`,`Precio`,`RucEmpresa` FROM `productos` WHERE `RucEmpresa` = RucEmp ;
+	SELECT * FROM `productos` WHERE `RucEmpresa` = RucEmp AND `Estado` = true;
 END $$
 DELIMITER ;
 
@@ -2435,4 +2455,3 @@ DELIMITER ;
 
 call DepProvByDistrito('070101');
 
-select * from empresas;
