@@ -10,7 +10,6 @@ body{
     width: 100%;
 	margin:0;
     padding:0;
-    background-color:rgb(250, 163, 79, 0.3);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -18,7 +17,6 @@ body{
 
 .page-container{
     width: 100%;
-    max-width: 1366px;
     background-color: white;
 }
 
@@ -39,7 +37,8 @@ h4#categoria {
 section#contendido{
     margin-top: 10px;
     width: 100%;
-    }
+    padding: 0 60px;
+}
 
 section#contenedor{
     display: flex;
@@ -94,4 +93,11 @@ img#img {
 
 .cuadros:hover .hover-galeria{
     transform: scale(0);
+}
+
+
+@media screen and (max-width:425px){
+    section#contendido{
+        padding: 0px;
+    }
 }

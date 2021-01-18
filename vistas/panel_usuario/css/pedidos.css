@@ -98,7 +98,7 @@
 }
 
 .table-container table{
-    width: 1050px;
+    width: 100%;
     background-color: white;
     border-collapse: collapse;
     text-align: left;
