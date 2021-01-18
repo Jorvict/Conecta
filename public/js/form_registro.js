@@ -25,7 +25,7 @@ function validateNumber(event) {
 	return correctKey;
 }
 
-function getFormValues(url, parametros) {
+function getFormResponse(url, parametros) {
 	let result;
 	$.ajax({
 		data: parametros,
@@ -61,7 +61,7 @@ function getFormValues(url, parametros) {
 	return result;
 }
 function CheckRegistro() {
-	const url = "../index.php?f=registro",
+	const url = "../index.php?controller=empresa&action=registro",
 		parametros = {
 			email: $("#correo").val(),
 			clave: $("#contrasena").val(),
@@ -72,8 +72,8 @@ function CheckRegistro() {
 			titular: $("#nombre").val(),
 			telefono: $("#numero").val(),
 		};
-		return getFormValues(url, parametros);
+		return getFormResponse(url, parametros);
 }
 
-$('#tip-categorias').load("../index.php?f=listarCategorias");
+$('#tip-categorias').load("../index.php?controller=empresa&action=listarCategorias");
 
