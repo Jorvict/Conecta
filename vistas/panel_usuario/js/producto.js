@@ -1,36 +1,11 @@
-let nuevo__producto = document.getElementById("nuevoProducto");
-let cancelar = document.getElementById("cancelar");
-
-nuevo__producto.addEventListener("click", () => {
-	actionForm("abrir", "nuevo");
-});
-cancelar.addEventListener("click", () => {
-	actionForm("cerrar");
-});
-function actionForm(action, type) {
-	console.log("Hola");
-	let bloque = document.getElementById("bloque");
-	let h1 = bloque.getElementsByTagName("h1")[0];
-	if (action == "abrir") {
-		bloque.classList.add("display__nuevo");
-	} else {
-		bloque.classList.remove("display__nuevo");
-		$("#formProducto")[0].reset();
-	}
-	if (type == "editar") {
-		$(h1).css("background-color", "orange");
-		h1.textContent = "Editar Producto";
-	} else {
-		$(h1).css("background-color", "rgb(0, 158, 251)");
-		h1.textContent = "Nuevo Producto";
-	}
-}
-
 $(function () {
 	let tableProd = $("#productosTabla").DataTable({
 		language: {
 			url: "js/spanish.json",
 		},
+		scrollX: true,
+		dom: '<"header__main"<"search"f>>t<"header__main"ip>',
+		lengthChange: false,
 		ajax: {
 			url:
 				"../../index.php?controller=producto&action=productosByRuc&ruc=" +
@@ -57,9 +32,14 @@ $(function () {
 					'<button class="editar_b"><i class="fas fa-edit editar"></i></button>',
 			},
 		],
-		// initComplete: function () {
-		//
-		// },
+		initComplete: function () {
+			$("#productosTabla_wrapper .header__main:first-child").append(
+				'<button class="producto__boton" id="nuevoProducto"> <i class="fas fa-list-alt"></i>&#160;Nuevo Producto</button>'
+			);
+			$("#nuevoProducto").click(() => {
+				actionForm("abrir", "nuevo");
+			});
+		},
 	});
 	$("#cantidad").keydown(validateNumber);
 	$("#precio").keydown((e) => {
@@ -108,6 +88,27 @@ $(function () {
 		});
 	});
 });
+$("#cancelar").click(() => {
+	actionForm("cerrar");
+});
+function actionForm(action, type) {
+	let bloque = document.getElementById("bloque");
+	let h1 = bloque.getElementsByTagName("h1")[0];
+	if (action == "abrir") {
+		bloque.classList.add("display__nuevo");
+	} else {
+		bloque.classList.remove("display__nuevo");
+		$("#formProducto")[0].reset();
+	}
+	if (type == "editar") {
+		$(h1).css("background-color", "orange");
+		h1.textContent = "Editar Producto";
+	} else {
+		$(h1).css("background-color", "rgb(0, 158, 251)");
+		h1.textContent = "Nuevo Producto";
+	}
+}
+
 $("#formProducto").submit(() => {
 	const url =
 			"../../index.php?controller=producto&action=" +

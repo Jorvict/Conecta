@@ -6,20 +6,14 @@ include 'header.php';
   <?php include 'menu.html'; ?>
   <main class="main">
     <?php include 'superior.php'; ?>
+    <!-- <a href="#" class="producto__boton" id="nuevoProducto"> <i class="fas fa-list-alt"></i>&#160;Nuevo Producto</a> -->
     <section class="producto">
       <h1 class="producto__titulo">Productos</h1>
-      <div class="header__main">
-        <form action="#" class="producto__form">
-          <label for="" class="buscar">Buscar:</label><br>
-          <input type="search" name="buscar" class="form__input">
-        </form>
-        <a href="#" class="producto__boton" id="nuevoProducto"> <i class="fas fa-list-alt"></i>&#160;Nuevo Producto</a>
-      </div>
       <div class="form__producto" id="bloque">
         <div class="contenido">
           <h1 class="formProducto">Nuevo producto</h1>
           <form class="formProducto__form" id="formProducto">
-          <input type="text" id="idProd" hidden>
+            <input type="text" id="idProd" hidden>
             <label for="nombre">Nombre del producto:</label>
             <input style="border:1px solid gray" class="form__item t" type="text" id="nombre" name="nombre_producto" required>
             <div class="form__parte">
@@ -54,10 +48,13 @@ include 'header.php';
       </div>
       <div class="producto__tabla">
         <table class="tabla" id="productosTabla">
-          <colgroup>
-            <col span="1" style="width: inherit;">
-            <col span="2" style="width: 250px;">
-          </colgroup>
+          <!-- <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+          </colgroup> -->
           <thead>
             <tr id="tabla__head">
               <th class="tabla__celda">Nombre</th>

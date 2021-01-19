@@ -33,7 +33,7 @@ label {
     font-family: 'Gotham Black';
     font-size: 24px;
     margin: 0;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 }
 
 @media screen and (min-width: 768px) {
@@ -44,6 +44,7 @@ label {
 }
 
 .header__main {
+    padding: 10px 0;
     font-size: 14px;
     display: flex;
     justify-content: space-between;
@@ -58,12 +59,13 @@ label {
 }
 
 .producto__boton {
+    width: auto;
     padding: .3rem;
     color: white;
     background-color: #1aabc2;
     border-color: #17a2b8;
     text-decoration: none;
-
+    float: right;
     font-weight: 600;
     border: none;
     transition: background .8s;
@@ -87,8 +89,8 @@ label {
 }
 
 .form__producto {
-
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .contenido {
@@ -242,42 +244,24 @@ label {
     width: 1050px;
     background-color: white;
     border-collapse: collapse;
-    text-align: left;
     text-align: center;
+    border-radius: 5px 5px 0px 0px;
+    overflow: hidden;
+    /* border: solid 1px white; */
 }
 
 @media screen and (min-width: 768px) {
     .tabla {
         width: 100%;
     }
-
 }
 
 
 #tabla__head {
     background-color: #00c1c8;
-    border-bottom: solid 5px #007579;
     color: white;
     font-family: 'Gotham Black';
-
-}
-
-.tabla {
-    border-radius: 5px 5px 5px 5px;
-    overflow: hidden;
-    border-collapse: collapse;
-}
-
-.tabla {
-    border: solid 1px white;
-    padding: 0 20px;
-    height: 50px;
-
-}
-
-#productosTabla td {
-
-    padding: .2rem;
+    margin-bottom: 10px;
 }
 
 @media screen and (min-width: 768px) {
@@ -358,15 +342,13 @@ label {
     color: white;
 }
 
-#productosTabla td {
+#productosTabla td, .tabla__celda {
     border: solid 1px #c1c1c1;
     padding: 0 20px;
     height: 50px;
-
-}
-
-.t {
-    height: 30px;
+    padding: .2rem;
+    min-width: 100px;
+    width: 25ch;
 }
 
 .display__nuevo {
