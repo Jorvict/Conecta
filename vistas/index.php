@@ -1,180 +1,14 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>Bienvenidos a Conecta Perú</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- CSS -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
-	<link rel="stylesheet" type="text/css" href="../public/css/test-header.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/index.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/footer.css">
-
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
-
-	<link rel="stylesheet" href="../public/css/formulario.css">
-	<link rel="stylesheet" href="../public/css/login.css">
-	<link rel="stylesheet" href="../public/css/sweetalert2.min.css">
-
+<?php
+$title = "Bienvenidos a Conecta Perú";
+include_once 'layouts/head.php';
+?>
+<link rel="stylesheet" type="text/css" href="../public/css/index.css">
 </head>
 
 <body>
 
 	<div class="page-container">
-		<div class="form-container">
-			<form action="../vistas/panel_usuario/index.php" onsubmit="return CheckRegistro()" class="form-registro" method="POST">
-				<h4>Registro</h4>
-				<span class="close-button">x</span>
-
-				<input class="controles" type="email" name="correo" id="correo" placeholder="Correo electrónico" required>
-
-				<input class="controles" type="password" name="contrasena" id="contrasena" placeholder="Contraseña" required>
-
-				<input class="controles" type="text" name="ruc" id="ruc" placeholder="RUC del negocio" onkeydown="return validateNumber(event)" maxlength="11" required>
-				
-				<input class="controles" type="text" name="negocio" id="negocio" placeholder="Nombre del negocio" required>
-
-				<select name="tip-categorias" id="tip-categorias" class="tip-categorias"></select>
-
-				<input class="controles" type="text" name="direccion" id="direccion"
-					placeholder="Dirección o referencia" required>
-
-					<input class="controles" type="text" name="nombre" id="nombre" placeholder="Nombre del titular" required>
-					
-					<input class="controles" type="text" name="numero" id="numero" placeholder="Número de celular" onkeydown="return validateNumber(event)" maxlength="9" required>
-				
-				<div class="btn-container">
-					<input class="boton" type="submit" value="REGISTRARSE">
-				</div>
-			</form>
-		</div>
-
-		<div class="login-container">
-			<form action="../vistas/panel_usuario/index.php" onsubmit="return CheckLogin()" class="form-login" method="POST">
-				<h4>Iniciar sesión</h4>
-				<span class="close-button-login">x</span>
-
-				<input class="controles" type="email" name="correologin" id="correologin" placeholder="Correo electrónico" required>
-	            <input class="controles" type="password" name="contrasenalogin" id="contrasenalogin" placeholder="Contraseña" required>
-
-				<input class="boton" type="submit" value="INGRESAR">
-			</form>
-		</div>
-
-		<header class="cabecera">
-			<figure class="img-container" id="img-logo">
-				<a href="./index.html">
-					<img src="../public/imagenes/header/LOGO_FINAL.webp" alt="">
-				</a>
-				<i class="icon-menu burger-button"></i>
-			</figure>
-			<section class="right-sect">
-				<section class="top">
-					<div class="division first">
-						<p>#OrgullososdeComprarleAlPerú</p>
-					</div>
-					<div class="division second">
-						<p>¿Tienes un negocio? <br>
-							Te ayudamos.</p>
-					</div>
-					<div class="division third">
-						<button class="register">
-							REGÍSTRATE <br>
-							GRATIS
-						</button>
-					</div>
-					<div class="division fourth">
-						<figure class="img-container">
-							<img id="img-login" src="../public/imagenes/header/home.gif" alt="">
-						</figure>
-
-						<button class="Login">
-							Iniciar sesión
-						</button>
-					</div>
-				</section>
-				<section class="middle">
-					<div class="input-container">
-						<input type="text" placeholder="¿Qué estás buscando?">
-						<i class="icon-search"></i>
-					</div>
-				</section>
-				<section class="bottom">
-					<nav class="menu">
-						<ul>
-							<li class="first-nav">
-								<a href="./index.html">Inicio</a>
-							</li>
-							<li class="first-nav parent">
-								<a href="./categorias.html">Categorías</a>
-								<ul>
-									<div class="wrapper">
-										<li class="lng-nav">
-											<a href="./ropa.html">Ropa y textil</a>
-										</li>
-										<li class="lng-nav">
-											<a href="#package">Abarrotes</a>
-										</li>
-										<li class="lng-nav">
-											<a href="#express">Restaurantes</a>
-										</li>
-										<li class="lng-nav">
-											<a href="">Salud</a>
-										</li>
-									</div>
-
-									<div class="wrapper">
-										<li class="lng-nav">
-											<a href="">Pastelería</a>
-										</li>
-										<li class="lng-nav">
-											<a href="">Cuero y calzado</a>
-										</li>
-										<li class="lng-nav">
-											<a href="">Ferretería</a>
-										</li>
-										<li class="lng-nav">
-											<a href="">Frutas y verduras</a>
-										</li>
-									</div>
-
-									<div class="wrapper">
-										<li>
-											<a href="">Útiles de oficina</a>
-										</li>
-										<li>
-											<a href="">Mascota</a>
-										</li>
-										<li>
-											<a href="">Iluminación</a>
-										</li>
-										<li>
-											<a href="">Decoración</a>
-										</li>
-										<li>
-											<a href="">Otros</a>
-										</li>
-									</div>
-								</ul>
-							</li>
-							<li class="first-nav">
-								<a href="">¿Quíenes somos?</a>
-							</li>
-							<li class="first-nav">
-								<a href="./contactanos.html">Contáctanos</a>
-							</li>
-						</ul>
-					</nav>
-				</section>
-			</section>
-		</header>
-
+		<?php include_once 'layouts/header.php' ?>
 		<section id="video">
 			<video loop muted autoplay preload="auto">
 				<source src="../public/videos/dummy.mp4" type="video/mp4"> Tú navegador no soporta el video
@@ -476,69 +310,11 @@
 					</div>
 			</section>
 		</section>
-
-		<footer>
-			<div class="contenedor-footer">
-				<div class="content-footeriz">
-					<div class="c-logo">
-						<img src="../public/imagenes/footer/LOGO_FINAL.webp" id="logofooter">
-					</div>
-
-				</div>
-				<div class="content-footercentro">
-					<h4 id="Suscribete"> 
-						Suscríbete a Conecta Perú <br>
-						Enterate acerca de nuestros productos y servicios.
-					</h4>
-					<section id="input-footer ">
-						<section id="input-footer ">
-							<input class="input-footer" type="text" aria-label="Search"
-								placeholder="Tu correo electrónico" id="input-footer">
-
-							<button class="btsubs" type="submit">SUSCRIBIRSE</button>
-							<p id="n-c-c">Nunca compartiremos tu dirección de correo electrónico con tercera persona.</p>
-						</section>
-
-
-					</section>
-				</div>
-				<div class="content-footerder">
-					<br id="salto-foot-der">
-					<br id="salto-foot-der">
-					<br id="salto-foot-der">
-					<br id="salto-foot-der">
-					<br id="salto-foot-der">
-					<h1 id="contactanos">CONTÁCTANOS</h1>
-					<div class="wrapper-fot">
-						<a class="contact-fot" href="https://www.facebook.com/conectaperupymes/"> <img id="face"
-								src="../public/imagenes/footer/facebook.png"></a>
-						<a class="contact-fot" href="https://wa.me/51936910425"> <img id="telefono"
-								src="../public/imagenes/footer/telefono.png"></a>
-						<a class="contact-fot" href="https://www.instagram.com/conectaperunegocios/"> <img
-								id="instagram" src="../public/imagenes/footer/instagram.png"></a>
-					</div>
-				</div>
-			</div>
-
-			<div class="otros">
-				<div class="c-otros">
-					<a href="terms_condiciones.html" id="otros">TÉRMINOS Y CONDICIONES</a>
-					<a href="" id="otros">POLÍTICAS DE PRIVACIDAD</a>
-
-				</div>
-			</div>
-
-		</footer>
-
+		<?php include_once 'layouts/footer.php'; ?>
 	</div>
 
 	<!-- jQuery and JS bundle w/ Popper.js -->
-	<script src="../public/plugins/jquery-3.5.1.min.js"></script>
-	<script src="../public/plugins/sweetalert2.all.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-	<script type="text/javascript" src="../public/js/menu.js" ></script>
-	<script type="text/javascript" src="../public/js/form_registro.js"></script>
-	<script type="text/javascript" src="../public/js/login.js"></script>
+	<?php include_once 'layouts/scripts.php'; ?>
 </body>
 
 </html>

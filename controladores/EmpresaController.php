@@ -15,7 +15,7 @@ class EmpresaController {
             session_unset();
             session_destroy();
         }
-        header('Location: vistas/index.html');
+        header('Location: vistas/index.php');
     }
     function login(){
         $email = trim($_POST['email']);
