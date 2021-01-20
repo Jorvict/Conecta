@@ -75,5 +75,5 @@ function CheckRegistro() {
 		return getFormResponse(url, parametros);
 }
 
-$('#tip-categorias').load("../index.php?controller=empresa&action=listarCategorias");
+$('#tip-categorias').load("../index.php?controller=categoria&action=listarCategorias");
 

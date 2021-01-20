@@ -44,14 +44,6 @@ class EmpresaController {
             return ['bool' => false, 'error' => 'rucDuplicado'];
         }
     }
-    function listarCategorias(){
-        $categorias = $this->modelo->listarCategorias();
-        $options = '<option value="0">Seleccione una categoría...</option>';
-        foreach ($categorias as $cat) {
-            $options.= '<option value='.$cat['IdCategoria'].'>'.$cat['nombre'].'</option>';
-        }
-        return $options;
-    }
     function listarDepartamentos(){
         $departamentos = $this->modelo->listarDepartamentos();
         $options = '<option value="0">Seleccione un departamento...</option>';

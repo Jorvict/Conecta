@@ -51,12 +51,6 @@ class Empresa {
         $stmt->execute(); 
         return $stmt->fetch(PDO::FETCH_ASSOC);       
     }
-    function listarCategorias(){
-        $sql = "select * from categorias";
-        $stmt = $this->cnx->prepare($sql);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
     function listarDepartamentos(){
         $sql = "select * from departamentos";
         $stmt = $this->cnx->prepare($sql);

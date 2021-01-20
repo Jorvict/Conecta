@@ -2300,7 +2300,7 @@ CONSTRAINT `detallepedido_fk2` FOREIGN KEY (`IdProducto`) REFERENCES `productos`
 -- ----------------------------
 -- Records for categorias
 -- ----------------------------
-insert into categorias(nombre) values("Ropa y textil");
+insert into categorias(nombre) values("Ropa y textiles");
 insert into categorias(nombre) values('Abarrotes');
 insert into categorias(nombre) values('Restaurantes');
 insert into categorias(nombre) values('Salud');
@@ -2309,7 +2309,7 @@ insert into categorias(nombre) values('Cuero y calzado');
 insert into categorias(nombre) values('Ferretería');
 insert into categorias(nombre) values('Frutas y verduras');
 insert into categorias(nombre) values('Útiles de oficina');
-insert into categorias(nombre) values('Mascota');
+insert into categorias(nombre) values('Mascotas');
 insert into categorias(nombre) values('Iluminación');
 insert into categorias(nombre) values('Decoración');
 insert into categorias(nombre) values('Otros');
@@ -2487,7 +2487,7 @@ VALUES (IdCli,Fecha,IdProd,Cant,Coment);
 END $$
 DELIMITER ;
 
-call agregarPedido(1,NOW(),1,2,'');
+-- call agregarPedido(1,NOW(),1,2,'');
 
 DELIMITER $$
 CREATE PROCEDURE eliminarPedido( IN IdPed int )
