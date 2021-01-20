@@ -3,8 +3,7 @@ require_once 'Conexion.php';
 
 class Producto {
     private $cnx;
-    public int $idProducto;
-    public $rucEmpresa,$nomProducto,$descripcion,$precio,$medida,$stock,$imagen;
+    public $idProducto,$rucEmpresa,$nomProducto,$descripcion,$precio,$medida,$stock,$imagen;
 
     function __construct($rucEmpresa=null,$nomProducto=null,$descripcion=null,$precio=null,$medida=null,$stock=null,$imagen=null,$idProducto = 0)
     {

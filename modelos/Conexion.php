@@ -3,7 +3,6 @@
 class Conexion
 {
     private static $host = '127.0.0.1';
-    private static $port = '3306';
     private static $dbname = 'conecta_peru';
     private static $user = 'root';
     private static $pwd = '';
@@ -13,7 +12,7 @@ class Conexion
     {
         try {
             if($bool){
-                self::$cnx = new PDO("mysql:host=".self::$host.":".self::$port.";dbname=".self::$dbname.";user=".self::$user.";pwd=".self::$pwd);
+                self::$cnx = new PDO("mysql:host=".self::$host.";dbname=".self::$dbname, self::$user, self::$pwd);
             } else {
                 self::$cnx = null;
             }

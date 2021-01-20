@@ -3,8 +3,7 @@ require_once 'Conexion.php';
 
 class Pedido {
     private $cnx;
-    public int $idPed,$idCli,$idProd,$cantidad;
-    public $fecha,$comments;
+    public $idPed,$idCli,$idProd,$cantidad,$fecha,$comments;
 
     function __construct($idCli = 0,$idProd = 0,$cantidad = 0,$comments = null)
     {

@@ -3,9 +3,7 @@ require_once 'Conexion.php';
 
 class Empresa {
     private $cnx;
-    public $emailPers,$clave,$ruc,$nomEmp,$direccion,$titular,$telefono,$descripcion,$logo,$emailEmp,$distrito,$whatsapp,$facebook,$instagram;
-    public bool $estado;
-    public int $id,$id_categoria;
+    public $emailPers,$clave,$ruc,$nomEmp,$direccion,$titular,$telefono,$descripcion,$logo,$emailEmp,$distrito,$whatsapp,$facebook,$instagram,$estado,$id,$id_categoria;
 
     
     function __construct($emailPers = null,$clave = null,$ruc = null,$nomEmp = null,$id_categoria = 0,$direccion = null,$titular = null,$telefono = null)
