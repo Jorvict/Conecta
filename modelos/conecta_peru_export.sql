@@ -1,40 +1,190 @@
-drop database if exists conecta_peru;
-create database conecta_peru;
-use conecta_peru;
-/*
-
- Source Server         : xampp
- Source Server Type    : MySQL
- Source Host           : localhost
- Source Schema         : conecta_peru
-
- Target Server Type    : MySQL
-
-*/
-
-SET NAMES utf8mb4;
-
+-- phpMyAdmin SQL Dump
+-- version 5.0.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Creato il: Gen 20, 2021 alle 17:48
+-- Versione del server: 10.4.14-MariaDB
+-- Versione PHP: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET SQL_SAFE_UPDATES = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `conecta_peru`
+-- Database: `conecta_peru`
 --
+
+DELIMITER $$
+--
+-- Procedure
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizarEmpresa` (IN `ruc` VARCHAR(11), `emailEmp` VARCHAR(50), `descripcion` VARCHAR(1000), `direccion` VARCHAR(100), `distrito` VARCHAR(6), `telefono` VARCHAR(9), `whatsapp` VARCHAR(11), `facebook` VARCHAR(200), `instangram` VARCHAR(200))  BEGIN
+	update `empresas` set `EmailEmp` = emailEmp,
+						`Descripcion` = descripcion,
+                        `Distrito` = distrito,
+                        `Direccion` = direccion,
+                        `Telefono` = telefono,
+                        `Whatsapp` = whatsapp,
+                        `Facebook` = facebook,
+                        `Instangram` = instangram
+	where empresas.RucEmpresa = ruc; 
+    SET SQL_SAFE_UPDATES = 1;
+    SET SQL_SAFE_UPDATES = 0;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `agregarCliente` (IN `Nom` VARCHAR(50), `Ape` VARCHAR(50), `Dir` VARCHAR(100), `Tel` VARCHAR(9))  BEGIN
+INSERT INTO `clientes`(`Nombre`,`Apellido`,`Direccion`,`Telefono`) 
+VALUES (Nom,Ape,Dir,Tel);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `agregarPedido` (IN `IdCli` INT, `Fecha` DATETIME, `IdProd` INT, `Cant` INT, `Coment` VARCHAR(1000))  BEGIN
+INSERT INTO `pedidos`(`IdCliente`,`Fecha`,`IdProducto`,`Cantidad`,`Comentarios`) 
+VALUES (IdCli,Fecha,IdProd,Cant,Coment);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `agregarProducto` (IN `RucEmpresa` VARCHAR(11), `NomProducto` VARCHAR(150), `Descripcion` VARCHAR(1000), `Precio` DECIMAL(7,2), `Medida` VARCHAR(50), `Stock` INT)  BEGIN 
+	INSERT INTO `productos`(`RucEmpresa`,`NomProducto`,`Descripcion`,`Precio`,`Medida`,`Stock`)
+    VALUES(RucEmpresa,NomProducto,Descripcion,Precio,Medida,Stock);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `agregarVenta` (IN `idPed` INT)  BEGIN
+	UPDATE `pedidos` SET `Vendido` = true WHERE `IdPedido` = IdPed;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `DepProvByDistrito` (IN `IdDist` VARCHAR(6))  BEGIN 
+	SELECT de.IdDepartamento,p.IdProvincia,di.IdDistrito FROM `distritos` di
+    INNER JOIN `provincias` p ON p.IdProvincia = di.IdProvincia
+    INNER JOIN `departamentos` de ON de.IdDepartamento = p.IdDepartamento
+    WHERE di.IdDistrito = IdDist;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `distritoByProvincia` (IN `IdProv` VARCHAR(4))  BEGIN 
+	SELECT * FROM `distritos` WHERE `IdProvincia` = IdProv;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `editarProducto` (IN `IdProd` INT, `NomProd` VARCHAR(150), `Descr` VARCHAR(1000), `Precio` DECIMAL(7,2), `Medida` VARCHAR(50), `Stock` INT)  BEGIN 
+	UPDATE `productos` SET `NomProducto` = NomProd,`Descripcion` = Descr,`Precio` = Precio,`Medida` = Medida,`Stock` = Stock
+    WHERE `IdProducto` = IdProd;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `eliminarPedido` (IN `IdPed` INT)  BEGIN
+UPDATE `pedidos` SET `Estado` = false WHERE `IdPedido` = IdPed;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `eliminarProducto` (IN `IdProd` INT)  BEGIN
+	UPDATE `productos` SET `Estado` = false WHERE `IdProducto` = IdProd;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `empresasByCategoria` (IN `IdCat` INT)  BEGIN 
+	SELECT `RucEmpresa`,`NomEmpresa`,`Logo` 
+    FROM `empresas` WHERE `IdCategoria` = IdCat;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `mostrarPedidosByRuc` (IN `RucEmp` VARCHAR(11))  BEGIN
+	SELECT ped.IdPedido,prod.NomProducto,CONCAT(c.Nombre,' ',c.Apellido) AS NombreCompleto,ped.Cantidad,ped.Fecha,c.Telefono,c.Direccion,ped.Comentarios
+    FROM pedidos ped INNER JOIN productos prod ON ped.IdProducto = prod.IdProducto
+    INNER JOIN clientes c ON ped.IdCliente = c.IdCliente
+    WHERE prod.RucEmpresa = RucEmp AND ped.Estado = true AND ped.Vendido = false;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `productosByRuc` (IN `RucEmp` VARCHAR(11))  BEGIN 
+	SELECT * FROM `productos` WHERE `RucEmpresa` = RucEmp AND `Estado` = true;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `provinciaByDepartamento` (IN `IdDep` VARCHAR(2))  BEGIN 
+	SELECT * FROM `provincias` WHERE `IdDepartamento` = IdDep;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `registrarEmpresa` (IN `emailPers` VARCHAR(50), `clave` VARCHAR(255), `ruc` VARCHAR(11), `empresa` VARCHAR(50), `id_categoria` INT, `direccion` VARCHAR(100), `titular` VARCHAR(50), `telefono` VARCHAR(9))  BEGIN
+	insert into empresas(`EmailPers`,`Contrasena`,`RucEmpresa`,`NomEmpresa`,`IdCategoria`,`Direccion`,`NomTitular`,`Telefono`)
+    values (emailPers,clave,ruc,empresa,id_categoria,direccion,titular,telefono);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `showEmpresa` (IN `RucEmp` VARCHAR(11))  BEGIN 
+	SELECT `NomEmpresa`,`Logo`,`Descripcion`,`Telefono`,`Facebook`,`Instangram`,`Direccion` 
+    FROM `empresas` WHERE `RucEmpresa` = RucEmp;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `showVentasByRuc` (IN `RucEmp` VARCHAR(11))  BEGIN
+	SELECT CONCAT(c.Nombre,' ',c.Apellido) AS NombreCompleto,prod.NomProducto,ped.Cantidad,prod.Precio,(prod.Precio*ped.Cantidad) AS Monto,ped.Fecha 
+    FROM pedidos ped INNER JOIN productos prod ON ped.IdProducto = prod.IdProducto
+    INNER JOIN clientes c ON ped.IdCliente = c.IdCliente
+    WHERE prod.RucEmpresa = RucEmp AND ped.Vendido = true;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `departamentos`
+-- Struttura della tabella `categorias`
 --
 
-CREATE TABLE IF NOT EXISTS `departamentos` (
+CREATE TABLE `categorias` (
+  `IdCategoria` int(11) NOT NULL,
+  `nombre` varchar(50) CHARACTER SET utf8mb4 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dump dei dati per la tabella `categorias`
+--
+
+INSERT INTO `categorias` (`IdCategoria`, `nombre`) VALUES
+(1, 'Ropa y textil'),
+(2, 'Abarrotes'),
+(3, 'Restaurantes'),
+(4, 'Salud'),
+(5, 'Pastelería'),
+(6, 'Cuero y calzado'),
+(7, 'Ferretería'),
+(8, 'Frutas y verduras'),
+(9, 'Útiles de oficina'),
+(10, 'Mascota'),
+(11, 'Iluminación'),
+(12, 'Decoración'),
+(13, 'Otros');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `IdCliente` int(11) NOT NULL,
+  `Nombre` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
+  `Apellido` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
+  `Direccion` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
+  `Telefono` varchar(9) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dump dei dati per la tabella `clientes`
+--
+
+INSERT INTO `clientes` (`IdCliente`, `Nombre`, `Apellido`, `Direccion`, `Telefono`) VALUES
+(1, 'Esteban', 'Chaname', 'Av. Perù', '955597838');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `departamentos`
+--
+
+CREATE TABLE `departamentos` (
   `IdDepartamento` varchar(2) NOT NULL,
   `Departamento` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `ubigeo_peru_departments`
+-- Dump dei dati per la tabella `departamentos`
 --
 
 INSERT INTO `departamentos` (`IdDepartamento`, `Departamento`) VALUES
@@ -67,18 +217,18 @@ INSERT INTO `departamentos` (`IdDepartamento`, `Departamento`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `distritos`
+-- Struttura della tabella `distritos`
 --
 
-CREATE TABLE IF NOT EXISTS `distritos` (
-  `IdDistrito` varchar(6) default null,
+CREATE TABLE `distritos` (
+  `IdDistrito` varchar(6) NOT NULL,
   `Distrito` varchar(45) DEFAULT NULL,
   `IdProvincia` varchar(4) DEFAULT NULL,
   `IdDepartamento` varchar(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `distritos`
+-- Dump dei dati per la tabella `distritos`
 --
 
 INSERT INTO `distritos` (`IdDistrito`, `Distrito`, `IdProvincia`, `IdDepartamento`) VALUES
@@ -1961,17 +2111,102 @@ INSERT INTO `distritos` (`IdDistrito`, `Distrito`, `IdProvincia`, `IdDepartament
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ubigeo_peru_provinces`
+-- Struttura della tabella `empresas`
 --
 
-CREATE TABLE IF NOT EXISTS `provincias` (
+CREATE TABLE `empresas` (
+  `RucEmpresa` varchar(11) NOT NULL,
+  `NomEmpresa` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
+  `Contrasena` varchar(255) NOT NULL,
+  `IdCategoria` int(11) NOT NULL,
+  `Descripcion` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
+  `Logo` longblob NOT NULL,
+  `NomTitular` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
+  `EmailEmp` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
+  `Direccion` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
+  `Distrito` varchar(6) DEFAULT NULL,
+  `EmailPers` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
+  `Telefono` varchar(9) NOT NULL,
+  `Whatsapp` varchar(11) CHARACTER SET utf8mb4 NOT NULL,
+  `Facebook` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
+  `Instangram` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
+  `Estado` tinyint(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dump dei dati per la tabella `empresas`
+--
+
+INSERT INTO `empresas` (`RucEmpresa`, `NomEmpresa`, `Contrasena`, `IdCategoria`, `Descripcion`, `Logo`, `NomTitular`, `EmailEmp`, `Direccion`, `Distrito`, `EmailPers`, `Telefono`, `Whatsapp`, `Facebook`, `Instangram`, `Estado`) VALUES
+('11111111111', 'Esteban Food', '$2y$10$EaT6clS1Xnh4TjWJ2A3V5uWN/rJifH72znuo84uPSPw.tJYvBxaK.', 3, '', '', 'Esteban Chaname', '', 'Av. Perú', NULL, 'esteban@gmail.com', '955597838', '', '', '', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `pedidos`
+--
+
+CREATE TABLE `pedidos` (
+  `IdPedido` int(11) NOT NULL,
+  `IdCliente` int(11) NOT NULL,
+  `Fecha` datetime NOT NULL,
+  `IdProducto` int(11) NOT NULL,
+  `Cantidad` int(11) NOT NULL,
+  `Comentarios` varchar(1000) DEFAULT NULL,
+  `Vendido` tinyint(1) NOT NULL DEFAULT 0,
+  `Estado` tinyint(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dump dei dati per la tabella `pedidos`
+--
+
+INSERT INTO `pedidos` (`IdPedido`, `IdCliente`, `Fecha`, `IdProducto`, `Cantidad`, `Comentarios`, `Vendido`, `Estado`) VALUES
+(1, 1, '2021-01-20 11:21:40', 1, 2, '', 1, 1),
+(2, 1, '2021-01-20 11:21:51', 1, 2, '', 1, 1),
+(3, 1, '2021-01-20 11:47:02', 1, 2, '', 0, 1),
+(4, 1, '2021-01-20 11:47:21', 1, 2, '', 0, 1),
+(5, 1, '2021-01-20 11:47:25', 1, 2, '', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `productos`
+--
+
+CREATE TABLE `productos` (
+  `IdProducto` int(11) NOT NULL,
+  `RucEmpresa` varchar(11) NOT NULL,
+  `NomProducto` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
+  `Descripcion` varchar(1000) CHARACTER SET utf8mb4 NOT NULL,
+  `Precio` decimal(7,2) NOT NULL,
+  `Stock` int(50) NOT NULL,
+  `Medida` varchar(50) NOT NULL,
+  `Imagen` longblob DEFAULT NULL,
+  `Estado` tinyint(1) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dump dei dati per la tabella `productos`
+--
+
+INSERT INTO `productos` (`IdProducto`, `RucEmpresa`, `NomProducto`, `Descripcion`, `Precio`, `Stock`, `Medida`, `Imagen`, `Estado`) VALUES
+(1, '11111111111', 'Producto1', 'Descripción', '10.00', 100, 'Kilo(s)', NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `provincias`
+--
+
+CREATE TABLE `provincias` (
   `IdProvincia` varchar(4) NOT NULL,
   `Provincia` varchar(45) NOT NULL,
   `IdDepartamento` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `ubigeo_peru_provinces`
+-- Dump dei dati per la tabella `provincias`
 --
 
 INSERT INTO `provincias` (`IdProvincia`, `Provincia`, `IdDepartamento`) VALUES
@@ -2173,360 +2408,129 @@ INSERT INTO `provincias` (`IdProvincia`, `Provincia`, `IdDepartamento`) VALUES
 ('2504', 'Purús', '25');
 
 --
--- Índices para tablas volcadas
+-- Indici per le tabelle scaricate
 --
 
 --
--- Indices de la tabla `departamentos`
+-- Indici per le tabelle `categorias`
+--
+ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`IdCategoria`) USING BTREE;
+
+--
+-- Indici per le tabelle `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`IdCliente`) USING BTREE;
+
+--
+-- Indici per le tabelle `departamentos`
 --
 ALTER TABLE `departamentos`
   ADD PRIMARY KEY (`IdDepartamento`);
 
 --
--- Indices de la tabla `provincias`
---
-ALTER TABLE `provincias`
-  ADD PRIMARY KEY (`IdProvincia`),
-  ADD FOREIGN KEY (`IdDepartamento`) REFERENCES `departamentos`(`IdDepartamento`);
-
---
--- Indices de la tabla `distritos`
+-- Indici per le tabelle `distritos`
 --
 ALTER TABLE `distritos`
   ADD PRIMARY KEY (`IdDistrito`),
-  ADD FOREIGN KEY (`IdProvincia`) REFERENCES `provincias`(`IdProvincia`);
+  ADD KEY `IdProvincia` (`IdProvincia`);
 
--- ----------------------------
--- Table structure for categorias
--- ----------------------------
-create table `categorias`(
- `IdCategoria` int(11) NOT NULL AUTO_INCREMENT,
- `nombre` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
- PRIMARY KEY (`IdCategoria`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--
+-- Indici per le tabelle `empresas`
+--
+ALTER TABLE `empresas`
+  ADD PRIMARY KEY (`RucEmpresa`),
+  ADD KEY `empresa_fk1` (`IdCategoria`),
+  ADD KEY `empresa_fk2` (`Distrito`);
 
--- ----------------------------
--- Table structure for empresas
--- ----------------------------
-CREATE TABLE `empresas`  (
-  `RucEmpresa` varchar(11) PRIMARY KEY NOT NULL,
-  `NomEmpresa` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Contrasena` varchar(255) NOT NULL,
-  `IdCategoria` int(11) NOT NULL,
-  `Descripcion` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Logo` longblob NOT NULL,
-  `NomTitular` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `EmailEmp` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Direccion` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Distrito` varchar(6) default null,
-  `EmailPers` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Telefono` varchar(9) NOT NULL,
-  `Whatsapp` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Facebook` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Instangram` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Estado` bool DEFAULT TRUE NOT NULL,
-  -- PRIMARY KEY (`RucEmpresa`) USING BTREE,
-  CONSTRAINT `empresa_fk1` FOREIGN KEY (`IdCategoria`) REFERENCES `categorias`(`IdCategoria`),
-  CONSTRAINT `empresa_fk2` FOREIGN KEY (`Distrito`) REFERENCES `distritos`(`IdDistrito`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--
+-- Indici per le tabelle `pedidos`
+--
+ALTER TABLE `pedidos`
+  ADD PRIMARY KEY (`IdPedido`) USING BTREE,
+  ADD KEY `pedidos_fk1` (`IdCliente`),
+  ADD KEY `pedidos_fk2` (`IdProducto`);
 
--- ----------------------------
--- Table structure for productos
--- ----------------------------
-CREATE TABLE `productos`  (
-  `IdProducto` int(11) NOT NULL AUTO_INCREMENT,
-  `RucEmpresa` varchar(11) NOT NULL,
-  `NomProducto` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Descripcion` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Precio` decimal(7,2) NOT NULL,
-  `Stock` int(50) NOT NULL,
-  `Medida` varchar(50) NOT NULL,
-  `Imagen` longblob,
-  `Estado` bool default true,
-  PRIMARY KEY (`IdProducto`) USING BTREE,
-  CONSTRAINT `productos_fk1` FOREIGN KEY (`RucEmpresa`) REFERENCES `empresas`(`RucEmpresa`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--
+-- Indici per le tabelle `productos`
+--
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`IdProducto`) USING BTREE,
+  ADD KEY `productos_fk1` (`RucEmpresa`);
 
--- ----------------------------
--- Table structure for clientes
--- ----------------------------
-create table `clientes`(
-`IdCliente` int(11) AUTO_INCREMENT,
-`Nombre` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-`Apellido` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-`Direccion` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-`Telefono` varchar(9) NOT NULL,
-PRIMARY KEY (`IdCliente`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--
+-- Indici per le tabelle `provincias`
+--
+ALTER TABLE `provincias`
+  ADD PRIMARY KEY (`IdProvincia`),
+  ADD KEY `IdDepartamento` (`IdDepartamento`);
 
--- ----------------------------
--- Table structure for pedidos
--- ----------------------------
-create table `pedidos`(
-`IdPedido` int AUTO_INCREMENT,
-`IdCliente` int NOT NULL,
-`Fecha` datetime NOT NULL,
-`IdProducto` int NOT NULL,
-`Cantidad` int NOT NULL,
-`Comentarios` varchar(1000),
-`Vendido` bool NOT NULL DEFAULT FALSE,
-`Estado` bool NOT NULL DEFAULT TRUE,
-PRIMARY KEY (`IdPedido`) USING BTREE,
-CONSTRAINT `pedidos_fk1` FOREIGN KEY (`IdCliente`) REFERENCES `clientes`(`IdCliente`),
-CONSTRAINT `pedidos_fk2` FOREIGN KEY (`IdProducto`) REFERENCES `productos`(`IdProducto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/* create table `pedidos2`(
-`IdPedido` int AUTO_INCREMENT,
-`IdCliente` int,
-`Fecha` datetime,
-PRIMARY KEY (`IdPedido`) USING BTREE,
-CONSTRAINT `pedidos_fk1` FOREIGN KEY (`IdCliente`) REFERENCES `clientes`(`IdCliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8; */
+--
+-- AUTO_INCREMENT per le tabelle scaricate
+--
 
--- ----------------------------
--- Table structure for detallepedido
--- ----------------------------
-/* create table `detallepedido`(
-`IdDetalle` int AUTO_INCREMENT,
-`IdPedido` int,
-`IdProducto` int,
-`Cantidad` int,
-`Comentarios` varchar(255),
-PRIMARY KEY (`IdDetalle`) USING BTREE,
-CONSTRAINT `detallepedido_fk1` FOREIGN KEY (`IdPedido`) REFERENCES `pedidos`(`IdPedido`),
-CONSTRAINT `detallepedido_fk2` FOREIGN KEY (`IdProducto`) REFERENCES `productos`(`IdProducto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8; */
+--
+-- AUTO_INCREMENT per la tabella `categorias`
+--
+ALTER TABLE `categorias`
+  MODIFY `IdCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
--- ----------------------------
--- Records for categorias
--- ----------------------------
-insert into categorias(nombre) values("Ropa y textil");
-insert into categorias(nombre) values('Abarrotes');
-insert into categorias(nombre) values('Restaurantes');
-insert into categorias(nombre) values('Salud');
-insert into categorias(nombre) values('Pastelería');
-insert into categorias(nombre) values('Cuero y calzado');
-insert into categorias(nombre) values('Ferretería');
-insert into categorias(nombre) values('Frutas y verduras');
-insert into categorias(nombre) values('Útiles de oficina');
-insert into categorias(nombre) values('Mascota');
-insert into categorias(nombre) values('Iluminación');
-insert into categorias(nombre) values('Decoración');
-insert into categorias(nombre) values('Otros');
-select * from categorias
+--
+-- AUTO_INCREMENT per la tabella `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `IdCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
-DELIMITER $$
-CREATE PROCEDURE registrarEmpresa(
-	in emailPers varchar(50),
-    clave varchar(255),
-	ruc varchar(11),
-	empresa varchar(50),
-	id_categoria int,
-	direccion varchar(100),
-	titular varchar(50),
-	telefono varchar(9))
-BEGIN
-	insert into empresas(`EmailPers`,`Contrasena`,`RucEmpresa`,`NomEmpresa`,`IdCategoria`,`Direccion`,`NomTitular`,`Telefono`)
-    values (emailPers,clave,ruc,empresa,id_categoria,direccion,titular,telefono);
-END $$
-DELIMITER ;
+--
+-- AUTO_INCREMENT per la tabella `pedidos`
+--
+ALTER TABLE `pedidos`
+  MODIFY `IdPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
--- call registrarEmpresa('prueba@gmail.com','123','11111111111','Negocio',1,'Av.Perú','Esteban','955597838');
+--
+-- AUTO_INCREMENT per la tabella `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `IdProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
-DELIMITER $$
-CREATE PROCEDURE actualizarEmpresa(
-	in ruc varchar(11),
-    emailEmp varchar(50),
-    descripcion varchar(1000),
-	direccion varchar(100),
-    distrito varchar(6),
-	telefono varchar(9),
-    whatsapp varchar(11),
-    facebook varchar(200),
-    instangram varchar(200))
-BEGIN
-	update `empresas` set `EmailEmp` = emailEmp,
-						`Descripcion` = descripcion,
-                        `Distrito` = distrito,
-                        `Direccion` = direccion,
-                        `Telefono` = telefono,
-                        `Whatsapp` = whatsapp,
-                        `Facebook` = facebook,
-                        `Instangram` = instangram
-	where empresas.RucEmpresa = ruc; 
-    SET SQL_SAFE_UPDATES = 1;
-    SET SQL_SAFE_UPDATES = 0;
-END $$
-DELIMITER ;
+--
+-- Limiti per le tabelle scaricate
+--
 
--- call actualizarEmpresa('11111111111','esteban@gmail.com','Descripción','Av. Perú','070104','955597838','955597838','esteban@gmail.com','esteban@gmail.com');
+--
+-- Limiti per la tabella `distritos`
+--
+ALTER TABLE `distritos`
+  ADD CONSTRAINT `distritos_ibfk_1` FOREIGN KEY (`IdProvincia`) REFERENCES `provincias` (`IdProvincia`);
 
-DELIMITER $$
-CREATE PROCEDURE showEmpresa(
-IN RucEmp varchar(11))
-BEGIN 
-	SELECT `NomEmpresa`,`Logo`,`Descripcion`,`Telefono`,`Facebook`,`Instangram`,`Direccion` 
-    FROM `empresas` WHERE `RucEmpresa` = RucEmp;
-END $$
-DELIMITER ;
+--
+-- Limiti per la tabella `empresas`
+--
+ALTER TABLE `empresas`
+  ADD CONSTRAINT `empresa_fk1` FOREIGN KEY (`IdCategoria`) REFERENCES `categorias` (`IdCategoria`),
+  ADD CONSTRAINT `empresa_fk2` FOREIGN KEY (`Distrito`) REFERENCES `distritos` (`IdDistrito`);
 
--- call showEmpresa('11111111111');
+--
+-- Limiti per la tabella `pedidos`
+--
+ALTER TABLE `pedidos`
+  ADD CONSTRAINT `pedidos_fk1` FOREIGN KEY (`IdCliente`) REFERENCES `clientes` (`IdCliente`),
+  ADD CONSTRAINT `pedidos_fk2` FOREIGN KEY (`IdProducto`) REFERENCES `productos` (`IdProducto`);
 
-DELIMITER $$
-CREATE PROCEDURE empresasByCategoria(
-IN IdCat int)
-BEGIN 
-	SELECT `RucEmpresa`,`NomEmpresa`,`Logo` 
-    FROM `empresas` WHERE `IdCategoria` = IdCat;
-END $$
-DELIMITER ;
+--
+-- Limiti per la tabella `productos`
+--
+ALTER TABLE `productos`
+  ADD CONSTRAINT `productos_fk1` FOREIGN KEY (`RucEmpresa`) REFERENCES `empresas` (`RucEmpresa`) ON UPDATE CASCADE;
 
--- call empresasByCategoria(1);
+--
+-- Limiti per la tabella `provincias`
+--
+ALTER TABLE `provincias`
+  ADD CONSTRAINT `provincias_ibfk_1` FOREIGN KEY (`IdDepartamento`) REFERENCES `departamentos` (`IdDepartamento`);
+COMMIT;
 
-DELIMITER $$
-CREATE PROCEDURE agregarProducto(
-IN RucEmpresa varchar(11),
-	NomProducto varchar(150),
-    Descripcion varchar(1000),
-    Precio decimal(7,2),
-    Medida varchar(50),
-    Stock int)
-BEGIN 
-	INSERT INTO `productos`(`RucEmpresa`,`NomProducto`,`Descripcion`,`Precio`,`Medida`,`Stock`)
-    VALUES(RucEmpresa,NomProducto,Descripcion,Precio,Medida,Stock);
-END $$
-DELIMITER ;
-
--- call agregarProducto('11111111111','Producto1','Descripción','10.5','Medida',100);
-
-DELIMITER $$
-CREATE PROCEDURE editarProducto(
-IN IdProd int,
-	NomProd varchar(150),
-    Descr varchar(1000),
-    Precio decimal(7,2),
-    Medida varchar(50),
-    Stock int)
-BEGIN 
-	UPDATE `productos` SET `NomProducto` = NomProd,`Descripcion` = Descr,`Precio` = Precio,`Medida` = Medida,`Stock` = Stock
-    WHERE `IdProducto` = IdProd;
-END $$
-DELIMITER ;
-
--- call editarProducto(2,'ProdEditado','Desc',10.5,'Kilo(s)',95);
-
-DELIMITER $$
-CREATE PROCEDURE eliminarProducto(IN IdProd int)
-BEGIN
-	UPDATE `productos` SET `Estado` = false WHERE `IdProducto` = IdProd;
-END $$
-DELIMITER ;
-
--- call eliminarProducto(2);
-
-DELIMITER $$
-CREATE PROCEDURE productosByRuc(
-IN RucEmp varchar(11))
-BEGIN 
-	SELECT * FROM `productos` WHERE `RucEmpresa` = RucEmp AND `Estado` = true;
-END $$
-DELIMITER ;
-
--- call productosByRuc('11111111111');
-
-DELIMITER $$
-CREATE PROCEDURE provinciaByDepartamento(
-IN IdDep varchar(2))
-BEGIN 
-	SELECT * FROM `provincias` WHERE `IdDepartamento` = IdDep;
-END $$
-DELIMITER ;
-
--- call provinciaByDepartamento('02');
-
-DELIMITER $$
-CREATE PROCEDURE distritoByProvincia(
-IN IdProv varchar(4))
-BEGIN 
-	SELECT * FROM `distritos` WHERE `IdProvincia` = IdProv;
-END $$
-DELIMITER ;
-
--- call distritoByProvincia('02');
-
-DELIMITER $$
-CREATE PROCEDURE DepProvByDistrito(
-IN IdDist varchar(6))
-BEGIN 
-	SELECT de.IdDepartamento,p.IdProvincia,di.IdDistrito FROM `distritos` di
-    INNER JOIN `provincias` p ON p.IdProvincia = di.IdProvincia
-    INNER JOIN `departamentos` de ON de.IdDepartamento = p.IdDepartamento
-    WHERE di.IdDistrito = IdDist;
-END $$
-DELIMITER ;
-
--- call DepProvByDistrito('070101');
-
-DELIMITER $$
-CREATE PROCEDURE agregarCliente(
-IN Nom varchar(50),Ape varchar(50),Dir varchar(100),Tel varchar(9))
-BEGIN
-INSERT INTO `clientes`(`Nombre`,`Apellido`,`Direccion`,`Telefono`) 
-VALUES (Nom,Ape,Dir,Tel);
-END $$
-DELIMITER ;
-
-call agregarCliente('Esteban','Chaname','Av. Perù','955597838');
-
-DELIMITER $$
-CREATE PROCEDURE agregarPedido(
-IN IdCli int,Fecha datetime,IdProd int,Cant int,Coment varchar(1000))
-BEGIN
-INSERT INTO `pedidos`(`IdCliente`,`Fecha`,`IdProducto`,`Cantidad`,`Comentarios`) 
-VALUES (IdCli,Fecha,IdProd,Cant,Coment);
-END $$
-DELIMITER ;
-
-call agregarPedido(1,NOW(),1,2,'');
-
-DELIMITER $$
-CREATE PROCEDURE eliminarPedido( IN IdPed int )
-BEGIN
-UPDATE `pedidos` SET `Estado` = false WHERE `IdPedido` = IdPed;
-END $$
-DELIMITER ;
-
--- call eliminarPedido(1);
-
-DELIMITER $$
-CREATE PROCEDURE mostrarPedidosByRuc( IN RucEmp varchar(11) )
-BEGIN
-	SELECT ped.IdPedido,prod.NomProducto,CONCAT(c.Nombre,' ',c.Apellido) AS NombreCompleto,ped.Cantidad,ped.Fecha,c.Telefono,c.Direccion,ped.Comentarios
-    FROM pedidos ped INNER JOIN productos prod ON ped.IdProducto = prod.IdProducto
-    INNER JOIN clientes c ON ped.IdCliente = c.IdCliente
-    WHERE prod.RucEmpresa = RucEmp AND ped.Estado = true AND ped.Vendido = false;
-END $$
-DELIMITER ;
-
--- call mostrarPedidosByRuc('11111111111');
-
-DELIMITER $$
-CREATE PROCEDURE agregarVenta( IN idPed int )
-BEGIN
-	UPDATE `pedidos` SET `Vendido` = true WHERE `IdPedido` = IdPed;
-END $$
-DELIMITER ; 
-
--- call agregarVenta(1);
-
-DELIMITER $$
-CREATE PROCEDURE showVentasByRuc( IN RucEmp varchar(11) )
-BEGIN
-	SELECT CONCAT(c.Nombre,' ',c.Apellido) AS NombreCompleto,prod.NomProducto,ped.Cantidad,prod.Precio,(prod.Precio*ped.Cantidad) AS Monto,ped.Fecha 
-    FROM pedidos ped INNER JOIN productos prod ON ped.IdProducto = prod.IdProducto
-    INNER JOIN clientes c ON ped.IdCliente = c.IdCliente
-    WHERE prod.RucEmpresa = RucEmp AND ped.Vendido = true;
-END $$
-DELIMITER ;
-
--- call showVentasByRuc('11111111111');
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -23,9 +23,5 @@ class Pedido {
         $sql = "call eliminarPedido({$idPed});";
         return $this->cnx->query($sql);
     }
-    function showVentasByRuc($ruc) {
-        $sql = "call showVentasByRuc('{$ruc}');";
-        return $this->cnx->query($sql,PDO::FETCH_ASSOC)->fetchAll();
-    }
 }
 ?>

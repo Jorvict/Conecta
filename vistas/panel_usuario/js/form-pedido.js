@@ -37,6 +37,7 @@ $(function () {
 	$("#tablePedidos tbody").on("click", ".check-order", function () {
 		ShowForm();
 		let data = tablePed.row($(this).parents("tr")).data();
+		$("#idPed").val(data["IdPedido"]);
 		$("#telefono").val(data["Telefono"]);
 		$("#direccion").val(data["Direccion"]);
 		$("#comments").val(data["Comentarios"]);
@@ -87,4 +88,27 @@ function HideForm() {
 }
 $(".close-button").click(() => {
 	HideForm();
+});
+$(".btn-confirmar").click(() => {
+	let idPed = $("#idPed").val();
+	$.ajax({
+		type: "POST",
+		url: "../../index.php?controller=venta&action=confirmarVenta",
+		data: {
+			idPed: idPed,
+		},
+		success: function (response) {
+			let json = JSON.parse(response);
+			Swal.fire({
+				icon: json.icon,
+				title: json.msg,
+				confirmButtonText: json.btnText,
+			}).then(() => {
+				if (json.icon == "success") {
+					HideForm();
+					$("#tablePedidos").DataTable().ajax.reload(null, false);
+				}
+			});
+		},
+	});
 });

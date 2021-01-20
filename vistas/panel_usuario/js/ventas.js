@@ -8,7 +8,7 @@ $(function () {
         dom: '<f>t<ip>',
         pageLength: 5,
         ajax: {
-            url: '../../index.php?controller=pedido&action=showVentasByRuc&ruc=' +
+            url: '../../index.php?controller=venta&action=showVentasByRuc&ruc=' +
             $('#rucSuperior').val(),
             dataSrc: ""
         },

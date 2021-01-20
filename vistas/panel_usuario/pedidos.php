@@ -18,7 +18,7 @@ include 'header.php';
         <figure class="img-container">
           <img src="../../public/imagenes/categorias/abarrote.jpg" alt="">
         </figure>
-
+        <input type="text" id="idPed" hidden>
         <div class="comments-container">
           <div class="comments-title-container">
             <h3 class="comments-title">Teléfono:</h3>
@@ -34,7 +34,7 @@ include 'header.php';
           <textarea name="" id="comments" cols="30" rows="3"></textarea>
           <div class="buttons-container">
             <button class="btn-cancelar"><i class="fas fa-times"></i>Cancelar</button>
-            <button class="btn-confirmar"><i class="fas fa-check"></i>Atender</button>
+            <button class="btn-confirmar"><i class="fas fa-check"></i>Confirmar</button>
           </div>
         </div>
       </div>

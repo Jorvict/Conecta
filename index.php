@@ -2,9 +2,11 @@
 require_once 'controladores/EmpresaController.php';
 require_once 'controladores/ProductoController.php';
 require_once 'controladores/PedidoController.php';
+require_once 'controladores/VentaController.php';
 $e = new EmpresaController();
 $prod = new ProductoController();
 $ped = new PedidoController();
+$v = new VentaController();
 if (isset($_GET['controller'])) {
     $a = $_GET['action'];
     switch ($_GET['controller']) {
@@ -25,6 +27,10 @@ if (isset($_GET['controller'])) {
             break;
         case 'pedido':
             $result = $ped->$a();
+            break;
+        case 'venta':
+            $result = $v->$a();
+            break;
     }
     echo (is_array($result)) ? json_encode($result) : $result;
 } else {
