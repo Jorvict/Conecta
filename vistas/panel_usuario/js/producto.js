@@ -6,6 +6,7 @@ $(function () {
 		scrollX: true,
 		dom: '<"header__main"<"search"f>>t<"header__main"ip>',
 		lengthChange: false,
+		pageLength: 5,
 		ajax: {
 			url:
 				"../../index.php?controller=producto&action=productosByRuc&ruc=" +
@@ -78,7 +79,7 @@ $(function () {
 							title: json.msg,
 							confirmButtonText: json.btnText,
 						}).then(() => {
-							if (json.icon == "success") {
+							if (json.icon == "info") {
 								$("#productosTabla").DataTable().ajax.reload(null, false);
 							}
 						});

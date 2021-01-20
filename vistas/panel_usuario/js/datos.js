@@ -37,16 +37,6 @@ dep.load(
 dep.change(updateSelects);
 prov.change(loadDistritos);
 
-function validateNumber(event) {
-	let unicode = event.keyCode || event.which;
-	let correctKey =
-		unicode == 8 ||
-		unicode == 9 ||
-		unicode == 116 ||
-		(unicode >= 48 && unicode <= 57) || // Números
-		(unicode >= 96 && unicode <= 105); // NumPad
-	return correctKey;
-}
 
 function CheckDatos() {
 	const url = "../../index.php?controller=empresa&action=actualizarDatos",

@@ -1,5 +1,6 @@
 <?php include 'header.php'; ?>
-
+<link rel="stylesheet" href="css/datos.css">
+</head>
 <body class="body">
   <?php include 'menu.html'; ?>
   <main class="main">
@@ -61,3 +62,6 @@
     </section>
   </main>
   <?php include 'footer.php'; ?>
+  <script type="text/javascript" src="./js/datos.js"></script>
+  </body>
+</html>

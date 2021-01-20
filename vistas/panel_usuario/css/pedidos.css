@@ -215,3 +215,6 @@
         font-size: 13px;
     }
 }
+.dataTables_filter {
+    float: left;
+}

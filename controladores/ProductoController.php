@@ -45,7 +45,7 @@ class ProductoController {
     function eliminarProducto(){
         $id = (int)$_POST['idProd'];
         return ($this->modelo->eliminarProducto($id) != false) ? 
-                ['msg' => 'Producto eliminado', 'icon' => 'success', 'btnText' => 'Continuar'] :
+                ['msg' => 'Producto eliminado', 'icon' => 'info', 'btnText' => 'Continuar'] :
                 ['msg' => 'No se pudo eliminar el producto', 'icon' => 'error', 'btnText' => 'Volver a intentar'];
 
     }

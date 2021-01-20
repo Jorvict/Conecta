@@ -2264,16 +2264,29 @@ PRIMARY KEY (`IdCliente`) USING BTREE
 -- ----------------------------
 create table `pedidos`(
 `IdPedido` int AUTO_INCREMENT,
+`IdCliente` int NOT NULL,
+`Fecha` datetime NOT NULL,
+`IdProducto` int NOT NULL,
+`Cantidad` int NOT NULL,
+`Comentarios` varchar(1000),
+`Vendido` bool NOT NULL DEFAULT FALSE,
+`Estado` bool NOT NULL DEFAULT TRUE,
+PRIMARY KEY (`IdPedido`) USING BTREE,
+CONSTRAINT `pedidos_fk1` FOREIGN KEY (`IdCliente`) REFERENCES `clientes`(`IdCliente`),
+CONSTRAINT `pedidos_fk2` FOREIGN KEY (`IdProducto`) REFERENCES `productos`(`IdProducto`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/* create table `pedidos2`(
+`IdPedido` int AUTO_INCREMENT,
 `IdCliente` int,
 `Fecha` datetime,
 PRIMARY KEY (`IdPedido`) USING BTREE,
 CONSTRAINT `pedidos_fk1` FOREIGN KEY (`IdCliente`) REFERENCES `clientes`(`IdCliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; */
 
 -- ----------------------------
 -- Table structure for detallepedido
 -- ----------------------------
-create table `detallepedido`(
+/* create table `detallepedido`(
 `IdDetalle` int AUTO_INCREMENT,
 `IdPedido` int,
 `IdProducto` int,
@@ -2282,7 +2295,7 @@ create table `detallepedido`(
 PRIMARY KEY (`IdDetalle`) USING BTREE,
 CONSTRAINT `detallepedido_fk1` FOREIGN KEY (`IdPedido`) REFERENCES `pedidos`(`IdPedido`),
 CONSTRAINT `detallepedido_fk2` FOREIGN KEY (`IdProducto`) REFERENCES `productos`(`IdProducto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; */
 
 -- ----------------------------
 -- Records for categorias
@@ -2318,101 +2331,7 @@ BEGIN
 END $$
 DELIMITER ;
 
--- call registrarEmpresa('prueba@gmail.com','123','11111111111','Negocio',1,'Av.Perú','Esteban','955597838');
-
-DELIMITER $$
-CREATE PROCEDURE agregarProducto(
-IN RucEmpresa varchar(11),
-	NomProducto varchar(150),
-    Descripcion varchar(1000),
-    Precio decimal(7,2),
-    Medida varchar(50),
-    Stock int)
-BEGIN 
-	INSERT INTO `productos`(`RucEmpresa`,`NomProducto`,`Descripcion`,`Precio`,`Medida`,`Stock`)
-    VALUES(RucEmpresa,NomProducto,Descripcion,Precio,Medida,Stock);
-END $$
-DELIMITER ;
-
--- call agregarProducto('11111111111','AProducto','Lorem ipsus','10.5','Medida',100);
-
-DELIMITER $$
-CREATE PROCEDURE editarProducto(
-IN IdProd int,
-	NomProd varchar(150),
-    Descr varchar(1000),
-    Precio decimal(7,2),
-    Medida varchar(50),
-    Stock int)
-BEGIN 
-	UPDATE `productos` SET `NomProducto` = NomProd,`Descripcion` = Descr,`Precio` = Precio,`Medida` = Medida,`Stock` = Stock
-    WHERE `IdProducto` = IdProd;
-END $$
-DELIMITER ;
-
--- call editarProducto(2,'ProdEditado','Desc',10.5,'Kilo(s)',95);
-
-DELIMITER $$
-CREATE PROCEDURE eliminarProducto(IN IdProd int)
-BEGIN
-	UPDATE `productos` SET `Estado` = false WHERE `IdProducto` = IdProd;
-END $$
-DELIMITER ;
-
--- call eliminarProducto(2);
-select * from productos;
-
-DELIMITER $$
-CREATE PROCEDURE productosByRuc(
-IN RucEmp varchar(11))
-BEGIN 
-	SELECT * FROM `productos` WHERE `RucEmpresa` = RucEmp AND `Estado` = true;
-END $$
-DELIMITER ;
-
-call productosByRuc('11111111111');
-
-DELIMITER $$
-CREATE PROCEDURE showEmpresa(
-IN RucEmp varchar(11))
-BEGIN 
-	SELECT `NomEmpresa`,`Logo`,`Descripcion`,`Telefono`,`Facebook`,`Instangram`,`Direccion` 
-    FROM `empresas` WHERE `RucEmpresa` = RucEmp;
-END $$
-DELIMITER ;
-
-call showEmpresa('11111111111');
-
-DELIMITER $$
-CREATE PROCEDURE empresasByCategoria(
-IN IdCat int)
-BEGIN 
-	SELECT `RucEmpresa`,`NomEmpresa`,`Logo` 
-    FROM `empresas` WHERE `IdCategoria` = IdCat;
-END $$
-DELIMITER ;
-
-call empresasByCategoria(1);
-
-DELIMITER $$
-CREATE PROCEDURE provinciaByDepartamento(
-IN IdDep varchar(2))
-BEGIN 
-	SELECT * FROM `provincias` WHERE `IdDepartamento` = IdDep;
-END $$
-DELIMITER ;
-
-call provinciaByDepartamento('02');
-
-DELIMITER $$
-CREATE PROCEDURE distritoByProvincia(
-IN IdProv varchar(4))
-BEGIN 
-	SELECT * FROM `distritos` WHERE `IdProvincia` = IdProv;
-END $$
-DELIMITER ;
-
-call distritoByProvincia('02');
+call registrarEmpresa('prueba@gmail.com','123','11111111111','Negocio',1,'Av.Perú','Esteban','955597838');
 
 DELIMITER $$
 CREATE PROCEDURE actualizarEmpresa(
@@ -2443,6 +2362,99 @@ DELIMITER ;
 -- call actualizarEmpresa('11111111111','esteban@gmail.com','Descripción','Av. Perú','070104','955597838','955597838','esteban@gmail.com','esteban@gmail.com');
 
 DELIMITER $$
+CREATE PROCEDURE showEmpresa(
+IN RucEmp varchar(11))
+BEGIN 
+	SELECT `NomEmpresa`,`Logo`,`Descripcion`,`Telefono`,`Facebook`,`Instangram`,`Direccion` 
+    FROM `empresas` WHERE `RucEmpresa` = RucEmp;
+END $$
+DELIMITER ;
+
+-- call showEmpresa('11111111111');
+
+DELIMITER $$
+CREATE PROCEDURE empresasByCategoria(
+IN IdCat int)
+BEGIN 
+	SELECT `RucEmpresa`,`NomEmpresa`,`Logo` 
+    FROM `empresas` WHERE `IdCategoria` = IdCat;
+END $$
+DELIMITER ;
+
+-- call empresasByCategoria(1);
+
+DELIMITER $$
+CREATE PROCEDURE agregarProducto(
+IN RucEmpresa varchar(11),
+	NomProducto varchar(150),
+    Descripcion varchar(1000),
+    Precio decimal(7,2),
+    Medida varchar(50),
+    Stock int)
+BEGIN 
+	INSERT INTO `productos`(`RucEmpresa`,`NomProducto`,`Descripcion`,`Precio`,`Medida`,`Stock`)
+    VALUES(RucEmpresa,NomProducto,Descripcion,Precio,Medida,Stock);
+END $$
+DELIMITER ;
+
+call agregarProducto('11111111111','Producto1','Descripción','10.5','Medida',100);
+
+DELIMITER $$
+CREATE PROCEDURE editarProducto(
+IN IdProd int,
+	NomProd varchar(150),
+    Descr varchar(1000),
+    Precio decimal(7,2),
+    Medida varchar(50),
+    Stock int)
+BEGIN 
+	UPDATE `productos` SET `NomProducto` = NomProd,`Descripcion` = Descr,`Precio` = Precio,`Medida` = Medida,`Stock` = Stock
+    WHERE `IdProducto` = IdProd;
+END $$
+DELIMITER ;
+
+-- call editarProducto(2,'ProdEditado','Desc',10.5,'Kilo(s)',95);
+
+DELIMITER $$
+CREATE PROCEDURE eliminarProducto(IN IdProd int)
+BEGIN
+	UPDATE `productos` SET `Estado` = false WHERE `IdProducto` = IdProd;
+END $$
+DELIMITER ;
+
+-- call eliminarProducto(2);
+
+DELIMITER $$
+CREATE PROCEDURE productosByRuc(
+IN RucEmp varchar(11))
+BEGIN 
+	SELECT * FROM `productos` WHERE `RucEmpresa` = RucEmp AND `Estado` = true;
+END $$
+DELIMITER ;
+
+-- call productosByRuc('11111111111');
+
+DELIMITER $$
+CREATE PROCEDURE provinciaByDepartamento(
+IN IdDep varchar(2))
+BEGIN 
+	SELECT * FROM `provincias` WHERE `IdDepartamento` = IdDep;
+END $$
+DELIMITER ;
+
+-- call provinciaByDepartamento('02');
+
+DELIMITER $$
+CREATE PROCEDURE distritoByProvincia(
+IN IdProv varchar(4))
+BEGIN 
+	SELECT * FROM `distritos` WHERE `IdProvincia` = IdProv;
+END $$
+DELIMITER ;
+
+-- call distritoByProvincia('02');
+
+DELIMITER $$
 CREATE PROCEDURE DepProvByDistrito(
 IN IdDist varchar(6))
 BEGIN 
@@ -2453,5 +2465,71 @@ BEGIN
 END $$
 DELIMITER ;
 
-call DepProvByDistrito('070101');
+-- call DepProvByDistrito('070101');
 
+DELIMITER $$
+CREATE PROCEDURE agregarCliente(
+IN Nom varchar(50),Ape varchar(50),Dir varchar(100),Tel varchar(9))
+BEGIN
+INSERT INTO `clientes`(`Nombre`,`Apellido`,`Direccion`,`Telefono`) 
+VALUES (Nom,Ape,Dir,Tel);
+END $$
+DELIMITER ;
+
+call agregarCliente('Esteban','Chaname','Av. Perù','955597838');
+
+DELIMITER $$
+CREATE PROCEDURE agregarPedido(
+IN IdCli int,Fecha datetime,IdProd int,Cant int,Coment varchar(1000))
+BEGIN
+INSERT INTO `pedidos`(`IdCliente`,`Fecha`,`IdProducto`,`Cantidad`,`Comentarios`) 
+VALUES (IdCli,Fecha,IdProd,Cant,Coment);
+END $$
+DELIMITER ;
+
+call agregarPedido(1,NOW(),1,2,'');
+call agregarPedido(1,NOW(),1,2,'');
+-- call agregarPedido(1,NOW(),2,2,'Sin comentarios...');
+
+DELIMITER $$
+CREATE PROCEDURE eliminarPedido( IN IdPed int )
+BEGIN
+UPDATE `pedidos` SET `Estado` = false WHERE `IdPedido` = IdPed;
+END $$
+DELIMITER ;
+
+-- call eliminarPedido(1);
+
+DELIMITER $$
+CREATE PROCEDURE mostrarPedidosByRuc( IN RucEmp varchar(11) )
+BEGIN
+	SELECT ped.IdPedido,prod.NomProducto,CONCAT(c.Nombre,' ',c.Apellido) AS NombreCompleto,ped.Cantidad,ped.Fecha,c.Telefono,c.Direccion,ped.Comentarios
+    FROM pedidos ped INNER JOIN productos prod ON ped.IdProducto = prod.IdProducto
+    INNER JOIN clientes c ON ped.IdCliente = c.IdCliente
+    WHERE prod.RucEmpresa = RucEmp AND ped.Estado = true AND ped.Vendido = false;
+END $$
+DELIMITER ;
+
+call mostrarPedidosByRuc('11111111111');
+
+DELIMITER $$
+CREATE PROCEDURE agregarVenta( IN idPed int )
+BEGIN
+	UPDATE `pedidos` SET `Vendido` = true WHERE `IdPedido` = IdPed;
+END $$
+DELIMITER ; 
+
+call agregarVenta(1);
+-- call agregarVenta(6);
+
+DELIMITER $$
+CREATE PROCEDURE showVentasByRuc( IN RucEmp varchar(11) )
+BEGIN
+	SELECT CONCAT(c.Nombre,' ',c.Apellido) AS NombreCompleto,prod.NomProducto,ped.Cantidad,prod.Precio,(prod.Precio*ped.Cantidad) AS Monto,ped.Fecha 
+    FROM pedidos ped INNER JOIN productos prod ON ped.IdProducto = prod.IdProducto
+    INNER JOIN clientes c ON ped.IdCliente = c.IdCliente
+    WHERE prod.RucEmpresa = RucEmp AND ped.Vendido = true;
+END $$
+DELIMITER ;
+
+call showVentasByRuc('11111111111');

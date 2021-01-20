@@ -1,7 +1,8 @@
 <?php
 include 'header.php';
 ?>
-
+<link rel="stylesheet" href="css/producto.css">
+</head>
 <body class="body">
   <?php include 'menu.html'; ?>
   <main class="main">
@@ -75,3 +76,6 @@ include 'header.php';
     </section>
   </main>
   <?php include 'footer.php'; ?>
+  <script type="text/javascript" src="./js/producto.js"></script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 ?>
-
+</head>
 <body class="body">
   <div class="page-container">
     <?php include 'menu.html'; ?>
@@ -11,3 +11,5 @@ include 'header.php';
     </main>
   </div>
 <?php include 'footer.php'; ?>
+  </body>
+</html>
