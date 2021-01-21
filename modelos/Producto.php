@@ -18,7 +18,7 @@ class Producto {
         $this->cnx = Conexion::conectar();
     }
     function productosByRuc(string $ruc){
-        $sql = "SELECT * FROM `productos` WHERE `RucEmpresa` = RucEmp AND `Estado` = true;";
+        $sql = "SELECT * FROM `productos` WHERE `RucEmpresa` = ? AND `Estado` = true;";
         $stmt = $this->cnx->prepare($sql);
         $stmt->execute(array($ruc));
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

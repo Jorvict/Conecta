@@ -1,13 +1,13 @@
 //Variables mostrar y ocultar form
 const product = document.querySelector('.form-container-product');
-const productButton = document.querySelector('.btn-product');
+
 const closeButtonProduct = document.querySelector('.close-button-product');
 
 // Desplegar Product
 function ShowProduct(){
     product.classList.add('is-activep')
 }
-productButton.addEventListener('click', ShowProduct)
+
 
 // Ocultar Product
 function HideProduct(){

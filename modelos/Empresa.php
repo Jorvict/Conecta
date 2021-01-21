@@ -104,7 +104,7 @@ class Empresa {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     function showEmpresa($ruc) {
-        $sql = "SELECT `NomEmpresa`,`Logo`,`Descripcion`,`Telefono`,`Facebook`,`Instangram`,`Direccion` 
+        $sql = "SELECT `RucEmpresa`,`NomEmpresa`,`Logo`,`Descripcion`,`Telefono`,`Facebook`,`Instangram`,`Direccion` 
                 FROM `empresas` WHERE `RucEmpresa` = '{$ruc}';";
         return $this->cnx->query($sql,PDO::FETCH_ASSOC)->fetch();
     }

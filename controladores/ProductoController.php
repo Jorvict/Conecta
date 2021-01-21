@@ -9,7 +9,33 @@ class ProductoController {
         $this->modelo = new Producto();
     }
     function productosByRuc(){
-        return $this->modelo->productosByRuc($_GET['ruc']);
+        $prods = $this->modelo->productosByRuc($_GET['ruc']);
+        if (isset($_POST['type'])) {
+            $articles = '';
+            foreach ($prods as $p) {
+                $articles .= "<article class='product'>
+                                <figure class='img-product'>
+                                    <img src='' alt='Imagen del Producto'>
+                                </figure>
+                                <h4 class='subtitulo-product'>
+                                    ".$p['NomProducto']."
+                                </h4>
+                                <p class='product-desc'>
+                                    ".$p['Precio']."
+                                </p>
+                                <div class='button-container'>
+                                    <input type='text' value='".$p['IdProducto']."' hidden>
+                                    <button class='btn-product'>
+                                        Ver producto
+                                    </button>
+                                </div>
+                            </article>";
+            }
+            return $articles;
+        } else {
+            return $prods;
+        }
+        
     }
     function agregarProducto(){
         $ruc = $_POST['ruc'];

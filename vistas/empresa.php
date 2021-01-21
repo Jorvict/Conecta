@@ -1,6 +1,6 @@
 <?php
 session_start();
-$title = "";
+$title = $_SESSION['empresa']['NomEmpresa'];
 include_once 'layouts/head.php'; ?>
 <link rel="stylesheet" type="text/css" href="../public/css/product_services.css">
 <link rel="stylesheet" href="../public/css/form-product.css">
@@ -93,6 +93,7 @@ include_once 'layouts/head.php'; ?>
 		<section id="t-principal">
 			<div class="space-title"></div>
 			<h4 id="categoria"><?php echo $_SESSION['empresa']['NomEmpresa']; ?></h4>
+			<h3 hidden><?php echo $_SESSION['empresa']['RucEmpresa']; ?></h3>
 		</section>
 
 		<main>
@@ -132,28 +133,10 @@ include_once 'layouts/head.php'; ?>
 						<div class="recomendaciones">
 							<h3 class="titulo">
 								Tambien podría interesarte
+								
 							</h3>
-							<div class="docker-imgs">
-								<figure class="dck-img-container">
-									<a href="">
-										<img src="../public/imagenes/categorias-comercio/Ropa_textiles/Renzo/logo.jpg" alt="">
-									</a>
-								</figure>
-								<figure class="dck-img-container">
-									<a href="">
-										<img src="../public/imagenes/categorias-comercio/Ropa_textiles/Capittana/logo.jpg" alt="">
-									</a>
-								</figure>
-								<figure class="dck-img-container">
-									<a href="">
-										<img src="../public/imagenes/categorias-comercio/Ropa_textiles/Sophie/logo.jpg" alt="">
-									</a>
-								</figure>
-								<figure class="dck-img-container">
-									<a href="">
-										<img src="../public/imagenes/categorias-comercio/Ropa_textiles/Peruvian_Flake/logo.jpg" alt="">
-									</a>
-								</figure>
+							<div id="docker-imgs">
+								<input type="text" value="<?php echo $_SESSION['categoria']['idCat']; ?>" hidden>
 							</div>
 						</div>
 					</div>
@@ -167,8 +150,8 @@ include_once 'layouts/head.php'; ?>
 					Productos
 				</h3>
 
-				<div class="products-container">
-					<article class="product">
+				<div id="products-container">
+					<!-- <article class="product">
 						<figure class="img-product">
 							<img src="../public/imagenes/categorias-comercio/Ropa_textiles/Butrich/costureria.jpg" alt="">
 						</figure>
@@ -251,7 +234,7 @@ include_once 'layouts/head.php'; ?>
 								Ver producto
 							</button>
 						</div>
-					</article>
+					</article> -->
 				</div>
 
 				<div class="button-container">
@@ -268,6 +251,7 @@ include_once 'layouts/head.php'; ?>
 
 	<?php include_once 'layouts/scripts.php'; ?>
 	<script type="text/javascript" src="../public/js/form-product.js"></script>
+	<script src="../public/js/empresa.js"></script>
 </body>
 
 </html>

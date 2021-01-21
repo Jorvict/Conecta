@@ -119,20 +119,20 @@ main .left-section .info-emp .container-sticky .recomendaciones .titulo{
     font-family: 'Myriad Pro';
 }
 
-main .left-section .info-emp .container-sticky .recomendaciones .docker-imgs{
+main .left-section .info-emp .container-sticky .recomendaciones #docker-imgs{
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
 }
 
-main .left-section .info-emp .container-sticky .recomendaciones .docker-imgs .dck-img-container{
+main .left-section .info-emp .container-sticky .recomendaciones #docker-imgs .dck-img-container{
     width: 50px;
     height: 50px;
     margin-right: 10px;
 }
 
-main .left-section .info-emp .container-sticky .recomendaciones .docker-imgs .dck-img-container img{
+main .left-section .info-emp .container-sticky .recomendaciones #docker-imgs .dck-img-container img{
     width: 100%;
     height: 100%;
     border-radius: 50px;
@@ -159,7 +159,7 @@ main .right-section .title-products{
     color: #00c7ce;
 }
 
-main .right-section .products-container{
+main .right-section #products-container{
     width: 90%;
     display: flex;
     flex-wrap: wrap;
@@ -167,7 +167,7 @@ main .right-section .products-container{
     margin-top: 30px;
 }
 
-main .right-section .products-container .product{
+main .right-section #products-container .product{
     width: 20%;
     min-width: 250px;
     margin-right: 1%;
@@ -179,24 +179,24 @@ main .right-section .products-container .product{
     height: auto;
 }
 
-main .right-section .products-container .product .img-product{
+main .right-section #products-container .product .img-product{
     width: 100%;
     height: 70%;
 }
 
-main .right-section .products-container .product .img-product img{
+main .right-section #products-container .product .img-product img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-main .right-section .products-container .product .subtitulo-product{
+main .right-section #products-container .product .subtitulo-product{
     margin-top: 10px;
     color: #00c7ce;
     text-align: center;
 }
 
-main .right-section .products-container .product .button-container button{
+main .right-section #products-container .product .button-container button{
     background: #ff9e00;
     color: #e4f4f4;
     font-size: 18px;
@@ -207,11 +207,11 @@ main .right-section .products-container .product .button-container button{
     font-weight: 700;
 }
 
-main .right-section .products-container .product .button-container button:focus{
+main .right-section #products-container .product .button-container button:focus{
     outline: none;
 }
 
-main .right-section .products-container .product .product-desc{
+main .right-section #products-container .product .product-desc{
     margin-top: 10px;
     font-size: 14px;
     font-weight: 600;

@@ -8,7 +8,9 @@ $(".contentCats").load(urlCats, data, () => {
 	});
 });
 $(".contentEmps").on("click", ".cuadros", function () {
-    let url = $(this)[0].getElementsByTagName("input")[0].value;
+	let url =
+		"../index.php?controller=empresa&action=showEmpresa&ruc=" +
+		$(this)[0].getElementsByTagName("input")[0].value;
 	$.ajax({
 		type: "GET",
 		url: url,
