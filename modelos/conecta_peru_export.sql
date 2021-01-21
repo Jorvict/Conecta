@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Gen 20, 2021 alle 17:48
+-- Creato il: Gen 21, 2021 alle 02:00
 -- Versione del server: 10.4.14-MariaDB
 -- Versione PHP: 7.4.11
 
@@ -137,7 +137,7 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`IdCategoria`, `nombre`) VALUES
-(1, 'Ropa y textil'),
+(1, 'Ropa y textiles'),
 (2, 'Abarrotes'),
 (3, 'Restaurantes'),
 (4, 'Salud'),
@@ -146,7 +146,7 @@ INSERT INTO `categorias` (`IdCategoria`, `nombre`) VALUES
 (7, 'Ferretería'),
 (8, 'Frutas y verduras'),
 (9, 'Útiles de oficina'),
-(10, 'Mascota'),
+(10, 'Mascotas'),
 (11, 'Iluminación'),
 (12, 'Decoración'),
 (13, 'Otros');
@@ -2138,7 +2138,19 @@ CREATE TABLE `empresas` (
 --
 
 INSERT INTO `empresas` (`RucEmpresa`, `NomEmpresa`, `Contrasena`, `IdCategoria`, `Descripcion`, `Logo`, `NomTitular`, `EmailEmp`, `Direccion`, `Distrito`, `EmailPers`, `Telefono`, `Whatsapp`, `Facebook`, `Instangram`, `Estado`) VALUES
-('11111111111', 'Esteban Food', '$2y$10$EaT6clS1Xnh4TjWJ2A3V5uWN/rJifH72znuo84uPSPw.tJYvBxaK.', 3, '', '', 'Esteban Chaname', '', 'Av. Perú', NULL, 'esteban@gmail.com', '955597838', '', '', '', 1);
+('10101010101', 'Categoria 10', '$2y$10$bEMqdTwv1x74OWSu6OYZxumgQCeYHV76JwND54bCAl2cU8b1k5Xa2', 10, '', '', 'Esteban Chaname', '', 'Av. Perú', NULL, 'esteban10@gmail.com', '955597838', '', '', '', 1),
+('11111111111', 'Categoria 1', '$2y$10$sGUofRf5d/zIC4PqAPpulOoixaAcLHsi0mG5FFPQY4h31B4GP1hx2', 1, '', '', 'Esteban Chaname', '', 'Av. Perú', NULL, 'esteban1@gmail.com', '955597838', '', '', '', 1),
+('12121212121', 'Categoria 11', '$2y$10$igi0eiyvsP5TpmnBVNsM2ujO9l9gWYhhpfXoPPNgG78CHVElDjyV2', 11, '', '', 'Esteban Chaname', '', 'Av. Perú', NULL, 'esteban11@gmail.com', '955597838', '', '', '', 1),
+('22222222222', 'Categoria 2', '$2y$10$UGoWLLa4BqS8hrc7pKOG8.hRYbU5WpsCghk985aCr5glYmpUujwR6', 2, '', '', 'Esteban Chaname', '', 'Av. Perú', NULL, 'esteban2@gmail.com', '955597838', '', '', '', 1),
+('23232323232', 'Categoria 12', '$2y$10$6RNHsE0PgEoSzWHViXLsWeyP3vkl4Ur96vC79VfCqOSOuFbU7ZKkm', 12, '', '', 'Esteban Chaname', '', 'Av. Perú', NULL, 'esteban12@gmail.com', '955597838', '', '', '', 1),
+('33333333333', 'Categoria 3', '$2y$10$pcxHqckgzXzHhgmk8F/miuIiYXCqvYYJG8./HWq8rljFLKfMM2ajO', 3, '', '', 'Esteban Chaname', '', 'Av. Perú', NULL, 'esteban3@gmail.com', '955597838', '', '', '', 1),
+('34343434343', 'Categoria 13', '$2y$10$wY3Q2D7Hf9uUfeXWn8RliOhuUAf343FtomfMVuR4871ARe5blC52O', 13, '', '', 'Esteban Chaname', '', 'Av. Perú', NULL, 'esteban13@gmail.com', '955597838', '', '', '', 1),
+('44444444444', 'Categoria 4', '$2y$10$iIcP1P91Uog/hFhJLiH9NeG7voEArpJwJpnJAVYLQSVsIOjiZ/tzy', 4, '', '', 'Esteban Chaname', '', 'Av. Perú', NULL, 'esteban4@gmail.com', '955597838', '', '', '', 1),
+('55555555555', 'Categoria 5', '$2y$10$EuYI5cdnf3ewvDtCSuqOT.xNiTTKiTfhK8ShQZGvPfFMtmQ6nsBHW', 5, '', '', 'Esteban Chaname', '', 'Av. Perú', NULL, 'esteban5@gmail.com', '955597838', '', '', '', 1),
+('66666666666', 'Categoria 6', '$2y$10$IGdSEalY.L4NAbMszV2frucTv8Hq0Zm9J.ZX.CtZVewobLkGESSFu', 6, '', '', 'Esteban Chaname', '', 'Av. Perú', NULL, 'esteban6@gmail.com', '955597838', '', '', '', 1),
+('77777777777', 'Categoria 7', '$2y$10$uq.uJNC4t.C2TG8RhuDV/.lqKLk2sNQvSbfDEIolIzLg8zZemMNHS', 7, '', '', 'Esteban Chaname', '', 'Av. Perú', NULL, 'esteban7@gmail.com', '955597838', '', '', '', 1),
+('88888888888', 'Categoria 8', '$2y$10$gwHTnoKW8gwfwVK8JRSCY.MYAZFD.VfVgjuAvfVHWLbjzEQzwiVDC', 8, '', '', 'Esteban Chaname', '', 'Av. Perú', NULL, 'esteban8@gmail.com', '955597838', '', '', '', 1),
+('99999999999', 'Categoria 9', '$2y$10$XGCDXmN/p6DPAF6bOvK2ruZU82NL/6XZSsCg0iRc3gVUhm4lqdehO', 9, '', '', 'Esteban Chaname', '', 'Av. Perú', NULL, 'esteban9@gmail.com', '955597838', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -2162,11 +2174,8 @@ CREATE TABLE `pedidos` (
 --
 
 INSERT INTO `pedidos` (`IdPedido`, `IdCliente`, `Fecha`, `IdProducto`, `Cantidad`, `Comentarios`, `Vendido`, `Estado`) VALUES
-(1, 1, '2021-01-20 11:21:40', 1, 2, '', 1, 1),
-(2, 1, '2021-01-20 11:21:51', 1, 2, '', 1, 1),
-(3, 1, '2021-01-20 11:47:02', 1, 2, '', 0, 1),
-(4, 1, '2021-01-20 11:47:21', 1, 2, '', 0, 1),
-(5, 1, '2021-01-20 11:47:25', 1, 2, '', 0, 1);
+(1, 1, '2021-01-20 19:59:22', 1, 2, '', 1, 1),
+(2, 1, '2021-01-20 19:59:30', 1, 2, '', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -2486,7 +2495,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT per la tabella `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `IdPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `IdPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT per la tabella `productos`
