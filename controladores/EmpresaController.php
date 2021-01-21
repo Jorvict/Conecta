@@ -94,5 +94,8 @@ class EmpresaController {
     function DepProvByDistrito($distrito){
         return $this->modelo->DepProvByDistrito($distrito);
     }
+    function showEmpresa() {
+        return $this->modelo->showEmpresa($_GET['ruc']);
+    }
 }
 ?>

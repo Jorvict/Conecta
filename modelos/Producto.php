@@ -18,13 +18,14 @@ class Producto {
         $this->cnx = Conexion::conectar();
     }
     function productosByRuc(string $ruc){
-        $sql = "call productosByRuc(?);";
+        $sql = "SELECT * FROM `productos` WHERE `RucEmpresa` = RucEmp AND `Estado` = true;";
         $stmt = $this->cnx->prepare($sql);
         $stmt->execute(array($ruc));
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     function agregarProducto(Producto $p){
-        $sql = "call agregarProducto(?,?,?,?,?,?);";
+        $sql = "INSERT INTO `productos`(`RucEmpresa`,`NomProducto`,`Descripcion`,`Precio`,`Medida`,`Stock`)
+                VALUES(?,?,?,?,?,?);";
         $stmt = $this->cnx->prepare($sql);
         $stmt->bindParam(1,$p->rucEmpresa,PDO::PARAM_STR,11);
         $stmt->bindParam(2,$p->nomProducto,PDO::PARAM_STR);
@@ -35,18 +36,19 @@ class Producto {
         return $stmt->execute();
     }
     function editarProducto(Producto $p){
-        $sql = "call editarProducto(?,?,?,?,?,?);";
+        $sql = "UPDATE `productos` SET `NomProducto` = ?,`Descripcion` = ?,`Precio` = ?,`Medida` = ?,`Stock` = ?
+                WHERE `IdProducto` = ?;";
         $stmt = $this->cnx->prepare($sql);
-        $stmt->bindParam(1,$p->idProducto,PDO::PARAM_INT);
-        $stmt->bindParam(2,$p->nomProducto,PDO::PARAM_STR);
-        $stmt->bindParam(3,$p->descripcion,PDO::PARAM_STR);
-        $stmt->bindParam(4,$p->precio);
-        $stmt->bindParam(5,$p->medida,PDO::PARAM_STR);
-        $stmt->bindParam(6,$p->stock,PDO::PARAM_INT);
+        $stmt->bindParam(1,$p->nomProducto,PDO::PARAM_STR);
+        $stmt->bindParam(2,$p->descripcion,PDO::PARAM_STR);
+        $stmt->bindParam(3,$p->precio);
+        $stmt->bindParam(4,$p->medida,PDO::PARAM_STR);
+        $stmt->bindParam(5,$p->stock,PDO::PARAM_INT);
+        $stmt->bindParam(6,$p->idProducto,PDO::PARAM_INT);
         return $stmt->execute();
     }
     function eliminarProducto(int $idProd){
-        $sql = "call eliminarProducto({$idProd});";
+        $sql = "UPDATE `productos` SET `Estado` = false WHERE `IdProducto` = {$idProd};";
         return $this->cnx->query($sql);
     }
 }

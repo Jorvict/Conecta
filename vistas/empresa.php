@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "";
 include_once 'layouts/head.php'; ?>
 <link rel="stylesheet" type="text/css" href="../public/css/product_services.css">
@@ -91,38 +92,41 @@ include_once 'layouts/head.php'; ?>
 
 		<section id="t-principal">
 			<div class="space-title"></div>
-			<h4 id="categoria">Butrich</h4>
+			<h4 id="categoria"><?php echo $_SESSION['empresa']['NomEmpresa']; ?></h4>
 		</section>
 
 		<main>
 			<figure class="img-container">
-				<img src="../public/imagenes/categorias-comercio/Ropa_textiles/Butrich/logo.png" alt="">
+				<img src="" alt="Logo de la empresa">
 			</figure>
 			<aside class="left-section">
 
 				<article class="info-emp">
 					<div class="container-sticky">
 						<p class="description">
-							Se presentó en eventos internacionales como el Mercedes Benz Fashion Week
-							de Madrid (2013) y fue la invitada internacional en el IFLS en Bogotá (2016), así como
-							finalista en el pitch to LAFS (Latin American Fashion Summit) en Cancún (2018).
+							<?php echo $_SESSION['empresa']['Descripcion']; ?>
 						</p>
 						<div class="social-section">
 							<div class="social social-tlf">
 								<i class="icon-phone"></i>
-								(01)239-0070
+								<?php echo $_SESSION['empresa']['Telefono']; ?>
 							</div>
+							<?php if ($_SESSION['empresa']['Facebook'] != "") {
+								?>
 							<div class="social social-fb">
 								<i class="icon-facebook"></i>
-								@bernardosbrasa
+								<?php echo $_SESSION['empresa']['Facebook']; ?>
 							</div>
+							<?php }
+							if ($_SESSION['empresa']['Facebook'] != "") { ?>
 							<div class="social social-ig">
 								<i class="icon-instagram"></i>
-								@bernardosbrasa
+								<?php echo $_SESSION['empresa']['Instangram']; ?>
 							</div>
+							<?php } ?>
 							<div class="social social-local">
 								<i class="icon-location"></i>
-								Av.Marchand #324 Mala,Lima,Peru
+								<?php echo $_SESSION['empresa']['Direccion']; ?>
 							</div>
 						</div>
 						<div class="recomendaciones">

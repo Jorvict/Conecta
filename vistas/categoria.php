@@ -28,7 +28,7 @@ include_once 'layouts/head.php';
 	</div>
 
 	<?php include_once 'layouts/scripts.php'; ?>
-
+	<script src="../public/js/categorias.js"></script>
 </body>
 
 </html>

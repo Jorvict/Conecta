@@ -15,11 +15,14 @@ class Pedido {
         $this->cnx = Conexion::conectar();
     }
     function mostrarPedidosByRuc($ruc) {
-        $sql = "call mostrarPedidosByRuc('{$ruc}');";
+        $sql = "SELECT ped.IdPedido,prod.NomProducto,CONCAT(c.Nombre,' ',c.Apellido) AS NombreCompleto,ped.Cantidad,ped.Fecha,c.Telefono,c.Direccion,ped.Comentarios
+                FROM pedidos ped INNER JOIN productos prod ON ped.IdProducto = prod.IdProducto
+                INNER JOIN clientes c ON ped.IdCliente = c.IdCliente
+                WHERE prod.RucEmpresa = '{$ruc}' AND ped.Estado = true AND ped.Vendido = false;";
         return $this->cnx->query($sql,PDO::FETCH_ASSOC)->fetchAll();
     }
     function eliminarPedido(int $idPed) {
-        $sql = "call eliminarPedido({$idPed});";
+        $sql = "UPDATE `pedidos` SET `Estado` = false WHERE `IdPedido` = {$idPed};";
         return $this->cnx->query($sql);
     }
 }

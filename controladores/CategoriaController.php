@@ -1,7 +1,5 @@
 <?php
 
-use function PHPSTORM_META\type;
-
 require_once 'modelos/Categoria.php';
 
 class CategoriaController {
@@ -40,7 +38,7 @@ class CategoriaController {
         $empresas = $this->modelo->empresasByCategoria($_POST['idCat']);
         $cuadros = '';
         foreach ($empresas as $emp) {
-            $urlEmpresa = '../index.php?controller=categoria&action=showEmpresa&ruc='.$emp['RucEmpresa'];
+            $urlEmpresa = '../index.php?controller=empresa&action=showEmpresa&ruc='.$emp['RucEmpresa'];
             $nomEmp = $emp['NomEmpresa'];
             $cuadros .= "<div class='cuadros'>
                             <input type='text' class='urlEmp' value='{$urlEmpresa}' hidden>
