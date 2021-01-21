@@ -2,7 +2,6 @@
 $title = "Categorías";
 include_once 'layouts/head.php';
 ?>
-<link rel="stylesheet" type="text/css" href="../public/css/cabecera.css">
 <link rel="stylesheet" type="text/css" href="../public/css/categorias.css">
 </head>
 
@@ -18,7 +17,7 @@ include_once 'layouts/head.php';
 		</section>
 
 		<section id="contendido">
-			<section id="contenedor"></section>
+			<section id="contenedor" class="contentCats"></section>
 		</section>
 
 		<?php include_once 'layouts/footer.php'; ?>

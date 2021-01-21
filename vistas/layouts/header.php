@@ -86,49 +86,62 @@
 						<ul>
 							<div class="wrapper">
 								<li class="lng-nav">
-									<a href="">Ropa y textil</a>
+									<input type="text" value="1" hidden>
+									Ropa y textil
 								</li>
 								<li class="lng-nav">
-									<a href="">Abarrotes</a>
+									<input type="text" value="2" hidden>
+									Abarrotes
 								</li>
 								<li class="lng-nav">
-									<a href="">Restaurantes</a>
+									<input type="text" value="3" hidden>
+									Restaurantes
 								</li>
 								<li class="lng-nav">
-									<a href="">Salud</a>
+									<input type="text" value="4" hidden>
+									Salud
 								</li>
 							</div>
 
 							<div class="wrapper">
 								<li class="lng-nav">
-									<a href="">Pastelería</a>
+									<input type="text" value="5" hidden>
+									Pastelería
 								</li>
 								<li class="lng-nav">
-									<a href="">Cuero y calzado</a>
+									<input type="text" value="6" hidden>
+									Cuero y calzado
 								</li>
 								<li class="lng-nav">
-									<a href="">Ferretería</a>
+									<input type="text" value="7" hidden>
+									Ferretería
 								</li>
 								<li class="lng-nav">
-									<a href="">Frutas y verduras</a>
+									<input type="text" value="8" hidden>
+									Frutas y verduras
 								</li>
 							</div>
 
 							<div class="wrapper">
 								<li>
-									<a href="">Útiles de oficina</a>
+									<input type="text" value="9" hidden>
+									Útiles de oficina
 								</li>
 								<li>
-									<a href="">Mascota</a>
+									<input type="text" value="10" hidden>
+									Mascota
 								</li>
 								<li>
-									<a href="">Iluminación</a>
+									<input type="text" value="11" hidden>
+									Iluminación
 								</li>
 								<li>
-									<a href="">Decoración</a>
+									<input type="text" value="12" hidden>
+									Decoración
 								</li>
 								<li>
-									<a href="">Otros</a>
+									<input type="text" value="13" hidden>
+									Otros
 								</li>
 							</div>
 						</ul>

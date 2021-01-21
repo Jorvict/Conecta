@@ -1,5 +1,9 @@
-let url = "../index.php?controller=categoria&action=listarCategorias";
+let urlCats = "../index.php?controller=categoria&action=listarCategorias";
 let data = {
 	type: "cuadros",
 };
-$("#contenedor").load(url, data);
+$(".contentCats").load(urlCats, data, () => {
+	$(".contentCats").on("click", ".cuadros", function() {
+       empresasByCategoria($(this)[0]); 
+    });
+});

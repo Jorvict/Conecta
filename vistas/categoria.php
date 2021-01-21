@@ -1,5 +1,6 @@
 <?php
-$title;
+session_start();
+$title = $_SESSION['categoria']['nomCat'];
 include_once 'layouts/head.php';
 ?>
 <link rel="stylesheet" type="text/css" href="../public/css/ropa.css">
@@ -13,64 +14,12 @@ include_once 'layouts/head.php';
 
 		<br>
 		<section id="t-principal">
-			<h4 id="categoria">Ropa y textiles</h4>
+			<h4 id="categoria"><?php echo $title; ?></h4>
 		</section>
 
 		<section id="contendido">
-			<section id="contenedor">
-				<div class="cuadros">
-					<a href="./product_services_butrich.html">
-						<img id="img" src="../public/imagenes/categorias-comercio/Ropa_textiles/Butrich/logo.png">
-						<div class="hover-galeria">
-							<p>Butrich</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="cuadros">
-					<a href="">
-						<img id="img" src="../public/imagenes/categorias-comercio/Ropa_textiles/Peruvian_Flake/logo.jpg">
-						<div class="hover-galeria">
-							<p>Peruvian Flake</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="cuadros">
-					<a href="">
-						<img id="img" src="../public/imagenes/categorias-comercio/Ropa_textiles/Sophie/logo.jpg">
-						<div class="hover-galeria">
-							<p>Sophie</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="cuadros">
-					<a href="">
-						<img id="img" src="../public/imagenes/categorias-comercio/Ropa_textiles/Renzo/logo.jpg">
-						<div class="hover-galeria">
-							<p>Renzo</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="cuadros">
-					<a href="">
-						<img id="img" src="../public/imagenes/categorias-comercio/Ropa_textiles/Capittana/logo.jpg">
-						<div class="hover-galeria">
-							<p>Capittana</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="cuadros">
-					<a href="./product_services_butrich.html">
-						<img id="img" src="../public/imagenes/categorias-comercio/Ropa_textiles/Capittana/logo.jpg">
-						<div class="hover-galeria">
-							<p>Capittana</p>
-						</div>
-					</a>
-				</div>
+			<section id="contenedor" class="contentEmps">
+				<?php echo $_SESSION['cuadrosEmps']; ?>
 			</section>
 		</section>
 

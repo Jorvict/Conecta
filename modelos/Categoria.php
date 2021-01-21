@@ -14,5 +14,9 @@ class Categoria {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    function empresasByCategoria($idCat) {
+        $sql = "call empresasByCategoria({$idCat});";
+        return $this->cnx->query($sql,PDO::FETCH_ASSOC)->fetchAll();
+    }
 }
 ?>

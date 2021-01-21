@@ -24,18 +24,35 @@ class CategoriaController {
                 $nomCat = $cat['nombre'];
                 $nomImg = strtolower(str_replace('de','',str_replace('y','',str_replace(' ','_',$nomCat))));
                 $urlImg = "../public/imagenes/categorias/".$nomImg.'.png';
-                $urlCategoria = "./categoria.php";
-                $options .= "<a href='{$urlCategoria}'>
-                                <div class='cuadros'>
-                                    <img id='img' src='{$urlImg}'>
-                                    <div class='hover-galeria'>
-                                        <p>{$nomCat}</p>
-                                    </div>
+                $idCat = $cat['IdCategoria'];
+                $options .= "<div class='cuadros'>
+                                <input type='text' value='{$idCat}' hidden>
+                                <img id='img' src='{$urlImg}'>
+                                <div class='hover-galeria'>
+                                    <p>{$nomCat}</p>
                                 </div>
-                            </a>";
+                            </div>";
             }
         }
         return $options;
+    }
+    function empresasByCategoria(){
+        $empresas = $this->modelo->empresasByCategoria($_POST['idCat']);
+        $cuadros = '';
+        foreach ($empresas as $emp) {
+            $urlEmpresa = '../index.php?controller=categoria&action=showEmpresa&ruc='.$emp['RucEmpresa'];
+            $nomEmp = $emp['NomEmpresa'];
+            $cuadros .= "<div class='cuadros'>
+                            <input type='text' class='urlEmp' value='{$urlEmpresa}' hidden>
+                            <img id='img' src=''>
+                            <div class='hover-galeria'>
+                                <p>{$nomEmp}</p>
+                            </div>
+                        </div>";
+        }
+        session_start();
+        $_SESSION['cuadrosEmps'] = $cuadros;
+        $_SESSION['categoria'] = $_POST;
     }
 }
 ?>

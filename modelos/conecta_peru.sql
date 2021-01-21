@@ -2381,7 +2381,7 @@ BEGIN
 END $$
 DELIMITER ;
 
--- call empresasByCategoria(1);
+-- call empresasByCategoria(3);
 
 DELIMITER $$
 CREATE PROCEDURE agregarProducto(
