@@ -3,9 +3,9 @@ require_once 'Conexion.php';
 
 class Producto {
     private $cnx;
-    public $idProducto,$rucEmpresa,$nomProducto,$descripcion,$precio,$medida,$stock,$imagen;
+    public $idProducto,$rucEmpresa,$nomProducto,$descripcion,$precio,$medida,$stock,$imagen,$ImagenUrl;
 
-    function __construct($rucEmpresa=null,$nomProducto=null,$descripcion=null,$precio=null,$medida=null,$stock=null,$imagen=null,$idProducto = 0)
+    function __construct($rucEmpresa=null,$nomProducto=null,$descripcion=null,$precio=null,$medida=null,$stock=null,$imagen=null,$ImagenUrl=null,$idProducto = 0)
     {
         $this->idProducto = $idProducto;
         $this->rucEmpresa = $rucEmpresa;
@@ -15,6 +15,7 @@ class Producto {
         $this->medida = $medida;
         $this->stock = $stock;
         $this->imagen = $imagen;
+        $this->ImagenUrl = $ImagenUrl;
         $this->cnx = Conexion::conectar();
     }
     function productosByRuc(string $ruc){
@@ -25,8 +26,8 @@ class Producto {
     }
     //here function new product
     function agregarProducto(Producto $p){
-        $sql = "INSERT INTO `productos`(`RucEmpresa`,`NomProducto`,`Descripcion`,`Precio`,`Medida`,`Stock`,`Imagen`)
-                VALUES(?,?,?,?,?,?,?);";
+        $sql = "INSERT INTO `productos`(`RucEmpresa`,`NomProducto`,`Descripcion`,`Precio`,`Medida`,`Stock`,`Imagen`,`ImagenUrl`)
+                VALUES(?,?,?,?,?,?,?,?);";
         $stmt = $this->cnx->prepare($sql);
         $stmt->bindParam(1,$p->rucEmpresa,PDO::PARAM_STR,11);
         $stmt->bindParam(2,$p->nomProducto,PDO::PARAM_STR);
@@ -35,6 +36,7 @@ class Producto {
         $stmt->bindParam(5,$p->medida,PDO::PARAM_STR);
         $stmt->bindParam(6,$p->stock,PDO::PARAM_INT);
         $stmt->bindParam(7,$p->imagen,PDO::PARAM_STR);
+        $stmt->bindParam(8,$p->ImagenUrl,PDO::PARAM_STR);
         return $stmt->execute();
     }
     function editarProducto(Producto $p){

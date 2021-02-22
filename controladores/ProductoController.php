@@ -41,10 +41,21 @@ class ProductoController {
     function agregarProducto(){
         $ruc = $_POST['ruc'];
         $imagenName = $_FILES['file']['name'];
+        
+        //-------- MODIFIED NAME --------------
+        $extension = pathinfo($imagenName, PATHINFO_EXTENSION);
+        $random = rand(0,99);
+        $rename = $random.date('Ymd').$imagenName;
+        $newname = $rename;
+        //.'.'.$extension
+        $imageurl = "./vistas/panel_usuario/imgproducts/" . $newname;
+
         $imagenTemp = $_FILES['file']['tmp_name'];
-        $imagenUrl = "./vistas/panel_usuario/imgproducts/" . $imagenName;
-        copy($imagenTemp,$imagenUrl);
-        $imagen = $imagenUrl;
+        move_uploaded_file($imagenTemp, $imageurl);
+        //copy($imagenTemp,$imagenUrl);
+
+        $imagen = $newname;
+        $ImagenUrl = $imageurl;
         //end my code add
 
 
@@ -56,7 +67,7 @@ class ProductoController {
         if (empty($nombre) || empty($descripcion) || $stock == 0) {
             return ['msg' => 'Datos incorrectos o incompletos','icon' => 'error', 'btnText' => 'Volver a intentar'];
         }
-        $p = new Producto($ruc,$nombre,$descripcion,$precio,$medida,$stock,$imagen);
+        $p = new Producto($ruc,$nombre,$descripcion,$precio,$medida,$stock,$imagen,$ImagenUrl);
         return ($this->modelo->agregarProducto($p)) ? 
                 ['msg' => 'Nuevo producto agregado', 'icon' => 'success', 'btnText' => 'Continuar'] :
                 ['msg' => 'No se pudo agregar el nuevo producto', 'icon' => 'error', 'btnText' => 'Volver a intentar'];
