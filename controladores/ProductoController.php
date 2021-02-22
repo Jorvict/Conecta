@@ -37,10 +37,17 @@ class ProductoController {
         }
         
     }
-    //here funtion for add new product
+    //here funtion for add new product and your image
     function agregarProducto(){
         $ruc = $_POST['ruc'];
-        $imagen= $_FILES['file']['name'];
+        $imagenName = $_FILES['file']['name'];
+        $imagenTemp = $_FILES['file']['tmp_name'];
+        $imagenUrl = "./vistas/panel_usuario/imgproducts/" . $imagenName;
+        copy($imagenTemp,$imagenUrl);
+        $imagen = $imagenUrl;
+        //end my code add
+
+
         $nombre = trim($_POST['nombre']);
         $descripcion = trim($_POST['descripcion']);
         $precio = $_POST['precio'];
