@@ -11,11 +11,13 @@ class ProductoController {
     function productosByRuc(){
         $prods = $this->modelo->productosByRuc($_GET['ruc']);
         if (isset($_POST['type'])) {
+            
             $articles = '';
             foreach ($prods as $p) {
+                $iganes = $p['ImagenUrl'];
                 $articles .= "<article class='product'>
                                 <figure class='img-product'>
-                                    <img src='' alt='Imagen del Producto'>
+                                    ´<img src='.$iganes' alt='Imagen del Producto'>´
                                 </figure>
                                 <h4 class='subtitulo-product'>
                                     ".$p['NomProducto']."
@@ -47,7 +49,7 @@ class ProductoController {
         $random = rand(0,99);
         $rename = $random.date('Ymd').$imagenName;
         $newname = $rename;
-        //.'.'.$extension
+        //for obtain extension of image .'.'.$extension
         $imageurl = "./vistas/panel_usuario/imgproducts/" . $newname;
 
         $imagenTemp = $_FILES['file']['tmp_name'];
