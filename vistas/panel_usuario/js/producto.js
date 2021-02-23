@@ -56,8 +56,10 @@ $(function () {
 		$("#precio").val(data["Precio"]);
 		$("#descripcion").val(data["Descripcion"]);
 	});
+	/* here add var imagen for elimante image*/
 	$("#productosTabla tbody").on("click", ".eliminar_b", function () {
 		let idProd = tableProd.row($(this).parents("tr")).data()["IdProducto"];
+		let Imagen = tableProd.row($(this).parents("tr")).data()["Imagen"];
 		Swal.fire({
 			icon: "question",
 			title: "¿Está seguro que desea eliminar este producto?",
@@ -71,6 +73,7 @@ $(function () {
 					url: "../../index.php?controller=producto&action=eliminarProducto",
 					data: {
 						idProd: idProd,
+						Imagen: Imagen,
 					},
 					success: function (response) {
 						let json = JSON.parse(response);

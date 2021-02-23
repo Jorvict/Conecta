@@ -13,12 +13,14 @@ class ProductoController {
         if (isset($_POST['type'])) {
             
             $articles = '';
+            //AQUI HE AGREGADO BR PARA AGREGAR ESPACIO
             foreach ($prods as $p) {
                 $iganes = $p['ImagenUrl'];
                 $articles .= "<article class='product'>
                                 <figure class='img-product'>
                                     ´<img src='.$iganes' alt='Imagen del Producto'>´
                                 </figure>
+                                <br>
                                 <h4 class='subtitulo-product'>
                                     ".$p['NomProducto']."
                                 </h4>
@@ -92,6 +94,9 @@ class ProductoController {
     }
     function eliminarProducto(){
         $id = (int)$_POST['idProd'];
+        //here add function for eliminate image
+        $eliminarimage = "./vistas/panel_usuario/imgproducts/" . $_POST['Imagen'];
+        unlink($eliminarimage);
         return ($this->modelo->eliminarProducto($id) != false) ? 
                 ['msg' => 'Producto eliminado', 'icon' => 'info', 'btnText' => 'Continuar'] :
                 ['msg' => 'No se pudo eliminar el producto', 'icon' => 'error', 'btnText' => 'Volver a intentar'];
