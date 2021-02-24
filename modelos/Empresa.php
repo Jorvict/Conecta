@@ -3,10 +3,10 @@ require_once 'Conexion.php';
 
 class Empresa {
     private $cnx;
-    public $emailPers,$clave,$ruc,$nomEmp,$direccion,$titular,$telefono,$descripcion,$logo,$emailEmp,$distrito,$whatsapp,$facebook,$instagram,$estado,$id,$id_categoria;
+    public $emailPers,$clave,$ruc,$nomEmp,$direccion,$titular,$telefono,$descripcion,$logo,$emailEmp,$distrito,$whatsapp,$facebook,$instagram,$logoUrl,$estado,$id,$id_categoria;
 
     
-    function __construct($emailPers = null,$clave = null,$ruc = null,$nomEmp = null,$id_categoria = 0,$direccion = null,$titular = null,$telefono = null)
+    function __construct($emailPers = null,$clave = null,$ruc = null,$nomEmp = null,$id_categoria = 0,$direccion = null,$titular = null,$telefono = null,$logo = null,$logoUrl = null)
     {
         $this->emailPers = $emailPers;
         $this->clave = $clave;
@@ -16,6 +16,9 @@ class Empresa {
         $this->direccion = $direccion;
         $this->titular = $titular;
         $this->telefono = $telefono;
+
+        $this->logo = $logo;
+        $this->logoUrl = $logoUrl;
         $this->cnx = Conexion::conectar();
     }
     function registrarEmpresa(Empresa $e){
@@ -70,6 +73,7 @@ class Empresa {
         $stmt->execute(array($idProv));
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    //here ad code for add image of the bussinness
     function actualizarEmpresa(Empresa $e){
         $sql = "UPDATE `empresas` SET `EmailEmp` = ?,
                                     `Descripcion` = ?,
@@ -78,7 +82,9 @@ class Empresa {
                                     `Telefono` = ?,
                                     `Whatsapp` = ?,
                                     `Facebook` = ?,
-                                    `Instangram` = ?
+                                    `Instangram` = ?,
+                                    `Logo` = ?,
+                                    `logoUrl` = ?
                 WHERE empresas.RucEmpresa = ?;";
         $stmt = $this->cnx->prepare($sql);
 
@@ -90,7 +96,11 @@ class Empresa {
         $stmt->bindParam(6,$e->whatsapp, PDO::PARAM_STR,9);
         $stmt->bindParam(7,$e->facebook, PDO::PARAM_STR);
         $stmt->bindParam(8,$e->instagram, PDO::PARAM_STR);
-        $stmt->bindParam(9,$e->ruc, PDO::PARAM_STR,11);
+
+        $stmt->bindParam(9,$e->logo, PDO::PARAM_STR);
+        $stmt->bindParam(10,$e->logoUrl, PDO::PARAM_STR);
+
+        $stmt->bindParam(11,$e->ruc, PDO::PARAM_STR,11);
 
         return $stmt->execute();
     }

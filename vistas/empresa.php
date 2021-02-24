@@ -98,7 +98,7 @@ include_once 'layouts/head.php'; ?>
 
 		<main>
 			<figure class="img-container">
-				<img src="" alt="Logo de la empresa">
+				<img src="<?php echo 'panel_usuario/logoemp/'. $_SESSION['empresa']['Logo']; ?>" alt="Logo de la empresa">
 			</figure>
 			<aside class="left-section">
 

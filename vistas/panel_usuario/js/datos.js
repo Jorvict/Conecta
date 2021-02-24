@@ -37,28 +37,59 @@ dep.load(
 dep.change(updateSelects);
 prov.change(loadDistritos);
 
+//here add code for update in controller :::::::::::::::: 
 
 function CheckDatos() {
-	const url = "../../index.php?controller=empresa&action=actualizarDatos",
-		parametros = {
-			ruc: $("#ruc").val(),
-			emailPers: $("#emailPers").val(),
-			email: $("#emailEmp").val(),
-			clave: $("#clave").val(),
-			descripcion: $("#descripcion").val(),
-			distrito: $("#distrito").val(),
-			departamento: $("#departamento").val(),
-			telefono: $("#telefono").val(),
-			direccion: $("#direccion").val(),
-			whatsapp: $("#whatsapp").val(),
-			facebook: $("#facebook").val(),
-			instagram: $("#instagram").val(),
-		};
+	const url = "../../index.php?controller=empresa&action=actualizarDatos";
+		
+		var fdata = new FormData();
+
+        let ruc = $('#ruc').val();
+        let emailPers = $('#emailEmp').val();
+		let email = $("#emailEmp").val();
+
+        let clave = $('#clave').val();
+		let descripcion = $('#descripcion').val();
+        let distrito = $('#distrito').val();
+        let departamento = $('#departamento').val();
+		let telefono = $('#telefono').val();
+		let direccion = $('#direccion').val();
+
+		let whatsapp = $('#whatsapp').val();
+		let facebook = $('#facebook').val();
+		let instagram = $('#instagram').val();
+		let nameimage = $('#nameimage').val();
+
+
+        let file = $('#file')[0].files[0];
+
+        fdata.append('ruc', ruc);
+        fdata.append('emailPers', emailPers);
+
+		fdata.append('email', email);
+
+        fdata.append('clave', clave);
+		fdata.append('descripcion', descripcion);
+        fdata.append('distrito', distrito);
+        fdata.append('departamento', departamento);
+		fdata.append('telefono', telefono);
+		fdata.append('direccion', direccion);
+
+		fdata.append('whatsapp', whatsapp);
+		fdata.append('facebook', facebook);
+		fdata.append('instagram', instagram);
+		fdata.append('nameimage', nameimage);
+
+
+        fdata.append('file', file);
+
 	$.ajax({
-		data: parametros,
+		data: fdata,
 		url: url,
 		type: "POST",
 		async: false,
+		processData: false,
+		contentType: false,
 		success: function (response) {
 			let msg,
 				icon,
