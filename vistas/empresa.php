@@ -109,20 +109,20 @@ include_once 'layouts/head.php'; ?>
 						</p>
 						<div class="social-section">
 							<div class="social social-tlf">
-								<i class="icon-phone"></i>
+								<a href=" <?php echo 'tel:+51'. $_SESSION['empresa']['Telefono']; ?> " target="_blank" ><i class="icon-phone" ></i></a>
 								<?php echo $_SESSION['empresa']['Telefono']; ?>
 							</div>
 							<?php if ($_SESSION['empresa']['Facebook'] != "") {
 								?>
 							<div class="social social-fb">
-								<i class="icon-facebook"></i>
-								<?php echo $_SESSION['empresa']['Facebook']; ?>
+								<a href="<?php echo $_SESSION['empresa']['Facebook']; ?>" target="_blank"><i class="icon-facebook"></i></a>
+								
 							</div>
 							<?php }
 							if ($_SESSION['empresa']['Facebook'] != "") { ?>
 							<div class="social social-ig">
-								<i class="icon-instagram"></i>
-								<?php echo $_SESSION['empresa']['Instangram']; ?>
+								<a href="<?php echo $_SESSION['empresa']['Instangram']; ?> " target="_blank"><i class="icon-instagram"></i></a>
+								
 							</div>
 							<?php } ?>
 							<div class="social social-local">
