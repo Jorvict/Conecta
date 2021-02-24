@@ -80,14 +80,38 @@ class ProductoController {
     
     function editarProducto(){
         $idProducto = (int)$_POST['id'];
+        //////////////////77////////// AD CODE FOR UPDATE IMAGE ////////////////
+        $eliminarimage = "./vistas/panel_usuario/imgproducts/" . $_POST['nameimage'];
+        unlink($eliminarimage);
+        //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        $imagenName = $_FILES['file']['name'];
+        
+        //-------- MODIFIED NAME --------------
+        $extension = pathinfo($imagenName, PATHINFO_EXTENSION);
+        $random = rand(0,99);
+        $rename = $random.date('Ymd').$imagenName;
+        $newname = $rename;
+        //for obtain extension of image .'.'.$extension
+        $imageurl = "./vistas/panel_usuario/imgproducts/" . $newname;
+
+        $imagenTemp = $_FILES['file']['tmp_name'];
+        move_uploaded_file($imagenTemp, $imageurl);
+        //copy($imagenTemp,$imagenUrl);
+
+        $imagen = $newname;
+        $ImagenUrl = $imageurl;
+        //end my code add
+
+        ////////////////////// END CODE FOR UPDATE IMAGE////////////////////////
+
+
         $ruc = $_POST['ruc'];
         $nombre = trim($_POST['nombre']);
         $descripcion = trim($_POST['descripcion']);
         $precio = $_POST['precio'];
         $medida = $_POST['medida'];
         $stock = (int)$_POST['cantidad'];
-        $imagen = "nameimage";
-        $ImagenUrl = "urlimage";
+
         if (empty($nombre) || empty($descripcion) || $stock == 0) {
             return ['msg' => 'Datos incorrectos o incompletos','icon' => 'error', 'btnText' => 'Volver a intentar'];
         }

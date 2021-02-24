@@ -39,8 +39,8 @@ include 'header.php';
               <div class="form__item">
               <!-- <input type="text" name="nameimage" id="nameimage" readonly> -->                 
                 
-                <label for="imagen"  class="text_label">imagen del poducto:<input  style="border: 0" type="text" name="nameimage" id="nameimage" disabled> </label><br>
-                <input style="border-radius:initial;" type="file" id="file" class="form__item" name="file" accept=".jpg , .png , .webp" >
+                <label for="imagen"  class="text_label">imagen del poducto:<input  style="border: 0; outline: none;" type="text" name="nameimage" id="nameimage" disabled> </label><br>
+                <input style="border-radius:initial;" type="file" id="file" class="form__item" name="file" accept=".jpg , .png , .webp" required>
               </div>
             </div>
             <div class="botonesProducto">

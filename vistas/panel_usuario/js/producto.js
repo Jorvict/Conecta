@@ -138,6 +138,7 @@ $("#formProducto").submit(() => {
         let medida = $('#medida').val();
         let precio = $('#precio').val();
 		let descripcion = $('#descripcion').val();
+		let nameimage = $('#nameimage').val();
         let file = $('#file')[0].files[0];
 
         fdata.append('ruc', ruc);
@@ -147,6 +148,7 @@ $("#formProducto").submit(() => {
         fdata.append('medida', medida);
         fdata.append('precio', precio);
 		fdata.append('descripcion', descripcion);
+		fdata.append('nameimage', nameimage);
 
 
         fdata.append('file', file);
