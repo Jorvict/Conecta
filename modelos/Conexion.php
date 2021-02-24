@@ -7,7 +7,7 @@ class Conexion
     private static $user = 'root';
     private static $pwd = '';
     private static $cnx = null;
-
+//ghxumdmy_conectaperu2
     public static function conectar($bool = true)
     {
         try {

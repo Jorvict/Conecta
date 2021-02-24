@@ -37,8 +37,10 @@ include 'header.php';
                 <textarea style="border:1px solid gray" class="form__text" id="descripcion" name="descripcion" required></textarea>
               </div>
               <div class="form__item">
-                <label for="imagen" class="text_label">imagen del poducto:</label><br>
-                <input style="border-radius:initial;" type="file" id="file" class="form__item" name="file" accept=".jpg , .png , .webp" required>
+              <!-- <input type="text" name="nameimage" id="nameimage" readonly> -->                 
+                
+                <label for="imagen"  class="text_label">imagen del poducto:<input  style="border: 0" type="text" name="nameimage" id="nameimage" disabled> </label><br>
+                <input style="border-radius:initial;" type="file" id="file" class="form__item" name="file" accept=".jpg , .png , .webp" >
               </div>
             </div>
             <div class="botonesProducto">

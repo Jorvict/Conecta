@@ -3,9 +3,17 @@ require_once 'Conexion.php';
 
 class Producto {
     private $cnx;
-    public $idProducto,$rucEmpresa,$nomProducto,$descripcion,$precio,$medida,$stock,$imagen,$ImagenUrl;
+    public $idProducto;
+    public $rucEmpresa;
+    public $nomProducto;
+    public $descripcion;
+    public $precio;
+    public $medida;
+    public $stock;
+    public $imagen;
+    public $ImagenUrl;
 
-    function __construct($rucEmpresa=null,$nomProducto=null,$descripcion=null,$precio=null,$medida=null,$stock=null,$imagen=null,$ImagenUrl=null,$idProducto = 0)
+    public function __construct($rucEmpresa=null,$nomProducto=null,$descripcion=null,$precio=null,$medida=null,$stock=null,$imagen=null,$ImagenUrl=null,$idProducto=0)
     {
         $this->idProducto = $idProducto;
         $this->rucEmpresa = $rucEmpresa;
@@ -18,6 +26,7 @@ class Producto {
         $this->ImagenUrl = $ImagenUrl;
         $this->cnx = Conexion::conectar();
     }
+   
     function productosByRuc(string $ruc){
         $sql = "SELECT * FROM `productos` WHERE `RucEmpresa` = ? AND `Estado` = true;";
         $stmt = $this->cnx->prepare($sql);
@@ -39,8 +48,9 @@ class Producto {
         $stmt->bindParam(8,$p->ImagenUrl,PDO::PARAM_STR);
         return $stmt->execute();
     }
+    /////////////here update
     function editarProducto(Producto $p){
-        $sql = "UPDATE `productos` SET `NomProducto` = ?,`Descripcion` = ?,`Precio` = ?,`Medida` = ?,`Stock` = ?
+        $sql = "UPDATE `productos` SET `NomProducto` = ?,`Descripcion` = ?,`Precio` = ?,`Medida` = ?,`Stock` = ?,`Imagen` = ?,`ImagenUrl` = ?
                 WHERE `IdProducto` = ?;";
         $stmt = $this->cnx->prepare($sql);
         $stmt->bindParam(1,$p->nomProducto,PDO::PARAM_STR);
@@ -48,9 +58,15 @@ class Producto {
         $stmt->bindParam(3,$p->precio);
         $stmt->bindParam(4,$p->medida,PDO::PARAM_STR);
         $stmt->bindParam(5,$p->stock,PDO::PARAM_INT);
-        $stmt->bindParam(6,$p->imagen,PDO::PARAM_INT);
+        $stmt->bindParam(6,$p->imagen);
+        $stmt->bindParam(7,$p->ImagenUrl);
+
+        $stmt->bindParam(8,$p->idProducto,PDO::PARAM_INT);
         return $stmt->execute();
     }
+
+
+
     function eliminarProducto(int $idProd){
         $sql = "UPDATE `productos` SET `Estado` = false WHERE `IdProducto` = {$idProd};";
         return $this->cnx->query($sql);

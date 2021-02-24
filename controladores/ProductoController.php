@@ -76,22 +76,29 @@ class ProductoController {
                 ['msg' => 'Nuevo producto agregado', 'icon' => 'success', 'btnText' => 'Continuar'] :
                 ['msg' => 'No se pudo agregar el nuevo producto', 'icon' => 'error', 'btnText' => 'Volver a intentar'];
     }
+    ///////////////////////////7edid productttttttttttttt//////////////7
+    
     function editarProducto(){
-        $id = (int)$_POST['id'];
+        $idProducto = (int)$_POST['id'];
         $ruc = $_POST['ruc'];
         $nombre = trim($_POST['nombre']);
         $descripcion = trim($_POST['descripcion']);
         $precio = $_POST['precio'];
         $medida = $_POST['medida'];
         $stock = (int)$_POST['cantidad'];
+        $imagen = "nameimage";
+        $ImagenUrl = "urlimage";
         if (empty($nombre) || empty($descripcion) || $stock == 0) {
             return ['msg' => 'Datos incorrectos o incompletos','icon' => 'error', 'btnText' => 'Volver a intentar'];
         }
-        $p = new Producto($ruc,$nombre,$descripcion,$precio,$medida,$stock,null,$id);
+        $p = new Producto($ruc,$nombre,$descripcion,$precio,$medida,$stock,$imagen,$ImagenUrl,$idProducto);
         return ($this->modelo->editarProducto($p)) ? 
                 ['msg' => 'Información del producto actualizada', 'icon' => 'success', 'btnText' => 'Continuar'] :
                 ['msg' => 'No se pudo editar el producto', 'icon' => 'error', 'btnText' => 'Volver a intentar'];
     }
+
+
+
     function eliminarProducto(){
         $id = (int)$_POST['idProd'];
         //here add function for eliminate image

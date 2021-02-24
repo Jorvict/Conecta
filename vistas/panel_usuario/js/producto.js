@@ -55,6 +55,12 @@ $(function () {
 		$("#medida").val(data["Medida"]);
 		$("#precio").val(data["Precio"]);
 		$("#descripcion").val(data["Descripcion"]);
+		/*here add for update products*/
+		//$("#nameimage").val(data["Imagen"]);
+		//var mostarimage = $("#img1").attr("src","image2.jpg");
+		//$("#nameimage").val(data["Imagen"]);s
+		$("#nameimage").val(data["Imagen"]);
+		
 	});
 	/* here add var imagen for elimante image*/
 	$("#productosTabla tbody").on("click", ".eliminar_b", function () {
@@ -92,9 +98,11 @@ $(function () {
 		});
 	});
 });
+
 $("#cancelar").click(() => {
 	actionForm("cerrar");
 });
+
 function actionForm(action, type) {
 	let bloque = document.getElementById("bloque");
 	let h1 = bloque.getElementsByTagName("h1")[0];
