@@ -45,9 +45,10 @@ class CategoriaController {
             if ($type == 'cuadros') {
                 $rucEmpresa = $emp['RucEmpresa'];
                 $nomEmp = $emp['NomEmpresa'];
+                $logo = $emp['Logo'];
                 $cuadros .= "<div class='cuadros'>
                                 <input type='text' class='urlEmp' value='{$rucEmpresa}' hidden>
-                                <img id='img' src=''>
+                                <img id='img' src='../vistas/panel_usuario/logoemp/{$logo}' >
                                 <div class='hover-galeria'>
                                     <p>{$nomEmp}</p>
                                 </div>
