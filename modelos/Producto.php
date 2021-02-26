@@ -71,4 +71,13 @@ class Producto {
         $sql = "UPDATE `productos` SET `Estado` = false WHERE `IdProducto` = {$idProd};";
         return $this->cnx->query($sql);
     }
+
+    function productosByid(int $idmyprod){
+        
+        $sql = "SELECT * FROM `productos` WHERE `IdProducto` = {$idmyprod};";
+        $stmt = $this->cnx->prepare($sql);
+        $stmt->execute(array($idmyprod));
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    }
 }

@@ -28,8 +28,8 @@ class ProductoController {
                                     ".$p['Precio']."
                                 </p>
                                 <div class='button-container'>
-                                    <input type='text' value='".$p['IdProducto']."' hidden>
-                                    <button class='btn-product'>
+                                    <input type='text' id='idproducto' value='".$p['IdProducto']."' hidden>
+                                    <button class='btn-product' data-id='".$p['IdProducto']."'>
                                         Ver producto
                                     </button>
                                 </div>
@@ -131,6 +131,15 @@ class ProductoController {
         return ($this->modelo->eliminarProducto($id) != false) ? 
                 ['msg' => 'Producto eliminado', 'icon' => 'info', 'btnText' => 'Continuar'] :
                 ['msg' => 'No se pudo eliminar el producto', 'icon' => 'error', 'btnText' => 'Volver a intentar'];
+
+    }
+    ////here new code for modal products 
+
+    function productosByid(){
+        $prodsModal = $this->modelo->productosByid($_GET['idmyprod']);
+        echo json_encode($prodsModal);
+
+
 
     }
 }

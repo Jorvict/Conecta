@@ -35,7 +35,7 @@ include_once 'layouts/head.php'; ?>
 								</div>
 								<div id="carouselControls" class="carousel_slide" data-ride="carousel">
 									<figure class="img-form-product">
-										<img src="../public/imagenes/sliders/form-product/slider1.jpg" alt="">
+										<img src="../public/imagenes/sliders/form-product/slider1.jpg" class="mimagen1" alt="">
 									</figure>
 									<figure class="img-form-product">
 										<img src="../public/imagenes/sliders/form-product/slider2.jpg" alt="">
@@ -49,9 +49,9 @@ include_once 'layouts/head.php'; ?>
 
 						<div class="description-form-product">
 							<div class="container-elements-product">
-								<h2>Costurería</h2>
-								<p>Descripción Lorem ipsum dolor sit, amet consectetur adipisicing elit asieuxnal ksnda </p>
-								<p class="price-container"><strong>Precio: </strong> S/ 14.99</p>
+								<h2 class="minombre"></h2>
+								<p class="midescripcion"> </p>
+								<p class="price-container"> </p>
 							</div>
 						</div>
 					</div>
@@ -89,6 +89,7 @@ include_once 'layouts/head.php'; ?>
 				</article>
 			</section>
 		</div>
+		<!-- end form for shoping -->
 
 		<section id="t-principal">
 			<div class="space-title"></div>
