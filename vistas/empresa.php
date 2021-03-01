@@ -59,34 +59,37 @@ include_once 'layouts/head.php'; ?>
 
 				<article class="right">
 					<h2>Formulario de compra</h2>
+					<form id="formVenta">
 
-					<div class="big-container">
-						<input type="hidden" id="IdProducto" placeholder="Nombre">
+						<div class="big-container">
+							<input type="hidden" id="IdProducto" >
 
-						<div class="cont-item"> 
-							<input type="text" placeholder="Nombre">
+							<div class="cont-item"> 
+								<input type="text" id="nombres" placeholder="Nombre" pattern="[a-zA-Z ]{2,254}" title="Solo debe contener letras. e.g. john" required>
+							</div>
+							<div class="cont-item">
+								<input type="text" id="apellido" placeholder="Apellido" pattern="[a-zA-Z ]{2,254}" title="Solo debe contener letras. e.g. Sala..." required>
+							</div>
+							<div class="cont-item">
+								<input type="text" id="Cantidad" placeholder="Cantidad" pattern="[0-9]{1,3}" title="debe conter numeros" required>
+							</div>
+							<div class="cont-item">
+								<input type="text" id="teléfono" placeholder="Teléfono" pattern="[0-9]{9}" title="debe conter numeros" required>
+							</div>
+							<div class="cont-item big">
+								<input type="text" id="dirección" placeholder="Dirección" required>
+							</div>
+							<div class="cont-item big">
+								<textarea name="comentarios" id="comentarios" cols="30" rows="4" placeholder="Escribe tu comentario aquí" textarea></textarea>
+							</div>
 						</div>
-						<div class="cont-item">
-							<input type="text" placeholder="Apellido">
+						<div class="btn-container">
+							<!--<button class="enviar-venta">
+								Adquirir
+							</button>-->
+							<input type="submit"  class="enviar-venta" value="Adquirir">
 						</div>
-						<div class="cont-item">
-							<input type="text" placeholder="Cantidad">
-						</div>
-						<div class="cont-item">
-							<input type="text" placeholder="Teléfono">
-						</div>
-						<div class="cont-item big">
-							<input type="text" placeholder="Dirección">
-						</div>
-						<div class="cont-item big">
-							<textarea name="comentarios" id="comentarios" cols="30" rows="4" placeholder="Escribe tu comentario aquí"></textarea>
-						</div>
-					</div>
-					<div class="btn-container">
-						<button class="enviar-venta">
-							Adquirir
-						</button>
-					</div>
+					</form>
 				</article>
 			</section>
 		</div>

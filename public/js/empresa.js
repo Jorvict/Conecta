@@ -83,3 +83,56 @@ $("#products-container").load(urlProds, { type: "article" }, function () {
 	
     
 });
+
+//here code for send  orders
+
+$('#formVenta').submit(function(e){
+	//e.preventDefault();
+	let idProduct = $('#IdProducto').val();
+	let nombres = $('#nombres').val();
+	let apellido = $('#apellido').val();
+	let cantidad  = $('#Cantidad').val();
+	let telefono = $('#teléfono').val();
+	let direccion  = $('#dirección').val();
+	let comentario = $('#comentarios').val();
+
+
+	var data = {
+		idProduct: idProduct,
+		nombres: nombres,
+		apellido: apellido,
+		cantidad: cantidad,
+		telefono: telefono,
+		direccion: direccion,
+		comentario: comentario
+	}
+	console.log(data);
+	$.ajax({
+		url: "../index.php?controller=pedido&action=realizarPedido",
+		type: "post",
+		data: data,
+		success: function(response){
+			console.log(response);
+			let json = JSON.parse(response);
+			Swal.fire({
+				icon: json.icon,
+				title: json.msg,
+				confirmButtonText: json.btnText,
+			}).then(() => {
+				if (json.icon == "success") {
+					$(".minombre").empty();
+					$(".midescripcion").empty();
+					$(".price-container").empty();
+					$('.mimagen1').empty();
+					$('#IdProducto').empty();
+					HideProduct();
+
+					$("#formVenta").trigger('reset');
+				}
+			});
+
+		},
+	});
+	return false;
+
+});

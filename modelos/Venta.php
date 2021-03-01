@@ -9,9 +9,10 @@ class Venta {
         $this->cnx = Conexion::conectar();
     }
     function showVentasByRuc($ruc) {
-        $sql = "SELECT CONCAT(c.Nombre,' ',c.Apellido) AS NombreCompleto,prod.NomProducto,ped.Cantidad,prod.Precio,(prod.Precio*ped.Cantidad) AS Monto,ped.Fecha 
-        FROM pedidos ped INNER JOIN productos prod ON ped.IdProducto = prod.IdProducto
-        INNER JOIN clientes c ON ped.IdCliente = c.IdCliente
+        $sql = "SELECT CONCAT(ped.nombre,' ',ped.apellido) AS NombreCompleto,prod.NomProducto,ped.Cantidad,prod.Precio,(prod.Precio*ped.Cantidad) AS Monto,ped.Fecha 
+        FROM pedidos ped 
+        INNER JOIN productos prod 
+        ON ped.IdProducto = prod.IdProducto        
         WHERE prod.RucEmpresa = '{$ruc}' AND ped.Vendido = true;";
         return $this->cnx->query($sql,PDO::FETCH_ASSOC)->fetchAll();
     }
