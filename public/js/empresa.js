@@ -56,14 +56,18 @@ $("#products-container").load(urlProds, { type: "article" }, function () {
 					var mydatos =JSON.parse(data);
 					ShowProduct()
 					console.log(mydatos)
+					var IdProducto = mydatos[0]['IdProducto'];
+
 					var nombre = mydatos[0]['NomProducto'];
 					var descripcion = mydatos[0]['Descripcion'];
 					var precio = mydatos[0]['Precio'];
 					var miimagen = mydatos[0]['Imagen'];
+
 					$(".minombre").prepend(nombre);
 					$(".midescripcion").prepend(descripcion);
 					$(".price-container").prepend('<strong>Precio S/. </strong>'+ precio);
 					$('.mimagen1').attr("src", '../vistas/panel_usuario/imgproducts/'+miimagen);
+					$('#IdProducto').val(IdProducto);
 									
 
 				}
