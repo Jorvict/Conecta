@@ -38,10 +38,10 @@ include_once 'layouts/head.php'; ?>
 										<img src="../public/imagenes/sliders/form-product/slider1.jpg" class="mimagen1" alt="">
 									</figure>
 									<figure class="img-form-product">
-										<img src="../public/imagenes/sliders/form-product/slider2.jpg" alt="">
+										<img src="../public/imagenes/sliders/form-product/slider2.jpg" alt="Logo Producto">
 									</figure>
 									<figure class="img-form-product">
-										<img src="../public/imagenes/sliders/form-product/slider3.jpg" alt="">
+										<img src="../public/imagenes/sliders/form-product/slider3.jpg" alt="Logo Producto">
 									</figure>
 								</div>
 							</section>
@@ -61,8 +61,9 @@ include_once 'layouts/head.php'; ?>
 					<h2>Formulario de compra</h2>
 
 					<div class="big-container">
+						<input type="hidden" id="IdProducto" placeholder="Nombre">
 
-						<div class="cont-item">
+						<div class="cont-item"> 
 							<input type="text" placeholder="Nombre">
 						</div>
 						<div class="cont-item">
