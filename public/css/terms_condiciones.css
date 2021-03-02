@@ -2,13 +2,13 @@
     font-family:  Helvetica, sans-serif;}
     @font-face{
         font-family:'Myriad Pro';
-        src: url('../../../public/fonts/MYRIADPRO-REGULAR.woff');
+        src: url('../fonts/MYRIADPRO-REGULAR.woff');
       }
       
       
       @font-face{
         font-family:'Gotham Black';
-        src: url('../../../public/fonts/Gotham-Black.otf');
+        src: url('../fonts/Gotham-Black.otf');
       }
 
 section#t-principal {
