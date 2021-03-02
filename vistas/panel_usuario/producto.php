@@ -10,8 +10,8 @@ include 'header.php';
     <!-- <a href="#" class="producto__boton" id="nuevoProducto"> <i class="fas fa-list-alt"></i>&#160;Nuevo Producto</a> -->
     <section class="producto">
       <h1 class="producto__titulo">Productos</h1>
-      <div class="form__producto" id="bloque">
-        <div class="contenido">
+      <div class="form__producto" id="bloque" style="overflow-y: scroll;">
+        <div class="contenido" >
           <h1 class="formProducto">Nuevo producto</h1>
           
           <!-- New Product-->
@@ -37,10 +37,22 @@ include 'header.php';
                 <textarea style="border:1px solid gray" class="form__text" id="descripcion" name="descripcion" required></textarea>
               </div>
               <div class="form__item">
-              <!-- <input type="text" name="nameimage" id="nameimage" readonly> -->                 
+                <!-- <input type="text" name="nameimage" id="nameimage" readonly> -->                 
                 
-                <label for="imagen"  class="text_label">imagen del poducto:<input  style="border: 0; outline: none;" type="text" name="nameimage" id="nameimage" disabled> </label><br>
+                <label for="imagen"  class="text_label">imagen del poducto Principal:<input  style="border: 0; outline: none;" type="text" name="nameimage" id="nameimage" disabled> </label><br>
                 <input style="border-radius:initial;" type="file" id="file" class="form__item" name="file" accept=".jpg , .png , .webp" required>
+              </div>
+              <div class="form__item">
+                <!-- <input type="text" name="nameimage" id="nameimage" readonly> -->                 
+                
+                <label for="imagen"  class="text_label">imagen del poducto 1:<input  style="border: 0; outline: none;" type="text" name="nameimage" id="nameimage" disabled> </label><br>
+                <input style="border-radius:initial;" type="file" id="file1" class="form__item" name="file" accept=".jpg , .png , .webp" required>
+              </div>
+              <div class="form__item">
+                <!-- <input type="text" name="nameimage" id="nameimage" readonly> -->                 
+                
+                <label for="imagen"  class="text_label">imagen del poducto 2:<input  style="border: 0; outline: none;" type="text" name="nameimage" id="nameimage" disabled> </label><br>
+                <input style="border-radius:initial;" type="file" id="file2" class="form__item" name="file" accept=".jpg , .png , .webp" required>
               </div>
             </div>
             <div class="botonesProducto">
