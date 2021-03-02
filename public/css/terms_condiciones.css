@@ -2,13 +2,21 @@
     font-family:  Helvetica, sans-serif;}
     @font-face{
         font-family:'Myriad Pro';
+<<<<<<< HEAD
         src: url('../../../public/fonts/MYRIADPRO-REGULAR.woff');
+=======
+        src: url('../fonts/MYRIADPRO-REGULAR.woff');
+>>>>>>> e347f9fe66ab666344293ef7211ead61b0fd2a88
       }
       
       
       @font-face{
         font-family:'Gotham Black';
+<<<<<<< HEAD
         src: url('../../../public/fonts/Gotham-Black.otf');
+=======
+        src: url('../fonts/Gotham-Black.otf');
+>>>>>>> e347f9fe66ab666344293ef7211ead61b0fd2a88
       }
 
 section#t-principal {

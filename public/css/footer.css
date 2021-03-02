@@ -1,6 +1,10 @@
 @font-face{
     font-family:'Marker Felt';
+<<<<<<< HEAD
     src: url(../../fonts/Marker_Felt.ttf);
+=======
+    src: url('../fonts/Marker_Felt.ttf');
+>>>>>>> e347f9fe66ab666344293ef7211ead61b0fd2a88
 }
 
 footer{

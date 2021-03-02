@@ -35,6 +35,7 @@ include_once 'layouts/head.php'; ?>
 								</div>
 								<div id="carouselControls" class="carousel_slide" data-ride="carousel">
 									<figure class="img-form-product">
+<<<<<<< HEAD
 										<img src="../public/imagenes/sliders/form-product/slider1.jpg" class="mimagen1" alt="Logo Producto">
 									</figure>
 									<figure class="img-form-product">
@@ -42,6 +43,15 @@ include_once 'layouts/head.php'; ?>
 									</figure>
 									<figure class="img-form-product">
 										<img src="../public/imagenes/sliders/form-product/slider3.jpg" class="mimagen3"  alt="Logo Producto">
+=======
+										<img src="../public/imagenes/sliders/form-product/slider1.jpg" class="mimagen1" alt="">
+									</figure>
+									<figure class="img-form-product">
+										<img src="../public/imagenes/sliders/form-product/slider2.jpg" alt="Logo Producto">
+									</figure>
+									<figure class="img-form-product">
+										<img src="../public/imagenes/sliders/form-product/slider3.jpg" alt="Logo Producto">
+>>>>>>> e347f9fe66ab666344293ef7211ead61b0fd2a88
 									</figure>
 								</div>
 							</section>

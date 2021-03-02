@@ -62,15 +62,21 @@ $("#products-container").load(urlProds, { type: "article" }, function () {
 					var descripcion = mydatos[0]['Descripcion'];
 					var precio = mydatos[0]['Precio'];
 					var miimagen = mydatos[0]['Imagen'];
+<<<<<<< HEAD
 					var miimagen2 = mydatos[0]['Imagen1'];
 					var miimagen3 = mydatos[0]['Imagen2'];
+=======
+>>>>>>> e347f9fe66ab666344293ef7211ead61b0fd2a88
 
 					$(".minombre").prepend(nombre);
 					$(".midescripcion").prepend(descripcion);
 					$(".price-container").prepend('<strong>Precio S/. </strong>'+ precio);
 					$('.mimagen1').attr("src", '../vistas/panel_usuario/imgproducts/'+miimagen);
+<<<<<<< HEAD
 					$('.mimagen2').attr("src", '../vistas/panel_usuario/imgproducts/'+miimagen2);
 					$('.mimagen3').attr("src", '../vistas/panel_usuario/imgproducts/'+miimagen3);
+=======
+>>>>>>> e347f9fe66ab666344293ef7211ead61b0fd2a88
 					$('#IdProducto').val(IdProducto);
 									
 
@@ -89,7 +95,10 @@ $("#products-container").load(urlProds, { type: "article" }, function () {
 });
 
 //here code for send  orders
+<<<<<<< HEAD
 // add for image two and three for view slider complete...
+=======
+>>>>>>> e347f9fe66ab666344293ef7211ead61b0fd2a88
 
 $('#formVenta').submit(function(e){
 	//e.preventDefault();
@@ -130,8 +139,11 @@ $('#formVenta').submit(function(e){
 					$(".price-container").empty();
 					$('.mimagen1').empty();
 					$('#IdProducto').empty();
+<<<<<<< HEAD
 					$('.mimagen2').empty();
     				$('.mimagen3').empty();
+=======
+>>>>>>> e347f9fe66ab666344293ef7211ead61b0fd2a88
 					HideProduct();
 
 					$("#formVenta").trigger('reset');

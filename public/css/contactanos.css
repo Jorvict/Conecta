@@ -8,7 +8,11 @@
 
 @font-face {
     font-family: 'Gotham Black';
+<<<<<<< HEAD
     src: url('../../../public/fonts/Gotham-Black.otf');
+=======
+    src: url('../fonts/Gotham-Black.otf');
+>>>>>>> e347f9fe66ab666344293ef7211ead61b0fd2a88
 }
 
 
