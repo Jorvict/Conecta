@@ -49,7 +49,7 @@ class ProductoController {
         //-------- MODIFIED NAME --------------
         $extension = pathinfo($imagenName, PATHINFO_EXTENSION);
         $random = rand(0,99);
-        $rename = $random.date('Ymd').$imagenName;
+        $rename = $random.date('YmdH').$imagenName;
         $newname = $rename;
         //for obtain extension of image .'.'.$extension
         $imageurl = "./vistas/panel_usuario/imgproducts/" . $newname;
@@ -57,10 +57,28 @@ class ProductoController {
         $imagenTemp = $_FILES['file']['tmp_name'];
         move_uploaded_file($imagenTemp, $imageurl);
         //copy($imagenTemp,$imagenUrl);
+        //:::::::::::code for add two and three image::::::::::::::::::::::
+        $random1 = rand(0,99);
+        $imagenName1 = $_FILES['file1']['name'];
+        $rename1 = $random1.date('Ymdi').$imagenName1;
+        $newname1 = $rename1;
+        $imageurl1 = "./vistas/panel_usuario/imgproducts/" . $newname1;
+        $imagenTemp1 = $_FILES['file1']['tmp_name'];
+        move_uploaded_file($imagenTemp1, $imageurl1);
+
+        $random2 = rand(0,99);
+        $imagenName2 = $_FILES['file2']['name'];
+        $rename2 = $random2.date('Ymds').$imagenName2;
+        $newname2 = $rename2;
+        $imageurl2 = "./vistas/panel_usuario/imgproducts/" . $newname2;
+        $imagenTemp2= $_FILES['file2']['tmp_name'];
+        move_uploaded_file($imagenTemp2, $imageurl2);
 
         $imagen = $newname;
         $ImagenUrl = $imageurl;
         //end my code add
+        $imagen1 = $newname1;
+        $imagen2 = $newname2;
 
 
         $nombre = trim($_POST['nombre']);
@@ -71,7 +89,7 @@ class ProductoController {
         if (empty($nombre) || empty($descripcion) || $stock == 0) {
             return ['msg' => 'Datos incorrectos o incompletos','icon' => 'error', 'btnText' => 'Volver a intentar'];
         }
-        $p = new Producto($ruc,$nombre,$descripcion,$precio,$medida,$stock,$imagen,$ImagenUrl);
+        $p = new Producto($ruc,$nombre,$descripcion,$precio,$medida,$stock,$imagen,$ImagenUrl,$imagen1,$imagen2);
         return ($this->modelo->agregarProducto($p)) ? 
                 ['msg' => 'Nuevo producto agregado', 'icon' => 'success', 'btnText' => 'Continuar'] :
                 ['msg' => 'No se pudo agregar el nuevo producto', 'icon' => 'error', 'btnText' => 'Volver a intentar'];
@@ -89,17 +107,41 @@ class ProductoController {
         //-------- MODIFIED NAME --------------
         $extension = pathinfo($imagenName, PATHINFO_EXTENSION);
         $random = rand(0,99);
-        $rename = $random.date('Ymd').$imagenName;
+        $rename = $random.date('YmdH').$imagenName;
         $newname = $rename;
         //for obtain extension of image .'.'.$extension
         $imageurl = "./vistas/panel_usuario/imgproducts/" . $newname;
 
         $imagenTemp = $_FILES['file']['tmp_name'];
         move_uploaded_file($imagenTemp, $imageurl);
-        //copy($imagenTemp,$imagenUrl);
+        
+        //image two and three:::::::::::::::::::::
+        $eliminarimage1 = "./vistas/panel_usuario/imgproducts/" . $_POST['nameimage1'];
+        unlink($eliminarimage1);
+        $random1 = rand(0,99);
+        $imagenName1 = $_FILES['file1']['name'];
+        $rename1 = $random1.date('Ymdi').$imagenName1;
+        $newname1 = $rename1;
+        $imageurl1 = "./vistas/panel_usuario/imgproducts/" . $newname1;
+        $imagenTemp1 = $_FILES['file1']['tmp_name'];
+        move_uploaded_file($imagenTemp1, $imageurl1);
+
+        $eliminarimage2 = "./vistas/panel_usuario/imgproducts/" . $_POST['nameimage2'];
+        unlink($eliminarimage2);
+        $random2 = rand(0,99);
+        $imagenName2 = $_FILES['file2']['name'];
+        $rename2 = $random2.date('Ymds').$imagenName2;
+        $newname2 = $rename2;
+        $imageurl2 = "./vistas/panel_usuario/imgproducts/" . $newname2;
+        $imagenTemp2= $_FILES['file2']['tmp_name'];
+        move_uploaded_file($imagenTemp2, $imageurl2);
+
 
         $imagen = $newname;
         $ImagenUrl = $imageurl;
+
+        $imagen1 = $newname1;
+        $imagen2 = $newname2;
         //end my code add
 
         ////////////////////// END CODE FOR UPDATE IMAGE////////////////////////
@@ -115,7 +157,7 @@ class ProductoController {
         if (empty($nombre) || empty($descripcion) || $stock == 0) {
             return ['msg' => 'Datos incorrectos o incompletos','icon' => 'error', 'btnText' => 'Volver a intentar'];
         }
-        $p = new Producto($ruc,$nombre,$descripcion,$precio,$medida,$stock,$imagen,$ImagenUrl,$idProducto);
+        $p = new Producto($ruc,$nombre,$descripcion,$precio,$medida,$stock,$imagen,$ImagenUrl,$imagen1,$imagen2,$idProducto);
         return ($this->modelo->editarProducto($p)) ? 
                 ['msg' => 'Información del producto actualizada', 'icon' => 'success', 'btnText' => 'Continuar'] :
                 ['msg' => 'No se pudo editar el producto', 'icon' => 'error', 'btnText' => 'Volver a intentar'];
@@ -128,6 +170,11 @@ class ProductoController {
         //here add function for eliminate image
         $eliminarimage = "./vistas/panel_usuario/imgproducts/" . $_POST['Imagen'];
         unlink($eliminarimage);
+        $eliminarimage1 = "./vistas/panel_usuario/imgproducts/" . $_POST['Imagen1'];
+        unlink($eliminarimage1);
+        $eliminarimage2 = "./vistas/panel_usuario/imgproducts/" . $_POST['Imagen2'];
+        unlink($eliminarimage2);
+
         return ($this->modelo->eliminarProducto($id) != false) ? 
                 ['msg' => 'Producto eliminado', 'icon' => 'info', 'btnText' => 'Continuar'] :
                 ['msg' => 'No se pudo eliminar el producto', 'icon' => 'error', 'btnText' => 'Volver a intentar'];

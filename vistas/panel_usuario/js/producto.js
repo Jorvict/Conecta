@@ -60,12 +60,16 @@ $(function () {
 		//var mostarimage = $("#img1").attr("src","image2.jpg");
 		//$("#nameimage").val(data["Imagen"]);s
 		$("#nameimage").val(data["Imagen"]);
+		$("#nameimage1").val(data["Imagen1"]);
+		$("#nameimage2").val(data["Imagen2"]);
 		
 	});
 	/* here add var imagen for elimante image*/
 	$("#productosTabla tbody").on("click", ".eliminar_b", function () {
 		let idProd = tableProd.row($(this).parents("tr")).data()["IdProducto"];
 		let Imagen = tableProd.row($(this).parents("tr")).data()["Imagen"];
+		let Imagen1 = tableProd.row($(this).parents("tr")).data()["Imagen1"];
+		let Imagen2 = tableProd.row($(this).parents("tr")).data()["Imagen2"];
 		Swal.fire({
 			icon: "question",
 			title: "¿Está seguro que desea eliminar este producto?",
@@ -80,6 +84,9 @@ $(function () {
 					data: {
 						idProd: idProd,
 						Imagen: Imagen,
+						Imagen1: Imagen1,
+						Imagen2: Imagen2,
+
 					},
 					success: function (response) {
 						let json = JSON.parse(response);
@@ -139,7 +146,14 @@ $("#formProducto").submit(() => {
         let precio = $('#precio').val();
 		let descripcion = $('#descripcion').val();
 		let nameimage = $('#nameimage').val();
+
+		let nameimage1 = $('#nameimage1').val();
+		let nameimage2 = $('#nameimage2').val();
+
         let file = $('#file')[0].files[0];
+		//add code for two and three image
+		let file1 = $('#file1')[0].files[0];
+		let file2 = $('#file2')[0].files[0];
 
         fdata.append('ruc', ruc);
         fdata.append('id', id);
@@ -149,9 +163,14 @@ $("#formProducto").submit(() => {
         fdata.append('precio', precio);
 		fdata.append('descripcion', descripcion);
 		fdata.append('nameimage', nameimage);
+		fdata.append('nameimage1', nameimage1);
+		fdata.append('nameimage2', nameimage2);
 
 
         fdata.append('file', file);
+		fdata.append('file1', file1);
+		fdata.append('file2', file2);
+
 	
 
 	$.ajax({

@@ -45,13 +45,13 @@ include 'header.php';
               <div class="form__item">
                 <!-- <input type="text" name="nameimage" id="nameimage" readonly> -->                 
                 
-                <label for="imagen"  class="text_label">imagen del poducto 1:<input  style="border: 0; outline: none;" type="text" name="nameimage" id="nameimage" disabled> </label><br>
+                <label for="imagen"  class="text_label">imagen del poducto 1:<input  style="border: 0; outline: none;" type="text" name="nameimage1" id="nameimage1" disabled> </label><br>
                 <input style="border-radius:initial;" type="file" id="file1" class="form__item" name="file" accept=".jpg , .png , .webp" required>
               </div>
               <div class="form__item">
                 <!-- <input type="text" name="nameimage" id="nameimage" readonly> -->                 
                 
-                <label for="imagen"  class="text_label">imagen del poducto 2:<input  style="border: 0; outline: none;" type="text" name="nameimage" id="nameimage" disabled> </label><br>
+                <label for="imagen"  class="text_label">imagen del poducto 2:<input  style="border: 0; outline: none;" type="text" name="nameimage2" id="nameimage2" disabled> </label><br>
                 <input style="border-radius:initial;" type="file" id="file2" class="form__item" name="file" accept=".jpg , .png , .webp" required>
               </div>
             </div>
