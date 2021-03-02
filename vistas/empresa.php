@@ -35,13 +35,13 @@ include_once 'layouts/head.php'; ?>
 								</div>
 								<div id="carouselControls" class="carousel_slide" data-ride="carousel">
 									<figure class="img-form-product">
-										<img src="../public/imagenes/sliders/form-product/slider1.jpg" class="mimagen1" alt="">
+										<img src="../public/imagenes/sliders/form-product/slider1.jpg" class="mimagen1" alt="Logo Producto">
 									</figure>
 									<figure class="img-form-product">
-										<img src="../public/imagenes/sliders/form-product/slider2.jpg" alt="Logo Producto">
+										<img src="../public/imagenes/sliders/form-product/slider2.jpg" class="mimagen2" alt="Logo Producto">
 									</figure>
 									<figure class="img-form-product">
-										<img src="../public/imagenes/sliders/form-product/slider3.jpg" alt="Logo Producto">
+										<img src="../public/imagenes/sliders/form-product/slider3.jpg" class="mimagen3"  alt="Logo Producto">
 									</figure>
 								</div>
 							</section>

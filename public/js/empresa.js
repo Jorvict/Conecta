@@ -62,11 +62,15 @@ $("#products-container").load(urlProds, { type: "article" }, function () {
 					var descripcion = mydatos[0]['Descripcion'];
 					var precio = mydatos[0]['Precio'];
 					var miimagen = mydatos[0]['Imagen'];
+					var miimagen2 = mydatos[0]['Imagen1'];
+					var miimagen3 = mydatos[0]['Imagen2'];
 
 					$(".minombre").prepend(nombre);
 					$(".midescripcion").prepend(descripcion);
 					$(".price-container").prepend('<strong>Precio S/. </strong>'+ precio);
 					$('.mimagen1').attr("src", '../vistas/panel_usuario/imgproducts/'+miimagen);
+					$('.mimagen2').attr("src", '../vistas/panel_usuario/imgproducts/'+miimagen2);
+					$('.mimagen3').attr("src", '../vistas/panel_usuario/imgproducts/'+miimagen3);
 					$('#IdProducto').val(IdProducto);
 									
 
@@ -125,6 +129,8 @@ $('#formVenta').submit(function(e){
 					$(".price-container").empty();
 					$('.mimagen1').empty();
 					$('#IdProducto').empty();
+					$('.mimagen2').empty();
+    				$('.mimagen3').empty();
 					HideProduct();
 
 					$("#formVenta").trigger('reset');

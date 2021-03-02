@@ -22,6 +22,8 @@ closeButtonProduct.addEventListener('click', function(){
 	$(".midescripcion").empty();
 	$(".price-container").empty();
     $('.mimagen1').empty();
+    $('.mimagen2').empty();
+    $('.mimagen3').empty();
     $('#IdProducto').empty();
     HideProduct()
 })
