@@ -89,6 +89,7 @@ $("#products-container").load(urlProds, { type: "article" }, function () {
 });
 
 //here code for send  orders
+// add for image two and three for view slider complete
 
 $('#formVenta').submit(function(e){
 	//e.preventDefault();
