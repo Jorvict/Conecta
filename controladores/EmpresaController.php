@@ -73,9 +73,50 @@ class EmpresaController {
         }
         return $options;
     }
+    //here add code for add image of businnes ::::::::::::::::::::::::::::::::
     function actualizarDatos(){
         $e = new Empresa();
+        
         $e->ruc = $_POST['ruc'];
+
+        $imagenName = $_FILES['file']['name']; 
+
+        if($_POST['nameimage'] ==""){
+
+                     
+        
+            //-------- MODIFIED NAME --------------
+            $extension = pathinfo($imagenName, PATHINFO_EXTENSION);
+            $random = rand(0,99);
+            $rename = $random.date('Ymd').$imagenName;
+            $newname = $rename;
+            //for obtain extension of image .'.'.$extension
+            $imageurl = "./vistas/panel_usuario/logoemp/" . $newname;
+    
+            $imagenTemp = $_FILES['file']['tmp_name'];
+            move_uploaded_file($imagenTemp, $imageurl);
+            //copy($imagenTemp,$imagenUrl);
+        }else{
+            
+
+            $eliminarimage = "./vistas/panel_usuario/logoemp/" . $_POST['nameimage'];
+            unlink($eliminarimage);
+
+            $extension = pathinfo($imagenName, PATHINFO_EXTENSION);
+            $random = rand(0,99);
+            $rename = $random.date('Ymd').$imagenName;
+            $newname = $rename;
+            //for obtain extension of image .'.'.$extension
+            $imageurl = "./vistas/panel_usuario/logoemp/" . $newname;
+    
+            $imagenTemp = $_FILES['file']['tmp_name'];
+            move_uploaded_file($imagenTemp, $imageurl);
+
+        }
+        //ad in controller 
+        $e->logo = $newname;
+        $e->logoUrl = $imageurl;
+
         $e->emailEmp = str_replace(" ","",$_POST['email']);
         $e->descripcion = trim($_POST['descripcion']);
         $e->direccion = trim($_POST['direccion']);
@@ -91,8 +132,12 @@ class EmpresaController {
                 $this->modelo->buscarByRuc($e->ruc) :
                 ['bool' => true, 'msg' => 'problemaSQL'];
     }
+    //end here code::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     function DepProvByDistrito($distrito){
         return $this->modelo->DepProvByDistrito($distrito);
+    }
+    function showEmpresa() {
+        return $this->modelo->showEmpresa($_GET['ruc']);
     }
 }
 ?>

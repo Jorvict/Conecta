@@ -2,12 +2,12 @@
 
 class Conexion
 {
-    private static $host = '127.0.0.1';
-    private static $dbname = 'conecta_peru';
+    private static $host = 'localhost';
+    private static $dbname = 'ghxumdmy_conectaperu2';
     private static $user = 'root';
     private static $pwd = '';
     private static $cnx = null;
-
+//ghxumdmy_conectaperu2
     public static function conectar($bool = true)
     {
         try {

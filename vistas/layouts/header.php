@@ -147,7 +147,7 @@
 						</ul>
 					</li>
 					<li class="first-nav">
-						<a href="">¿Quíenes somos?</a>
+						<a href="./nosotros.php">¿Quíenes somos?</a>
 					</li>
 					<li class="first-nav">
 						<a href="./contactanos.php">Contáctanos</a>

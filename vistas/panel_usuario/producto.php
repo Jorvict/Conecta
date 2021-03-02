@@ -10,10 +10,12 @@ include 'header.php';
     <!-- <a href="#" class="producto__boton" id="nuevoProducto"> <i class="fas fa-list-alt"></i>&#160;Nuevo Producto</a> -->
     <section class="producto">
       <h1 class="producto__titulo">Productos</h1>
-      <div class="form__producto" id="bloque">
-        <div class="contenido">
+      <div class="form__producto" id="bloque" style="overflow-y: scroll;">
+        <div class="contenido" >
           <h1 class="formProducto">Nuevo producto</h1>
-          <form class="formProducto__form" id="formProducto">
+          
+          <!-- New Product-->
+          <form class="formProducto__form" id="formProducto" enctype="multipart/form-data">
             <input type="text" id="idProd" hidden>
             <label for="nombre">Nombre del producto:</label>
             <input style="border:1px solid gray" class="form__item t" type="text" id="nombre" name="nombre_producto" required>
@@ -35,8 +37,22 @@ include 'header.php';
                 <textarea style="border:1px solid gray" class="form__text" id="descripcion" name="descripcion" required></textarea>
               </div>
               <div class="form__item">
-                <label for="imagen" class="text_label">imagen del poducto:</label><br>
-                <input style="border-radius:initial;" type="file" id="imagen" class="form__item" name="imagen">
+                <!-- <input type="text" name="nameimage" id="nameimage" readonly> -->                 
+                
+                <label for="imagen"  class="text_label">imagen del poducto Principal:<input  style="border: 0; outline: none;" type="hidden" name="nameimage" id="nameimage" disabled> </label><br>
+                <input style="border-radius:initial;" type="file" id="file" class="form__item" name="file" accept=".jpg , .png , .webp" required>
+              </div>
+              <div class="form__item">
+                <!-- <input type="text" name="nameimage" id="nameimage" readonly> -->                 
+                
+                <label for="imagen"  class="text_label">imagen del poducto 1:<input  style="border: 0; outline: none;" type="hidden" name="nameimage1" id="nameimage1" disabled> </label><br>
+                <input style="border-radius:initial;" type="file" id="file1" class="form__item" name="file" accept=".jpg , .png , .webp" required>
+              </div>
+              <div class="form__item">
+                <!-- <input type="text" name="nameimage" id="nameimage" readonly> -->                 
+                
+                <label for="imagen"  class="text_label">imagen del poducto 2:<input  style="border: 0; outline: none;" type="hidden" name="nameimage2" id="nameimage2" disabled> </label><br>
+                <input style="border-radius:initial;" type="file" id="file2" class="form__item" name="file" accept=".jpg , .png , .webp" required>
               </div>
             </div>
             <div class="botonesProducto">
@@ -45,6 +61,7 @@ include 'header.php';
             </div>
 
           </form>
+          <!--here end new producto-->
         </div>
       </div>
       <div class="producto__tabla">

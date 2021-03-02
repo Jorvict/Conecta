@@ -6,7 +6,7 @@
   <main class="main">
     <?php include 'superior.php'; ?>
     <section class="formulario">
-      <form class="datos" id="formDatos">
+      <form class="datos" id="formDatos" enctype="multipart/form-data">
         <h1 class="datos__titulo">Mis datos</h1>
         <div class="datos">
           <input class="datos__form" type="text" placeholder="Nombre" name="nombre" value="<?php echo $_SESSION['empresa']['NomTitular'] ?>" readonly>
@@ -48,17 +48,17 @@
           <input class="datos__form" type="url" placeholder="URL instagram" name="instagram" id="instagram" value="<?php echo $_SESSION['empresa']['Instangram'] ?>">
           <section class="imagen">
             <figure class="imagen__logo">
-              <img style="width: 70%;margin: 0 auto;display: block;" src="image/logo1.PNG" alt="logo" class="imagen__img1">
+              <img style="width: 70%;margin: 0 auto;display: block;" src="<?php  echo 'logoemp/' .  $_SESSION['empresa']['Logo'] ?>" alt="logo" class="imagen__img1">
             </figure>
             <div class="indicacion">
               <p class="indicacion__texto">Sube tu logo en JPG o PNG, peso máximo de 1Mb. Tamaño sugerido 180 x 180
-                pixeles.</p>
-              <input class="indicacion__form datos__form" type="file" name="logo">
+                pixeles.<input   type="hidden" name="nameimage" id="nameimage" value="<?php echo $_SESSION['empresa']['Logo'] ?>"></p>
+              <input class="indicacion__form datos__form" type="file" id="file" name="file" accept=".jpg , .png , .webp" required>
             </div>
           </section>
           <input class="imagen__submit" type="submit" id="btnGuardar" value="Guardar datos">
         </div>
-      </form>
+      </form> <!-- end form code :::::::::::::-->
     </section>
   </main>
   <?php include 'footer.php'; ?>

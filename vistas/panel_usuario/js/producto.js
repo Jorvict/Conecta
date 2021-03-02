@@ -55,9 +55,21 @@ $(function () {
 		$("#medida").val(data["Medida"]);
 		$("#precio").val(data["Precio"]);
 		$("#descripcion").val(data["Descripcion"]);
+		/*here add for update products*/
+		//$("#nameimage").val(data["Imagen"]);
+		//var mostarimage = $("#img1").attr("src","image2.jpg");
+		//$("#nameimage").val(data["Imagen"]);s
+		$("#nameimage").val(data["Imagen"]);
+		$("#nameimage1").val(data["Imagen1"]);
+		$("#nameimage2").val(data["Imagen2"]);
+		
 	});
+	/* here add var imagen for elimante image*/
 	$("#productosTabla tbody").on("click", ".eliminar_b", function () {
 		let idProd = tableProd.row($(this).parents("tr")).data()["IdProducto"];
+		let Imagen = tableProd.row($(this).parents("tr")).data()["Imagen"];
+		let Imagen1 = tableProd.row($(this).parents("tr")).data()["Imagen1"];
+		let Imagen2 = tableProd.row($(this).parents("tr")).data()["Imagen2"];
 		Swal.fire({
 			icon: "question",
 			title: "¿Está seguro que desea eliminar este producto?",
@@ -71,6 +83,10 @@ $(function () {
 					url: "../../index.php?controller=producto&action=eliminarProducto",
 					data: {
 						idProd: idProd,
+						Imagen: Imagen,
+						Imagen1: Imagen1,
+						Imagen2: Imagen2,
+
 					},
 					success: function (response) {
 						let json = JSON.parse(response);
@@ -89,9 +105,11 @@ $(function () {
 		});
 	});
 });
+
 $("#cancelar").click(() => {
 	actionForm("cerrar");
 });
+
 function actionForm(action, type) {
 	let bloque = document.getElementById("bloque");
 	let h1 = bloque.getElementsByTagName("h1")[0];
@@ -110,25 +128,57 @@ function actionForm(action, type) {
 	}
 }
 
+/*here new product*/
 $("#formProducto").submit(() => {
 	const url =
 			"../../index.php?controller=producto&action=" +
 			($("#bloque h1").text() == "Nuevo Producto" ? "agregar" : "editar") +
-			"Producto",
-		parametros = {
-			ruc: $("#rucSuperior").val(),
-			id: $("#idProd").val(),
-			nombre: $("#nombre").val(),
-			cantidad: $("#cantidad").val(),
-			medida: $("#medida").val(),
-			precio: $("#precio").val(),
-			descripcion: $("#descripcion").val(),
-		};
+			"Producto";
+
+	
+
+		var fdata = new FormData();
+        let ruc = $('#rucSuperior').val();
+        let id = $('#idProd').val();
+        let nombre = $('#nombre').val();
+		let cantidad = $('#cantidad').val();
+        let medida = $('#medida').val();
+        let precio = $('#precio').val();
+		let descripcion = $('#descripcion').val();
+		let nameimage = $('#nameimage').val();
+
+		let nameimage1 = $('#nameimage1').val();
+		let nameimage2 = $('#nameimage2').val();
+
+        let file = $('#file')[0].files[0];
+		//add code for two and three image
+		let file1 = $('#file1')[0].files[0];
+		let file2 = $('#file2')[0].files[0];
+
+        fdata.append('ruc', ruc);
+        fdata.append('id', id);
+        fdata.append('nombre', nombre);
+		fdata.append('cantidad', cantidad);
+        fdata.append('medida', medida);
+        fdata.append('precio', precio);
+		fdata.append('descripcion', descripcion);
+		fdata.append('nameimage', nameimage);
+		fdata.append('nameimage1', nameimage1);
+		fdata.append('nameimage2', nameimage2);
+
+
+        fdata.append('file', file);
+		fdata.append('file1', file1);
+		fdata.append('file2', file2);
+
+	
 
 	$.ajax({
 		type: "POST",
 		url: url,
-		data: parametros,
+		data: fdata,
+		processData: false,
+		contentType: false,
 		success: function (response) {
 			let json = JSON.parse(response);
 			Swal.fire({
@@ -145,3 +195,5 @@ $("#formProducto").submit(() => {
 	});
 	return false;
 });
+
+

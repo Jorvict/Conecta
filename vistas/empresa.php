@@ -1,5 +1,6 @@
 <?php
-$title = "";
+session_start();
+$title = $_SESSION['empresa']['NomEmpresa'];
 include_once 'layouts/head.php'; ?>
 <link rel="stylesheet" type="text/css" href="../public/css/product_services.css">
 <link rel="stylesheet" href="../public/css/form-product.css">
@@ -34,13 +35,13 @@ include_once 'layouts/head.php'; ?>
 								</div>
 								<div id="carouselControls" class="carousel_slide" data-ride="carousel">
 									<figure class="img-form-product">
-										<img src="../public/imagenes/sliders/form-product/slider1.jpg" alt="">
+										<img src="../public/imagenes/sliders/form-product/slider1.jpg" class="mimagen1" alt="">
 									</figure>
 									<figure class="img-form-product">
-										<img src="../public/imagenes/sliders/form-product/slider2.jpg" alt="">
+										<img src="../public/imagenes/sliders/form-product/slider2.jpg" alt="Logo Producto">
 									</figure>
 									<figure class="img-form-product">
-										<img src="../public/imagenes/sliders/form-product/slider3.jpg" alt="">
+										<img src="../public/imagenes/sliders/form-product/slider3.jpg" alt="Logo Producto">
 									</figure>
 								</div>
 							</section>
@@ -48,9 +49,9 @@ include_once 'layouts/head.php'; ?>
 
 						<div class="description-form-product">
 							<div class="container-elements-product">
-								<h2>Costurería</h2>
-								<p>Descripción Lorem ipsum dolor sit, amet consectetur adipisicing elit asieuxnal ksnda </p>
-								<p class="price-container"><strong>Precio: </strong> S/ 14.99</p>
+								<h2 class="minombre"></h2>
+								<p class="midescripcion"> </p>
+								<p class="price-container"> </p>
 							</div>
 						</div>
 					</div>
@@ -58,98 +59,89 @@ include_once 'layouts/head.php'; ?>
 
 				<article class="right">
 					<h2>Formulario de compra</h2>
+					<form id="formVenta">
 
-					<div class="big-container">
+						<div class="big-container">
+							<input type="hidden" id="IdProducto" >
 
-						<div class="cont-item">
-							<input type="text" placeholder="Nombre">
+							<div class="cont-item"> 
+								<input type="text" id="nombres" placeholder="Nombre" pattern="[a-zA-Z ]{2,254}" title="Solo debe contener letras. e.g. john" required>
+							</div>
+							<div class="cont-item">
+								<input type="text" id="apellido" placeholder="Apellido" pattern="[a-zA-Z ]{2,254}" title="Solo debe contener letras. e.g. Sala..." required>
+							</div>
+							<div class="cont-item">
+								<input type="text" id="Cantidad" placeholder="Cantidad" pattern="[0-9]{1,3}" title="debe conter numeros" required>
+							</div>
+							<div class="cont-item">
+								<input type="text" id="teléfono" placeholder="Teléfono" pattern="[0-9]{9}" title="debe conter numeros" required>
+							</div>
+							<div class="cont-item big">
+								<input type="text" id="dirección" placeholder="Dirección" required>
+							</div>
+							<div class="cont-item big">
+								<textarea name="comentarios" id="comentarios" cols="30" rows="4" placeholder="Escribe tu comentario aquí" textarea></textarea>
+							</div>
 						</div>
-						<div class="cont-item">
-							<input type="text" placeholder="Apellido">
+						<div class="btn-container">
+							<!--<button class="enviar-venta">
+								Adquirir
+							</button>-->
+							<input type="submit"  class="enviar-venta" value="Adquirir">
 						</div>
-						<div class="cont-item">
-							<input type="text" placeholder="Cantidad">
-						</div>
-						<div class="cont-item">
-							<input type="text" placeholder="Teléfono">
-						</div>
-						<div class="cont-item big">
-							<input type="text" placeholder="Dirección">
-						</div>
-						<div class="cont-item big">
-							<textarea name="comentarios" id="comentarios" cols="30" rows="4" placeholder="Escribe tu comentario aquí"></textarea>
-						</div>
-					</div>
-					<div class="btn-container">
-						<button class="enviar-venta">
-							Adquirir
-						</button>
-					</div>
+					</form>
 				</article>
 			</section>
 		</div>
+		<!-- end form for shoping -->
 
 		<section id="t-principal">
 			<div class="space-title"></div>
-			<h4 id="categoria">Butrich</h4>
+			<h4 id="categoria"><?php echo $_SESSION['empresa']['NomEmpresa']; ?></h4>
+			<h3 hidden><?php echo $_SESSION['empresa']['RucEmpresa']; ?></h3>
 		</section>
 
 		<main>
 			<figure class="img-container">
-				<img src="../public/imagenes/categorias-comercio/Ropa_textiles/Butrich/logo.png" alt="">
+				<img src="<?php echo 'panel_usuario/logoemp/'. $_SESSION['empresa']['Logo']; ?>" alt="Logo de la empresa">
 			</figure>
 			<aside class="left-section">
 
 				<article class="info-emp">
 					<div class="container-sticky">
 						<p class="description">
-							Se presentó en eventos internacionales como el Mercedes Benz Fashion Week
-							de Madrid (2013) y fue la invitada internacional en el IFLS en Bogotá (2016), así como
-							finalista en el pitch to LAFS (Latin American Fashion Summit) en Cancún (2018).
+							<?php echo $_SESSION['empresa']['Descripcion']; ?>
 						</p>
 						<div class="social-section">
 							<div class="social social-tlf">
-								<i class="icon-phone"></i>
-								(01)239-0070
+								<a href=" <?php echo 'tel:+51'. $_SESSION['empresa']['Telefono']; ?> " target="_blank" ><i class="icon-phone" ></i></a>
+								<?php echo $_SESSION['empresa']['Telefono']; ?>
 							</div>
+							<?php if ($_SESSION['empresa']['Facebook'] != "") {
+								?>
 							<div class="social social-fb">
-								<i class="icon-facebook"></i>
-								@bernardosbrasa
+								<a href="<?php echo $_SESSION['empresa']['Facebook']; ?>" target="_blank"><i class="icon-facebook"></i></a>
+								
 							</div>
+							<?php }
+							if ($_SESSION['empresa']['Facebook'] != "") { ?>
 							<div class="social social-ig">
-								<i class="icon-instagram"></i>
-								@bernardosbrasa
+								<a href="<?php echo $_SESSION['empresa']['Instangram']; ?> " target="_blank"><i class="icon-instagram"></i></a>
+								
 							</div>
+							<?php } ?>
 							<div class="social social-local">
 								<i class="icon-location"></i>
-								Av.Marchand #324 Mala,Lima,Peru
+								<?php echo $_SESSION['empresa']['Direccion']; ?>
 							</div>
 						</div>
 						<div class="recomendaciones">
 							<h3 class="titulo">
 								Tambien podría interesarte
+								
 							</h3>
-							<div class="docker-imgs">
-								<figure class="dck-img-container">
-									<a href="">
-										<img src="../public/imagenes/categorias-comercio/Ropa_textiles/Renzo/logo.jpg" alt="">
-									</a>
-								</figure>
-								<figure class="dck-img-container">
-									<a href="">
-										<img src="../public/imagenes/categorias-comercio/Ropa_textiles/Capittana/logo.jpg" alt="">
-									</a>
-								</figure>
-								<figure class="dck-img-container">
-									<a href="">
-										<img src="../public/imagenes/categorias-comercio/Ropa_textiles/Sophie/logo.jpg" alt="">
-									</a>
-								</figure>
-								<figure class="dck-img-container">
-									<a href="">
-										<img src="../public/imagenes/categorias-comercio/Ropa_textiles/Peruvian_Flake/logo.jpg" alt="">
-									</a>
-								</figure>
+							<div id="docker-imgs">
+								<input type="text" value="<?php echo $_SESSION['categoria']['idCat']; ?>" hidden>
 							</div>
 						</div>
 					</div>
@@ -163,8 +155,8 @@ include_once 'layouts/head.php'; ?>
 					Productos
 				</h3>
 
-				<div class="products-container">
-					<article class="product">
+				<div id="products-container">
+					<!-- <article class="product">
 						<figure class="img-product">
 							<img src="../public/imagenes/categorias-comercio/Ropa_textiles/Butrich/costureria.jpg" alt="">
 						</figure>
@@ -247,7 +239,7 @@ include_once 'layouts/head.php'; ?>
 								Ver producto
 							</button>
 						</div>
-					</article>
+					</article> -->
 				</div>
 
 				<div class="button-container">
@@ -264,6 +256,7 @@ include_once 'layouts/head.php'; ?>
 
 	<?php include_once 'layouts/scripts.php'; ?>
 	<script type="text/javascript" src="../public/js/form-product.js"></script>
+	<script src="../public/js/empresa.js"></script>
 </body>
 
 </html>

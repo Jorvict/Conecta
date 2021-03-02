@@ -1,19 +1,30 @@
 //Variables mostrar y ocultar form
 const product = document.querySelector('.form-container-product');
-const productButton = document.querySelector('.btn-product');
+
 const closeButtonProduct = document.querySelector('.close-button-product');
 
 // Desplegar Product
 function ShowProduct(){
     product.classList.add('is-activep')
+    
 }
-productButton.addEventListener('click', ShowProduct)
+
 
 // Ocultar Product
 function HideProduct(){
     product.classList.remove('is-activep')
+    
+    
 }
-closeButtonProduct.addEventListener('click', HideProduct)
+closeButtonProduct.addEventListener('click', function(){
+    
+    $(".minombre").empty();
+	$(".midescripcion").empty();
+	$(".price-container").empty();
+    $('.mimagen1').empty();
+    $('#IdProducto').empty();
+    HideProduct()
+})
 
 //Variables movimiento de sliders
 const sliderContainer = document.querySelector('.carousel_slide')
