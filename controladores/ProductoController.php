@@ -189,4 +189,36 @@ class ProductoController {
 
 
     }
+
+    //ad product for show in index
+    function featuredProduct()
+    {
+        $featuredproducts = $this->modelo->featuredProduct();
+        //var_dump($featuredproducts);
+        $articles = '';
+        foreach ($featuredproducts as $p) {
+            $iganes = $p['ImagenUrl'];
+            $articles .= "<article class='product'>
+                            <figure class='img-product'>
+                                ´<img src='.$iganes' alt='Imagen del Producto'>´
+                            </figure>
+                            <br>
+                            <h4 class='subtitulo-product'>
+                                ".$p['NomProducto']."
+                            </h4>
+                            <p class='product-desc'>
+                                ".$p['Descripcion']."
+                            </p>
+                            <div class='button-container'>
+                                <input type='text' id='idproducto' value='".$p['IdProducto']."' hidden>
+                                <button class='btn-product' data-id='".$p['IdProducto']."'>
+                                    VER TIENDA
+                                </button>
+                            </div>
+                        </article>";
+        }
+        return $articles;
+
+        
+    } 
 }

@@ -143,3 +143,9 @@ $('#formVenta').submit(function(e){
 	return false;
 
 });
+
+//lead products destacados in index
+let urlFeauturedProduct = "../index.php?controller=producto&action=featuredProduct";
+$("#destacados").load(urlFeauturedProduct, { type: "article" }, function(){
+
+})

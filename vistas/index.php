@@ -131,8 +131,9 @@ include_once 'layouts/head.php';
 
 			<section class="contenedor">
 
-				<div class="destacados">
-					<div class="pasos-sig">
+
+				<div id="destacados" class="destacados">
+					<!--<div class="pasos-sig">
 						<img src="../public/imagenes/index/img.jpg">
 						<div class="subtitulo">
 							<h4>Vestido vintage de puntos</h4>
@@ -251,7 +252,7 @@ include_once 'layouts/head.php';
 						<div class="ver">
 							<a href="#">VER TIENDA</a>
 						</div>
-					</div>
+					</div>-->
 				</div>
 			</section>
 
@@ -315,6 +316,8 @@ include_once 'layouts/head.php';
 
 	<!-- jQuery and JS bundle w/ Popper.js -->
 	<?php include_once 'layouts/scripts.php'; ?>
+	<!-- add this script-->
+	<script src="../public/js/empresa.js"></script>
 </body>
 
 </html>
