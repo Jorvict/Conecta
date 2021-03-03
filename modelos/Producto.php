@@ -91,7 +91,7 @@ class Producto {
 
     ///ad my code 
     function featuredProduct(){
-        $sql = "SELECT * FROM productos WHERE RucEmpresa IN (select distinct RucEmpresa from productos) limit 3";
+        $sql = "SELECT * FROM productos WHERE RucEmpresa IN (select distinct RucEmpresa from productos) limit 4";
         $stmt = $this->cnx->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

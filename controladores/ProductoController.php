@@ -211,8 +211,8 @@ class ProductoController {
                                 </p>
                             </span>
                             <div class='ver'>
-                                <input type='text' id='idproducto' value='".$p['IdProducto']."' hidden>
-                                <button class='verbtn' data-id='".$p['IdProducto']."'>
+                                <input type='text' id='idproducto' value='".$p['RucEmpresa']."' hidden>
+                                <button class='btn-product' data-id='".$p['RucEmpresa']."'>
                                     VER TIENDA
                                 </button>
                             </div>

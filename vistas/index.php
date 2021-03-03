@@ -132,7 +132,7 @@ include_once 'layouts/head.php';
 			<section class="contenedor">
 
 
-				<div id="destacados" class="destacados">
+				<div id="destacado" class="destacados">
 					<!--<div class="pasos-sig">
 						<img src="../public/imagenes/index/img.jpg">
 						<div class="subtitulo">
@@ -318,6 +318,9 @@ include_once 'layouts/head.php';
 	<?php include_once 'layouts/scripts.php'; ?>
 	<!-- add this script-->
 	<script src="../public/js/empresa.js"></script>
+	
+	<script src="../public/js/a.js"></script>
+
 </body>
 
 </html>

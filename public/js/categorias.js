@@ -20,3 +20,4 @@ $(".contentEmps").on("click", ".cuadros", function () {
 		},
 	});
 });
+//index button:::::::::::::::::::::::::::::::::::::::::::::::::::::::
