@@ -201,7 +201,7 @@ class ProductoController {
             $rucEmpresa = $p['RucEmpresa'];
             $articles .= "<article class='pasos-sig'>
                             <input type='text' class='urlEmp' value='{$rucEmpresa}' hidden>                            
-                            ´<img src='.$iganes' alt='Imagen del Producto'>´
+                            <img src='.$iganes' alt='Imagen del Producto'>
                             <div class='subtitulo'>
                             <h4> ".$p['NomProducto']."</h4>
                             </div>
