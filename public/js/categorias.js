@@ -7,6 +7,7 @@ $(".contentCats").load(urlCats, data, () => {
 		empresasByCategoria($(this)[0]);
 	});
 });
+
 $(".contentEmps").on("click", ".cuadros", function () {
 	let url =
 		"../index.php?controller=empresa&action=showEmpresa&ruc=" +

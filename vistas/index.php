@@ -150,7 +150,7 @@ include_once 'layouts/head.php';
 					<div class="pasos-sig">
 						<img src="../public/imagenes/index/img.jpg">
 						<div class="subtitulo">
-							<h4>Cafarena lila</h4>
+							Cafarena lila
 						</div>
 						<span>
 							<p class="p">Chompa de cuello alto / cafarena. Talla S/M. Lila. De segunda.</p>

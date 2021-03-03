@@ -198,20 +198,21 @@ class ProductoController {
         $articles = '';
         foreach ($featuredproducts as $p) {
             $iganes = $p['ImagenUrl'];
-            $articles .= "<article class='product'>
-                            <figure class='img-product'>
-                                ´<img src='.$iganes' alt='Imagen del Producto'>´
-                            </figure>
-                            <br>
-                            <h4 class='subtitulo-product'>
-                                ".$p['NomProducto']."
-                            </h4>
-                            <p class='product-desc'>
-                                ".$p['Descripcion']."
-                            </p>
-                            <div class='button-container'>
+            $rucEmpresa = $p['RucEmpresa'];
+            $articles .= "<article class='pasos-sig'>
+                            <input type='text' class='urlEmp' value='{$rucEmpresa}' hidden>                            
+                            ´<img src='.$iganes' alt='Imagen del Producto'>´
+                            <div class='subtitulo'>
+                            <h4> ".$p['NomProducto']."</h4>
+                            </div>
+                            <span>
+                                <p class='p'>
+                                    ".$p['Descripcion']."
+                                </p>
+                            </span>
+                            <div class='ver'>
                                 <input type='text' id='idproducto' value='".$p['IdProducto']."' hidden>
-                                <button class='btn-product' data-id='".$p['IdProducto']."'>
+                                <button class='verbtn' data-id='".$p['IdProducto']."'>
                                     VER TIENDA
                                 </button>
                             </div>
