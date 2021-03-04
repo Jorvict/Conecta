@@ -1,18 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-<<<<<<< HEAD
-    src:  url('../../fonts/icomoon.eot?t08oil');
-    src:  url('../../fonts/icomoon.eot?t08oil#iefix') format('embedded-opentype'),
-      url('../../fonts/icomoon.ttf?t08oil') format('truetype'),
-      url('../../fonts/icomoon.woff?t08oil') format('woff'),
-      url('../../fonts/icomoon.svg?t08oil#icomoon') format('svg');
-=======
     src:  url('../fonts/icomoon.eot?t08oil');
     src:  url('../fonts/icomoon.eot?t08oil#iefix') format('embedded-opentype'),
       url('../fonts/icomoon.ttf?t08oil') format('truetype'),
       url('../fonts/icomoon.woff?t08oil') format('woff'),
       url('../fonts/icomoon.svg?t08oil#icomoon') format('svg');
->>>>>>> e347f9fe66ab666344293ef7211ead61b0fd2a88
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -220,7 +212,7 @@ section.titulo{
     overflow: hidden;
     width: 97%;
     box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.75);
-    margin: 0 auto;
+    margin: 10px auto;
     height: 40px;
 }
 
@@ -419,13 +411,14 @@ h3#txtcaja {
     align-items: center;
 }
 
-.ver a {
+.ver .btn-product{
     padding: 2px 40px;
     background-color: orange;
     color: white;
     border-radius: 10px;
     text-decoration: none;
     font-size: 14px;
+    border-style: none;
 }
 
 h1#cotiza {
