@@ -35,37 +35,54 @@ class CategoriaController {
         return $options;
     }
     function empresasByCategoria($type = 'cuadros'){
-        $empresas = $this->modelo->empresasByCategoria($_POST['idCat']);
+        if(isset($_POST['idCat'])){
+
+            $empresas = $this->modelo->empresasByCategoria($_POST['idCat']);
+
+        }
+        
         if (isset($_POST['type'])) {
             $type = $_POST['type'];
         }
         $cuadros = '';
-        foreach ($empresas as $emp) {
-            $numFigures = 4;
-            if ($type == 'cuadros') {
-                $rucEmpresa = $emp['RucEmpresa'];
-                $nomEmp = $emp['NomEmpresa'];
-                $logo = $emp['Logo'];
-                $cuadros .= "<div class='cuadros'>
-                                <input type='text' class='urlEmp' value='{$rucEmpresa}' hidden>
-                                <img id='img' src='../vistas/panel_usuario/logoemp/{$logo}' >
-                                <div class='hover-galeria'>
-                                    <p>{$nomEmp}</p>
-                                </div>
-                            </div>";
-            } else {
-                if ($numFigures > 0) {
-                    if ($_POST['ruc'] != $emp['RucEmpresa']) {
-                        $ruc = $emp['RucEmpresa'];
-                        $cuadros .= "<figure class='dck-img-container'>
-                                        <input type='text' value='{$ruc}' hidden>
-                                        <img src='' alt='Otro logo'>
-                                    </figure>";
-                        --$numFigures;
-                    }
-                } 
+        //add this code for fixed fechall
+        if($empresas){
+
+            foreach ($empresas as $emp) {
+                $numFigures = 4;
+                if ($type == 'cuadros') {
+                    $rucEmpresa = $emp['RucEmpresa'];
+                    $nomEmp = $emp['NomEmpresa'];
+                    $logo = $emp['Logo'];
+                    $cuadros .= "<div class='cuadros'>
+                                    <input type='text' class='urlEmp' value='{$rucEmpresa}' hidden>
+                                    <img id='img' src='../vistas/panel_usuario/logoemp/{$logo}' >
+                                    <div class='hover-galeria'>
+                                        <p>{$nomEmp}</p>
+                                    </div>
+                                </div>";
+                } else {
+                    if ($numFigures > 0) {
+                        if ($_POST['ruc'] != $emp['RucEmpresa']) {
+                            $ruc = $emp['RucEmpresa'];
+                            $cuadros .= "<figure class='dck-img-container'>
+                                            <input type='text' value='{$ruc}' hidden>
+                                            <img src='' alt='Otro logo'>
+                                        </figure>";
+                            $numFigures;
+                        }
+                    } 
+                }
             }
-        }        
+
+
+
+        }
+        
+            
+
+        
+                
         if ($type == 'imgs') {
             return $cuadros;
         } else {
