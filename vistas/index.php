@@ -319,7 +319,7 @@ include_once 'layouts/head.php';
 	<!-- add this script-->
 	<script src="../public/js/empresa.js"></script>
 	
-	<script src="../public/js/a.js"></script>
+	
 
 </body>
 
